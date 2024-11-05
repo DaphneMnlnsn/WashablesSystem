@@ -261,6 +261,18 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MachineList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MachineList.Designer.cs">
+      <DependentUpon>MachineList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MachineUnitList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MachineUnitList.Designer.cs">
+      <DependentUpon>MachineUnitList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -455,6 +467,9 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MachineUnitList.resx">
+      <DependentUpon>MachineUnitList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -636,6 +651,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\image 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ellipse 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ellipse 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ellipse 2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
