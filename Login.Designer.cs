@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
             this.cLoginButton = new WashablesSystem.CustomButton();
             this.ctxtbxPass = new WashablesSystem.CustomTextbox();
@@ -160,7 +159,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::WashablesSystem.Properties.Resources.image_2;
             this.pictureBox1.Location = new System.Drawing.Point(85, 213);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(754, 452);
