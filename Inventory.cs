@@ -12,9 +12,14 @@ namespace WashablesSystem
 {
     public partial class Inventory : Form
     {
-        public Inventory()
+        public Inventory(Main parentForm)
         {
             InitializeComponent();
+            if (parentForm != null)
+            {
+                parentForm.Header = "Inventory";
+                string text = parentForm.Header;
+            }
         }
     }
 }

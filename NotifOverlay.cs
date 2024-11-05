@@ -68,6 +68,7 @@ namespace WashablesSystem
             string message3 = "ITM003 Zonrox is low in stock! Restock now!";
             activity3.setNotif(message3);
             notifPanel.Controls.Add(activity3);
+            
         }
     }
 }

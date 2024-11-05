@@ -12,9 +12,14 @@ namespace WashablesSystem
 {
     public partial class Billing : Form
     {
-        public Billing()
+        public Billing(Main parentForm)
         {
             InitializeComponent();
+            if (parentForm != null)
+            {
+                parentForm.Header = "Billing";
+                string text = parentForm.Header;
+            }
         }
     }
 }

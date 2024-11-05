@@ -12,9 +12,14 @@ namespace WashablesSystem
 {
     public partial class Customers : Form
     {
-        public Customers()
+        public Customers(Main parentForm)
         {
             InitializeComponent();
+            if (parentForm != null)
+            {
+                parentForm.Header = "Customers";
+                string text = parentForm.Header;
+            }
         }
 
         private void Customers_Load(object sender, EventArgs e)

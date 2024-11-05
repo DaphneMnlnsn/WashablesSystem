@@ -12,9 +12,14 @@ namespace WashablesSystem
 {
     public partial class Schedule : Form
     {
-        public Schedule()
+        public Schedule(Main parentForm)
         {
             InitializeComponent();
+            if (parentForm != null)
+            {
+                parentForm.Header = "Schedule";
+                string text = parentForm.Header;
+            }
         }
     }
 }

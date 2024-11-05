@@ -17,16 +17,7 @@ namespace WashablesSystem
         public Main()
         {
             InitializeComponent();
-            loadForm(new Dashboard());
-        }
-
-        public Main(string open)
-        {
-            InitializeComponent();
-            if (open.Equals("customers"))
-            {
-                loadForm(new Customers());
-            }
+            loadForm(new Dashboard(this));
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -48,42 +39,42 @@ namespace WashablesSystem
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            loadForm(new Dashboard());
+            loadForm(new Dashboard(this));
         }
 
         private void btnOperations_Click(object sender, EventArgs e)
         {
-            loadForm(new LaundryOperations());
+            loadForm(new LaundryOperations(this));
         }
 
         private void btnSchedule_Click(object sender, EventArgs e)
         {
-            loadForm(new Schedule());
+            loadForm(new Schedule(this));
         }
 
         private void btnSAndE_Click(object sender, EventArgs e)
         {
-            loadForm(new ServicesAndEquipment());
+            loadForm(new ServicesAndEquipment(this));
         }
 
         private void btnInventory_Click(object sender, EventArgs e)
         {
-            loadForm(new Inventory());
+            loadForm(new Inventory(this));
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)
         {
-            loadForm(new Customers());
+            loadForm(new Customers(this));
         }
 
         private void btnUsers_Click(object sender, EventArgs e)
         {
-            loadForm(new Users());
+            loadForm(new Users(this));
         }
 
         private void btnBilling_Click(object sender, EventArgs e)
         {
-            loadForm(new Billing());
+            loadForm(new Billing(this));
         }
 
         private void btnNotif_Click(object sender, EventArgs e)
@@ -92,9 +83,26 @@ namespace WashablesSystem
             notif1.BorderStyle = BorderStyle.FixedSingle;
             this.Controls.Add(notif1);
             notif1.Size = new System.Drawing.Size(524, 615);
-            notif1.Location = new System.Drawing.Point(1093, 110);
+            notif1.Dock = DockStyle.Right;
             notif1.Select();
             notif1.BringToFront();
+        }
+
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        public string Header
+        {
+            get { return lblHeader.Text; }
+            set { lblHeader.Text = value; }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            new Login().Show();
+            this.Hide();
         }
     }
 }

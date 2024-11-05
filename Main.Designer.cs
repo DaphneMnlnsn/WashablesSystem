@@ -30,11 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelPage = new System.Windows.Forms.Panel();
-            this.lblProfile = new System.Windows.Forms.Label();
-            this.lblHeader = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnInventory = new System.Windows.Forms.PictureBox();
             this.btnCustomers = new System.Windows.Forms.PictureBox();
             this.btnUsers = new System.Windows.Forms.PictureBox();
@@ -43,12 +38,15 @@
             this.btnSchedule = new System.Windows.Forms.PictureBox();
             this.btnOperations = new System.Windows.Forms.PictureBox();
             this.btnDashboard = new System.Windows.Forms.PictureBox();
+            this.panelPage = new System.Windows.Forms.Panel();
+            this.lblProfile = new System.Windows.Forms.Label();
+            this.lblHeader = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btnNotif = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnInventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnUsers)).BeginInit();
@@ -57,6 +55,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnSchedule)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOperations)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDashboard)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNotif)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).BeginInit();
@@ -78,69 +78,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(120, 804);
             this.panel1.TabIndex = 0;
-            // 
-            // panelPage
-            // 
-            this.panelPage.Location = new System.Drawing.Point(120, 110);
-            this.panelPage.Name = "panelPage";
-            this.panelPage.Size = new System.Drawing.Size(1498, 804);
-            this.panelPage.TabIndex = 2;
-            // 
-            // lblProfile
-            // 
-            this.lblProfile.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblProfile.AutoSize = true;
-            this.lblProfile.Font = new System.Drawing.Font("Berlin Sans FB", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProfile.ForeColor = System.Drawing.Color.White;
-            this.lblProfile.Location = new System.Drawing.Point(1283, 28);
-            this.lblProfile.Name = "lblProfile";
-            this.lblProfile.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblProfile.Size = new System.Drawing.Size(131, 44);
-            this.lblProfile.TabIndex = 17;
-            this.lblProfile.Text = "Admin";
-            this.lblProfile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblHeader
-            // 
-            this.lblHeader.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblHeader.AutoSize = true;
-            this.lblHeader.Font = new System.Drawing.Font("Berlin Sans FB", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.ForeColor = System.Drawing.Color.White;
-            this.lblHeader.Location = new System.Drawing.Point(146, 28);
-            this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(200, 44);
-            this.lblHeader.TabIndex = 13;
-            this.lblHeader.Text = "Dashboard";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.panel2.Controls.Add(this.tableLayoutPanel1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1618, 110);
-            this.panel2.TabIndex = 1;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.1248F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.87521F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 667F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox4, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnNotif, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblHeader, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnLogout, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblProfile, 2, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 4);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1612, 100);
-            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // btnInventory
             // 
@@ -230,6 +167,69 @@
             this.btnDashboard.TabStop = false;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
+            // panelPage
+            // 
+            this.panelPage.Location = new System.Drawing.Point(120, 110);
+            this.panelPage.Name = "panelPage";
+            this.panelPage.Size = new System.Drawing.Size(1498, 804);
+            this.panelPage.TabIndex = 2;
+            // 
+            // lblProfile
+            // 
+            this.lblProfile.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblProfile.AutoSize = true;
+            this.lblProfile.Font = new System.Drawing.Font("Berlin Sans FB", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfile.ForeColor = System.Drawing.Color.White;
+            this.lblProfile.Location = new System.Drawing.Point(1280, 28);
+            this.lblProfile.Name = "lblProfile";
+            this.lblProfile.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblProfile.Size = new System.Drawing.Size(131, 44);
+            this.lblProfile.TabIndex = 17;
+            this.lblProfile.Text = "Admin";
+            this.lblProfile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblHeader
+            // 
+            this.lblHeader.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblHeader.AutoSize = true;
+            this.lblHeader.Font = new System.Drawing.Font("Berlin Sans FB", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.ForeColor = System.Drawing.Color.White;
+            this.lblHeader.Location = new System.Drawing.Point(146, 28);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(200, 44);
+            this.lblHeader.TabIndex = 13;
+            this.lblHeader.Text = "Dashboard";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.panel2.Controls.Add(this.tableLayoutPanel1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1618, 110);
+            this.panel2.TabIndex = 1;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 5;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.1248F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.87521F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 667F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 108F));
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox4, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnNotif, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblHeader, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnLogout, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblProfile, 2, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 4);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1612, 100);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
@@ -244,7 +244,7 @@
             // 
             this.btnNotif.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnNotif.Image = global::WashablesSystem.Properties.Resources.Bell;
-            this.btnNotif.Location = new System.Drawing.Point(1441, 22);
+            this.btnNotif.Location = new System.Drawing.Point(1438, 22);
             this.btnNotif.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.btnNotif.Name = "btnNotif";
             this.btnNotif.Size = new System.Drawing.Size(55, 55);
@@ -257,12 +257,13 @@
             // 
             this.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnLogout.Image = global::WashablesSystem.Properties.Resources.Logout;
-            this.btnLogout.Location = new System.Drawing.Point(1509, 22);
+            this.btnLogout.Location = new System.Drawing.Point(1506, 22);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(55, 55);
             this.btnLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnLogout.TabIndex = 16;
             this.btnLogout.TabStop = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // Main
             // 
@@ -276,11 +277,9 @@
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Washables Laundry";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Main_Load);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnInventory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCustomers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnUsers)).EndInit();
@@ -289,6 +288,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnSchedule)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOperations)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDashboard)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNotif)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).EndInit();

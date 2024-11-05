@@ -12,9 +12,14 @@ namespace WashablesSystem
 {
     public partial class ServicesAndEquipment : Form
     {
-        public ServicesAndEquipment()
+        public ServicesAndEquipment(Main parentForm)
         {
             InitializeComponent();
+            if (parentForm != null)
+            {
+                parentForm.Header = "Services and Equipment";
+                string text = parentForm.Header;
+            }
         }
     }
 }

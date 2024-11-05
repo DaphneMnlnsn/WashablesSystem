@@ -12,9 +12,14 @@ namespace WashablesSystem
 {
     public partial class Dashboard : Form
     {
-        public Dashboard()
+        public Dashboard(Main parentForm)
         {
             InitializeComponent();
+            if (parentForm != null)
+            {
+                parentForm.Header = "Dashboard";
+                string text = parentForm.Header;
+            }
         }
 
         private void Dashboard_Load(object sender, EventArgs e)

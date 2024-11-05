@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace WashablesSystem
 {
-    public partial class LaundryOperations : Form
+    public partial class AddUser : Form
     {
-        public LaundryOperations(Main parentForm)
+        public AddUser()
         {
             InitializeComponent();
-            if (parentForm != null)
-            {
-                parentForm.Header = "Laundry Operations";
-                string text = parentForm.Header;
-            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
