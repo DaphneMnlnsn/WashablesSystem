@@ -16,5 +16,16 @@ namespace WashablesSystem
         {
             InitializeComponent();
         }
+
+        private void EditItem_Load(object sender, EventArgs e)
+        {
+            txtBoxName.Text = "Surf Powder";
+            txtBoxPrice.Text = "20.00";
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

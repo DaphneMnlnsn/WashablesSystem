@@ -74,17 +74,19 @@
             this.panel1.Controls.Add(this.btnOperations);
             this.panel1.Controls.Add(this.btnDashboard);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 110);
+            this.panel1.Location = new System.Drawing.Point(0, 72);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(120, 804);
+            this.panel1.Size = new System.Drawing.Size(80, 523);
             this.panel1.TabIndex = 0;
             // 
             // btnInventory
             // 
             this.btnInventory.Image = global::WashablesSystem.Properties.Resources.Open_Parcel;
-            this.btnInventory.Location = new System.Drawing.Point(24, 414);
+            this.btnInventory.Location = new System.Drawing.Point(16, 269);
+            this.btnInventory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnInventory.Name = "btnInventory";
-            this.btnInventory.Size = new System.Drawing.Size(64, 64);
+            this.btnInventory.Size = new System.Drawing.Size(43, 42);
             this.btnInventory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnInventory.TabIndex = 9;
             this.btnInventory.TabStop = false;
@@ -93,9 +95,10 @@
             // btnCustomers
             // 
             this.btnCustomers.Image = global::WashablesSystem.Properties.Resources.Customer;
-            this.btnCustomers.Location = new System.Drawing.Point(24, 509);
+            this.btnCustomers.Location = new System.Drawing.Point(16, 331);
+            this.btnCustomers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCustomers.Name = "btnCustomers";
-            this.btnCustomers.Size = new System.Drawing.Size(64, 64);
+            this.btnCustomers.Size = new System.Drawing.Size(43, 42);
             this.btnCustomers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCustomers.TabIndex = 8;
             this.btnCustomers.TabStop = false;
@@ -104,9 +107,10 @@
             // btnUsers
             // 
             this.btnUsers.Image = global::WashablesSystem.Properties.Resources.Name_Tag_Woman_Horizontal;
-            this.btnUsers.Location = new System.Drawing.Point(24, 605);
+            this.btnUsers.Location = new System.Drawing.Point(16, 393);
+            this.btnUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUsers.Name = "btnUsers";
-            this.btnUsers.Size = new System.Drawing.Size(64, 64);
+            this.btnUsers.Size = new System.Drawing.Size(43, 42);
             this.btnUsers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnUsers.TabIndex = 7;
             this.btnUsers.TabStop = false;
@@ -115,9 +119,10 @@
             // btnBilling
             // 
             this.btnBilling.Image = global::WashablesSystem.Properties.Resources.Bill;
-            this.btnBilling.Location = new System.Drawing.Point(24, 699);
+            this.btnBilling.Location = new System.Drawing.Point(16, 454);
+            this.btnBilling.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBilling.Name = "btnBilling";
-            this.btnBilling.Size = new System.Drawing.Size(64, 64);
+            this.btnBilling.Size = new System.Drawing.Size(43, 42);
             this.btnBilling.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnBilling.TabIndex = 6;
             this.btnBilling.TabStop = false;
@@ -126,9 +131,10 @@
             // btnSAndE
             // 
             this.btnSAndE.Image = global::WashablesSystem.Properties.Resources.Clothes_in_Laundry;
-            this.btnSAndE.Location = new System.Drawing.Point(24, 319);
+            this.btnSAndE.Location = new System.Drawing.Point(16, 207);
+            this.btnSAndE.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSAndE.Name = "btnSAndE";
-            this.btnSAndE.Size = new System.Drawing.Size(64, 64);
+            this.btnSAndE.Size = new System.Drawing.Size(43, 42);
             this.btnSAndE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnSAndE.TabIndex = 5;
             this.btnSAndE.TabStop = false;
@@ -137,9 +143,10 @@
             // btnSchedule
             // 
             this.btnSchedule.Image = global::WashablesSystem.Properties.Resources.Schedule;
-            this.btnSchedule.Location = new System.Drawing.Point(24, 223);
+            this.btnSchedule.Location = new System.Drawing.Point(16, 145);
+            this.btnSchedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSchedule.Name = "btnSchedule";
-            this.btnSchedule.Size = new System.Drawing.Size(64, 64);
+            this.btnSchedule.Size = new System.Drawing.Size(43, 42);
             this.btnSchedule.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnSchedule.TabIndex = 4;
             this.btnSchedule.TabStop = false;
@@ -148,9 +155,10 @@
             // btnOperations
             // 
             this.btnOperations.Image = global::WashablesSystem.Properties.Resources.Washing;
-            this.btnOperations.Location = new System.Drawing.Point(24, 128);
+            this.btnOperations.Location = new System.Drawing.Point(16, 83);
+            this.btnOperations.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOperations.Name = "btnOperations";
-            this.btnOperations.Size = new System.Drawing.Size(64, 64);
+            this.btnOperations.Size = new System.Drawing.Size(43, 42);
             this.btnOperations.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnOperations.TabIndex = 3;
             this.btnOperations.TabStop = false;
@@ -159,9 +167,10 @@
             // btnDashboard
             // 
             this.btnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Image")));
-            this.btnDashboard.Location = new System.Drawing.Point(24, 35);
+            this.btnDashboard.Location = new System.Drawing.Point(16, 23);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(64, 64);
+            this.btnDashboard.Size = new System.Drawing.Size(43, 42);
             this.btnDashboard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnDashboard.TabIndex = 2;
             this.btnDashboard.TabStop = false;
@@ -169,9 +178,10 @@
             // 
             // panelPage
             // 
-            this.panelPage.Location = new System.Drawing.Point(120, 110);
+            this.panelPage.Location = new System.Drawing.Point(80, 72);
+            this.panelPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelPage.Name = "panelPage";
-            this.panelPage.Size = new System.Drawing.Size(1498, 804);
+            this.panelPage.Size = new System.Drawing.Size(999, 523);
             this.panelPage.TabIndex = 2;
             // 
             // lblProfile
@@ -180,10 +190,11 @@
             this.lblProfile.AutoSize = true;
             this.lblProfile.Font = new System.Drawing.Font("Berlin Sans FB", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProfile.ForeColor = System.Drawing.Color.White;
-            this.lblProfile.Location = new System.Drawing.Point(1280, 28);
+            this.lblProfile.Location = new System.Drawing.Point(854, 17);
+            this.lblProfile.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProfile.Name = "lblProfile";
             this.lblProfile.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblProfile.Size = new System.Drawing.Size(131, 44);
+            this.lblProfile.Size = new System.Drawing.Size(86, 30);
             this.lblProfile.TabIndex = 17;
             this.lblProfile.Text = "Admin";
             this.lblProfile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -194,9 +205,10 @@
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Berlin Sans FB", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.ForeColor = System.Drawing.Color.White;
-            this.lblHeader.Location = new System.Drawing.Point(146, 28);
+            this.lblHeader.Location = new System.Drawing.Point(97, 17);
+            this.lblHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(200, 44);
+            this.lblHeader.Size = new System.Drawing.Size(136, 30);
             this.lblHeader.TabIndex = 13;
             this.lblHeader.Text = "Dashboard";
             // 
@@ -206,8 +218,9 @@
             this.panel2.Controls.Add(this.tableLayoutPanel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1618, 110);
+            this.panel2.Size = new System.Drawing.Size(1079, 72);
             this.panel2.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -215,28 +228,30 @@
             this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.1248F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.87521F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 667F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 108F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 445F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 73F));
             this.tableLayoutPanel1.Controls.Add(this.pictureBox4, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnNotif, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblHeader, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnLogout, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblProfile, 2, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 3);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1612, 100);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1075, 65);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox4.Location = new System.Drawing.Point(2, 2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(136, 87);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox4.Size = new System.Drawing.Size(91, 61);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 15;
             this.pictureBox4.TabStop = false;
             // 
@@ -244,10 +259,10 @@
             // 
             this.btnNotif.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnNotif.Image = global::WashablesSystem.Properties.Resources.Bell;
-            this.btnNotif.Location = new System.Drawing.Point(1438, 22);
-            this.btnNotif.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
+            this.btnNotif.Location = new System.Drawing.Point(957, 14);
+            this.btnNotif.Margin = new System.Windows.Forms.Padding(2, 2, 7, 2);
             this.btnNotif.Name = "btnNotif";
-            this.btnNotif.Size = new System.Drawing.Size(55, 55);
+            this.btnNotif.Size = new System.Drawing.Size(37, 36);
             this.btnNotif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnNotif.TabIndex = 14;
             this.btnNotif.TabStop = false;
@@ -257,9 +272,10 @@
             // 
             this.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnLogout.Image = global::WashablesSystem.Properties.Resources.Logout;
-            this.btnLogout.Location = new System.Drawing.Point(1506, 22);
+            this.btnLogout.Location = new System.Drawing.Point(1003, 14);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(55, 55);
+            this.btnLogout.Size = new System.Drawing.Size(37, 36);
             this.btnLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnLogout.TabIndex = 16;
             this.btnLogout.TabStop = false;
@@ -267,13 +283,14 @@
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1618, 914);
+            this.ClientSize = new System.Drawing.Size(1079, 595);
             this.Controls.Add(this.panelPage);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Washables Laundry";

@@ -96,6 +96,30 @@
     <Compile Include="AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="ArchiveInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArchiveInventory.Designer.cs">
+      <DependentUpon>ArchiveInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArchiveInventoryList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ArchiveInventoryList.Designer.cs">
+      <DependentUpon>ArchiveInventoryList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArchiveSched.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArchiveSched.Designer.cs">
+      <DependentUpon>ArchiveSched.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArchiveSchedList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ArchiveSchedList.Designer.cs">
+      <DependentUpon>ArchiveSchedList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Billing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,17 +201,53 @@
     <Compile Include="EditUser.Designer.cs">
       <DependentUpon>EditUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="FinishedList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinishedList.Designer.cs">
+      <DependentUpon>FinishedList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinishedSched.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FinishedSched.Designer.cs">
+      <DependentUpon>FinishedSched.cs</DependentUpon>
+    </Compile>
     <Compile Include="FreeWash.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FreeWash.Designer.cs">
       <DependentUpon>FreeWash.cs</DependentUpon>
     </Compile>
+    <Compile Include="InProgressList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InProgressList.Designer.cs">
+      <DependentUpon>InProgressList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InProgressSched.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InProgressSched.Designer.cs">
+      <DependentUpon>InProgressSched.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inventory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Inventory.Designer.cs">
       <DependentUpon>Inventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ItemList.Designer.cs">
+      <DependentUpon>ItemList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemView.Designer.cs">
+      <DependentUpon>ItemView.cs</DependentUpon>
     </Compile>
     <Compile Include="LaundryOperations.cs">
       <SubType>Form</SubType>
@@ -230,6 +290,18 @@
     </Compile>
     <Compile Include="NotifOverlay.Designer.cs">
       <DependentUpon>NotifOverlay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PendingList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PendingList.Designer.cs">
+      <DependentUpon>PendingList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PendingSched.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PendingSched.Designer.cs">
+      <DependentUpon>PendingSched.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -305,6 +377,18 @@
     <EmbeddedResource Include="AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ArchiveInventory.resx">
+      <DependentUpon>ArchiveInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArchiveInventoryList.resx">
+      <DependentUpon>ArchiveInventoryList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArchiveSched.resx">
+      <DependentUpon>ArchiveSched.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArchiveSchedList.resx">
+      <DependentUpon>ArchiveSchedList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Billing.resx">
       <DependentUpon>Billing.cs</DependentUpon>
     </EmbeddedResource>
@@ -341,11 +425,29 @@
     <EmbeddedResource Include="EditUser.resx">
       <DependentUpon>EditUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FinishedList.resx">
+      <DependentUpon>FinishedList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinishedSched.resx">
+      <DependentUpon>FinishedSched.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FreeWash.resx">
       <DependentUpon>FreeWash.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InProgressList.resx">
+      <DependentUpon>InProgressList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InProgressSched.resx">
+      <DependentUpon>InProgressSched.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inventory.resx">
       <DependentUpon>Inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemList.resx">
+      <DependentUpon>ItemList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemView.resx">
+      <DependentUpon>ItemView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LaundryOperations.resx">
       <DependentUpon>LaundryOperations.cs</DependentUpon>
@@ -367,6 +469,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NotifOverlay.resx">
       <DependentUpon>NotifOverlay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PendingList.resx">
+      <DependentUpon>PendingList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PendingSched.resx">
+      <DependentUpon>PendingSched.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -59,11 +59,11 @@ namespace WashablesSystem
             lblText.MouseEnter += new EventHandler(Surface_MouseEnter);
             lblText.MouseLeave += new EventHandler(Surface_MouseLeave);
 
-            this.Controls.Add(lblText);//2
-            this.Controls.Add(btnIcon);//1
-            this.Controls.Add(cmbList);//0
-            this.MinimumSize = new Size(200, 30);
-            this.Size = new Size(200, 30);
+            this.Controls.Add(lblText);
+            this.Controls.Add(btnIcon);
+            this.Controls.Add(cmbList);
+            this.MinimumSize = new Size(50, 30);
+            this.Size = new Size(150, 30);
             this.ForeColor = Color.DimGray;
             this.Padding = new Padding(borderSize);
             this.Font = new Font(this.Font.Name, 10F);
@@ -73,10 +73,10 @@ namespace WashablesSystem
         }
         private void AdjustComboBoxDimensions()
         {
-            cmbList.Width = this.Width - 3;
+            cmbList.Width = this.Width;
             cmbList.Location = new Point()
             {
-                X = this.Width - this.Padding.Right - cmbList.Width,
+                X = this.Width - this.Padding.Right - (this.Width-3),
                 Y = lblText.Bottom - cmbList.Height
             };
         }
@@ -330,7 +330,7 @@ namespace WashablesSystem
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
-            AdjustComboBoxDimensions();
+            //AdjustComboBoxDimensions();
         }
     }
 }

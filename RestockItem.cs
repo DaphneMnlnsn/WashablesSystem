@@ -16,5 +16,15 @@ namespace WashablesSystem
         {
             InitializeComponent();
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void RestockItem_Load(object sender, EventArgs e)
+        {
+            txtBoxRemaining.Text = "20";
+        }
     }
 }

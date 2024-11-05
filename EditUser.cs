@@ -21,5 +21,12 @@ namespace WashablesSystem
         {
             this.Close();
         }
+
+        private void EditUser_Load(object sender, EventArgs e)
+        {
+            txtBoxName.Text = "Lyca Max";
+            txtBoxPass.Text = "●●●●●●●●●●●●";
+            txtBoxConfirmPass.Text = "●●●●●●●●●●●●";
+        }
     }
 }
