@@ -31,8 +31,14 @@ namespace WashablesSystem
             PickUpDate.Text = pickUpDate;
             btnEdit.Image = editImage;
             TimeLeft.Text = timeLeft;
-            Cancel.Image = CancelImage;
+            btnCancel.Image = CancelImage;
 
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            EditLaundry edit = new EditLaundry();
+            edit.ShowDialog();
         }
     }
 }

@@ -34,8 +34,10 @@
             this.ORNo = new System.Windows.Forms.Label();
             this.Weights = new System.Windows.Forms.Label();
             this.PickUpDate = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.PictureBox();
             this.ScheduleTime = new System.Windows.Forms.Label();
             this.TimeLeft = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.PictureBox();
             this.Services = new System.Windows.Forms.Label();
             this.UnitUsed = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -45,12 +47,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
-            this.Cancel = new System.Windows.Forms.PictureBox();
-            this.btnEdit = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Cancel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -71,7 +71,7 @@
             this.tableLayoutPanel2.Controls.Add(this.ORNo, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.Weights, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.PickUpDate, 5, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Cancel, 8, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnCancel, 8, 0);
             this.tableLayoutPanel2.Controls.Add(this.ScheduleTime, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.TimeLeft, 6, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnEdit, 7, 0);
@@ -137,6 +137,18 @@
             this.PickUpDate.Text = "Pick up Date";
             this.PickUpDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnCancel.Image = global::WashablesSystem.Properties.Resources.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(913, 33);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 7, 2);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(28, 27);
+            this.btnCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCancel.TabIndex = 86;
+            this.btnCancel.TabStop = false;
+            // 
             // ScheduleTime
             // 
             this.ScheduleTime.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -162,6 +174,19 @@
             this.TimeLeft.TabIndex = 84;
             this.TimeLeft.Text = "Time Left";
             this.TimeLeft.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnEdit.Image = global::WashablesSystem.Properties.Resources.Create;
+            this.btnEdit.Location = new System.Drawing.Point(877, 33);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 3, 2);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(30, 27);
+            this.btnEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnEdit.TabIndex = 85;
+            this.btnEdit.TabStop = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // Services
             // 
@@ -194,7 +219,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(683, 9);
+            this.label6.Location = new System.Drawing.Point(681, 9);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 19);
@@ -207,7 +232,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(541, 9);
+            this.label5.Location = new System.Drawing.Point(539, 9);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 19);
@@ -220,7 +245,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(373, 9);
+            this.label3.Location = new System.Drawing.Point(371, 9);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 19);
@@ -233,7 +258,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(10, 9);
+            this.label2.Location = new System.Drawing.Point(9, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 19);
@@ -246,7 +271,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(138, 9);
+            this.label1.Location = new System.Drawing.Point(136, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 19);
@@ -264,7 +289,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 171F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 115F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 176F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 132F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
@@ -291,30 +316,6 @@
             this.label4.Text = "_________________________________________________________________________________" +
     "___________________________________________________________________________";
             // 
-            // Cancel
-            // 
-            this.Cancel.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.Cancel.Image = global::WashablesSystem.Properties.Resources.Cancel;
-            this.Cancel.Location = new System.Drawing.Point(913, 33);
-            this.Cancel.Margin = new System.Windows.Forms.Padding(2, 2, 7, 2);
-            this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(28, 27);
-            this.Cancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Cancel.TabIndex = 86;
-            this.Cancel.TabStop = false;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnEdit.Image = global::WashablesSystem.Properties.Resources.Create;
-            this.btnEdit.Location = new System.Drawing.Point(877, 33);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 3, 2);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(30, 27);
-            this.btnEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnEdit.TabIndex = 85;
-            this.btnEdit.TabStop = false;
-            // 
             // PendingList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,15 +323,15 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label4);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PendingList";
             this.Size = new System.Drawing.Size(947, 103);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Cancel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,7 +348,7 @@
         private System.Windows.Forms.Label Services;
         private System.Windows.Forms.PictureBox btnEdit;
         private System.Windows.Forms.Label CustomerName;
-        private System.Windows.Forms.PictureBox Cancel;
+        private System.Windows.Forms.PictureBox btnCancel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;

@@ -27,6 +27,11 @@ namespace WashablesSystem
             txtBoxName.Text = "Lyca Max";
             txtBoxPass.Text = "●●●●●●●●●●●●";
             txtBoxConfirmPass.Text = "●●●●●●●●●●●●";
+            checkDashboard.Checked = true;
+            checkLaundry.Checked = true;
+            checkSched.Checked = true;
+            checkCustomers.Checked = true;
+            checkBilling.Checked = true;
         }
     }
 }

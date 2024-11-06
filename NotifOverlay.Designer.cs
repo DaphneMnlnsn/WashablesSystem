@@ -41,9 +41,10 @@
             this.btnSeeAll.AutoSize = true;
             this.btnSeeAll.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeeAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.btnSeeAll.Location = new System.Drawing.Point(217, 575);
+            this.btnSeeAll.Location = new System.Drawing.Point(145, 374);
+            this.btnSeeAll.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.btnSeeAll.Name = "btnSeeAll";
-            this.btnSeeAll.Size = new System.Drawing.Size(82, 30);
+            this.btnSeeAll.Size = new System.Drawing.Size(56, 20);
             this.btnSeeAll.TabIndex = 52;
             this.btnSeeAll.Text = "See All";
             this.btnSeeAll.Click += new System.EventHandler(this.btnSeeAll_Click);
@@ -55,28 +56,30 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
             this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.label1.Size = new System.Drawing.Size(192, 43);
+            this.label1.Padding = new System.Windows.Forms.Padding(3, 3, 0, 0);
+            this.label1.Size = new System.Drawing.Size(129, 28);
             this.label1.TabIndex = 53;
             this.label1.Text = "Notifications";
             // 
             // notifPanel
             // 
-            this.notifPanel.Location = new System.Drawing.Point(4, 56);
-            this.notifPanel.MaximumSize = new System.Drawing.Size(524, 650);
+            this.notifPanel.Location = new System.Drawing.Point(3, 36);
+            this.notifPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.notifPanel.MaximumSize = new System.Drawing.Size(349, 422);
             this.notifPanel.Name = "notifPanel";
-            this.notifPanel.Size = new System.Drawing.Size(517, 516);
+            this.notifPanel.Size = new System.Drawing.Size(345, 335);
             this.notifPanel.TabIndex = 0;
             // 
             // btnClose
             // 
             this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnClose.Image = global::WashablesSystem.Properties.Resources.Close;
-            this.btnClose.Location = new System.Drawing.Point(484, 8);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
+            this.btnClose.Location = new System.Drawing.Point(323, 5);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 7, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(32, 32);
+            this.btnClose.Size = new System.Drawing.Size(21, 21);
             this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnClose.TabIndex = 54;
             this.btnClose.TabStop = false;
@@ -84,17 +87,18 @@
             // 
             // NotifOverlay
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSeeAll);
             this.Controls.Add(this.notifPanel);
-            this.MaximumSize = new System.Drawing.Size(524, 615);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(349, 400);
             this.Name = "NotifOverlay";
-            this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.Size = new System.Drawing.Size(524, 615);
+            this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 6);
+            this.Size = new System.Drawing.Size(349, 400);
             this.Load += new System.EventHandler(this.NotifOverlay_Load);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.NotifOverlay_MouseClick);
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();

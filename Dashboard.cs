@@ -12,13 +12,13 @@ namespace WashablesSystem
 {
     public partial class Dashboard : Form
     {
+        Form thisParentForm;
         public Dashboard(Main parentForm)
         {
             InitializeComponent();
             if (parentForm != null)
             {
                 parentForm.Header = "Dashboard";
-                string text = parentForm.Header;
             }
         }
 
@@ -88,6 +88,25 @@ namespace WashablesSystem
             chartServices.Series["Series1"].Points.AddXY("Wash-Dry-Fold", "23");
             chartServices.Series["Series1"].Points.AddXY("Wash-Dry-Press", "13");
             chartServices.Series["Series1"].Points.AddXY("Dry Clean", "3");
+        }
+
+        private void btnSeeAll_Click(object sender, EventArgs e)
+        {
+            thisParentForm = this.ParentForm;
+            loadForm(new Users(new Main(), "Activity Log"));
+        }
+        private void loadForm(Form m)
+        {
+            Panel panelTab = (Panel)thisParentForm.Controls.Find("panelPage", true)[0];
+            if (panelTab.Controls.Count > 0)
+            {
+                panelTab.Controls.RemoveAt(0);
+            }
+            m.TopLevel = false;
+            m.Dock = DockStyle.Fill;
+            panelTab.Controls.Add(m);
+            panelTab.Tag = m;
+            m.Show();
         }
     }
 }

@@ -24,7 +24,7 @@ namespace WashablesSystem
 
         private void RestockItem_Load(object sender, EventArgs e)
         {
-            txtBoxRemaining.Text = "20";
+            txtBoxRemaining.Text = "20kg";
         }
     }
 }

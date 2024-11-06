@@ -28,31 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.unitPicture = new System.Windows.Forms.PictureBox();
             this.lblUnit = new System.Windows.Forms.Label();
             this.btnAvailability = new WashablesSystem.CustomButton();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitPicture)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // unitPicture
             // 
-            this.pictureBox1.Image = global::WashablesSystem.Properties.Resources.Washing_Machine;
-            this.pictureBox1.Location = new System.Drawing.Point(45, 23);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(186, 195);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.unitPicture.Image = global::WashablesSystem.Properties.Resources.Washing_Machine;
+            this.unitPicture.Location = new System.Drawing.Point(30, 15);
+            this.unitPicture.Name = "unitPicture";
+            this.unitPicture.Size = new System.Drawing.Size(124, 127);
+            this.unitPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.unitPicture.TabIndex = 0;
+            this.unitPicture.TabStop = false;
             // 
             // lblUnit
             // 
             this.lblUnit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUnit.AutoSize = true;
             this.lblUnit.Font = new System.Drawing.Font("Berlin Sans FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnit.Location = new System.Drawing.Point(86, 223);
+            this.lblUnit.Location = new System.Drawing.Point(57, 145);
+            this.lblUnit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUnit.Name = "lblUnit";
-            this.lblUnit.Size = new System.Drawing.Size(80, 39);
+            this.lblUnit.Size = new System.Drawing.Size(54, 26);
             this.lblUnit.TabIndex = 5;
             this.lblUnit.Text = "Unit";
             // 
@@ -68,9 +68,10 @@
             this.btnAvailability.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAvailability.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAvailability.ForeColor = System.Drawing.Color.Black;
-            this.btnAvailability.Location = new System.Drawing.Point(28, 266);
+            this.btnAvailability.Location = new System.Drawing.Point(19, 173);
+            this.btnAvailability.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAvailability.Name = "btnAvailability";
-            this.btnAvailability.Size = new System.Drawing.Size(216, 37);
+            this.btnAvailability.Size = new System.Drawing.Size(144, 24);
             this.btnAvailability.TabIndex = 18;
             this.btnAvailability.Text = "Available";
             this.btnAvailability.TextColor = System.Drawing.Color.Black;
@@ -78,16 +79,15 @@
             // 
             // MachineUnitList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.btnAvailability);
             this.Controls.Add(this.lblUnit);
-            this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Controls.Add(this.unitPicture);
             this.Name = "MachineUnitList";
-            this.Size = new System.Drawing.Size(273, 354);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Size = new System.Drawing.Size(182, 230);
+            ((System.ComponentModel.ISupportInitialize)(this.unitPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,7 +95,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox unitPicture;
         private System.Windows.Forms.Label lblUnit;
         private CustomButton btnAvailability;
     }

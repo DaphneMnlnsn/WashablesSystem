@@ -35,10 +35,9 @@
             // 
             // lblMachine
             // 
-            this.lblMachine.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMachine.AutoSize = true;
             this.lblMachine.Font = new System.Drawing.Font("Berlin Sans FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMachine.Location = new System.Drawing.Point(5, 4);
+            this.lblMachine.Location = new System.Drawing.Point(-1, 6);
             this.lblMachine.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMachine.Name = "lblMachine";
             this.lblMachine.Size = new System.Drawing.Size(104, 26);
@@ -50,27 +49,31 @@
             this.line.AutoSize = true;
             this.line.Location = new System.Drawing.Point(-3, 23);
             this.line.Name = "line";
-            this.line.Size = new System.Drawing.Size(607, 13);
+            this.line.Size = new System.Drawing.Size(577, 13);
             this.line.TabIndex = 5;
             this.line.Text = "_________________________________________________________________________________" +
-    "___________________";
+    "______________";
             // 
             // machineContainer
             // 
+            this.machineContainer.AutoSize = true;
             this.machineContainer.Location = new System.Drawing.Point(0, 36);
+            this.machineContainer.MaximumSize = new System.Drawing.Size(599, 0);
             this.machineContainer.Name = "machineContainer";
-            this.machineContainer.Size = new System.Drawing.Size(599, 241);
+            this.machineContainer.Size = new System.Drawing.Size(599, 0);
             this.machineContainer.TabIndex = 6;
             // 
             // MachineList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.lblMachine);
             this.Controls.Add(this.line);
             this.Controls.Add(this.machineContainer);
+            this.MaximumSize = new System.Drawing.Size(575, 0);
             this.Name = "MachineList";
-            this.Size = new System.Drawing.Size(599, 277);
+            this.Size = new System.Drawing.Size(575, 39);
             this.Load += new System.EventHandler(this.MachineList_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

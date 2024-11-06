@@ -28,89 +28,88 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtBoxSearch = new WashablesSystem.CustomTextbox();
+            this.txtBoxWeight = new WashablesSystem.CustomTextbox();
             this.txtBoxHour = new WashablesSystem.CustomTextbox();
-            this.btnAdd = new WashablesSystem.CustomButton();
+            this.btnSched = new WashablesSystem.CustomButton();
             this.btnCancel = new WashablesSystem.CustomButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.customDatePicker1 = new WashablesSystem.CustomDatePicker();
+            this.datePickup = new WashablesSystem.CustomDatePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.customTextbox1 = new WashablesSystem.CustomTextbox();
+            this.radio2hrs = new System.Windows.Forms.RadioButton();
+            this.radio3hrs = new System.Windows.Forms.RadioButton();
+            this.radioCustomHour = new System.Windows.Forms.RadioButton();
+            this.radioCustomMin = new System.Windows.Forms.RadioButton();
+            this.radio30min = new System.Windows.Forms.RadioButton();
+            this.radio1min = new System.Windows.Forms.RadioButton();
+            this.txtBoxMinute = new WashablesSystem.CustomTextbox();
             this.timeBox = new System.Windows.Forms.GroupBox();
             this.timeBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtBoxSearch
+            // txtBoxWeight
             // 
-            this.txtBoxSearch.BackColor = System.Drawing.SystemColors.Control;
-            this.txtBoxSearch.BorderColor = System.Drawing.Color.Black;
-            this.txtBoxSearch.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.txtBoxSearch.BorderRadius = 15;
-            this.txtBoxSearch.BorderSize = 1;
-            this.txtBoxSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxSearch.ForeColor = System.Drawing.Color.Black;
-            this.txtBoxSearch.Location = new System.Drawing.Point(30, 137);
-            this.txtBoxSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBoxSearch.Multiline = false;
-            this.txtBoxSearch.Name = "txtBoxSearch";
-            this.txtBoxSearch.Padding = new System.Windows.Forms.Padding(15, 7, 10, 7);
-            this.txtBoxSearch.PasswordChar = false;
-            this.txtBoxSearch.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtBoxSearch.PlaceholderText = "";
-            this.txtBoxSearch.Size = new System.Drawing.Size(460, 40);
-            this.txtBoxSearch.TabIndex = 23;
-            this.txtBoxSearch.UnderlinedStyle = false;
+            this.txtBoxWeight.BackColor = System.Drawing.SystemColors.Control;
+            this.txtBoxWeight.BorderColor = System.Drawing.Color.Silver;
+            this.txtBoxWeight.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.txtBoxWeight.BorderRadius = 5;
+            this.txtBoxWeight.BorderSize = 1;
+            this.txtBoxWeight.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxWeight.ForeColor = System.Drawing.Color.Black;
+            this.txtBoxWeight.Location = new System.Drawing.Point(20, 89);
+            this.txtBoxWeight.Multiline = false;
+            this.txtBoxWeight.Name = "txtBoxWeight";
+            this.txtBoxWeight.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
+            this.txtBoxWeight.PasswordChar = false;
+            this.txtBoxWeight.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtBoxWeight.PlaceholderText = "";
+            this.txtBoxWeight.Size = new System.Drawing.Size(307, 26);
+            this.txtBoxWeight.TabIndex = 23;
+            this.txtBoxWeight.UnderlinedStyle = false;
             // 
             // txtBoxHour
             // 
             this.txtBoxHour.BackColor = System.Drawing.SystemColors.Control;
-            this.txtBoxHour.BorderColor = System.Drawing.Color.Black;
+            this.txtBoxHour.BorderColor = System.Drawing.Color.Silver;
             this.txtBoxHour.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.txtBoxHour.BorderRadius = 15;
+            this.txtBoxHour.BorderRadius = 5;
             this.txtBoxHour.BorderSize = 1;
             this.txtBoxHour.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxHour.ForeColor = System.Drawing.Color.Black;
-            this.txtBoxHour.Location = new System.Drawing.Point(44, 108);
-            this.txtBoxHour.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxHour.Location = new System.Drawing.Point(29, 70);
             this.txtBoxHour.Multiline = false;
             this.txtBoxHour.Name = "txtBoxHour";
-            this.txtBoxHour.Padding = new System.Windows.Forms.Padding(15, 7, 10, 7);
+            this.txtBoxHour.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
             this.txtBoxHour.PasswordChar = false;
             this.txtBoxHour.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtBoxHour.PlaceholderText = "";
-            this.txtBoxHour.Size = new System.Drawing.Size(143, 40);
+            this.txtBoxHour.Size = new System.Drawing.Size(95, 26);
             this.txtBoxHour.TabIndex = 27;
             this.txtBoxHour.UnderlinedStyle = false;
             // 
-            // btnAdd
+            // btnSched
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.btnAdd.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.btnAdd.BorderColor = System.Drawing.Color.Transparent;
-            this.btnAdd.BorderRadius = 15;
-            this.btnAdd.BorderSize = 0;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(61, 537);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(203, 73);
-            this.btnAdd.TabIndex = 30;
-            this.btnAdd.Text = "Schedule and Mark as Resolved";
-            this.btnAdd.TextColor = System.Drawing.Color.White;
-            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnSched.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.btnSched.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.btnSched.BorderColor = System.Drawing.Color.Transparent;
+            this.btnSched.BorderRadius = 15;
+            this.btnSched.BorderSize = 0;
+            this.btnSched.FlatAppearance.BorderSize = 0;
+            this.btnSched.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSched.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSched.ForeColor = System.Drawing.Color.White;
+            this.btnSched.Location = new System.Drawing.Point(41, 349);
+            this.btnSched.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSched.Name = "btnSched";
+            this.btnSched.Size = new System.Drawing.Size(135, 47);
+            this.btnSched.TabIndex = 30;
+            this.btnSched.Text = "Schedule and Mark as Resolved";
+            this.btnSched.TextColor = System.Drawing.Color.White;
+            this.btnSched.UseVisualStyleBackColor = false;
             // 
             // btnCancel
             // 
@@ -123,9 +122,10 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(280, 551);
+            this.btnCancel.Location = new System.Drawing.Point(187, 358);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(174, 45);
+            this.btnCancel.Size = new System.Drawing.Size(116, 29);
             this.btnCancel.TabIndex = 31;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.TextColor = System.Drawing.Color.Black;
@@ -138,9 +138,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(33, 294);
+            this.label4.Location = new System.Drawing.Point(22, 191);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 26);
+            this.label4.Size = new System.Drawing.Size(44, 18);
             this.label4.TabIndex = 36;
             this.label4.Text = "Time:";
             // 
@@ -150,9 +151,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(33, 196);
+            this.label3.Location = new System.Drawing.Point(22, 127);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 26);
+            this.label3.Size = new System.Drawing.Size(96, 18);
             this.label3.TabIndex = 35;
             this.label3.Text = "Pick-up Date";
             // 
@@ -162,9 +164,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(33, 101);
+            this.label2.Location = new System.Drawing.Point(22, 66);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 26);
+            this.label2.Size = new System.Drawing.Size(88, 18);
             this.label2.TabIndex = 34;
             this.label2.Text = "Weight (kg)";
             // 
@@ -174,9 +177,10 @@
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.lblHeader.Location = new System.Drawing.Point(25, 32);
+            this.lblHeader.Location = new System.Drawing.Point(17, 21);
+            this.lblHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(248, 31);
+            this.lblHeader.Size = new System.Drawing.Size(169, 21);
             this.lblHeader.TabIndex = 32;
             this.lblHeader.Text = "Schedule Free Wash";
             // 
@@ -186,25 +190,27 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(25, 52);
+            this.label1.Location = new System.Drawing.Point(17, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(494, 31);
+            this.label1.Size = new System.Drawing.Size(330, 21);
             this.label1.TabIndex = 33;
             this.label1.Text = "________________________________________";
             // 
-            // customDatePicker1
+            // datePickup
             // 
-            this.customDatePicker1.BorderColor = System.Drawing.Color.Black;
-            this.customDatePicker1.BorderSize = 1;
-            this.customDatePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customDatePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.customDatePicker1.Location = new System.Drawing.Point(30, 232);
-            this.customDatePicker1.MinimumSize = new System.Drawing.Size(4, 35);
-            this.customDatePicker1.Name = "customDatePicker1";
-            this.customDatePicker1.Size = new System.Drawing.Size(461, 35);
-            this.customDatePicker1.SkinColor = System.Drawing.SystemColors.Control;
-            this.customDatePicker1.TabIndex = 40;
-            this.customDatePicker1.TextColor = System.Drawing.Color.Black;
+            this.datePickup.BorderColor = System.Drawing.Color.Silver;
+            this.datePickup.BorderSize = 1;
+            this.datePickup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePickup.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePickup.Location = new System.Drawing.Point(20, 151);
+            this.datePickup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.datePickup.MinimumSize = new System.Drawing.Size(4, 35);
+            this.datePickup.Name = "datePickup";
+            this.datePickup.Size = new System.Drawing.Size(309, 35);
+            this.datePickup.SkinColor = System.Drawing.SystemColors.Control;
+            this.datePickup.TabIndex = 40;
+            this.datePickup.TextColor = System.Drawing.Color.Black;
             // 
             // label5
             // 
@@ -212,9 +218,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(33, 334);
+            this.label5.Location = new System.Drawing.Point(22, 217);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 26);
+            this.label5.Size = new System.Drawing.Size(67, 18);
             this.label5.TabIndex = 41;
             this.label5.Text = "By Hours";
             // 
@@ -224,135 +231,144 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(275, 334);
+            this.label6.Location = new System.Drawing.Point(183, 217);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(122, 26);
+            this.label6.Size = new System.Drawing.Size(78, 18);
             this.label6.TabIndex = 42;
             this.label6.Text = "By Minutes";
             // 
-            // radioButton1
+            // radio2hrs
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(19, 28);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(192, 32);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "2 hours (Default)";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radio2hrs.AutoSize = true;
+            this.radio2hrs.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radio2hrs.Location = new System.Drawing.Point(13, 18);
+            this.radio2hrs.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radio2hrs.Name = "radio2hrs";
+            this.radio2hrs.Size = new System.Drawing.Size(134, 23);
+            this.radio2hrs.TabIndex = 0;
+            this.radio2hrs.TabStop = true;
+            this.radio2hrs.Text = "2 hours (Default)";
+            this.radio2hrs.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radio3hrs
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(19, 67);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(106, 32);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "3 hours";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radio3hrs.AutoSize = true;
+            this.radio3hrs.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radio3hrs.Location = new System.Drawing.Point(13, 44);
+            this.radio3hrs.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radio3hrs.Name = "radio3hrs";
+            this.radio3hrs.Size = new System.Drawing.Size(74, 23);
+            this.radio3hrs.TabIndex = 1;
+            this.radio3hrs.TabStop = true;
+            this.radio3hrs.Text = "3 hours";
+            this.radio3hrs.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // radioCustomHour
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(19, 120);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(21, 20);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioCustomHour.AutoSize = true;
+            this.radioCustomHour.Location = new System.Drawing.Point(13, 78);
+            this.radioCustomHour.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioCustomHour.Name = "radioCustomHour";
+            this.radioCustomHour.Size = new System.Drawing.Size(14, 13);
+            this.radioCustomHour.TabIndex = 2;
+            this.radioCustomHour.TabStop = true;
+            this.radioCustomHour.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // radioCustomMin
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(258, 120);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(21, 20);
-            this.radioButton4.TabIndex = 2;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioCustomMin.AutoSize = true;
+            this.radioCustomMin.Location = new System.Drawing.Point(172, 78);
+            this.radioCustomMin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioCustomMin.Name = "radioCustomMin";
+            this.radioCustomMin.Size = new System.Drawing.Size(14, 13);
+            this.radioCustomMin.TabIndex = 2;
+            this.radioCustomMin.TabStop = true;
+            this.radioCustomMin.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
+            // radio30min
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton5.Location = new System.Drawing.Point(258, 67);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(139, 32);
-            this.radioButton5.TabIndex = 1;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "30 minutes";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.radio30min.AutoSize = true;
+            this.radio30min.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radio30min.Location = new System.Drawing.Point(172, 44);
+            this.radio30min.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radio30min.Name = "radio30min";
+            this.radio30min.Size = new System.Drawing.Size(97, 23);
+            this.radio30min.TabIndex = 1;
+            this.radio30min.TabStop = true;
+            this.radio30min.Text = "30 minutes";
+            this.radio30min.UseVisualStyleBackColor = true;
             // 
-            // radioButton6
+            // radio1min
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton6.Location = new System.Drawing.Point(258, 28);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(116, 32);
-            this.radioButton6.TabIndex = 0;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "1 minute";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.radio1min.AutoSize = true;
+            this.radio1min.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radio1min.Location = new System.Drawing.Point(172, 18);
+            this.radio1min.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radio1min.Name = "radio1min";
+            this.radio1min.Size = new System.Drawing.Size(81, 23);
+            this.radio1min.TabIndex = 0;
+            this.radio1min.TabStop = true;
+            this.radio1min.Text = "1 minute";
+            this.radio1min.UseVisualStyleBackColor = true;
             // 
-            // customTextbox1
+            // txtBoxMinute
             // 
-            this.customTextbox1.BackColor = System.Drawing.SystemColors.Control;
-            this.customTextbox1.BorderColor = System.Drawing.Color.Black;
-            this.customTextbox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.customTextbox1.BorderRadius = 15;
-            this.customTextbox1.BorderSize = 1;
-            this.customTextbox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextbox1.ForeColor = System.Drawing.Color.Black;
-            this.customTextbox1.Location = new System.Drawing.Point(283, 108);
-            this.customTextbox1.Margin = new System.Windows.Forms.Padding(4);
-            this.customTextbox1.Multiline = false;
-            this.customTextbox1.Name = "customTextbox1";
-            this.customTextbox1.Padding = new System.Windows.Forms.Padding(15, 7, 10, 7);
-            this.customTextbox1.PasswordChar = false;
-            this.customTextbox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.customTextbox1.PlaceholderText = "";
-            this.customTextbox1.Size = new System.Drawing.Size(143, 40);
-            this.customTextbox1.TabIndex = 27;
-            this.customTextbox1.UnderlinedStyle = false;
+            this.txtBoxMinute.BackColor = System.Drawing.SystemColors.Control;
+            this.txtBoxMinute.BorderColor = System.Drawing.Color.Silver;
+            this.txtBoxMinute.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.txtBoxMinute.BorderRadius = 5;
+            this.txtBoxMinute.BorderSize = 1;
+            this.txtBoxMinute.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxMinute.ForeColor = System.Drawing.Color.Black;
+            this.txtBoxMinute.Location = new System.Drawing.Point(189, 70);
+            this.txtBoxMinute.Multiline = false;
+            this.txtBoxMinute.Name = "txtBoxMinute";
+            this.txtBoxMinute.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
+            this.txtBoxMinute.PasswordChar = false;
+            this.txtBoxMinute.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtBoxMinute.PlaceholderText = "";
+            this.txtBoxMinute.Size = new System.Drawing.Size(95, 26);
+            this.txtBoxMinute.TabIndex = 27;
+            this.txtBoxMinute.UnderlinedStyle = false;
             // 
             // timeBox
             // 
-            this.timeBox.Controls.Add(this.radioButton3);
-            this.timeBox.Controls.Add(this.radioButton4);
-            this.timeBox.Controls.Add(this.radioButton2);
-            this.timeBox.Controls.Add(this.radioButton1);
-            this.timeBox.Controls.Add(this.radioButton5);
+            this.timeBox.Controls.Add(this.radioCustomHour);
+            this.timeBox.Controls.Add(this.radioCustomMin);
+            this.timeBox.Controls.Add(this.radio3hrs);
+            this.timeBox.Controls.Add(this.radio2hrs);
+            this.timeBox.Controls.Add(this.radio30min);
             this.timeBox.Controls.Add(this.txtBoxHour);
-            this.timeBox.Controls.Add(this.radioButton6);
-            this.timeBox.Controls.Add(this.customTextbox1);
-            this.timeBox.Location = new System.Drawing.Point(30, 360);
+            this.timeBox.Controls.Add(this.radio1min);
+            this.timeBox.Controls.Add(this.txtBoxMinute);
+            this.timeBox.Location = new System.Drawing.Point(20, 234);
+            this.timeBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.timeBox.Name = "timeBox";
-            this.timeBox.Size = new System.Drawing.Size(460, 171);
+            this.timeBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.timeBox.Size = new System.Drawing.Size(307, 111);
             this.timeBox.TabIndex = 45;
             this.timeBox.TabStop = false;
             // 
             // FreeWash
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 636);
+            this.ClientSize = new System.Drawing.Size(363, 413);
             this.Controls.Add(this.timeBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.customDatePicker1);
+            this.Controls.Add(this.datePickup);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.txtBoxSearch);
+            this.Controls.Add(this.btnSched);
+            this.Controls.Add(this.txtBoxWeight);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FreeWash";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.timeBox.ResumeLayout(false);
@@ -363,25 +379,25 @@
         }
 
         #endregion
-        private CustomTextbox txtBoxSearch;
+        private CustomTextbox txtBoxWeight;
         private CustomTextbox txtBoxHour;
-        private CustomButton btnAdd;
+        private CustomButton btnSched;
         private CustomButton btnCancel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label label1;
-        private CustomDatePicker customDatePicker1;
+        private CustomDatePicker datePickup;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private CustomTextbox customTextbox1;
+        private System.Windows.Forms.RadioButton radio2hrs;
+        private System.Windows.Forms.RadioButton radioCustomHour;
+        private System.Windows.Forms.RadioButton radio3hrs;
+        private System.Windows.Forms.RadioButton radioCustomMin;
+        private System.Windows.Forms.RadioButton radio30min;
+        private System.Windows.Forms.RadioButton radio1min;
+        private CustomTextbox txtBoxMinute;
         private System.Windows.Forms.GroupBox timeBox;
     }
 }

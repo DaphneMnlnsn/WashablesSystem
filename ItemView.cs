@@ -20,11 +20,11 @@ namespace WashablesSystem
         private void ItemView_Load(object sender, EventArgs e)
         {
             ItemList item = new ItemList();
-            item.setItemInfo("ITM0001", "Surf Powder", "Powder", "20", "20.00");
+            item.setItemInfo("ITM0001", "Surf Powder", "Powder", "20kg", "20.00 /kg");
             ItemContainer.Controls.Add(item);
 
             ItemList item2 = new ItemList();
-            item2.setItemInfo("ITM0002", "Champion Liquid", "Liquid", "20", "45.00");
+            item2.setItemInfo("ITM0002", "Champion Liquid", "Liquid", "20mL", "45.00 /mL");
             ItemContainer.Controls.Add(item2);
         }
 

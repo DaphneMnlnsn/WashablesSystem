@@ -33,16 +33,16 @@
             this.ORNo = new System.Windows.Forms.Label();
             this.Weights = new System.Windows.Forms.Label();
             this.PickUpDate = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.PictureBox();
             this.ScheduleTime = new System.Windows.Forms.Label();
             this.TimeLeft = new System.Windows.Forms.Label();
+            this.btnRestore = new System.Windows.Forms.PictureBox();
             this.Services = new System.Windows.Forms.Label();
             this.UnitUsed = new System.Windows.Forms.Label();
-            this.Cancel = new System.Windows.Forms.PictureBox();
-            this.btnRestore = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Cancel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestore)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +64,7 @@
             this.tableLayoutPanel2.Controls.Add(this.ORNo, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.Weights, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.PickUpDate, 5, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Cancel, 8, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnDelete, 8, 0);
             this.tableLayoutPanel2.Controls.Add(this.ScheduleTime, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.TimeLeft, 6, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnRestore, 7, 0);
@@ -130,6 +130,18 @@
             this.PickUpDate.Text = "Pick up Date";
             this.PickUpDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnDelete.Image = global::WashablesSystem.Properties.Resources.Trash;
+            this.btnDelete.Location = new System.Drawing.Point(903, 33);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 15, 2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(30, 27);
+            this.btnDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnDelete.TabIndex = 86;
+            this.btnDelete.TabStop = false;
+            // 
             // ScheduleTime
             // 
             this.ScheduleTime.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -156,6 +168,18 @@
             this.TimeLeft.Text = "Time Left";
             this.TimeLeft.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnRestore
+            // 
+            this.btnRestore.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnRestore.Image = global::WashablesSystem.Properties.Resources.Restore;
+            this.btnRestore.Location = new System.Drawing.Point(846, 33);
+            this.btnRestore.Margin = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.btnRestore.Name = "btnRestore";
+            this.btnRestore.Size = new System.Drawing.Size(30, 27);
+            this.btnRestore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnRestore.TabIndex = 85;
+            this.btnRestore.TabStop = false;
+            // 
             // Services
             // 
             this.Services.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -181,30 +205,6 @@
             this.UnitUsed.TabIndex = 78;
             this.UnitUsed.Text = "Unit Used";
             this.UnitUsed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Cancel
-            // 
-            this.Cancel.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.Cancel.Image = global::WashablesSystem.Properties.Resources.Cancel;
-            this.Cancel.Location = new System.Drawing.Point(903, 33);
-            this.Cancel.Margin = new System.Windows.Forms.Padding(2, 2, 15, 2);
-            this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(30, 27);
-            this.Cancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Cancel.TabIndex = 86;
-            this.Cancel.TabStop = false;
-            // 
-            // btnRestore
-            // 
-            this.btnRestore.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnRestore.Image = global::WashablesSystem.Properties.Resources.Restore;
-            this.btnRestore.Location = new System.Drawing.Point(846, 33);
-            this.btnRestore.Margin = new System.Windows.Forms.Padding(2, 2, 5, 2);
-            this.btnRestore.Name = "btnRestore";
-            this.btnRestore.Size = new System.Drawing.Size(30, 27);
-            this.btnRestore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnRestore.TabIndex = 85;
-            this.btnRestore.TabStop = false;
             // 
             // label1
             // 
@@ -238,12 +238,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ArchiveSchedList";
             this.Size = new System.Drawing.Size(940, 106);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Cancel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestore)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -261,7 +261,7 @@
         private System.Windows.Forms.Label Services;
         private System.Windows.Forms.PictureBox btnRestore;
         private System.Windows.Forms.Label CustomerName;
-        private System.Windows.Forms.PictureBox Cancel;
+        private System.Windows.Forms.PictureBox btnDelete;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }

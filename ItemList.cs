@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Diagnostics;
+using System.Windows.Media;
 
 namespace WashablesSystem
 {
@@ -29,6 +30,14 @@ namespace WashablesSystem
             Quantity.Text = quan;
             Price.Text = price;
 
+            if (quan.Equals("20mL"))
+            {
+                ItemCode.ForeColor = System.Drawing.Color.FromArgb(161, 0, 0);
+                ItemName.ForeColor = System.Drawing.Color.FromArgb(161, 0, 0);
+                Category.ForeColor = System.Drawing.Color.FromArgb(161, 0, 0);
+                Quantity.ForeColor = System.Drawing.Color.FromArgb(161, 0, 0);
+                Price.ForeColor = System.Drawing.Color.FromArgb(161, 0, 0);
+            }
 
         }
 

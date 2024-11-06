@@ -20,7 +20,8 @@ namespace WashablesSystem
         private void EditItem_Load(object sender, EventArgs e)
         {
             txtBoxName.Text = "Surf Powder";
-            txtBoxPrice.Text = "20.00";
+            txtBoxPrice.Text = "200.00";
+            cbCategory.SelectedIndex = 0;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

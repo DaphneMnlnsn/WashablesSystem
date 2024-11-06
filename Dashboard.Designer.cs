@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea37 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend37 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series61 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea38 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend38 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series62 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series63 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series64 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea39 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend39 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series65 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.chartSales = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.cbTimeSales = new WashablesSystem.CustomComboBox();
@@ -56,7 +56,7 @@
             this.btnSeeAll = new System.Windows.Forms.Label();
             this.activityPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.customButton1 = new WashablesSystem.CustomButton();
+            this.btnReport = new WashablesSystem.CustomButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartSales)).BeginInit();
             this.panel2.SuspendLayout();
@@ -82,23 +82,23 @@
             // 
             this.chartSales.BackColor = System.Drawing.Color.Transparent;
             this.chartSales.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea37.BackColor = System.Drawing.Color.Transparent;
-            chartArea37.Name = "ChartArea1";
-            this.chartSales.ChartAreas.Add(chartArea37);
-            legend37.Enabled = false;
-            legend37.Name = "Legend1";
-            this.chartSales.Legends.Add(legend37);
+            chartArea1.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            this.chartSales.ChartAreas.Add(chartArea1);
+            legend1.Enabled = false;
+            legend1.Name = "Legend1";
+            this.chartSales.Legends.Add(legend1);
             this.chartSales.Location = new System.Drawing.Point(-13, 36);
             this.chartSales.Margin = new System.Windows.Forms.Padding(2);
             this.chartSales.Name = "chartSales";
             this.chartSales.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series61.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            series61.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            series61.ChartArea = "ChartArea1";
-            series61.Color = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
-            series61.Legend = "Legend1";
-            series61.Name = "Series1";
-            this.chartSales.Series.Add(series61);
+            series1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            series1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            series1.ChartArea = "ChartArea1";
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartSales.Series.Add(series1);
             this.chartSales.Size = new System.Drawing.Size(495, 187);
             this.chartSales.TabIndex = 16;
             this.chartSales.Text = "chart1";
@@ -216,46 +216,46 @@
             // 
             this.chartKgs.BackColor = System.Drawing.Color.Transparent;
             this.chartKgs.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea38.BackColor = System.Drawing.Color.Transparent;
-            chartArea38.Name = "ChartArea1";
-            chartArea38.Position.Auto = false;
-            chartArea38.Position.Height = 94F;
-            chartArea38.Position.Width = 78F;
-            chartArea38.Position.X = 3F;
-            chartArea38.Position.Y = 3F;
-            this.chartKgs.ChartAreas.Add(chartArea38);
-            legend38.BackColor = System.Drawing.Color.Transparent;
-            legend38.BorderWidth = 0;
-            legend38.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend38.IsTextAutoFit = false;
-            legend38.ItemColumnSpacing = 20;
-            legend38.Name = "Legend1";
-            legend38.Position.Auto = false;
-            legend38.Position.Height = 33.10104F;
-            legend38.Position.Width = 17.60753F;
-            legend38.Position.X = 80.39247F;
-            legend38.Position.Y = 3F;
-            legend38.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chartKgs.Legends.Add(legend38);
+            chartArea2.BackColor = System.Drawing.Color.Transparent;
+            chartArea2.Name = "ChartArea1";
+            chartArea2.Position.Auto = false;
+            chartArea2.Position.Height = 94F;
+            chartArea2.Position.Width = 78F;
+            chartArea2.Position.X = 3F;
+            chartArea2.Position.Y = 3F;
+            this.chartKgs.ChartAreas.Add(chartArea2);
+            legend2.BackColor = System.Drawing.Color.Transparent;
+            legend2.BorderWidth = 0;
+            legend2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend2.IsTextAutoFit = false;
+            legend2.ItemColumnSpacing = 20;
+            legend2.Name = "Legend1";
+            legend2.Position.Auto = false;
+            legend2.Position.Height = 33.10104F;
+            legend2.Position.Width = 17.60753F;
+            legend2.Position.X = 80.39247F;
+            legend2.Position.Y = 3F;
+            legend2.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chartKgs.Legends.Add(legend2);
             this.chartKgs.Location = new System.Drawing.Point(-11, 36);
             this.chartKgs.Margin = new System.Windows.Forms.Padding(2);
             this.chartKgs.Name = "chartKgs";
             this.chartKgs.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series62.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            series62.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            series62.ChartArea = "ChartArea1";
-            series62.Color = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
-            series62.Legend = "Legend1";
-            series62.Name = "Unit I";
-            series63.ChartArea = "ChartArea1";
-            series63.Legend = "Legend1";
-            series63.Name = "Unit II";
-            series64.ChartArea = "ChartArea1";
-            series64.Legend = "Legend1";
-            series64.Name = "Unit III";
-            this.chartKgs.Series.Add(series62);
-            this.chartKgs.Series.Add(series63);
-            this.chartKgs.Series.Add(series64);
+            series2.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            series2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            series2.ChartArea = "ChartArea1";
+            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
+            series2.Legend = "Legend1";
+            series2.Name = "Unit I";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Unit II";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Unit III";
+            this.chartKgs.Series.Add(series2);
+            this.chartKgs.Series.Add(series3);
+            this.chartKgs.Series.Add(series4);
             this.chartKgs.Size = new System.Drawing.Size(497, 187);
             this.chartKgs.TabIndex = 17;
             this.chartKgs.Text = "chart1";
@@ -313,28 +313,28 @@
             // 
             this.chartServices.BackColor = System.Drawing.Color.Transparent;
             this.chartServices.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea39.BackColor = System.Drawing.Color.Transparent;
-            chartArea39.Name = "ChartArea1";
-            this.chartServices.ChartAreas.Add(chartArea39);
-            legend39.BackColor = System.Drawing.Color.Transparent;
-            legend39.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend39.IsTextAutoFit = false;
-            legend39.Name = "Legend1";
-            this.chartServices.Legends.Add(legend39);
+            chartArea3.BackColor = System.Drawing.Color.Transparent;
+            chartArea3.Name = "ChartArea1";
+            this.chartServices.ChartAreas.Add(chartArea3);
+            legend3.BackColor = System.Drawing.Color.Transparent;
+            legend3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend3.IsTextAutoFit = false;
+            legend3.Name = "Legend1";
+            this.chartServices.Legends.Add(legend3);
             this.chartServices.Location = new System.Drawing.Point(2, 24);
             this.chartServices.Margin = new System.Windows.Forms.Padding(2);
             this.chartServices.Name = "chartServices";
             this.chartServices.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series65.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            series65.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            series65.ChartArea = "ChartArea1";
-            series65.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series65.Color = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
-            series65.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series65.IsValueShownAsLabel = true;
-            series65.Legend = "Legend1";
-            series65.Name = "Series1";
-            this.chartServices.Series.Add(series65);
+            series5.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            series5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
+            series5.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series5.IsValueShownAsLabel = true;
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.chartServices.Series.Add(series5);
             this.chartServices.Size = new System.Drawing.Size(467, 209);
             this.chartServices.TabIndex = 17;
             this.chartServices.Text = "chart1";
@@ -363,6 +363,7 @@
             this.btnSeeAll.Size = new System.Drawing.Size(56, 20);
             this.btnSeeAll.TabIndex = 51;
             this.btnSeeAll.Text = "See All";
+            this.btnSeeAll.Click += new System.EventHandler(this.btnSeeAll_Click);
             // 
             // activityPanel
             // 
@@ -385,25 +386,25 @@
             this.label3.TabIndex = 17;
             this.label3.Text = "Activity Log";
             // 
-            // customButton1
+            // btnReport
             // 
-            this.customButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.customButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.customButton1.BorderColor = System.Drawing.Color.Transparent;
-            this.customButton1.BorderRadius = 6;
-            this.customButton1.BorderSize = 0;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customButton1.ForeColor = System.Drawing.Color.Black;
-            this.customButton1.Location = new System.Drawing.Point(813, 8);
-            this.customButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(159, 31);
-            this.customButton1.TabIndex = 2;
-            this.customButton1.Text = "Generate Report";
-            this.customButton1.TextColor = System.Drawing.Color.Black;
-            this.customButton1.UseVisualStyleBackColor = false;
+            this.btnReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnReport.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnReport.BorderColor = System.Drawing.Color.Transparent;
+            this.btnReport.BorderRadius = 6;
+            this.btnReport.BorderSize = 0;
+            this.btnReport.FlatAppearance.BorderSize = 0;
+            this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReport.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReport.ForeColor = System.Drawing.Color.Black;
+            this.btnReport.Location = new System.Drawing.Point(813, 8);
+            this.btnReport.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(159, 31);
+            this.btnReport.TabIndex = 2;
+            this.btnReport.Text = "Generate Report";
+            this.btnReport.TextColor = System.Drawing.Color.Black;
+            this.btnReport.UseVisualStyleBackColor = false;
             // 
             // Dashboard
             // 
@@ -414,7 +415,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.customButton1);
+            this.Controls.Add(this.btnReport);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dashboard";
@@ -436,7 +437,7 @@
         }
 
         #endregion
-        private CustomButton customButton1;
+        private CustomButton btnReport;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;

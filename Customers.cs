@@ -18,7 +18,6 @@ namespace WashablesSystem
             if (parentForm != null)
             {
                 parentForm.Header = "Customers";
-                string text = parentForm.Header;
             }
         }
 

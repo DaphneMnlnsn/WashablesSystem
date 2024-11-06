@@ -31,7 +31,7 @@ namespace WashablesSystem
             PickUpDate.Text = pickUpDate;
             btnRestore.Image = restoreImage;
             TimeLeft.Text = timeLeft;
-            Cancel.Image = CancelImage;
+            btnDelete.Image = CancelImage;
 
         }
     }

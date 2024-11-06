@@ -12,14 +12,16 @@ namespace WashablesSystem
 {
     public partial class NotifOverlay : UserControl
     {
-        public NotifOverlay()
+        Main parentForm;
+        public NotifOverlay(Main parent)
         {
             InitializeComponent();
+            parentForm = parent;
         }
 
         private void btnSeeAll_Click(object sender, EventArgs e)
         {
-            loadForm(new Notifications());
+            loadForm(new Notifications(parentForm));
         }
         private void loadForm(Form m)
         {
@@ -38,6 +40,8 @@ namespace WashablesSystem
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Dispose();
+            PictureBox btn = (PictureBox)parentForm.FindForm().Controls.Find("btnNotif", true)[0];
+            btn.Enabled = true;
         }
 
         private void NotifOverlay_MouseClick(object sender, MouseEventArgs e)

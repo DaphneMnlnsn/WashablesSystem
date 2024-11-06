@@ -56,7 +56,7 @@
             this.btnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnView.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.btnView.Location = new System.Drawing.Point(23, 63);
-            this.btnView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnView.Margin = new System.Windows.Forms.Padding(2);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(99, 29);
             this.btnView.TabIndex = 4;
@@ -70,8 +70,8 @@
             this.btnArchive.FlatAppearance.BorderSize = 0;
             this.btnArchive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnArchive.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
-            this.btnArchive.Location = new System.Drawing.Point(122, 63);
-            this.btnArchive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnArchive.Location = new System.Drawing.Point(120, 63);
+            this.btnArchive.Margin = new System.Windows.Forms.Padding(2);
             this.btnArchive.Name = "btnArchive";
             this.btnArchive.Size = new System.Drawing.Size(106, 29);
             this.btnArchive.TabIndex = 5;
@@ -83,7 +83,7 @@
             // 
             this.panelTab.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelTab.Location = new System.Drawing.Point(23, 91);
-            this.panelTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelTab.Margin = new System.Windows.Forms.Padding(2);
             this.panelTab.Name = "panelTab";
             this.panelTab.Size = new System.Drawing.Size(947, 403);
             this.panelTab.TabIndex = 7;
@@ -134,7 +134,7 @@
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Inventory";
             this.Text = "Customers";
             this.Load += new System.EventHandler(this.Inventory_Load);

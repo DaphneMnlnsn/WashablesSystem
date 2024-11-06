@@ -36,18 +36,18 @@
             this.label6 = new System.Windows.Forms.Label();
             this.what = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnRestock = new System.Windows.Forms.PictureBox();
             this.ItemCode = new System.Windows.Forms.Label();
             this.Price = new System.Windows.Forms.Label();
             this.ItemName = new System.Windows.Forms.Label();
             this.Quantity = new System.Windows.Forms.Label();
             this.Category = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Cancel = new System.Windows.Forms.PictureBox();
+            this.btnCancel = new System.Windows.Forms.PictureBox();
             this.btnEdit = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Cancel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRestock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +61,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 171F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 115F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 176F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
@@ -80,7 +80,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(136, 9);
+            this.label1.Location = new System.Drawing.Point(135, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 19);
@@ -93,7 +93,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(9, 9);
+            this.label2.Location = new System.Drawing.Point(8, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 19);
@@ -106,7 +106,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(371, 9);
+            this.label3.Location = new System.Drawing.Point(370, 9);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 19);
@@ -119,7 +119,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(539, 9);
+            this.label5.Location = new System.Drawing.Point(538, 9);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 19);
@@ -132,7 +132,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(681, 9);
+            this.label6.Location = new System.Drawing.Point(680, 9);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 19);
@@ -167,13 +167,13 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71F));
-            this.tableLayoutPanel2.Controls.Add(this.pictureBox1, 5, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnRestock, 5, 0);
             this.tableLayoutPanel2.Controls.Add(this.ItemCode, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.Price, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.ItemName, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.Quantity, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.Category, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Cancel, 7, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnCancel, 7, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnEdit, 6, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(-4, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -182,6 +182,19 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(948, 37);
             this.tableLayoutPanel2.TabIndex = 94;
+            // 
+            // btnRestock
+            // 
+            this.btnRestock.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRestock.Image = global::WashablesSystem.Properties.Resources.Restock;
+            this.btnRestock.Location = new System.Drawing.Point(780, 5);
+            this.btnRestock.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRestock.Name = "btnRestock";
+            this.btnRestock.Size = new System.Drawing.Size(35, 27);
+            this.btnRestock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnRestock.TabIndex = 92;
+            this.btnRestock.TabStop = false;
+            this.btnRestock.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // ItemCode
             // 
@@ -248,30 +261,17 @@
             this.Category.Text = "Category";
             this.Category.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
+            // btnCancel
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::WashablesSystem.Properties.Resources.Restock;
-            this.pictureBox1.Location = new System.Drawing.Point(780, 5);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(35, 27);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 92;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // Cancel
-            // 
-            this.Cancel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Cancel.Image = global::WashablesSystem.Properties.Resources.Cancel;
-            this.Cancel.Location = new System.Drawing.Point(906, 5);
-            this.Cancel.Margin = new System.Windows.Forms.Padding(2);
-            this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(28, 27);
-            this.Cancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Cancel.TabIndex = 91;
-            this.Cancel.TabStop = false;
+            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCancel.Image = global::WashablesSystem.Properties.Resources.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(906, 5);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(28, 27);
+            this.btnCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCancel.TabIndex = 91;
+            this.btnCancel.TabStop = false;
             // 
             // btnEdit
             // 
@@ -293,15 +293,15 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.what);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ItemList";
             this.Size = new System.Drawing.Size(940, 44);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Cancel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRestock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -323,7 +323,7 @@
         private System.Windows.Forms.Label ItemName;
         private System.Windows.Forms.Label Category;
         private System.Windows.Forms.PictureBox btnEdit;
-        private System.Windows.Forms.PictureBox Cancel;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox btnCancel;
+        private System.Windows.Forms.PictureBox btnRestock;
     }
 }

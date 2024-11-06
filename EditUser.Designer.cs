@@ -31,7 +31,7 @@
             this.txtBoxName = new WashablesSystem.CustomTextbox();
             this.txtBoxPass = new WashablesSystem.CustomTextbox();
             this.txtBoxConfirmPass = new WashablesSystem.CustomTextbox();
-            this.btnAdd = new WashablesSystem.CustomButton();
+            this.btnSave = new WashablesSystem.CustomButton();
             this.btnCancel = new WashablesSystem.CustomButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,14 +39,14 @@
             this.lblHeader = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.checkDashboard = new System.Windows.Forms.CheckBox();
+            this.checkLaundry = new System.Windows.Forms.CheckBox();
+            this.checkSched = new System.Windows.Forms.CheckBox();
+            this.checkSAndE = new System.Windows.Forms.CheckBox();
+            this.checkInventory = new System.Windows.Forms.CheckBox();
+            this.checkCustomers = new System.Windows.Forms.CheckBox();
+            this.checkUsers = new System.Windows.Forms.CheckBox();
+            this.checkBilling = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -59,14 +59,15 @@
             // 
             // txtBoxName
             // 
-            this.txtBoxName.BackColor = System.Drawing.SystemColors.Control;
-            this.txtBoxName.BorderColor = System.Drawing.Color.Black;
+            this.txtBoxName.BackColor = System.Drawing.Color.White;
+            this.txtBoxName.BorderColor = System.Drawing.Color.Silver;
             this.txtBoxName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.txtBoxName.BorderRadius = 15;
+            this.txtBoxName.BorderRadius = 5;
             this.txtBoxName.BorderSize = 1;
             this.txtBoxName.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxName.ForeColor = System.Drawing.Color.Black;
             this.txtBoxName.Location = new System.Drawing.Point(20, 109);
+            this.txtBoxName.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxName.Multiline = false;
             this.txtBoxName.Name = "txtBoxName";
             this.txtBoxName.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
@@ -79,14 +80,15 @@
             // 
             // txtBoxPass
             // 
-            this.txtBoxPass.BackColor = System.Drawing.SystemColors.Control;
-            this.txtBoxPass.BorderColor = System.Drawing.Color.Black;
+            this.txtBoxPass.BackColor = System.Drawing.Color.White;
+            this.txtBoxPass.BorderColor = System.Drawing.Color.Silver;
             this.txtBoxPass.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.txtBoxPass.BorderRadius = 15;
+            this.txtBoxPass.BorderRadius = 5;
             this.txtBoxPass.BorderSize = 1;
             this.txtBoxPass.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxPass.ForeColor = System.Drawing.Color.Black;
             this.txtBoxPass.Location = new System.Drawing.Point(20, 181);
+            this.txtBoxPass.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxPass.Multiline = false;
             this.txtBoxPass.Name = "txtBoxPass";
             this.txtBoxPass.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
@@ -99,14 +101,15 @@
             // 
             // txtBoxConfirmPass
             // 
-            this.txtBoxConfirmPass.BackColor = System.Drawing.SystemColors.Control;
-            this.txtBoxConfirmPass.BorderColor = System.Drawing.Color.Black;
+            this.txtBoxConfirmPass.BackColor = System.Drawing.Color.White;
+            this.txtBoxConfirmPass.BorderColor = System.Drawing.Color.Silver;
             this.txtBoxConfirmPass.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.txtBoxConfirmPass.BorderRadius = 15;
+            this.txtBoxConfirmPass.BorderRadius = 5;
             this.txtBoxConfirmPass.BorderSize = 1;
             this.txtBoxConfirmPass.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxConfirmPass.ForeColor = System.Drawing.Color.Black;
             this.txtBoxConfirmPass.Location = new System.Drawing.Point(20, 259);
+            this.txtBoxConfirmPass.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxConfirmPass.Multiline = false;
             this.txtBoxConfirmPass.Name = "txtBoxConfirmPass";
             this.txtBoxConfirmPass.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
@@ -117,25 +120,25 @@
             this.txtBoxConfirmPass.TabIndex = 27;
             this.txtBoxConfirmPass.UnderlinedStyle = false;
             // 
-            // btnAdd
+            // btnSave
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.btnAdd.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.btnAdd.BorderColor = System.Drawing.Color.Transparent;
-            this.btnAdd.BorderRadius = 15;
-            this.btnAdd.BorderSize = 0;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(59, 331);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(116, 29);
-            this.btnAdd.TabIndex = 30;
-            this.btnAdd.Text = "Save";
-            this.btnAdd.TextColor = System.Drawing.Color.White;
-            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.btnSave.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.btnSave.BorderColor = System.Drawing.Color.Transparent;
+            this.btnSave.BorderRadius = 15;
+            this.btnSave.BorderSize = 0;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(59, 331);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(116, 29);
+            this.btnSave.TabIndex = 30;
+            this.btnSave.Text = "Save";
+            this.btnSave.TextColor = System.Drawing.Color.White;
+            this.btnSave.UseVisualStyleBackColor = false;
             // 
             // btnCancel
             // 
@@ -149,7 +152,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
             this.btnCancel.Location = new System.Drawing.Point(179, 332);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(116, 29);
             this.btnCancel.TabIndex = 31;
@@ -237,85 +240,85 @@
             this.label5.TabIndex = 37;
             this.label5.Text = "User Permission";
             // 
-            // checkBox1
+            // checkDashboard
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(367, 109);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 38;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkDashboard.AutoSize = true;
+            this.checkDashboard.Location = new System.Drawing.Point(367, 109);
+            this.checkDashboard.Margin = new System.Windows.Forms.Padding(2);
+            this.checkDashboard.Name = "checkDashboard";
+            this.checkDashboard.Size = new System.Drawing.Size(15, 14);
+            this.checkDashboard.TabIndex = 38;
+            this.checkDashboard.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // checkLaundry
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(367, 135);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(15, 14);
-            this.checkBox2.TabIndex = 39;
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkLaundry.AutoSize = true;
+            this.checkLaundry.Location = new System.Drawing.Point(367, 135);
+            this.checkLaundry.Margin = new System.Windows.Forms.Padding(2);
+            this.checkLaundry.Name = "checkLaundry";
+            this.checkLaundry.Size = new System.Drawing.Size(15, 14);
+            this.checkLaundry.TabIndex = 39;
+            this.checkLaundry.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // checkSched
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(367, 160);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(15, 14);
-            this.checkBox3.TabIndex = 40;
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkSched.AutoSize = true;
+            this.checkSched.Location = new System.Drawing.Point(367, 160);
+            this.checkSched.Margin = new System.Windows.Forms.Padding(2);
+            this.checkSched.Name = "checkSched";
+            this.checkSched.Size = new System.Drawing.Size(15, 14);
+            this.checkSched.TabIndex = 40;
+            this.checkSched.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // checkSAndE
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(367, 186);
-            this.checkBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(15, 14);
-            this.checkBox4.TabIndex = 41;
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkSAndE.AutoSize = true;
+            this.checkSAndE.Location = new System.Drawing.Point(367, 186);
+            this.checkSAndE.Margin = new System.Windows.Forms.Padding(2);
+            this.checkSAndE.Name = "checkSAndE";
+            this.checkSAndE.Size = new System.Drawing.Size(15, 14);
+            this.checkSAndE.TabIndex = 41;
+            this.checkSAndE.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // checkInventory
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(367, 211);
-            this.checkBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(15, 14);
-            this.checkBox5.TabIndex = 42;
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.checkInventory.AutoSize = true;
+            this.checkInventory.Location = new System.Drawing.Point(367, 211);
+            this.checkInventory.Margin = new System.Windows.Forms.Padding(2);
+            this.checkInventory.Name = "checkInventory";
+            this.checkInventory.Size = new System.Drawing.Size(15, 14);
+            this.checkInventory.TabIndex = 42;
+            this.checkInventory.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // checkCustomers
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(367, 235);
-            this.checkBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(15, 14);
-            this.checkBox6.TabIndex = 43;
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.checkCustomers.AutoSize = true;
+            this.checkCustomers.Location = new System.Drawing.Point(367, 235);
+            this.checkCustomers.Margin = new System.Windows.Forms.Padding(2);
+            this.checkCustomers.Name = "checkCustomers";
+            this.checkCustomers.Size = new System.Drawing.Size(15, 14);
+            this.checkCustomers.TabIndex = 43;
+            this.checkCustomers.UseVisualStyleBackColor = true;
             // 
-            // checkBox7
+            // checkUsers
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(367, 260);
-            this.checkBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(15, 14);
-            this.checkBox7.TabIndex = 44;
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.checkUsers.AutoSize = true;
+            this.checkUsers.Location = new System.Drawing.Point(367, 260);
+            this.checkUsers.Margin = new System.Windows.Forms.Padding(2);
+            this.checkUsers.Name = "checkUsers";
+            this.checkUsers.Size = new System.Drawing.Size(15, 14);
+            this.checkUsers.TabIndex = 44;
+            this.checkUsers.UseVisualStyleBackColor = true;
             // 
-            // checkBox8
+            // checkBilling
             // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(367, 284);
-            this.checkBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(15, 14);
-            this.checkBox8.TabIndex = 45;
-            this.checkBox8.UseVisualStyleBackColor = true;
+            this.checkBilling.AutoSize = true;
+            this.checkBilling.Location = new System.Drawing.Point(367, 284);
+            this.checkBilling.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBilling.Name = "checkBilling";
+            this.checkBilling.Size = new System.Drawing.Size(15, 14);
+            this.checkBilling.TabIndex = 45;
+            this.checkBilling.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -434,14 +437,14 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.checkBox8);
-            this.Controls.Add(this.checkBox7);
-            this.Controls.Add(this.checkBox6);
-            this.Controls.Add(this.checkBox5);
-            this.Controls.Add(this.checkBox4);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.checkBilling);
+            this.Controls.Add(this.checkUsers);
+            this.Controls.Add(this.checkCustomers);
+            this.Controls.Add(this.checkInventory);
+            this.Controls.Add(this.checkSAndE);
+            this.Controls.Add(this.checkSched);
+            this.Controls.Add(this.checkLaundry);
+            this.Controls.Add(this.checkDashboard);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -449,12 +452,12 @@
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtBoxConfirmPass);
             this.Controls.Add(this.txtBoxPass);
             this.Controls.Add(this.txtBoxName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EditUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.EditUser_Load);
@@ -467,7 +470,7 @@
         private CustomTextbox txtBoxName;
         private CustomTextbox txtBoxPass;
         private CustomTextbox txtBoxConfirmPass;
-        private CustomButton btnAdd;
+        private CustomButton btnSave;
         private CustomButton btnCancel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -475,14 +478,14 @@
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox8;
+        private System.Windows.Forms.CheckBox checkDashboard;
+        private System.Windows.Forms.CheckBox checkLaundry;
+        private System.Windows.Forms.CheckBox checkSched;
+        private System.Windows.Forms.CheckBox checkSAndE;
+        private System.Windows.Forms.CheckBox checkInventory;
+        private System.Windows.Forms.CheckBox checkCustomers;
+        private System.Windows.Forms.CheckBox checkUsers;
+        private System.Windows.Forms.CheckBox checkBilling;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;

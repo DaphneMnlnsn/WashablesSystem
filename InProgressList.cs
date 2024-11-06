@@ -32,7 +32,7 @@ namespace WashablesSystem
             PickUpDate.Text = pickUpDate;
             btnPause.Image = PauseImage;
             TimeLeft.Text = timeLeft;
-            Cancel.Image = CancelImage;
+            btnCancel.Image = CancelImage;
 
         }
     }

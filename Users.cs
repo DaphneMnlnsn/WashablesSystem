@@ -12,15 +12,28 @@ namespace WashablesSystem
 {
     public partial class Users : Form
     {
+        string openedForm = "User Account";
+
         public Users(Main parentForm)
         {
             InitializeComponent();
             if (parentForm != null)
             {
                 parentForm.Header = "Users";
-                string text = parentForm.Header;
             }
+            
         }
+
+        public Users(Main parentForm, string openForm)
+        {
+            InitializeComponent();
+            if (parentForm != null)
+            {
+                parentForm.Header = "Users";
+            }
+            this.openedForm = openForm;
+        }
+
         private void loadForm(Form m)
         {
             if (this.panelTab.Controls.Count > 0)
@@ -35,7 +48,14 @@ namespace WashablesSystem
         }
         private void Users_Load(object sender, EventArgs e)
         {
-            loadForm(new UserAccount());
+            if (openedForm.Equals("Activity Log"))
+            {
+                btnActivityLog_Click(sender, e);
+            }
+            else
+            {
+                btnUserAccount_Click(sender, e);
+            }
         }
         private void btnUserAccount_Click(object sender, EventArgs e)
         {

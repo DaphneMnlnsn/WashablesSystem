@@ -21,5 +21,26 @@ namespace WashablesSystem
         {
             this.Close();
         }
+
+        private void unitQuantity_Click(object sender, EventArgs e)
+        {
+            if (cbCategory.Text.Equals("Liquid"))
+            {
+                unitQuantity.Items.Clear();
+                unitQuantity.Items.Add("milliliter (mL)");
+                unitQuantity.Items.Add("liter (L)");
+            }
+            else
+            {
+                unitQuantity.Items.Clear();
+                unitQuantity.Items.Add("gram (g)");
+                unitQuantity.Items.Add("kilogram (kg)");
+            }
+        }
+
+        private void unitQuantity_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            lblPrice.Text = "Price per " + unitQuantity.Text;
+        }
     }
 }

@@ -86,7 +86,7 @@
             this.btnActivityLog.FlatAppearance.BorderSize = 0;
             this.btnActivityLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActivityLog.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
-            this.btnActivityLog.Location = new System.Drawing.Point(271, 60);
+            this.btnActivityLog.Location = new System.Drawing.Point(269, 60);
             this.btnActivityLog.Margin = new System.Windows.Forms.Padding(2);
             this.btnActivityLog.Name = "btnActivityLog";
             this.btnActivityLog.Size = new System.Drawing.Size(132, 32);

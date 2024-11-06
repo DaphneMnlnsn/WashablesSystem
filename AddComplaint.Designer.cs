@@ -33,11 +33,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.customDatePicker1 = new WashablesSystem.CustomDatePicker();
-            this.cbTimeSales = new WashablesSystem.CustomComboBox();
+            this.dateComplained = new WashablesSystem.CustomDatePicker();
             this.btnCancel = new WashablesSystem.CustomButton();
             this.btnAdd = new WashablesSystem.CustomButton();
             this.txtBoxSearch = new WashablesSystem.CustomTextbox();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label4
@@ -105,43 +105,20 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "________________________________________";
             // 
-            // customDatePicker1
+            // dateComplained
             // 
-            this.customDatePicker1.BorderColor = System.Drawing.Color.Black;
-            this.customDatePicker1.BorderSize = 1;
-            this.customDatePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customDatePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.customDatePicker1.Location = new System.Drawing.Point(21, 231);
-            this.customDatePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.customDatePicker1.MinimumSize = new System.Drawing.Size(4, 35);
-            this.customDatePicker1.Name = "customDatePicker1";
-            this.customDatePicker1.Size = new System.Drawing.Size(307, 35);
-            this.customDatePicker1.SkinColor = System.Drawing.SystemColors.Control;
-            this.customDatePicker1.TabIndex = 39;
-            this.customDatePicker1.TextColor = System.Drawing.Color.Black;
-            // 
-            // cbTimeSales
-            // 
-            this.cbTimeSales.BackColor = System.Drawing.SystemColors.Control;
-            this.cbTimeSales.BorderColor = System.Drawing.Color.Black;
-            this.cbTimeSales.BorderSize = 1;
-            this.cbTimeSales.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTimeSales.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTimeSales.ForeColor = System.Drawing.Color.Black;
-            this.cbTimeSales.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.cbTimeSales.Items.AddRange(new object[] {
-            "Missing Item",
-            "Remaining Stains"});
-            this.cbTimeSales.ListBackColor = System.Drawing.SystemColors.Control;
-            this.cbTimeSales.ListTextColor = System.Drawing.Color.Black;
-            this.cbTimeSales.Location = new System.Drawing.Point(20, 159);
-            this.cbTimeSales.Margin = new System.Windows.Forms.Padding(2);
-            this.cbTimeSales.MinimumSize = new System.Drawing.Size(133, 20);
-            this.cbTimeSales.Name = "cbTimeSales";
-            this.cbTimeSales.Padding = new System.Windows.Forms.Padding(1);
-            this.cbTimeSales.Size = new System.Drawing.Size(306, 25);
-            this.cbTimeSales.TabIndex = 38;
-            this.cbTimeSales.Texts = "Missing Item";
+            this.dateComplained.BorderColor = System.Drawing.Color.Silver;
+            this.dateComplained.BorderSize = 1;
+            this.dateComplained.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateComplained.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateComplained.Location = new System.Drawing.Point(21, 231);
+            this.dateComplained.Margin = new System.Windows.Forms.Padding(2);
+            this.dateComplained.MinimumSize = new System.Drawing.Size(4, 35);
+            this.dateComplained.Name = "dateComplained";
+            this.dateComplained.Size = new System.Drawing.Size(307, 35);
+            this.dateComplained.SkinColor = System.Drawing.Color.White;
+            this.dateComplained.TabIndex = 39;
+            this.dateComplained.TextColor = System.Drawing.Color.Black;
             // 
             // btnCancel
             // 
@@ -186,12 +163,12 @@
             // 
             // txtBoxSearch
             // 
-            this.txtBoxSearch.BackColor = System.Drawing.SystemColors.Control;
-            this.txtBoxSearch.BorderColor = System.Drawing.Color.Black;
+            this.txtBoxSearch.BackColor = System.Drawing.Color.White;
+            this.txtBoxSearch.BorderColor = System.Drawing.Color.Silver;
             this.txtBoxSearch.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.txtBoxSearch.BorderRadius = 5;
             this.txtBoxSearch.BorderSize = 1;
-            this.txtBoxSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.txtBoxSearch.ForeColor = System.Drawing.Color.Black;
             this.txtBoxSearch.Location = new System.Drawing.Point(20, 89);
             this.txtBoxSearch.Margin = new System.Windows.Forms.Padding(4);
@@ -201,17 +178,33 @@
             this.txtBoxSearch.PasswordChar = false;
             this.txtBoxSearch.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtBoxSearch.PlaceholderText = "";
-            this.txtBoxSearch.Size = new System.Drawing.Size(307, 26);
+            this.txtBoxSearch.Size = new System.Drawing.Size(307, 30);
             this.txtBoxSearch.TabIndex = 23;
             this.txtBoxSearch.UnderlinedStyle = false;
+            // 
+            // cbCategory
+            // 
+            this.cbCategory.BackColor = System.Drawing.SystemColors.Control;
+            this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategory.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cbCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Items.AddRange(new object[] {
+            "Missing Item",
+            "Remaining Stains"});
+            this.cbCategory.Location = new System.Drawing.Point(21, 160);
+            this.cbCategory.Margin = new System.Windows.Forms.Padding(2);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(307, 25);
+            this.cbCategory.TabIndex = 203;
             // 
             // AddComplaint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(363, 346);
-            this.Controls.Add(this.customDatePicker1);
-            this.Controls.Add(this.cbTimeSales);
+            this.Controls.Add(this.cbCategory);
+            this.Controls.Add(this.dateComplained);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -238,7 +231,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label label1;
-        private CustomComboBox cbTimeSales;
-        private CustomDatePicker customDatePicker1;
+        private CustomDatePicker dateComplained;
+        private System.Windows.Forms.ComboBox cbCategory;
     }
 }

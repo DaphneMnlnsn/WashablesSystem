@@ -35,7 +35,7 @@
             this.panelTab = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.PictureBox();
             this.txtBoxSearch = new WashablesSystem.CustomTextbox();
-            this.btnAddCustomer = new WashablesSystem.CustomButton();
+            this.btnAddLaundry = new WashablesSystem.CustomButton();
             this.btnArchive = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +59,7 @@
             this.btnInProgress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInProgress.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.btnInProgress.Location = new System.Drawing.Point(23, 63);
-            this.btnInProgress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInProgress.Margin = new System.Windows.Forms.Padding(2);
             this.btnInProgress.Name = "btnInProgress";
             this.btnInProgress.Size = new System.Drawing.Size(99, 29);
             this.btnInProgress.TabIndex = 4;
@@ -73,8 +73,8 @@
             this.btnPending.FlatAppearance.BorderSize = 0;
             this.btnPending.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPending.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
-            this.btnPending.Location = new System.Drawing.Point(122, 63);
-            this.btnPending.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPending.Location = new System.Drawing.Point(121, 63);
+            this.btnPending.Margin = new System.Windows.Forms.Padding(2);
             this.btnPending.Name = "btnPending";
             this.btnPending.Size = new System.Drawing.Size(102, 29);
             this.btnPending.TabIndex = 5;
@@ -88,8 +88,8 @@
             this.btnFinished.FlatAppearance.BorderSize = 0;
             this.btnFinished.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFinished.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
-            this.btnFinished.Location = new System.Drawing.Point(225, 63);
-            this.btnFinished.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFinished.Location = new System.Drawing.Point(223, 63);
+            this.btnFinished.Margin = new System.Windows.Forms.Padding(2);
             this.btnFinished.Name = "btnFinished";
             this.btnFinished.Size = new System.Drawing.Size(98, 29);
             this.btnFinished.TabIndex = 6;
@@ -101,7 +101,7 @@
             // 
             this.panelTab.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelTab.Location = new System.Drawing.Point(23, 91);
-            this.panelTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelTab.Margin = new System.Windows.Forms.Padding(2);
             this.panelTab.Name = "panelTab";
             this.panelTab.Size = new System.Drawing.Size(947, 403);
             this.panelTab.TabIndex = 7;
@@ -140,25 +140,26 @@
             this.txtBoxSearch.TabIndex = 8;
             this.txtBoxSearch.UnderlinedStyle = false;
             // 
-            // btnAddCustomer
+            // btnAddLaundry
             // 
-            this.btnAddCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.btnAddCustomer.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.btnAddCustomer.BorderColor = System.Drawing.Color.Transparent;
-            this.btnAddCustomer.BorderRadius = 6;
-            this.btnAddCustomer.BorderSize = 0;
-            this.btnAddCustomer.FlatAppearance.BorderSize = 0;
-            this.btnAddCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddCustomer.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnAddCustomer.Location = new System.Drawing.Point(826, 15);
-            this.btnAddCustomer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnAddCustomer.Name = "btnAddCustomer";
-            this.btnAddCustomer.Size = new System.Drawing.Size(144, 31);
-            this.btnAddCustomer.TabIndex = 16;
-            this.btnAddCustomer.Text = "+ Add Laundry";
-            this.btnAddCustomer.TextColor = System.Drawing.Color.White;
-            this.btnAddCustomer.UseVisualStyleBackColor = false;
+            this.btnAddLaundry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnAddLaundry.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnAddLaundry.BorderColor = System.Drawing.Color.Transparent;
+            this.btnAddLaundry.BorderRadius = 6;
+            this.btnAddLaundry.BorderSize = 0;
+            this.btnAddLaundry.FlatAppearance.BorderSize = 0;
+            this.btnAddLaundry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddLaundry.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddLaundry.ForeColor = System.Drawing.Color.Black;
+            this.btnAddLaundry.Location = new System.Drawing.Point(826, 15);
+            this.btnAddLaundry.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddLaundry.Name = "btnAddLaundry";
+            this.btnAddLaundry.Size = new System.Drawing.Size(144, 31);
+            this.btnAddLaundry.TabIndex = 16;
+            this.btnAddLaundry.Text = "+ Add Laundry";
+            this.btnAddLaundry.TextColor = System.Drawing.Color.Black;
+            this.btnAddLaundry.UseVisualStyleBackColor = false;
+            this.btnAddLaundry.Click += new System.EventHandler(this.btnAddLaundry_Click);
             // 
             // btnArchive
             // 
@@ -166,8 +167,8 @@
             this.btnArchive.FlatAppearance.BorderSize = 0;
             this.btnArchive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnArchive.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
-            this.btnArchive.Location = new System.Drawing.Point(324, 63);
-            this.btnArchive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnArchive.Location = new System.Drawing.Point(320, 63);
+            this.btnArchive.Margin = new System.Windows.Forms.Padding(2);
             this.btnArchive.Name = "btnArchive";
             this.btnArchive.Size = new System.Drawing.Size(98, 29);
             this.btnArchive.TabIndex = 17;
@@ -180,7 +181,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(999, 523);
-            this.Controls.Add(this.btnAddCustomer);
+            this.Controls.Add(this.btnAddLaundry);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtBoxSearch);
             this.Controls.Add(this.panelTab);
@@ -190,7 +191,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnArchive);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Schedule";
             this.Text = "Customers";
             this.Load += new System.EventHandler(this.Customers_Load);
@@ -209,7 +210,7 @@
         private System.Windows.Forms.Panel panelTab;
         private CustomTextbox txtBoxSearch;
         private System.Windows.Forms.PictureBox btnSearch;
-        private CustomButton btnAddCustomer;
+        private CustomButton btnAddLaundry;
         private System.Windows.Forms.Button btnArchive;
     }
 }

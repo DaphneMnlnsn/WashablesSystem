@@ -28,136 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtBoxSearch = new WashablesSystem.CustomTextbox();
-            this.customTextbox2 = new WashablesSystem.CustomTextbox();
-            this.customTextbox3 = new WashablesSystem.CustomTextbox();
-            this.btnAdd = new WashablesSystem.CustomButton();
-            this.btnCancel = new WashablesSystem.CustomButton();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbTimeSales = new WashablesSystem.CustomComboBox();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.unitQuantity = new System.Windows.Forms.ComboBox();
+            this.btnCancel = new WashablesSystem.CustomButton();
+            this.btnAdd = new WashablesSystem.CustomButton();
+            this.txtBoxPrice = new WashablesSystem.CustomTextbox();
+            this.txtBoxQuantity = new WashablesSystem.CustomTextbox();
+            this.txtBoxName = new WashablesSystem.CustomTextbox();
             this.SuspendLayout();
             // 
-            // txtBoxSearch
+            // lblPrice
             // 
-            this.txtBoxSearch.BackColor = System.Drawing.SystemColors.Control;
-            this.txtBoxSearch.BorderColor = System.Drawing.Color.Black;
-            this.txtBoxSearch.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.txtBoxSearch.BorderRadius = 15;
-            this.txtBoxSearch.BorderSize = 1;
-            this.txtBoxSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxSearch.ForeColor = System.Drawing.Color.Black;
-            this.txtBoxSearch.Location = new System.Drawing.Point(20, 89);
-            this.txtBoxSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBoxSearch.Multiline = false;
-            this.txtBoxSearch.Name = "txtBoxSearch";
-            this.txtBoxSearch.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
-            this.txtBoxSearch.PasswordChar = false;
-            this.txtBoxSearch.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtBoxSearch.PlaceholderText = "";
-            this.txtBoxSearch.Size = new System.Drawing.Size(307, 26);
-            this.txtBoxSearch.TabIndex = 23;
-            this.txtBoxSearch.UnderlinedStyle = false;
-            // 
-            // customTextbox2
-            // 
-            this.customTextbox2.BackColor = System.Drawing.SystemColors.Control;
-            this.customTextbox2.BorderColor = System.Drawing.Color.Black;
-            this.customTextbox2.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.customTextbox2.BorderRadius = 15;
-            this.customTextbox2.BorderSize = 1;
-            this.customTextbox2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextbox2.ForeColor = System.Drawing.Color.Black;
-            this.customTextbox2.Location = new System.Drawing.Point(20, 231);
-            this.customTextbox2.Margin = new System.Windows.Forms.Padding(4);
-            this.customTextbox2.Multiline = false;
-            this.customTextbox2.Name = "customTextbox2";
-            this.customTextbox2.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
-            this.customTextbox2.PasswordChar = false;
-            this.customTextbox2.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.customTextbox2.PlaceholderText = "";
-            this.customTextbox2.Size = new System.Drawing.Size(307, 26);
-            this.customTextbox2.TabIndex = 27;
-            this.customTextbox2.UnderlinedStyle = false;
-            // 
-            // customTextbox3
-            // 
-            this.customTextbox3.BackColor = System.Drawing.SystemColors.Control;
-            this.customTextbox3.BorderColor = System.Drawing.Color.Black;
-            this.customTextbox3.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.customTextbox3.BorderRadius = 15;
-            this.customTextbox3.BorderSize = 1;
-            this.customTextbox3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextbox3.ForeColor = System.Drawing.Color.Black;
-            this.customTextbox3.Location = new System.Drawing.Point(20, 304);
-            this.customTextbox3.Margin = new System.Windows.Forms.Padding(4);
-            this.customTextbox3.Multiline = false;
-            this.customTextbox3.Name = "customTextbox3";
-            this.customTextbox3.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
-            this.customTextbox3.PasswordChar = false;
-            this.customTextbox3.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.customTextbox3.PlaceholderText = "";
-            this.customTextbox3.Size = new System.Drawing.Size(307, 26);
-            this.customTextbox3.TabIndex = 29;
-            this.customTextbox3.UnderlinedStyle = false;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.btnAdd.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.btnAdd.BorderColor = System.Drawing.Color.Transparent;
-            this.btnAdd.BorderRadius = 15;
-            this.btnAdd.BorderSize = 0;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(59, 358);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(116, 29);
-            this.btnAdd.TabIndex = 30;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.TextColor = System.Drawing.Color.White;
-            this.btnAdd.UseVisualStyleBackColor = false;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancel.BackgroundColor = System.Drawing.Color.Transparent;
-            this.btnCancel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.btnCancel.BorderRadius = 15;
-            this.btnCancel.BorderSize = 1;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(179, 358);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(116, 29);
-            this.btnCancel.TabIndex = 31;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.TextColor = System.Drawing.Color.Black;
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(22, 281);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 18);
-            this.label5.TabIndex = 37;
-            this.label5.Text = "Price";
+            this.lblPrice.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.lblPrice.ForeColor = System.Drawing.Color.Black;
+            this.lblPrice.Location = new System.Drawing.Point(22, 281);
+            this.lblPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(40, 18);
+            this.lblPrice.TabIndex = 37;
+            this.lblPrice.Text = "Price";
             // 
             // label4
             // 
@@ -224,36 +121,149 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "________________________________________";
             // 
-            // cbTimeSales
+            // cbCategory
             // 
-            this.cbTimeSales.BackColor = System.Drawing.SystemColors.Control;
-            this.cbTimeSales.BorderColor = System.Drawing.Color.DimGray;
-            this.cbTimeSales.BorderSize = 1;
-            this.cbTimeSales.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTimeSales.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.cbTimeSales.ForeColor = System.Drawing.Color.Black;
-            this.cbTimeSales.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.cbTimeSales.Items.AddRange(new object[] {
+            this.cbCategory.BackColor = System.Drawing.SystemColors.Control;
+            this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategory.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cbCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Items.AddRange(new object[] {
             "Powder",
             "Liquid"});
-            this.cbTimeSales.ListBackColor = System.Drawing.SystemColors.Control;
-            this.cbTimeSales.ListTextColor = System.Drawing.Color.Black;
-            this.cbTimeSales.Location = new System.Drawing.Point(21, 162);
-            this.cbTimeSales.Margin = new System.Windows.Forms.Padding(2);
-            this.cbTimeSales.MinimumSize = new System.Drawing.Size(133, 20);
-            this.cbTimeSales.Name = "cbTimeSales";
-            this.cbTimeSales.Padding = new System.Windows.Forms.Padding(1);
-            this.cbTimeSales.Size = new System.Drawing.Size(306, 25);
-            this.cbTimeSales.TabIndex = 39;
-            this.cbTimeSales.Texts = "";
+            this.cbCategory.Location = new System.Drawing.Point(21, 162);
+            this.cbCategory.Margin = new System.Windows.Forms.Padding(2);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(307, 28);
+            this.cbCategory.TabIndex = 202;
+            // 
+            // unitQuantity
+            // 
+            this.unitQuantity.BackColor = System.Drawing.SystemColors.Control;
+            this.unitQuantity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.unitQuantity.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.unitQuantity.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unitQuantity.FormattingEnabled = true;
+            this.unitQuantity.Location = new System.Drawing.Point(214, 231);
+            this.unitQuantity.Margin = new System.Windows.Forms.Padding(2);
+            this.unitQuantity.Name = "unitQuantity";
+            this.unitQuantity.Size = new System.Drawing.Size(118, 28);
+            this.unitQuantity.TabIndex = 203;
+            this.unitQuantity.SelectionChangeCommitted += new System.EventHandler(this.unitQuantity_SelectionChangeCommitted);
+            this.unitQuantity.Click += new System.EventHandler(this.unitQuantity_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancel.BackgroundColor = System.Drawing.Color.Transparent;
+            this.btnCancel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.btnCancel.BorderRadius = 15;
+            this.btnCancel.BorderSize = 1;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnCancel.Location = new System.Drawing.Point(179, 358);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(116, 29);
+            this.btnCancel.TabIndex = 31;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.TextColor = System.Drawing.Color.Black;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.btnAdd.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.btnAdd.BorderColor = System.Drawing.Color.Transparent;
+            this.btnAdd.BorderRadius = 15;
+            this.btnAdd.BorderSize = 0;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(59, 358);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(116, 29);
+            this.btnAdd.TabIndex = 30;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.TextColor = System.Drawing.Color.White;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            // 
+            // txtBoxPrice
+            // 
+            this.txtBoxPrice.BackColor = System.Drawing.Color.White;
+            this.txtBoxPrice.BorderColor = System.Drawing.Color.Silver;
+            this.txtBoxPrice.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.txtBoxPrice.BorderRadius = 5;
+            this.txtBoxPrice.BorderSize = 1;
+            this.txtBoxPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxPrice.ForeColor = System.Drawing.Color.Black;
+            this.txtBoxPrice.Location = new System.Drawing.Point(20, 304);
+            this.txtBoxPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxPrice.Multiline = false;
+            this.txtBoxPrice.Name = "txtBoxPrice";
+            this.txtBoxPrice.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
+            this.txtBoxPrice.PasswordChar = false;
+            this.txtBoxPrice.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtBoxPrice.PlaceholderText = "";
+            this.txtBoxPrice.Size = new System.Drawing.Size(307, 26);
+            this.txtBoxPrice.TabIndex = 29;
+            this.txtBoxPrice.UnderlinedStyle = false;
+            // 
+            // txtBoxQuantity
+            // 
+            this.txtBoxQuantity.BackColor = System.Drawing.Color.White;
+            this.txtBoxQuantity.BorderColor = System.Drawing.Color.Silver;
+            this.txtBoxQuantity.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.txtBoxQuantity.BorderRadius = 5;
+            this.txtBoxQuantity.BorderSize = 1;
+            this.txtBoxQuantity.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxQuantity.ForeColor = System.Drawing.Color.Black;
+            this.txtBoxQuantity.Location = new System.Drawing.Point(20, 231);
+            this.txtBoxQuantity.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxQuantity.Multiline = false;
+            this.txtBoxQuantity.Name = "txtBoxQuantity";
+            this.txtBoxQuantity.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
+            this.txtBoxQuantity.PasswordChar = false;
+            this.txtBoxQuantity.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtBoxQuantity.PlaceholderText = "";
+            this.txtBoxQuantity.Size = new System.Drawing.Size(188, 26);
+            this.txtBoxQuantity.TabIndex = 27;
+            this.txtBoxQuantity.UnderlinedStyle = false;
+            // 
+            // txtBoxName
+            // 
+            this.txtBoxName.BackColor = System.Drawing.Color.White;
+            this.txtBoxName.BorderColor = System.Drawing.Color.Silver;
+            this.txtBoxName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.txtBoxName.BorderRadius = 5;
+            this.txtBoxName.BorderSize = 1;
+            this.txtBoxName.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxName.ForeColor = System.Drawing.Color.Black;
+            this.txtBoxName.Location = new System.Drawing.Point(20, 89);
+            this.txtBoxName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxName.Multiline = false;
+            this.txtBoxName.Name = "txtBoxName";
+            this.txtBoxName.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
+            this.txtBoxName.PasswordChar = false;
+            this.txtBoxName.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtBoxName.PlaceholderText = "";
+            this.txtBoxName.Size = new System.Drawing.Size(307, 26);
+            this.txtBoxName.TabIndex = 23;
+            this.txtBoxName.UnderlinedStyle = false;
             // 
             // AddItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(363, 413);
-            this.Controls.Add(this.cbTimeSales);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.unitQuantity);
+            this.Controls.Add(this.cbCategory);
+            this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -261,9 +271,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.customTextbox3);
-            this.Controls.Add(this.customTextbox2);
-            this.Controls.Add(this.txtBoxSearch);
+            this.Controls.Add(this.txtBoxPrice);
+            this.Controls.Add(this.txtBoxQuantity);
+            this.Controls.Add(this.txtBoxName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddItem";
@@ -274,17 +284,18 @@
         }
 
         #endregion
-        private CustomTextbox txtBoxSearch;
-        private CustomTextbox customTextbox2;
-        private CustomTextbox customTextbox3;
+        private CustomTextbox txtBoxName;
+        private CustomTextbox txtBoxQuantity;
+        private CustomTextbox txtBoxPrice;
         private CustomButton btnAdd;
         private CustomButton btnCancel;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label label1;
-        private CustomComboBox cbTimeSales;
+        private System.Windows.Forms.ComboBox cbCategory;
+        private System.Windows.Forms.ComboBox unitQuantity;
     }
 }

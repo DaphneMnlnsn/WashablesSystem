@@ -73,5 +73,11 @@ namespace WashablesSystem
             btnPending.BackColor = SystemColors.Control;
             btnArchive.BackColor = Color.FromArgb(217, 217, 217);
         }
+
+        private void btnAddLaundry_Click(object sender, EventArgs e)
+        {
+            AddLaundry laundryForm = new AddLaundry();
+            laundryForm.ShowDialog();
+        }
     }
 }

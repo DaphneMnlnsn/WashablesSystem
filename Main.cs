@@ -79,13 +79,14 @@ namespace WashablesSystem
 
         private void btnNotif_Click(object sender, EventArgs e)
         {
-            NotifOverlay notif1 = new NotifOverlay();
+            NotifOverlay notif1 = new NotifOverlay(this);
             notif1.BorderStyle = BorderStyle.FixedSingle;
             this.Controls.Add(notif1);
             notif1.Size = new System.Drawing.Size(524, 615);
             notif1.Dock = DockStyle.Right;
             notif1.Select();
             notif1.BringToFront();
+            btnNotif.Enabled = false;
         }
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)

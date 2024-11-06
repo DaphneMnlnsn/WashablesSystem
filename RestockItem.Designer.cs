@@ -36,6 +36,7 @@
             this.btnAdd = new WashablesSystem.CustomButton();
             this.txtBoxQuantity = new WashablesSystem.CustomTextbox();
             this.txtBoxRemaining = new WashablesSystem.CustomTextbox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label3
@@ -133,10 +134,10 @@
             // 
             // txtBoxQuantity
             // 
-            this.txtBoxQuantity.BackColor = System.Drawing.SystemColors.Control;
-            this.txtBoxQuantity.BorderColor = System.Drawing.Color.Black;
+            this.txtBoxQuantity.BackColor = System.Drawing.Color.White;
+            this.txtBoxQuantity.BorderColor = System.Drawing.Color.Silver;
             this.txtBoxQuantity.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.txtBoxQuantity.BorderRadius = 15;
+            this.txtBoxQuantity.BorderRadius = 5;
             this.txtBoxQuantity.BorderSize = 1;
             this.txtBoxQuantity.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxQuantity.ForeColor = System.Drawing.Color.Black;
@@ -154,10 +155,10 @@
             // 
             // txtBoxRemaining
             // 
-            this.txtBoxRemaining.BackColor = System.Drawing.SystemColors.Control;
-            this.txtBoxRemaining.BorderColor = System.Drawing.Color.Black;
+            this.txtBoxRemaining.BackColor = System.Drawing.Color.White;
+            this.txtBoxRemaining.BorderColor = System.Drawing.Color.Silver;
             this.txtBoxRemaining.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.txtBoxRemaining.BorderRadius = 15;
+            this.txtBoxRemaining.BorderRadius = 5;
             this.txtBoxRemaining.BorderSize = 1;
             this.txtBoxRemaining.Enabled = false;
             this.txtBoxRemaining.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -174,12 +175,26 @@
             this.txtBoxRemaining.TabIndex = 23;
             this.txtBoxRemaining.UnderlinedStyle = false;
             // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(289, 169);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(26, 20);
+            this.label4.TabIndex = 36;
+            this.label4.Text = "kg";
+            // 
             // RestockItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(363, 307);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblHeader);
@@ -189,7 +204,7 @@
             this.Controls.Add(this.txtBoxQuantity);
             this.Controls.Add(this.txtBoxRemaining);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RestockItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.RestockItem_Load);
@@ -207,5 +222,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
     }
 }

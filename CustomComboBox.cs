@@ -73,10 +73,10 @@ namespace WashablesSystem
         }
         private void AdjustComboBoxDimensions()
         {
-            cmbList.Width = this.Width;
+            cmbList.Width = this.Width - 3;
             cmbList.Location = new Point()
             {
-                X = this.Width - this.Padding.Right - (this.Width-3),
+                X = this.Width - this.Padding.Right - cmbList.Width,
                 Y = lblText.Bottom - cmbList.Height
             };
         }

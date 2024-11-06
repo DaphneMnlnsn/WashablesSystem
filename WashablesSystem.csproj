@@ -90,6 +90,12 @@
     <Compile Include="AddItem.Designer.cs">
       <DependentUpon>AddItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddLaundry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddLaundry.Designer.cs">
+      <DependentUpon>AddLaundry.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +201,12 @@
     <Compile Include="EditItem.Designer.cs">
       <DependentUpon>EditItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditLaundry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditLaundry.Designer.cs">
+      <DependentUpon>EditLaundry.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +230,12 @@
     </Compile>
     <Compile Include="FreeWash.Designer.cs">
       <DependentUpon>FreeWash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InProgLaundryList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InProgLaundryList.Designer.cs">
+      <DependentUpon>InProgLaundryList.cs</DependentUpon>
     </Compile>
     <Compile Include="InProgressList.cs">
       <SubType>UserControl</SubType>
@@ -285,6 +303,12 @@
     <Compile Include="MissingItem.Designer.cs">
       <DependentUpon>MissingItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="NotificationList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NotificationList.Designer.cs">
+      <DependentUpon>NotificationList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Notifications.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -303,11 +327,35 @@
     <Compile Include="NotifOverlay.Designer.cs">
       <DependentUpon>NotifOverlay.cs</DependentUpon>
     </Compile>
+    <Compile Include="PaymentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentDetails.Designer.cs">
+      <DependentUpon>PaymentDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PendingLaundryList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PendingLaundryList.Designer.cs">
+      <DependentUpon>PendingLaundryList.cs</DependentUpon>
+    </Compile>
     <Compile Include="PendingList.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="PendingList.Designer.cs">
       <DependentUpon>PendingList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PendingPaymentList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PendingPaymentList.Designer.cs">
+      <DependentUpon>PendingPaymentList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PendingPayments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PendingPayments.Designer.cs">
+      <DependentUpon>PendingPayments.cs</DependentUpon>
     </Compile>
     <Compile Include="PendingSched.cs">
       <SubType>Form</SubType>
@@ -317,6 +365,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Receipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receipt.Designer.cs">
+      <DependentUpon>Receipt.cs</DependentUpon>
+    </Compile>
     <Compile Include="RestockItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -335,11 +389,35 @@
     <Compile Include="Schedule.Designer.cs">
       <DependentUpon>Schedule.cs</DependentUpon>
     </Compile>
+    <Compile Include="SelectableUnitList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SelectableUnitList.Designer.cs">
+      <DependentUpon>SelectableUnitList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectAvailableUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectAvailableUnit.Designer.cs">
+      <DependentUpon>SelectAvailableUnit.cs</DependentUpon>
+    </Compile>
     <Compile Include="ServicesAndEquipment.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ServicesAndEquipment.Designer.cs">
       <DependentUpon>ServicesAndEquipment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransactionHistory.Designer.cs">
+      <DependentUpon>TransactionHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TransactionList.Designer.cs">
+      <DependentUpon>TransactionList.cs</DependentUpon>
     </Compile>
     <Compile Include="UserAccount.cs">
       <SubType>Form</SubType>
@@ -385,6 +463,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddItem.resx">
       <DependentUpon>AddItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddLaundry.resx">
+      <DependentUpon>AddLaundry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
@@ -434,6 +515,9 @@
     <EmbeddedResource Include="EditItem.resx">
       <DependentUpon>EditItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditLaundry.resx">
+      <DependentUpon>EditLaundry.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditUser.resx">
       <DependentUpon>EditUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -445,6 +529,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FreeWash.resx">
       <DependentUpon>FreeWash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InProgLaundryList.resx">
+      <DependentUpon>InProgLaundryList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InProgressList.resx">
       <DependentUpon>InProgressList.cs</DependentUpon>
@@ -467,6 +554,9 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MachineList.resx">
+      <DependentUpon>MachineList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MachineUnitList.resx">
       <DependentUpon>MachineUnitList.cs</DependentUpon>
     </EmbeddedResource>
@@ -475,6 +565,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MissingItem.resx">
       <DependentUpon>MissingItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotificationList.resx">
+      <DependentUpon>NotificationList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Notifications.resx">
       <DependentUpon>Notifications.cs</DependentUpon>
@@ -485,8 +578,20 @@
     <EmbeddedResource Include="NotifOverlay.resx">
       <DependentUpon>NotifOverlay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PaymentDetails.resx">
+      <DependentUpon>PaymentDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PendingLaundryList.resx">
+      <DependentUpon>PendingLaundryList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PendingList.resx">
       <DependentUpon>PendingList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PendingPaymentList.resx">
+      <DependentUpon>PendingPaymentList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PendingPayments.resx">
+      <DependentUpon>PendingPayments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PendingSched.resx">
       <DependentUpon>PendingSched.cs</DependentUpon>
@@ -501,6 +606,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Receipt.resx">
+      <DependentUpon>Receipt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RestockItem.resx">
       <DependentUpon>RestockItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -510,8 +618,17 @@
     <EmbeddedResource Include="Schedule.resx">
       <DependentUpon>Schedule.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SelectableUnitList.resx">
+      <DependentUpon>SelectableUnitList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectAvailableUnit.resx">
+      <DependentUpon>SelectAvailableUnit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ServicesAndEquipment.resx">
       <DependentUpon>ServicesAndEquipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransactionList.resx">
+      <DependentUpon>TransactionList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserAccount.resx">
       <DependentUpon>UserAccount.cs</DependentUpon>
@@ -660,6 +777,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Ellipse 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Iron.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
