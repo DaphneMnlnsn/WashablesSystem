@@ -34,6 +34,10 @@ namespace WashablesSystem
             PendingLaundryList pending = new PendingLaundryList();
             pending.setStatus("OR123", "Quiana Momingo", "Wash (Clothes...)", "10/12/2024 5:22PM", "10/15/2024");
             laundryContainer.Controls.Add(pending);
+
+            PendingLaundryList pending2 = new PendingLaundryList();
+            pending2.setStatus("OR123", "Quiana Momingo", "Wash (Bed Sheet...)", "10/12/2024 5:22PM", "10/15/2024");
+            laundryContainer.Controls.Add(pending2);
         }
 
         private void btnInProg_Click(object sender, EventArgs e)
@@ -48,6 +52,7 @@ namespace WashablesSystem
             InProgLaundryList inProgress = new InProgLaundryList();
             inProgress.setStatus("Unit I", "Kiana Martin", "Wash (Clothes...)", "29 minutes");
             laundryContainer.Controls.Add(inProgress);
+
         }
 
         private void LaundryOperations_Load(object sender, EventArgs e)

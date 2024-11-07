@@ -449,6 +449,12 @@
     <Compile Include="SelectAvailableUnit.Designer.cs">
       <DependentUpon>SelectAvailableUnit.cs</DependentUpon>
     </Compile>
+    <Compile Include="SelectServices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectServices.Designer.cs">
+      <DependentUpon>SelectServices.cs</DependentUpon>
+    </Compile>
     <Compile Include="ServiceEquipmentList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -460,6 +466,12 @@
     </Compile>
     <Compile Include="ServicesAndEquipment.Designer.cs">
       <DependentUpon>ServicesAndEquipment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceTypeList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ServiceTypeList.Designer.cs">
+      <DependentUpon>ServiceTypeList.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="TransactionHistory.cs">
@@ -694,11 +706,17 @@
     <EmbeddedResource Include="SelectAvailableUnit.resx">
       <DependentUpon>SelectAvailableUnit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SelectServices.resx">
+      <DependentUpon>SelectServices.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ServiceEquipmentList.resx">
       <DependentUpon>ServiceEquipmentList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ServicesAndEquipment.resx">
       <DependentUpon>ServicesAndEquipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceTypeList.resx">
+      <DependentUpon>ServiceTypeList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransactionList.resx">
       <DependentUpon>TransactionList.cs</DependentUpon>

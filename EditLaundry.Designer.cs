@@ -49,7 +49,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cbMachine = new System.Windows.Forms.ComboBox();
-            this.cbService = new System.Windows.Forms.ComboBox();
             this.cbCust = new System.Windows.Forms.ComboBox();
             this.cbItem1 = new System.Windows.Forms.ComboBox();
             this.cbItem2 = new System.Windows.Forms.ComboBox();
@@ -63,6 +62,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.customTextbox1 = new WashablesSystem.CustomTextbox();
+            this.txtWeight3 = new WashablesSystem.CustomTextbox();
+            this.txtWeight2 = new WashablesSystem.CustomTextbox();
+            this.btnService = new WashablesSystem.CustomTextbox();
             this.pickupDate = new WashablesSystem.CustomDatePicker();
             this.txtWeight = new WashablesSystem.CustomTextbox();
             this.quantity3 = new WashablesSystem.CustomTextbox();
@@ -83,9 +85,9 @@
             this.lblHeader.Location = new System.Drawing.Point(19, 18);
             this.lblHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(164, 21);
+            this.lblHeader.Size = new System.Drawing.Size(161, 21);
             this.lblHeader.TabIndex = 44;
-            this.lblHeader.Text = "Add Laundry Form";
+            this.lblHeader.Text = "Edit Laundry Form";
             // 
             // label1
             // 
@@ -338,22 +340,6 @@
             this.cbMachine.Size = new System.Drawing.Size(183, 25);
             this.cbMachine.TabIndex = 89;
             // 
-            // cbService
-            // 
-            this.cbService.BackColor = System.Drawing.SystemColors.Control;
-            this.cbService.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbService.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cbService.Font = new System.Drawing.Font("Berlin Sans FB", 11F);
-            this.cbService.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.cbService.FormattingEnabled = true;
-            this.cbService.Items.AddRange(new object[] {
-            "Wash-Dry-Fold (Clothes...)",
-            "Wash-Dry-Press (Clothes...)"});
-            this.cbService.Location = new System.Drawing.Point(34, 141);
-            this.cbService.Name = "cbService";
-            this.cbService.Size = new System.Drawing.Size(276, 25);
-            this.cbService.TabIndex = 90;
-            // 
             // cbCust
             // 
             this.cbCust.BackColor = System.Drawing.SystemColors.Control;
@@ -550,6 +536,70 @@
             this.customTextbox1.TabIndex = 38;
             this.customTextbox1.UnderlinedStyle = false;
             // 
+            // txtWeight3
+            // 
+            this.txtWeight3.BackColor = System.Drawing.Color.White;
+            this.txtWeight3.BorderColor = System.Drawing.Color.LightGray;
+            this.txtWeight3.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.txtWeight3.BorderRadius = 5;
+            this.txtWeight3.BorderSize = 1;
+            this.txtWeight3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtWeight3.ForeColor = System.Drawing.Color.Black;
+            this.txtWeight3.Location = new System.Drawing.Point(221, 258);
+            this.txtWeight3.Margin = new System.Windows.Forms.Padding(4);
+            this.txtWeight3.Multiline = false;
+            this.txtWeight3.Name = "txtWeight3";
+            this.txtWeight3.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
+            this.txtWeight3.PasswordChar = false;
+            this.txtWeight3.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtWeight3.PlaceholderText = "Service 3";
+            this.txtWeight3.Size = new System.Drawing.Size(89, 30);
+            this.txtWeight3.TabIndex = 100;
+            this.txtWeight3.UnderlinedStyle = false;
+            // 
+            // txtWeight2
+            // 
+            this.txtWeight2.BackColor = System.Drawing.Color.White;
+            this.txtWeight2.BorderColor = System.Drawing.Color.LightGray;
+            this.txtWeight2.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.txtWeight2.BorderRadius = 5;
+            this.txtWeight2.BorderSize = 1;
+            this.txtWeight2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtWeight2.ForeColor = System.Drawing.Color.Black;
+            this.txtWeight2.Location = new System.Drawing.Point(128, 258);
+            this.txtWeight2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtWeight2.Multiline = false;
+            this.txtWeight2.Name = "txtWeight2";
+            this.txtWeight2.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
+            this.txtWeight2.PasswordChar = false;
+            this.txtWeight2.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtWeight2.PlaceholderText = "Service 2";
+            this.txtWeight2.Size = new System.Drawing.Size(89, 30);
+            this.txtWeight2.TabIndex = 99;
+            this.txtWeight2.UnderlinedStyle = false;
+            // 
+            // btnService
+            // 
+            this.btnService.BackColor = System.Drawing.Color.White;
+            this.btnService.BorderColor = System.Drawing.Color.LightGray;
+            this.btnService.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnService.BorderRadius = 5;
+            this.btnService.BorderSize = 1;
+            this.btnService.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.btnService.ForeColor = System.Drawing.Color.Black;
+            this.btnService.Location = new System.Drawing.Point(34, 138);
+            this.btnService.Margin = new System.Windows.Forms.Padding(4);
+            this.btnService.Multiline = false;
+            this.btnService.Name = "btnService";
+            this.btnService.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
+            this.btnService.PasswordChar = false;
+            this.btnService.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.btnService.PlaceholderText = "";
+            this.btnService.Size = new System.Drawing.Size(276, 30);
+            this.btnService.TabIndex = 98;
+            this.btnService.UnderlinedStyle = false;
+            this.btnService.Click += new System.EventHandler(this.btnService_Click);
+            // 
             // pickupDate
             // 
             this.pickupDate.BorderColor = System.Drawing.Color.LightGray;
@@ -583,7 +633,7 @@
             this.txtWeight.PasswordChar = false;
             this.txtWeight.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtWeight.PlaceholderText = "";
-            this.txtWeight.Size = new System.Drawing.Size(279, 30);
+            this.txtWeight.Size = new System.Drawing.Size(89, 30);
             this.txtWeight.TabIndex = 60;
             this.txtWeight.UnderlinedStyle = false;
             // 
@@ -696,12 +746,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(654, 454);
+            this.Controls.Add(this.txtWeight3);
+            this.Controls.Add(this.txtWeight2);
+            this.Controls.Add(this.btnService);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cbItem3);
             this.Controls.Add(this.cbItem2);
             this.Controls.Add(this.cbItem1);
             this.Controls.Add(this.cbCust);
-            this.Controls.Add(this.cbService);
             this.Controls.Add(this.cbMachine);
             this.Controls.Add(this.lblMinutes);
             this.Controls.Add(this.lblHours);
@@ -770,7 +822,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbMachine;
-        private System.Windows.Forms.ComboBox cbService;
         private System.Windows.Forms.ComboBox cbCust;
         private System.Windows.Forms.ComboBox cbItem1;
         private System.Windows.Forms.ComboBox cbItem2;
@@ -783,5 +834,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private CustomTextbox customTextbox1;
+        private CustomTextbox btnService;
+        private CustomTextbox txtWeight2;
+        private CustomTextbox txtWeight3;
     }
 }

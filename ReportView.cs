@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Menu;
 
 namespace WashablesSystem
 {
@@ -20,6 +21,11 @@ namespace WashablesSystem
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ReportView_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

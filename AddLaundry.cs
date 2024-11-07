@@ -22,7 +22,7 @@ namespace WashablesSystem
             /// collect details
             string unit = cbMachine.Text;
             string custName = cbCust.Text;
-            string service = cbService.Text;
+            string service = btnService.Text;
             string weight = txtWeight.Text;
             string item1 = cbItem1.Text;
             string item2 = cbItem2.Text;
@@ -39,6 +39,12 @@ namespace WashablesSystem
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnService_Click(object sender, EventArgs e)
+        {
+            SelectServices select = new SelectServices(this);
+            select.ShowDialog();
         }
     }
 }

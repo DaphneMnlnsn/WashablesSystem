@@ -60,16 +60,16 @@
             this.cbSE.BackColor = System.Drawing.SystemColors.Control;
             this.cbSE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSE.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cbSE.Font = new System.Drawing.Font("Berlin Sans FB", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSE.Font = new System.Drawing.Font("Berlin Sans FB", 16F);
             this.cbSE.ForeColor = System.Drawing.SystemColors.MenuText;
             this.cbSE.FormattingEnabled = true;
             this.cbSE.Items.AddRange(new object[] {
             "WASH-DRY-FOLD",
             "WASH-DRY-PRESS",
             "ARCHIVE"});
-            this.cbSE.Location = new System.Drawing.Point(23, 60);
+            this.cbSE.Location = new System.Drawing.Point(23, 63);
             this.cbSE.Name = "cbSE";
-            this.cbSE.Size = new System.Drawing.Size(276, 38);
+            this.cbSE.Size = new System.Drawing.Size(276, 31);
             this.cbSE.TabIndex = 91;
             this.cbSE.SelectedIndexChanged += new System.EventHandler(this.cbSE_SelectedIndexChanged);
             // 
@@ -91,7 +91,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 360F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 261F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 198F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 199F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -110,7 +110,7 @@
             this.lblSE.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSE.AutoSize = true;
             this.lblSE.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSE.Location = new System.Drawing.Point(277, 9);
+            this.lblSE.Location = new System.Drawing.Point(276, 9);
             this.lblSE.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSE.Name = "lblSE";
             this.lblSE.Size = new System.Drawing.Size(58, 18);
@@ -123,7 +123,7 @@
             this.lblRS.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblRS.AutoSize = true;
             this.lblRS.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRS.Location = new System.Drawing.Point(586, 9);
+            this.lblRS.Location = new System.Drawing.Point(585, 9);
             this.lblRS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRS.Name = "lblRS";
             this.lblRS.Size = new System.Drawing.Size(62, 18);

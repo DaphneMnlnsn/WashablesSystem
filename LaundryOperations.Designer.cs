@@ -139,6 +139,7 @@
             this.laundryContainer.BackColor = System.Drawing.SystemColors.Control;
             this.laundryContainer.Location = new System.Drawing.Point(13, 51);
             this.laundryContainer.Name = "laundryContainer";
+            this.laundryContainer.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.laundryContainer.Size = new System.Drawing.Size(316, 459);
             this.laundryContainer.TabIndex = 13;
             // 

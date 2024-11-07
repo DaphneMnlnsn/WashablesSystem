@@ -25,7 +25,7 @@ namespace WashablesSystem
         {
             cbMachine.Text = "Washing Machine";
             pickupDate.Text = "10/16/2024";
-            cbService.SelectedIndex = 0;
+            btnService.Text = "Wash-Dry-Fold (Clothes, Table Napkin, Pillowcase)";
             cbCust.SelectedIndex = 1;
             txtWeight.Text = "5.00";
             cbItem1.SelectedIndex = 0;
@@ -34,6 +34,11 @@ namespace WashablesSystem
             quantity2.Text = "1mL";
             rb2hrs.Checked = true;
 
+        }
+        private void btnService_Click(object sender, EventArgs e)
+        {
+            SelectServices select = new SelectServices(this);
+            select.ShowDialog();
         }
     }
 }
