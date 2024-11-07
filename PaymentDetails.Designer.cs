@@ -138,7 +138,7 @@
             this.txtBoxReferenceNo.BorderSize = 1;
             this.txtBoxReferenceNo.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxReferenceNo.ForeColor = System.Drawing.Color.Black;
-            this.txtBoxReferenceNo.Location = new System.Drawing.Point(114, 305);
+            this.txtBoxReferenceNo.Location = new System.Drawing.Point(114, 300);
             this.txtBoxReferenceNo.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxReferenceNo.Multiline = false;
             this.txtBoxReferenceNo.Name = "txtBoxReferenceNo";
@@ -156,7 +156,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Berlin Sans FB", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(21, 309);
+            this.label9.Location = new System.Drawing.Point(21, 304);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(92, 16);
@@ -195,7 +195,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Berlin Sans FB", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(241, 240);
+            this.label7.Location = new System.Drawing.Point(241, 235);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(112, 16);
@@ -211,7 +211,7 @@
             this.txtBoxCharge.BorderSize = 1;
             this.txtBoxCharge.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxCharge.ForeColor = System.Drawing.Color.Black;
-            this.txtBoxCharge.Location = new System.Drawing.Point(244, 270);
+            this.txtBoxCharge.Location = new System.Drawing.Point(244, 265);
             this.txtBoxCharge.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxCharge.Multiline = false;
             this.txtBoxCharge.Name = "txtBoxCharge";
@@ -228,7 +228,7 @@
             this.groupBox1.Controls.Add(this.radioBtnGcash);
             this.groupBox1.Controls.Add(this.radioBtnCash);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(23, 256);
+            this.groupBox1.Location = new System.Drawing.Point(23, 251);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -266,7 +266,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(21, 238);
+            this.label6.Location = new System.Drawing.Point(21, 233);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(122, 18);

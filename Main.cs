@@ -49,7 +49,7 @@ namespace WashablesSystem
 
         private void btnSchedule_Click(object sender, EventArgs e)
         {
-            loadForm(new Schedule(this));
+            loadForm(new Schedule(this, "In Progress"));
         }
 
         private void btnSAndE_Click(object sender, EventArgs e)

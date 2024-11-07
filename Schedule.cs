@@ -12,7 +12,8 @@ namespace WashablesSystem
 {
     public partial class Schedule : Form
     {
-        public Schedule(Main parentForm)
+        string openedForm = "In Progress";
+        public Schedule(Main parentForm, string openedForm)
         {
             InitializeComponent();
             if (parentForm != null)
@@ -20,10 +21,20 @@ namespace WashablesSystem
                 parentForm.Header = "Schedule";
                 string text = parentForm.Header;
             }
+
+            this.openedForm = openedForm;
         }
         private void Customers_Load(object sender, EventArgs e)
         {
-            loadForm(new InProgressSched());
+            if (openedForm.Equals("Finished"))
+            {
+                btnFinished_Click(sender, e);
+            }
+            else
+            {
+                loadForm(new InProgressSched());
+            }
+            
         }
         private void loadForm(Form m)
         {
