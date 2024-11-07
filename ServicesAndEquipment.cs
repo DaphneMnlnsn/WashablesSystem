@@ -124,7 +124,7 @@ namespace WashablesSystem
                         containerSE.Controls.Add(Erow1);
 
                         ServiceEquipmentList Erow2 = new ServiceEquipmentList();
-                        Erow2.setRowInfo("WMU3", "Unit II", "Available", "Edit", edit);
+                        Erow2.setRowInfo("WMU2", "Unit II", "Available", "Edit", edit);
                         containerSE.Controls.Add(Erow2);
 
                         ServiceEquipmentList Erow3 = new ServiceEquipmentList();
@@ -141,7 +141,7 @@ namespace WashablesSystem
                         containerSE.Controls.Add(Erow2);
 
                         Erow3 = new ServiceEquipmentList();
-                        Erow3.setRowInfo("DRU2", "Unit III", "Available", "Edit", edit);
+                        Erow3.setRowInfo("DRU3", "Unit III", "Available", "Edit", edit);
                         containerSE.Controls.Add(Erow3);
                         break;
                     case "IRON":
