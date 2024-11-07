@@ -36,21 +36,20 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Location = new System.Drawing.Point(8, 33);
-            this.reportViewer1.Margin = new System.Windows.Forms.Padding(2);
+            this.reportViewer1.Location = new System.Drawing.Point(12, 51);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(639, 373);
+            this.reportViewer1.Size = new System.Drawing.Size(958, 573);
             this.reportViewer1.TabIndex = 0;
             // 
             // btnClose
             // 
             this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnClose.Image = global::WashablesSystem.Properties.Resources.Close;
-            this.btnClose.Location = new System.Drawing.Point(626, 6);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 7, 2);
+            this.btnClose.Location = new System.Drawing.Point(939, 9);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(21, 21);
+            this.btnClose.Size = new System.Drawing.Size(32, 32);
             this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnClose.TabIndex = 55;
             this.btnClose.TabStop = false;
@@ -62,27 +61,24 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(4, 6);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(6, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 25);
+            this.label3.Size = new System.Drawing.Size(103, 38);
             this.label3.TabIndex = 56;
             this.label3.Text = "Report";
             // 
             // ReportView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 413);
+            this.ClientSize = new System.Drawing.Size(981, 635);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.reportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ReportView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report";
-            this.Load += new System.EventHandler(this.ReportView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

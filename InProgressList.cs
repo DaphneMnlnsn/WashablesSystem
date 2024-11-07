@@ -35,5 +35,19 @@ namespace WashablesSystem
             btnCancel.Image = CancelImage;
 
         }
+
+        private void btnPause_Click(object sender, EventArgs e)
+        {
+            if (lblStatus.Text.Equals("Playing"))
+            {
+                btnPause.Image = WashablesSystem.Properties.Resources.Play;
+                lblStatus.Text = "Paused";
+            }
+            else
+            {
+                btnPause.Image = WashablesSystem.Properties.Resources.Pause;
+                lblStatus.Text = "Playing";
+            }
+        }
     }
 }

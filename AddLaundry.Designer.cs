@@ -443,7 +443,6 @@
             this.txtBoxSearch.PlaceholderText = "";
             this.txtBoxSearch.Size = new System.Drawing.Size(147, 26);
             this.txtBoxSearch.TabIndex = 38;
-            this.txtBoxSearch.Text = "";
             this.txtBoxSearch.UnderlinedStyle = false;
             // 
             // groupBox2
@@ -535,7 +534,6 @@
             this.customTextbox1.PlaceholderText = "";
             this.customTextbox1.Size = new System.Drawing.Size(147, 26);
             this.customTextbox1.TabIndex = 38;
-            this.customTextbox1.Text = "";
             this.customTextbox1.UnderlinedStyle = false;
             // 
             // pickupDate
@@ -545,6 +543,7 @@
             this.pickupDate.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.pickupDate.CalendarTitleBackColor = System.Drawing.SystemColors.Control;
             this.pickupDate.Font = new System.Drawing.Font("Berlin Sans FB", 11F);
+            this.pickupDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.pickupDate.Location = new System.Drawing.Point(367, 83);
             this.pickupDate.MinimumSize = new System.Drawing.Size(4, 35);
             this.pickupDate.Name = "pickupDate";
@@ -573,7 +572,6 @@
             this.txtWeight.PlaceholderText = "Service 1";
             this.txtWeight.Size = new System.Drawing.Size(89, 30);
             this.txtWeight.TabIndex = 60;
-            this.txtWeight.Text = "";
             this.txtWeight.UnderlinedStyle = false;
             // 
             // quantity3
@@ -595,7 +593,6 @@
             this.quantity3.PlaceholderText = "";
             this.quantity3.Size = new System.Drawing.Size(72, 30);
             this.quantity3.TabIndex = 51;
-            this.quantity3.Text = "";
             this.quantity3.UnderlinedStyle = false;
             // 
             // quantity2
@@ -617,7 +614,6 @@
             this.quantity2.PlaceholderText = "";
             this.quantity2.Size = new System.Drawing.Size(72, 30);
             this.quantity2.TabIndex = 50;
-            this.quantity2.Text = "";
             this.quantity2.UnderlinedStyle = false;
             // 
             // btnCancel
@@ -681,7 +677,6 @@
             this.quantity1.PlaceholderText = "";
             this.quantity1.Size = new System.Drawing.Size(72, 30);
             this.quantity1.TabIndex = 41;
-            this.quantity1.Text = "";
             this.quantity1.UnderlinedStyle = false;
             // 
             // btnService
@@ -703,7 +698,6 @@
             this.btnService.PlaceholderText = "";
             this.btnService.Size = new System.Drawing.Size(276, 30);
             this.btnService.TabIndex = 98;
-            this.btnService.Text = "";
             this.btnService.UnderlinedStyle = false;
             this.btnService.Click += new System.EventHandler(this.btnService_Click);
             // 
@@ -726,7 +720,6 @@
             this.txtWeight2.PlaceholderText = "Service 2";
             this.txtWeight2.Size = new System.Drawing.Size(89, 30);
             this.txtWeight2.TabIndex = 99;
-            this.txtWeight2.Text = "";
             this.txtWeight2.UnderlinedStyle = false;
             // 
             // txtWeight3
@@ -748,7 +741,6 @@
             this.txtWeight3.PlaceholderText = "Service 3";
             this.txtWeight3.Size = new System.Drawing.Size(89, 30);
             this.txtWeight3.TabIndex = 100;
-            this.txtWeight3.Text = "";
             this.txtWeight3.UnderlinedStyle = false;
             // 
             // AddLaundry

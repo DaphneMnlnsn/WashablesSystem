@@ -40,6 +40,7 @@
             this.Services = new System.Windows.Forms.Label();
             this.UnitUsed = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPause)).BeginInit();
@@ -179,6 +180,7 @@
             this.btnPause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnPause.TabIndex = 85;
             this.btnPause.TabStop = false;
+            this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
             // 
             // Services
             // 
@@ -219,11 +221,26 @@
             this.label1.Text = "_________________________________________________________________________________" +
     "___________________________________________________________________________";
             // 
+            // lblStatus
+            // 
+            this.lblStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 2F, System.Drawing.FontStyle.Bold);
+            this.lblStatus.Location = new System.Drawing.Point(925, 98);
+            this.lblStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(14, 4);
+            this.lblStatus.TabIndex = 96;
+            this.lblStatus.Text = "Playing";
+            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblStatus.Visible = false;
+            // 
             // InProgressList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -251,5 +268,6 @@
         private System.Windows.Forms.Label CustomerName;
         private System.Windows.Forms.PictureBox btnCancel;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblStatus;
     }
 }

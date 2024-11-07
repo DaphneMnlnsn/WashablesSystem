@@ -50,7 +50,7 @@ namespace WashablesSystem
             /// add in-progress Laundry orders
             laundryContainer.Controls.Clear();
             InProgLaundryList inProgress = new InProgLaundryList();
-            inProgress.setStatus("Unit I", "Kiana Martin", "Wash (Clothes...)", "29 minutes");
+            inProgress.setStatus("Unit III", "Kiana Martin", "Wash (Clothes...)", "29 minutes");
             laundryContainer.Controls.Add(inProgress);
 
         }
@@ -74,7 +74,7 @@ namespace WashablesSystem
             cbSort.Hide();
             laundryContainer.Padding = new Padding(0, 10, 0, 0);
             InProgLaundryList inProgress = new InProgLaundryList();
-            inProgress.setStatus("Unit I", "Kiana Martin", "Wash (Clothes...)", "29 minutes");
+            inProgress.setStatus("Unit III", "Kiana Martin", "Wash (Clothes...)", "29 minutes");
             laundryContainer.Controls.Add(inProgress);
 
         }

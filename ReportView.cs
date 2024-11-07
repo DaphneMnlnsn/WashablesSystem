@@ -22,10 +22,5 @@ namespace WashablesSystem
         {
             this.Close();
         }
-
-        private void ReportView_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

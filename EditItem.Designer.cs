@@ -148,9 +148,9 @@
             this.label4.Location = new System.Drawing.Point(21, 208);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(161, 18);
+            this.label4.Size = new System.Drawing.Size(157, 18);
             this.label4.TabIndex = 208;
-            this.label4.Text = "Price per kilogram (kg)";
+            this.label4.Text = "Price per kilogram/liter";
             // 
             // label3
             // 

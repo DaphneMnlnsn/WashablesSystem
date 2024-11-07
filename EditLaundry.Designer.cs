@@ -607,6 +607,7 @@
             this.pickupDate.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.pickupDate.CalendarTitleBackColor = System.Drawing.SystemColors.Control;
             this.pickupDate.Font = new System.Drawing.Font("Berlin Sans FB", 11F);
+            this.pickupDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.pickupDate.Location = new System.Drawing.Point(367, 83);
             this.pickupDate.MinimumSize = new System.Drawing.Size(4, 35);
             this.pickupDate.Name = "pickupDate";

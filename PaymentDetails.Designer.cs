@@ -32,12 +32,6 @@
             this.txtBoxDPChange = new WashablesSystem.CustomTextbox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtBoxDPReceived = new WashablesSystem.CustomTextbox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtBoxChange = new WashablesSystem.CustomTextbox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtBoxPaymentReceived = new WashablesSystem.CustomTextbox();
             this.txtBoxReferenceNo = new WashablesSystem.CustomTextbox();
             this.label9 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -60,7 +54,11 @@
             this.txtBoxWeight = new WashablesSystem.CustomTextbox();
             this.txtBoxName = new WashablesSystem.CustomTextbox();
             this.txtBoxService = new WashablesSystem.CustomTextbox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label14
@@ -69,7 +67,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Berlin Sans FB", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(342, 378);
+            this.label14.Location = new System.Drawing.Point(292, 367);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(52, 16);
@@ -85,7 +83,7 @@
             this.txtBoxDPChange.BorderSize = 1;
             this.txtBoxDPChange.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxDPChange.ForeColor = System.Drawing.Color.Black;
-            this.txtBoxDPChange.Location = new System.Drawing.Point(339, 397);
+            this.txtBoxDPChange.Location = new System.Drawing.Point(289, 386);
             this.txtBoxDPChange.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxDPChange.Multiline = false;
             this.txtBoxDPChange.Name = "txtBoxDPChange";
@@ -103,7 +101,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Berlin Sans FB", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(252, 378);
+            this.label15.Location = new System.Drawing.Point(202, 367);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(58, 16);
@@ -119,7 +117,7 @@
             this.txtBoxDPReceived.BorderSize = 1;
             this.txtBoxDPReceived.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxDPReceived.ForeColor = System.Drawing.Color.Black;
-            this.txtBoxDPReceived.Location = new System.Drawing.Point(243, 397);
+            this.txtBoxDPReceived.Location = new System.Drawing.Point(193, 386);
             this.txtBoxDPReceived.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxDPReceived.Multiline = false;
             this.txtBoxDPReceived.Name = "txtBoxDPReceived";
@@ -130,100 +128,6 @@
             this.txtBoxDPReceived.Size = new System.Drawing.Size(81, 26);
             this.txtBoxDPReceived.TabIndex = 204;
             this.txtBoxDPReceived.UnderlinedStyle = false;
-            // 
-            // label13
-            // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(243, 354);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(117, 18);
-            this.label13.TabIndex = 203;
-            this.label13.Text = "Down Payment:";
-            // 
-            // label12
-            // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(20, 354);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(100, 18);
-            this.label12.TabIndex = 202;
-            this.label12.Text = "Full Payment:";
-            // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Berlin Sans FB", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(119, 378);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(52, 16);
-            this.label11.TabIndex = 200;
-            this.label11.Text = "Change";
-            // 
-            // txtBoxChange
-            // 
-            this.txtBoxChange.BackColor = System.Drawing.Color.White;
-            this.txtBoxChange.BorderColor = System.Drawing.Color.Silver;
-            this.txtBoxChange.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.txtBoxChange.BorderRadius = 5;
-            this.txtBoxChange.BorderSize = 1;
-            this.txtBoxChange.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxChange.ForeColor = System.Drawing.Color.Black;
-            this.txtBoxChange.Location = new System.Drawing.Point(116, 397);
-            this.txtBoxChange.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBoxChange.Multiline = false;
-            this.txtBoxChange.Name = "txtBoxChange";
-            this.txtBoxChange.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
-            this.txtBoxChange.PasswordChar = false;
-            this.txtBoxChange.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtBoxChange.PlaceholderText = "";
-            this.txtBoxChange.Size = new System.Drawing.Size(65, 26);
-            this.txtBoxChange.TabIndex = 199;
-            this.txtBoxChange.UnderlinedStyle = false;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Berlin Sans FB", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(25, 378);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(58, 16);
-            this.label10.TabIndex = 198;
-            this.label10.Text = "Received";
-            // 
-            // txtBoxPaymentReceived
-            // 
-            this.txtBoxPaymentReceived.BackColor = System.Drawing.Color.White;
-            this.txtBoxPaymentReceived.BorderColor = System.Drawing.Color.Silver;
-            this.txtBoxPaymentReceived.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.txtBoxPaymentReceived.BorderRadius = 5;
-            this.txtBoxPaymentReceived.BorderSize = 1;
-            this.txtBoxPaymentReceived.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPaymentReceived.ForeColor = System.Drawing.Color.Black;
-            this.txtBoxPaymentReceived.Location = new System.Drawing.Point(23, 397);
-            this.txtBoxPaymentReceived.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBoxPaymentReceived.Multiline = false;
-            this.txtBoxPaymentReceived.Name = "txtBoxPaymentReceived";
-            this.txtBoxPaymentReceived.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
-            this.txtBoxPaymentReceived.PasswordChar = false;
-            this.txtBoxPaymentReceived.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtBoxPaymentReceived.PlaceholderText = "";
-            this.txtBoxPaymentReceived.Size = new System.Drawing.Size(81, 26);
-            this.txtBoxPaymentReceived.TabIndex = 197;
-            this.txtBoxPaymentReceived.UnderlinedStyle = false;
             // 
             // txtBoxReferenceNo
             // 
@@ -473,7 +377,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(221, 485);
+            this.btnCancel.Location = new System.Drawing.Point(215, 485);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(103, 31);
@@ -494,7 +398,7 @@
             this.btnProceed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProceed.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProceed.ForeColor = System.Drawing.Color.White;
-            this.btnProceed.Location = new System.Drawing.Point(111, 485);
+            this.btnProceed.Location = new System.Drawing.Point(105, 485);
             this.btnProceed.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnProceed.Name = "btnProceed";
             this.btnProceed.Size = new System.Drawing.Size(106, 31);
@@ -568,22 +472,56 @@
             this.txtBoxService.TabIndex = 208;
             this.txtBoxService.UnderlinedStyle = false;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.radioButton1);
+            this.groupBox2.Controls.Add(this.radioButton2);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(24, 336);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.groupBox2.Size = new System.Drawing.Size(154, 87);
+            this.groupBox2.TabIndex = 191;
+            this.groupBox2.TabStop = false;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(6, 52);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(131, 24);
+            this.radioButton1.TabIndex = 1;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Down Payment";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Location = new System.Drawing.Point(6, 20);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(116, 24);
+            this.radioButton2.TabIndex = 0;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Full Payment";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
             // PaymentDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(430, 535);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.txtBoxService);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txtBoxDPChange);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.txtBoxDPReceived);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.txtBoxChange);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.txtBoxPaymentReceived);
             this.Controls.Add(this.txtBoxReferenceNo);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.lblTotal);
@@ -610,6 +548,8 @@
             this.Load += new System.EventHandler(this.PaymentDetails_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -621,12 +561,6 @@
         private CustomTextbox txtBoxDPChange;
         private System.Windows.Forms.Label label15;
         private CustomTextbox txtBoxDPReceived;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private CustomTextbox txtBoxChange;
-        private System.Windows.Forms.Label label10;
-        private CustomTextbox txtBoxPaymentReceived;
         private CustomTextbox txtBoxReferenceNo;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblTotal;
@@ -649,5 +583,8 @@
         private CustomTextbox txtBoxWeight;
         private CustomTextbox txtBoxName;
         private CustomTextbox txtBoxService;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
     }
 }
