@@ -66,7 +66,7 @@
             // notifPanel
             // 
             this.notifPanel.Location = new System.Drawing.Point(3, 36);
-            this.notifPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.notifPanel.Margin = new System.Windows.Forms.Padding(2);
             this.notifPanel.MaximumSize = new System.Drawing.Size(349, 422);
             this.notifPanel.Name = "notifPanel";
             this.notifPanel.Size = new System.Drawing.Size(345, 335);
@@ -94,7 +94,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSeeAll);
             this.Controls.Add(this.notifPanel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(349, 400);
             this.Name = "NotifOverlay";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 6);

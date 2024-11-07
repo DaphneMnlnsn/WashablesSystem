@@ -531,6 +531,7 @@
             this.txtBoxName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.txtBoxName.BorderRadius = 5;
             this.txtBoxName.BorderSize = 1;
+            this.txtBoxName.Enabled = false;
             this.txtBoxName.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxName.ForeColor = System.Drawing.Color.Black;
             this.txtBoxName.Location = new System.Drawing.Point(18, 74);
@@ -552,6 +553,7 @@
             this.txtBoxService.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.txtBoxService.BorderRadius = 5;
             this.txtBoxService.BorderSize = 1;
+            this.txtBoxService.Enabled = false;
             this.txtBoxService.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxService.ForeColor = System.Drawing.Color.Black;
             this.txtBoxService.Location = new System.Drawing.Point(18, 129);

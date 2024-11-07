@@ -21,6 +21,8 @@ namespace WashablesSystem
 
         private void btnSeeAll_Click(object sender, EventArgs e)
         {
+            PictureBox btn = (PictureBox)parentForm.FindForm().Controls.Find("btnNotif", true)[0];
+            btn.Enabled = true;
             loadForm(new Notifications(parentForm));
         }
         private void loadForm(Form m)
@@ -48,6 +50,8 @@ namespace WashablesSystem
         {
             if (e.Button == MouseButtons.Left && this.Visible == true)
                 this.Dispose();
+                PictureBox btn = (PictureBox)parentForm.FindForm().Controls.Find("btnNotif", true)[0];
+                btn.Enabled = true;
         }
 
         private void NotifOverlay_Load(object sender, EventArgs e)

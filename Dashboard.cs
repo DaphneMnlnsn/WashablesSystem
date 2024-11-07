@@ -108,5 +108,11 @@ namespace WashablesSystem
             panelTab.Tag = m;
             m.Show();
         }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            ReportView reportView = new ReportView();
+            reportView.ShowDialog();
+        }
     }
 }

@@ -31,5 +31,11 @@ namespace WashablesSystem
             activity3.setActivityLog("Roxanne Rose", "10/12/2024 7:30PM", "scheduled laundry OR2345");
             activityContainer.Controls.Add(activity3);
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            ReportView reportView = new ReportView();
+            reportView.ShowDialog();
+        }
     }
 }
