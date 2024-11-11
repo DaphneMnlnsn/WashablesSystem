@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label6 = new System.Windows.Forms.Label();
-            this.txtBoxMin = new WashablesSystem.CustomTextbox();
+            this.textBox = new WashablesSystem.CustomTextbox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cbService = new System.Windows.Forms.ComboBox();
@@ -42,6 +42,8 @@
             this.btnAdd = new WashablesSystem.CustomButton();
             this.txtBoxRate = new WashablesSystem.CustomTextbox();
             this.txtBoxName = new WashablesSystem.CustomTextbox();
+            this.txtBoxMin = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBoxMin)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -58,26 +60,26 @@
             this.label6.TabIndex = 235;
             this.label6.Text = "kgs";
             // 
-            // txtBoxMin
+            // textBox
             // 
-            this.txtBoxMin.BackColor = System.Drawing.Color.White;
-            this.txtBoxMin.BorderColor = System.Drawing.Color.Silver;
-            this.txtBoxMin.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.txtBoxMin.BorderRadius = 5;
-            this.txtBoxMin.BorderSize = 1;
-            this.txtBoxMin.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.txtBoxMin.ForeColor = System.Drawing.Color.Black;
-            this.txtBoxMin.Location = new System.Drawing.Point(215, 231);
-            this.txtBoxMin.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBoxMin.Multiline = false;
-            this.txtBoxMin.Name = "txtBoxMin";
-            this.txtBoxMin.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
-            this.txtBoxMin.PasswordChar = false;
-            this.txtBoxMin.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtBoxMin.PlaceholderText = "";
-            this.txtBoxMin.Size = new System.Drawing.Size(111, 30);
-            this.txtBoxMin.TabIndex = 234;
-            this.txtBoxMin.UnderlinedStyle = false;
+            this.textBox.BackColor = System.Drawing.Color.White;
+            this.textBox.BorderColor = System.Drawing.Color.Silver;
+            this.textBox.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.textBox.BorderRadius = 5;
+            this.textBox.BorderSize = 1;
+            this.textBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.textBox.ForeColor = System.Drawing.Color.Black;
+            this.textBox.Location = new System.Drawing.Point(215, 231);
+            this.textBox.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox.Multiline = false;
+            this.textBox.Name = "textBox";
+            this.textBox.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
+            this.textBox.PasswordChar = false;
+            this.textBox.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.textBox.PlaceholderText = "";
+            this.textBox.Size = new System.Drawing.Size(111, 30);
+            this.textBox.TabIndex = 234;
+            this.textBox.UnderlinedStyle = false;
             // 
             // label5
             // 
@@ -270,13 +272,28 @@
             this.txtBoxName.TabIndex = 222;
             this.txtBoxName.UnderlinedStyle = false;
             // 
+            // txtBoxMin
+            // 
+            this.txtBoxMin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxMin.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtBoxMin.Location = new System.Drawing.Point(219, 236);
+            this.txtBoxMin.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.txtBoxMin.Name = "txtBoxMin";
+            this.txtBoxMin.Size = new System.Drawing.Size(75, 21);
+            this.txtBoxMin.TabIndex = 236;
+            // 
             // AddService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(363, 349);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.txtBoxMin);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.textBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbService);
@@ -293,6 +310,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddService";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            ((System.ComponentModel.ISupportInitialize)(this.txtBoxMin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,7 +319,7 @@
         #endregion
 
         private System.Windows.Forms.Label label6;
-        private CustomTextbox txtBoxMin;
+        private CustomTextbox textBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbService;
@@ -314,5 +332,6 @@
         private CustomButton btnAdd;
         private CustomTextbox txtBoxRate;
         private CustomTextbox txtBoxName;
+        private System.Windows.Forms.NumericUpDown txtBoxMin;
     }
 }

@@ -17,6 +17,13 @@ namespace WashablesSystem
             InitializeComponent();
         }
 
+        public AddLaundry(string machineSelected, string unitSelected)
+        {
+            InitializeComponent();
+            cbMachine.Text = machineSelected;
+            cbUnit.Text = unitSelected;
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             /// collect details

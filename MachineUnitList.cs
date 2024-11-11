@@ -17,12 +17,13 @@ namespace WashablesSystem
         {
             InitializeComponent();
         }
-        public void setMachineInfo(string unitName, string availability, Image picture)
+        public void setMachineInfo(string unitName, string availability, string machine, Image picture)
         {
             //Displaying machine info
             lblUnit.Text = unitName;
             btnAvailability.Text = availability;
             unitPicture.Image = picture;
+            machineType.Text = machine;
 
             if (availability.Equals("Available"))
             {
@@ -37,6 +38,12 @@ namespace WashablesSystem
                 btnAvailability.BackColor = Color.FromArgb(217, 217, 217);
             }
 
+        }
+
+        private void btnAvailability_Click(object sender, EventArgs e)
+        {
+            AddLaundry addLaundry = new AddLaundry(machineType.Text, lblUnit.Text);
+            addLaundry.ShowDialog();
         }
     }
 }

@@ -39,8 +39,9 @@
             this.btnCancel = new WashablesSystem.CustomButton();
             this.btnAdd = new WashablesSystem.CustomButton();
             this.txtBoxPrice = new WashablesSystem.CustomTextbox();
-            this.txtBoxQuantity = new WashablesSystem.CustomTextbox();
             this.txtBoxName = new WashablesSystem.CustomTextbox();
+            this.txtBoxQuantity = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBoxQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPrice
@@ -147,7 +148,7 @@
             this.unitQuantity.Location = new System.Drawing.Point(214, 231);
             this.unitQuantity.Margin = new System.Windows.Forms.Padding(2);
             this.unitQuantity.Name = "unitQuantity";
-            this.unitQuantity.Size = new System.Drawing.Size(118, 28);
+            this.unitQuantity.Size = new System.Drawing.Size(113, 28);
             this.unitQuantity.TabIndex = 203;
             this.unitQuantity.SelectionChangeCommitted += new System.EventHandler(this.unitQuantity_SelectionChangeCommitted);
             this.unitQuantity.Click += new System.EventHandler(this.unitQuantity_Click);
@@ -214,27 +215,6 @@
             this.txtBoxPrice.TabIndex = 29;
             this.txtBoxPrice.UnderlinedStyle = false;
             // 
-            // txtBoxQuantity
-            // 
-            this.txtBoxQuantity.BackColor = System.Drawing.Color.White;
-            this.txtBoxQuantity.BorderColor = System.Drawing.Color.Silver;
-            this.txtBoxQuantity.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.txtBoxQuantity.BorderRadius = 5;
-            this.txtBoxQuantity.BorderSize = 1;
-            this.txtBoxQuantity.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxQuantity.ForeColor = System.Drawing.Color.Black;
-            this.txtBoxQuantity.Location = new System.Drawing.Point(20, 231);
-            this.txtBoxQuantity.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBoxQuantity.Multiline = false;
-            this.txtBoxQuantity.Name = "txtBoxQuantity";
-            this.txtBoxQuantity.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
-            this.txtBoxQuantity.PasswordChar = false;
-            this.txtBoxQuantity.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtBoxQuantity.PlaceholderText = "";
-            this.txtBoxQuantity.Size = new System.Drawing.Size(188, 26);
-            this.txtBoxQuantity.TabIndex = 27;
-            this.txtBoxQuantity.UnderlinedStyle = false;
-            // 
             // txtBoxName
             // 
             this.txtBoxName.BackColor = System.Drawing.Color.White;
@@ -256,11 +236,26 @@
             this.txtBoxName.TabIndex = 23;
             this.txtBoxName.UnderlinedStyle = false;
             // 
+            // txtBoxQuantity
+            // 
+            this.txtBoxQuantity.DecimalPlaces = 2;
+            this.txtBoxQuantity.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtBoxQuantity.Location = new System.Drawing.Point(22, 233);
+            this.txtBoxQuantity.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.txtBoxQuantity.Name = "txtBoxQuantity";
+            this.txtBoxQuantity.Size = new System.Drawing.Size(187, 25);
+            this.txtBoxQuantity.TabIndex = 204;
+            // 
             // AddItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(363, 413);
+            this.Controls.Add(this.txtBoxQuantity);
             this.Controls.Add(this.unitQuantity);
             this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.lblPrice);
@@ -272,12 +267,12 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtBoxPrice);
-            this.Controls.Add(this.txtBoxQuantity);
             this.Controls.Add(this.txtBoxName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            ((System.ComponentModel.ISupportInitialize)(this.txtBoxQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,7 +280,6 @@
 
         #endregion
         private CustomTextbox txtBoxName;
-        private CustomTextbox txtBoxQuantity;
         private CustomTextbox txtBoxPrice;
         private CustomButton btnAdd;
         private CustomButton btnCancel;
@@ -297,5 +291,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.ComboBox unitQuantity;
+        private System.Windows.Forms.NumericUpDown txtBoxQuantity;
     }
 }

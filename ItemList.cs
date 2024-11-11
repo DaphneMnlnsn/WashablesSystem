@@ -52,5 +52,11 @@ namespace WashablesSystem
             RestockItem restockItem = new RestockItem();
             restockItem.ShowDialog();
         }
+
+        private void tableLayoutPanel2_Click(object sender, EventArgs e)
+        {
+            ItemHistory itemHistory = new ItemHistory();
+            itemHistory.ShowDialog();
+        }
     }
 }

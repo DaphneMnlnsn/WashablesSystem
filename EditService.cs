@@ -26,7 +26,7 @@ namespace WashablesSystem
             cbService.SelectedIndex = 0;
             txtBoxName.Text = "Curtains, Pillows";
             txtBoxRate.Text = "70.00";
-            txtBoxMin.Text = "3";
+            txtBoxMin.Value = 3;
         }
     }
 }

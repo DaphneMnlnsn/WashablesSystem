@@ -17,6 +17,13 @@ namespace WashablesSystem
             InitializeComponent();
         }
 
+        public PendingPayments(string ORNum)
+        {
+            InitializeComponent();
+            PaymentDetails paymentDetails = new PaymentDetails(ORNum);
+            paymentDetails.ShowDialog();
+        }
+
         private void PendingPayments_Load(object sender, EventArgs e)
         {
             PendingPaymentList pending1 = new PendingPaymentList();

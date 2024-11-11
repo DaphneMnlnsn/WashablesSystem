@@ -197,13 +197,13 @@
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(0, 71);
+            this.label1.Location = new System.Drawing.Point(0, 72);
             this.label1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(943, 13);
+            this.label1.Size = new System.Drawing.Size(937, 13);
             this.label1.TabIndex = 96;
             this.label1.Text = "_________________________________________________________________________________" +
-    "___________________________________________________________________________";
+    "__________________________________________________________________________";
             // 
             // FinishedList
             // 
@@ -213,7 +213,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FinishedList";
-            this.Size = new System.Drawing.Size(940, 97);
+            this.Size = new System.Drawing.Size(941, 85);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBill)).EndInit();

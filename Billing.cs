@@ -18,6 +18,13 @@ namespace WashablesSystem
             parentForm.Header = "Billing";
         }
 
+        public Billing(Main parentForm, string ORNum)
+        {
+            InitializeComponent();
+            parentForm.Header = "Billing";
+            loadForm(new PendingPayments(ORNum));
+        }
+
         private void Customers_Load(object sender, EventArgs e)
         {
             loadForm(new PendingPayments());

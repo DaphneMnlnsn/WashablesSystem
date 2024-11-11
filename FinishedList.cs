@@ -40,8 +40,7 @@ namespace WashablesSystem
             Form parentForm = this.FindForm();
             grandparentForm = parentForm?.ParentForm;
             greatgrandparentForm = grandparentForm?.ParentForm;
-            loadForm(new Billing(new Main()));
-            
+            loadForm(new Billing(new Main(), ORNo.Text));
         }
         private void loadForm(Form m)
         {

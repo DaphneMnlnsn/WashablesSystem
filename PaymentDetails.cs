@@ -12,9 +12,15 @@ namespace WashablesSystem
 {
     public partial class PaymentDetails : Form
     {
+        string payingORNum = "";
         public PaymentDetails()
         {
             InitializeComponent();
+        }
+        public PaymentDetails(string ORNum)
+        {
+            InitializeComponent();
+            payingORNum = ORNum;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -24,7 +30,14 @@ namespace WashablesSystem
 
         private void PaymentDetails_Load(object sender, EventArgs e)
         {
-            txtBoxName.Text = "Daphne Manalansan";
+            if (payingORNum.Equals("OR1033"))
+            {
+                txtBoxName.Text = "Amiah Velasco";
+            }
+            else
+            {
+                txtBoxName.Text = "Daphne Manalansan";
+            }
             txtBoxService.Text = "Wash-Dry-Fold (Clothes, Pillowcase...)";
             txtBoxWeight.Text = "5.00";
             lblTotal.Text = "140.00";

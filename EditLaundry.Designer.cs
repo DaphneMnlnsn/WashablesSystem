@@ -35,10 +35,7 @@
             this.lblItemTitle = new System.Windows.Forms.Label();
             this.lblCust = new System.Windows.Forms.Label();
             this.lblService = new System.Windows.Forms.Label();
-            this.lblUnit = new System.Windows.Forms.Label();
             this.lblItemName = new System.Windows.Forms.Label();
-            this.lblPriority = new System.Windows.Forms.Label();
-            this.priorityCheckBox = new System.Windows.Forms.CheckBox();
             this.lvlPickup = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblHours = new System.Windows.Forms.Label();
@@ -48,32 +45,45 @@
             this.rbCustomHour = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbMachine = new System.Windows.Forms.ComboBox();
             this.cbCust = new System.Windows.Forms.ComboBox();
             this.cbItem1 = new System.Windows.Forms.ComboBox();
             this.cbItem2 = new System.Windows.Forms.ComboBox();
             this.cbItem3 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtBoxSearch = new WashablesSystem.CustomTextbox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rb1min = new System.Windows.Forms.RadioButton();
             this.rb3min = new System.Windows.Forms.RadioButton();
             this.rbCustomMin = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.customTextbox1 = new WashablesSystem.CustomTextbox();
-            this.txtWeight3 = new WashablesSystem.CustomTextbox();
-            this.txtWeight2 = new WashablesSystem.CustomTextbox();
             this.btnService = new WashablesSystem.CustomTextbox();
             this.pickupDate = new WashablesSystem.CustomDatePicker();
-            this.txtWeight = new WashablesSystem.CustomTextbox();
-            this.quantity3 = new WashablesSystem.CustomTextbox();
-            this.quantity2 = new WashablesSystem.CustomTextbox();
             this.btnCancel = new WashablesSystem.CustomButton();
             this.btnAdd = new WashablesSystem.CustomButton();
-            this.quantity1 = new WashablesSystem.CustomTextbox();
+            this.cbUnit = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbMachine = new System.Windows.Forms.ComboBox();
+            this.priorityCheckBox = new System.Windows.Forms.CheckBox();
+            this.lblPriority = new System.Windows.Forms.Label();
+            this.lblUnit = new System.Windows.Forms.Label();
+            this.quantity3 = new System.Windows.Forms.NumericUpDown();
+            this.quantity2 = new System.Windows.Forms.NumericUpDown();
+            this.quantity1 = new System.Windows.Forms.NumericUpDown();
+            this.txtWeight3 = new System.Windows.Forms.NumericUpDown();
+            this.txtWeight2 = new System.Windows.Forms.NumericUpDown();
+            this.txtWeight = new System.Windows.Forms.NumericUpDown();
+            this.txtOtherHr = new System.Windows.Forms.NumericUpDown();
+            this.txtOtherMin = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quantity3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quantity2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quantity1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWeight3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWeight2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOtherHr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOtherMin)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHeader
@@ -108,12 +118,12 @@
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.lblQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.lblQuantity.Location = new System.Drawing.Point(244, 317);
+            this.lblQuantity.Location = new System.Drawing.Point(222, 318);
             this.lblQuantity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(66, 18);
+            this.lblQuantity.Size = new System.Drawing.Size(116, 18);
             this.lblQuantity.TabIndex = 69;
-            this.lblQuantity.Text = "Quantity";
+            this.lblQuantity.Text = "Quantity (g/mL)";
             // 
             // lblWeight
             // 
@@ -167,19 +177,6 @@
             this.lblService.TabIndex = 62;
             this.lblService.Text = "Service Type";
             // 
-            // lblUnit
-            // 
-            this.lblUnit.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblUnit.AutoSize = true;
-            this.lblUnit.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
-            this.lblUnit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.lblUnit.Location = new System.Drawing.Point(34, 63);
-            this.lblUnit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblUnit.Name = "lblUnit";
-            this.lblUnit.Size = new System.Drawing.Size(61, 18);
-            this.lblUnit.TabIndex = 61;
-            this.lblUnit.Text = "Machine";
-            // 
             // lblItemName
             // 
             this.lblItemName.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -192,28 +189,6 @@
             this.lblItemName.Size = new System.Drawing.Size(82, 18);
             this.lblItemName.TabIndex = 70;
             this.lblItemName.Text = "Item Name";
-            // 
-            // lblPriority
-            // 
-            this.lblPriority.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblPriority.AutoSize = true;
-            this.lblPriority.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
-            this.lblPriority.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.lblPriority.Location = new System.Drawing.Point(222, 85);
-            this.lblPriority.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPriority.Name = "lblPriority";
-            this.lblPriority.Size = new System.Drawing.Size(61, 18);
-            this.lblPriority.TabIndex = 71;
-            this.lblPriority.Text = "Priority?";
-            // 
-            // priorityCheckBox
-            // 
-            this.priorityCheckBox.AutoSize = true;
-            this.priorityCheckBox.Location = new System.Drawing.Point(288, 89);
-            this.priorityCheckBox.Name = "priorityCheckBox";
-            this.priorityCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.priorityCheckBox.TabIndex = 72;
-            this.priorityCheckBox.UseVisualStyleBackColor = true;
             // 
             // lvlPickup
             // 
@@ -323,23 +298,6 @@
             this.label3.TabIndex = 82;
             this.label3.Text = "3 Hours";
             // 
-            // cbMachine
-            // 
-            this.cbMachine.BackColor = System.Drawing.SystemColors.Control;
-            this.cbMachine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMachine.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cbMachine.Font = new System.Drawing.Font("Berlin Sans FB", 11F);
-            this.cbMachine.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.cbMachine.FormattingEnabled = true;
-            this.cbMachine.Items.AddRange(new object[] {
-            "Washing Machine",
-            "Dryer",
-            "Iron"});
-            this.cbMachine.Location = new System.Drawing.Point(34, 85);
-            this.cbMachine.Name = "cbMachine";
-            this.cbMachine.Size = new System.Drawing.Size(183, 25);
-            this.cbMachine.TabIndex = 89;
-            // 
             // cbCust
             // 
             this.cbCust.BackColor = System.Drawing.SystemColors.Control;
@@ -412,47 +370,26 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtOtherHr);
             this.groupBox1.Controls.Add(this.rb2hrs);
             this.groupBox1.Controls.Add(this.rb3hrs);
             this.groupBox1.Controls.Add(this.rbCustomHour);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtBoxSearch);
             this.groupBox1.Location = new System.Drawing.Point(383, 171);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 100);
             this.groupBox1.TabIndex = 95;
             this.groupBox1.TabStop = false;
             // 
-            // txtBoxSearch
-            // 
-            this.txtBoxSearch.BackColor = System.Drawing.Color.White;
-            this.txtBoxSearch.BorderColor = System.Drawing.Color.LightGray;
-            this.txtBoxSearch.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.txtBoxSearch.BorderRadius = 5;
-            this.txtBoxSearch.BorderSize = 1;
-            this.txtBoxSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxSearch.ForeColor = System.Drawing.Color.Black;
-            this.txtBoxSearch.Location = new System.Drawing.Point(27, 60);
-            this.txtBoxSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBoxSearch.Multiline = false;
-            this.txtBoxSearch.Name = "txtBoxSearch";
-            this.txtBoxSearch.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
-            this.txtBoxSearch.PasswordChar = false;
-            this.txtBoxSearch.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtBoxSearch.PlaceholderText = "";
-            this.txtBoxSearch.Size = new System.Drawing.Size(147, 26);
-            this.txtBoxSearch.TabIndex = 38;
-            this.txtBoxSearch.UnderlinedStyle = false;
-            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtOtherMin);
             this.groupBox2.Controls.Add(this.rb1min);
             this.groupBox2.Controls.Add(this.rb3min);
             this.groupBox2.Controls.Add(this.rbCustomMin);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.customTextbox1);
             this.groupBox2.Location = new System.Drawing.Point(383, 293);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 100);
@@ -515,69 +452,6 @@
             this.label5.TabIndex = 82;
             this.label5.Text = "30 minutes";
             // 
-            // customTextbox1
-            // 
-            this.customTextbox1.BackColor = System.Drawing.Color.White;
-            this.customTextbox1.BorderColor = System.Drawing.Color.LightGray;
-            this.customTextbox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.customTextbox1.BorderRadius = 5;
-            this.customTextbox1.BorderSize = 1;
-            this.customTextbox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextbox1.ForeColor = System.Drawing.Color.Black;
-            this.customTextbox1.Location = new System.Drawing.Point(27, 60);
-            this.customTextbox1.Margin = new System.Windows.Forms.Padding(4);
-            this.customTextbox1.Multiline = false;
-            this.customTextbox1.Name = "customTextbox1";
-            this.customTextbox1.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
-            this.customTextbox1.PasswordChar = false;
-            this.customTextbox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.customTextbox1.PlaceholderText = "";
-            this.customTextbox1.Size = new System.Drawing.Size(147, 26);
-            this.customTextbox1.TabIndex = 38;
-            this.customTextbox1.UnderlinedStyle = false;
-            // 
-            // txtWeight3
-            // 
-            this.txtWeight3.BackColor = System.Drawing.Color.White;
-            this.txtWeight3.BorderColor = System.Drawing.Color.LightGray;
-            this.txtWeight3.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.txtWeight3.BorderRadius = 5;
-            this.txtWeight3.BorderSize = 1;
-            this.txtWeight3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.txtWeight3.ForeColor = System.Drawing.Color.Black;
-            this.txtWeight3.Location = new System.Drawing.Point(221, 258);
-            this.txtWeight3.Margin = new System.Windows.Forms.Padding(4);
-            this.txtWeight3.Multiline = false;
-            this.txtWeight3.Name = "txtWeight3";
-            this.txtWeight3.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
-            this.txtWeight3.PasswordChar = false;
-            this.txtWeight3.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtWeight3.PlaceholderText = "Service 3";
-            this.txtWeight3.Size = new System.Drawing.Size(89, 30);
-            this.txtWeight3.TabIndex = 100;
-            this.txtWeight3.UnderlinedStyle = false;
-            // 
-            // txtWeight2
-            // 
-            this.txtWeight2.BackColor = System.Drawing.Color.White;
-            this.txtWeight2.BorderColor = System.Drawing.Color.LightGray;
-            this.txtWeight2.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.txtWeight2.BorderRadius = 5;
-            this.txtWeight2.BorderSize = 1;
-            this.txtWeight2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.txtWeight2.ForeColor = System.Drawing.Color.Black;
-            this.txtWeight2.Location = new System.Drawing.Point(128, 258);
-            this.txtWeight2.Margin = new System.Windows.Forms.Padding(4);
-            this.txtWeight2.Multiline = false;
-            this.txtWeight2.Name = "txtWeight2";
-            this.txtWeight2.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
-            this.txtWeight2.PasswordChar = false;
-            this.txtWeight2.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtWeight2.PlaceholderText = "Service 2";
-            this.txtWeight2.Size = new System.Drawing.Size(89, 30);
-            this.txtWeight2.TabIndex = 99;
-            this.txtWeight2.UnderlinedStyle = false;
-            // 
             // btnService
             // 
             this.btnService.BackColor = System.Drawing.Color.White;
@@ -615,70 +489,7 @@
             this.pickupDate.SkinColor = System.Drawing.Color.White;
             this.pickupDate.TabIndex = 74;
             this.pickupDate.TextColor = System.Drawing.Color.Black;
-            this.pickupDate.Value = new System.DateTime(2024, 11, 6, 20, 51, 15, 0);
-            // 
-            // txtWeight
-            // 
-            this.txtWeight.BackColor = System.Drawing.Color.White;
-            this.txtWeight.BorderColor = System.Drawing.Color.LightGray;
-            this.txtWeight.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.txtWeight.BorderRadius = 5;
-            this.txtWeight.BorderSize = 1;
-            this.txtWeight.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.txtWeight.ForeColor = System.Drawing.Color.Black;
-            this.txtWeight.Location = new System.Drawing.Point(34, 257);
-            this.txtWeight.Margin = new System.Windows.Forms.Padding(4);
-            this.txtWeight.Multiline = false;
-            this.txtWeight.Name = "txtWeight";
-            this.txtWeight.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
-            this.txtWeight.PasswordChar = false;
-            this.txtWeight.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtWeight.PlaceholderText = "";
-            this.txtWeight.Size = new System.Drawing.Size(89, 30);
-            this.txtWeight.TabIndex = 60;
-            this.txtWeight.UnderlinedStyle = false;
-            // 
-            // quantity3
-            // 
-            this.quantity3.BackColor = System.Drawing.Color.White;
-            this.quantity3.BorderColor = System.Drawing.Color.LightGray;
-            this.quantity3.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.quantity3.BorderRadius = 5;
-            this.quantity3.BorderSize = 1;
-            this.quantity3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.quantity3.ForeColor = System.Drawing.Color.Black;
-            this.quantity3.Location = new System.Drawing.Point(241, 399);
-            this.quantity3.Margin = new System.Windows.Forms.Padding(4);
-            this.quantity3.Multiline = false;
-            this.quantity3.Name = "quantity3";
-            this.quantity3.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
-            this.quantity3.PasswordChar = false;
-            this.quantity3.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.quantity3.PlaceholderText = "";
-            this.quantity3.Size = new System.Drawing.Size(72, 30);
-            this.quantity3.TabIndex = 51;
-            this.quantity3.UnderlinedStyle = false;
-            // 
-            // quantity2
-            // 
-            this.quantity2.BackColor = System.Drawing.Color.White;
-            this.quantity2.BorderColor = System.Drawing.Color.LightGray;
-            this.quantity2.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.quantity2.BorderRadius = 5;
-            this.quantity2.BorderSize = 1;
-            this.quantity2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.quantity2.ForeColor = System.Drawing.Color.Black;
-            this.quantity2.Location = new System.Drawing.Point(241, 367);
-            this.quantity2.Margin = new System.Windows.Forms.Padding(4);
-            this.quantity2.Multiline = false;
-            this.quantity2.Name = "quantity2";
-            this.quantity2.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
-            this.quantity2.PasswordChar = false;
-            this.quantity2.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.quantity2.PlaceholderText = "";
-            this.quantity2.Size = new System.Drawing.Size(72, 30);
-            this.quantity2.TabIndex = 50;
-            this.quantity2.UnderlinedStyle = false;
+            this.pickupDate.Value = new System.DateTime(2024, 11, 30, 0, 0, 0, 0);
             // 
             // btnCancel
             // 
@@ -721,63 +532,238 @@
             this.btnAdd.TextColor = System.Drawing.Color.White;
             this.btnAdd.UseVisualStyleBackColor = false;
             // 
+            // cbUnit
+            // 
+            this.cbUnit.BackColor = System.Drawing.SystemColors.Control;
+            this.cbUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbUnit.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cbUnit.Font = new System.Drawing.Font("Berlin Sans FB", 11F);
+            this.cbUnit.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.cbUnit.FormattingEnabled = true;
+            this.cbUnit.Items.AddRange(new object[] {
+            "Unit I",
+            "Unit II",
+            "Unit III"});
+            this.cbUnit.Location = new System.Drawing.Point(155, 85);
+            this.cbUnit.Name = "cbUnit";
+            this.cbUnit.Size = new System.Drawing.Size(90, 25);
+            this.cbUnit.TabIndex = 108;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.label6.Location = new System.Drawing.Point(155, 63);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 18);
+            this.label6.TabIndex = 107;
+            this.label6.Text = "Unit";
+            // 
+            // cbMachine
+            // 
+            this.cbMachine.BackColor = System.Drawing.SystemColors.Control;
+            this.cbMachine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMachine.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cbMachine.Font = new System.Drawing.Font("Berlin Sans FB", 11F);
+            this.cbMachine.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.cbMachine.FormattingEnabled = true;
+            this.cbMachine.Items.AddRange(new object[] {
+            "Washing Machine",
+            "Dryer",
+            "Iron"});
+            this.cbMachine.Location = new System.Drawing.Point(34, 85);
+            this.cbMachine.Name = "cbMachine";
+            this.cbMachine.Size = new System.Drawing.Size(114, 25);
+            this.cbMachine.TabIndex = 106;
+            // 
+            // priorityCheckBox
+            // 
+            this.priorityCheckBox.AutoSize = true;
+            this.priorityCheckBox.Location = new System.Drawing.Point(274, 91);
+            this.priorityCheckBox.Name = "priorityCheckBox";
+            this.priorityCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.priorityCheckBox.TabIndex = 105;
+            this.priorityCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // lblPriority
+            // 
+            this.lblPriority.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblPriority.AutoSize = true;
+            this.lblPriority.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.lblPriority.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.lblPriority.Location = new System.Drawing.Point(252, 63);
+            this.lblPriority.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPriority.Name = "lblPriority";
+            this.lblPriority.Size = new System.Drawing.Size(61, 18);
+            this.lblPriority.TabIndex = 104;
+            this.lblPriority.Text = "Priority?";
+            // 
+            // lblUnit
+            // 
+            this.lblUnit.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblUnit.AutoSize = true;
+            this.lblUnit.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.lblUnit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.lblUnit.Location = new System.Drawing.Point(34, 63);
+            this.lblUnit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUnit.Name = "lblUnit";
+            this.lblUnit.Size = new System.Drawing.Size(61, 18);
+            this.lblUnit.TabIndex = 103;
+            this.lblUnit.Text = "Machine";
+            // 
+            // quantity3
+            // 
+            this.quantity3.DecimalPlaces = 2;
+            this.quantity3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.quantity3.Location = new System.Drawing.Point(243, 402);
+            this.quantity3.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.quantity3.Name = "quantity3";
+            this.quantity3.Size = new System.Drawing.Size(70, 25);
+            this.quantity3.TabIndex = 218;
+            // 
+            // quantity2
+            // 
+            this.quantity2.DecimalPlaces = 2;
+            this.quantity2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.quantity2.Location = new System.Drawing.Point(243, 370);
+            this.quantity2.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.quantity2.Name = "quantity2";
+            this.quantity2.Size = new System.Drawing.Size(69, 25);
+            this.quantity2.TabIndex = 217;
+            // 
             // quantity1
             // 
-            this.quantity1.BackColor = System.Drawing.Color.White;
-            this.quantity1.BorderColor = System.Drawing.Color.LightGray;
-            this.quantity1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.quantity1.BorderRadius = 5;
-            this.quantity1.BorderSize = 1;
+            this.quantity1.DecimalPlaces = 2;
             this.quantity1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.quantity1.ForeColor = System.Drawing.Color.Black;
-            this.quantity1.Location = new System.Drawing.Point(241, 335);
-            this.quantity1.Margin = new System.Windows.Forms.Padding(4);
-            this.quantity1.Multiline = false;
+            this.quantity1.Location = new System.Drawing.Point(243, 338);
+            this.quantity1.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.quantity1.Name = "quantity1";
-            this.quantity1.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
-            this.quantity1.PasswordChar = false;
-            this.quantity1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.quantity1.PlaceholderText = "";
-            this.quantity1.Size = new System.Drawing.Size(72, 30);
-            this.quantity1.TabIndex = 41;
-            this.quantity1.UnderlinedStyle = false;
+            this.quantity1.Size = new System.Drawing.Size(69, 25);
+            this.quantity1.TabIndex = 216;
+            // 
+            // txtWeight3
+            // 
+            this.txtWeight3.DecimalPlaces = 2;
+            this.txtWeight3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtWeight3.Location = new System.Drawing.Point(221, 261);
+            this.txtWeight3.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.txtWeight3.Name = "txtWeight3";
+            this.txtWeight3.Size = new System.Drawing.Size(89, 25);
+            this.txtWeight3.TabIndex = 215;
+            // 
+            // txtWeight2
+            // 
+            this.txtWeight2.DecimalPlaces = 2;
+            this.txtWeight2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtWeight2.Location = new System.Drawing.Point(129, 261);
+            this.txtWeight2.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.txtWeight2.Name = "txtWeight2";
+            this.txtWeight2.Size = new System.Drawing.Size(89, 25);
+            this.txtWeight2.TabIndex = 214;
+            // 
+            // txtWeight
+            // 
+            this.txtWeight.DecimalPlaces = 2;
+            this.txtWeight.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtWeight.Location = new System.Drawing.Point(34, 261);
+            this.txtWeight.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.txtWeight.Name = "txtWeight";
+            this.txtWeight.Size = new System.Drawing.Size(89, 25);
+            this.txtWeight.TabIndex = 213;
+            // 
+            // txtOtherHr
+            // 
+            this.txtOtherHr.DecimalPlaces = 2;
+            this.txtOtherHr.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtOtherHr.Location = new System.Drawing.Point(28, 62);
+            this.txtOtherHr.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.txtOtherHr.Name = "txtOtherHr";
+            this.txtOtherHr.Size = new System.Drawing.Size(57, 25);
+            this.txtOtherHr.TabIndex = 209;
+            // 
+            // txtOtherMin
+            // 
+            this.txtOtherMin.DecimalPlaces = 2;
+            this.txtOtherMin.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtOtherMin.Location = new System.Drawing.Point(28, 61);
+            this.txtOtherMin.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.txtOtherMin.Name = "txtOtherMin";
+            this.txtOtherMin.Size = new System.Drawing.Size(57, 25);
+            this.txtOtherMin.TabIndex = 210;
             // 
             // EditLaundry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(654, 454);
+            this.Controls.Add(this.quantity3);
+            this.Controls.Add(this.quantity2);
+            this.Controls.Add(this.quantity1);
             this.Controls.Add(this.txtWeight3);
             this.Controls.Add(this.txtWeight2);
+            this.Controls.Add(this.txtWeight);
+            this.Controls.Add(this.cbUnit);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cbMachine);
+            this.Controls.Add(this.priorityCheckBox);
+            this.Controls.Add(this.lblPriority);
+            this.Controls.Add(this.lblUnit);
             this.Controls.Add(this.btnService);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cbItem3);
             this.Controls.Add(this.cbItem2);
             this.Controls.Add(this.cbItem1);
             this.Controls.Add(this.cbCust);
-            this.Controls.Add(this.cbMachine);
             this.Controls.Add(this.lblMinutes);
             this.Controls.Add(this.lblHours);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.pickupDate);
             this.Controls.Add(this.lvlPickup);
-            this.Controls.Add(this.priorityCheckBox);
-            this.Controls.Add(this.lblPriority);
             this.Controls.Add(this.lblItemName);
             this.Controls.Add(this.lblQuantity);
             this.Controls.Add(this.lblWeight);
             this.Controls.Add(this.lblItemTitle);
             this.Controls.Add(this.lblCust);
             this.Controls.Add(this.lblService);
-            this.Controls.Add(this.lblUnit);
-            this.Controls.Add(this.txtWeight);
-            this.Controls.Add(this.quantity3);
-            this.Controls.Add(this.quantity2);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.quantity1);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditLaundry";
@@ -788,6 +774,14 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quantity3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quantity2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quantity1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWeight3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWeight2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOtherHr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOtherMin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -798,20 +792,12 @@
         private System.Windows.Forms.Label label1;
         private CustomButton btnCancel;
         private CustomButton btnAdd;
-        private CustomTextbox quantity1;
-        private CustomTextbox txtBoxSearch;
-        private CustomTextbox quantity2;
-        private CustomTextbox quantity3;
         private System.Windows.Forms.Label lblQuantity;
         private System.Windows.Forms.Label lblWeight;
         private System.Windows.Forms.Label lblItemTitle;
         private System.Windows.Forms.Label lblCust;
         private System.Windows.Forms.Label lblService;
-        private System.Windows.Forms.Label lblUnit;
-        private CustomTextbox txtWeight;
         private System.Windows.Forms.Label lblItemName;
-        private System.Windows.Forms.Label lblPriority;
-        private System.Windows.Forms.CheckBox priorityCheckBox;
         private System.Windows.Forms.Label lvlPickup;
         private CustomDatePicker pickupDate;
         private System.Windows.Forms.Label lblTime;
@@ -822,7 +808,6 @@
         private System.Windows.Forms.RadioButton rbCustomHour;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbMachine;
         private System.Windows.Forms.ComboBox cbCust;
         private System.Windows.Forms.ComboBox cbItem1;
         private System.Windows.Forms.ComboBox cbItem2;
@@ -834,9 +819,20 @@
         private System.Windows.Forms.RadioButton rbCustomMin;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private CustomTextbox customTextbox1;
         private CustomTextbox btnService;
-        private CustomTextbox txtWeight2;
-        private CustomTextbox txtWeight3;
+        private System.Windows.Forms.ComboBox cbUnit;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cbMachine;
+        private System.Windows.Forms.CheckBox priorityCheckBox;
+        private System.Windows.Forms.Label lblPriority;
+        private System.Windows.Forms.Label lblUnit;
+        private System.Windows.Forms.NumericUpDown quantity3;
+        private System.Windows.Forms.NumericUpDown quantity2;
+        private System.Windows.Forms.NumericUpDown quantity1;
+        private System.Windows.Forms.NumericUpDown txtWeight3;
+        private System.Windows.Forms.NumericUpDown txtWeight2;
+        private System.Windows.Forms.NumericUpDown txtWeight;
+        private System.Windows.Forms.NumericUpDown txtOtherHr;
+        private System.Windows.Forms.NumericUpDown txtOtherMin;
     }
 }
