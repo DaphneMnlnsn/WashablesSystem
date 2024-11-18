@@ -33,23 +33,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.checkDashboard = new System.Windows.Forms.CheckBox();
-            this.checkLaundry = new System.Windows.Forms.CheckBox();
-            this.checkSched = new System.Windows.Forms.CheckBox();
-            this.checkSAndE = new System.Windows.Forms.CheckBox();
-            this.checkInventory = new System.Windows.Forms.CheckBox();
-            this.checkCustomers = new System.Windows.Forms.CheckBox();
-            this.checkUsers = new System.Windows.Forms.CheckBox();
-            this.checkBilling = new System.Windows.Forms.CheckBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.btnSee = new System.Windows.Forms.PictureBox();
             this.btnConfirmSee = new System.Windows.Forms.PictureBox();
             this.btnCancel = new WashablesSystem.CustomButton();
@@ -57,6 +40,24 @@
             this.txtBoxConfirm = new WashablesSystem.CustomTextbox();
             this.txtBoxPass = new WashablesSystem.CustomTextbox();
             this.txtBoxName = new WashablesSystem.CustomTextbox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.checkBilling = new System.Windows.Forms.CheckBox();
+            this.checkUsers = new System.Windows.Forms.CheckBox();
+            this.checkCustomers = new System.Windows.Forms.CheckBox();
+            this.checkInventory = new System.Windows.Forms.CheckBox();
+            this.checkSAndE = new System.Windows.Forms.CheckBox();
+            this.checkSched = new System.Windows.Forms.CheckBox();
+            this.checkLaundry = new System.Windows.Forms.CheckBox();
+            this.checkDashboard = new System.Windows.Forms.CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnSee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConfirmSee)).BeginInit();
             this.SuspendLayout();
@@ -126,203 +127,6 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "_________________________________________________________________________________" +
     "_";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(364, 72);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 18);
-            this.label5.TabIndex = 37;
-            this.label5.Text = "User Permission";
-            // 
-            // checkDashboard
-            // 
-            this.checkDashboard.AutoSize = true;
-            this.checkDashboard.Location = new System.Drawing.Point(367, 109);
-            this.checkDashboard.Margin = new System.Windows.Forms.Padding(2);
-            this.checkDashboard.Name = "checkDashboard";
-            this.checkDashboard.Size = new System.Drawing.Size(15, 14);
-            this.checkDashboard.TabIndex = 38;
-            this.checkDashboard.UseVisualStyleBackColor = true;
-            // 
-            // checkLaundry
-            // 
-            this.checkLaundry.AutoSize = true;
-            this.checkLaundry.Location = new System.Drawing.Point(367, 135);
-            this.checkLaundry.Margin = new System.Windows.Forms.Padding(2);
-            this.checkLaundry.Name = "checkLaundry";
-            this.checkLaundry.Size = new System.Drawing.Size(15, 14);
-            this.checkLaundry.TabIndex = 39;
-            this.checkLaundry.UseVisualStyleBackColor = true;
-            // 
-            // checkSched
-            // 
-            this.checkSched.AutoSize = true;
-            this.checkSched.Location = new System.Drawing.Point(367, 160);
-            this.checkSched.Margin = new System.Windows.Forms.Padding(2);
-            this.checkSched.Name = "checkSched";
-            this.checkSched.Size = new System.Drawing.Size(15, 14);
-            this.checkSched.TabIndex = 40;
-            this.checkSched.UseVisualStyleBackColor = true;
-            // 
-            // checkSAndE
-            // 
-            this.checkSAndE.AutoSize = true;
-            this.checkSAndE.Location = new System.Drawing.Point(367, 186);
-            this.checkSAndE.Margin = new System.Windows.Forms.Padding(2);
-            this.checkSAndE.Name = "checkSAndE";
-            this.checkSAndE.Size = new System.Drawing.Size(15, 14);
-            this.checkSAndE.TabIndex = 41;
-            this.checkSAndE.UseVisualStyleBackColor = true;
-            // 
-            // checkInventory
-            // 
-            this.checkInventory.AutoSize = true;
-            this.checkInventory.Location = new System.Drawing.Point(367, 211);
-            this.checkInventory.Margin = new System.Windows.Forms.Padding(2);
-            this.checkInventory.Name = "checkInventory";
-            this.checkInventory.Size = new System.Drawing.Size(15, 14);
-            this.checkInventory.TabIndex = 42;
-            this.checkInventory.UseVisualStyleBackColor = true;
-            // 
-            // checkCustomers
-            // 
-            this.checkCustomers.AutoSize = true;
-            this.checkCustomers.Location = new System.Drawing.Point(367, 235);
-            this.checkCustomers.Margin = new System.Windows.Forms.Padding(2);
-            this.checkCustomers.Name = "checkCustomers";
-            this.checkCustomers.Size = new System.Drawing.Size(15, 14);
-            this.checkCustomers.TabIndex = 43;
-            this.checkCustomers.UseVisualStyleBackColor = true;
-            // 
-            // checkUsers
-            // 
-            this.checkUsers.AutoSize = true;
-            this.checkUsers.Location = new System.Drawing.Point(367, 260);
-            this.checkUsers.Margin = new System.Windows.Forms.Padding(2);
-            this.checkUsers.Name = "checkUsers";
-            this.checkUsers.Size = new System.Drawing.Size(15, 14);
-            this.checkUsers.TabIndex = 44;
-            this.checkUsers.UseVisualStyleBackColor = true;
-            // 
-            // checkBilling
-            // 
-            this.checkBilling.AutoSize = true;
-            this.checkBilling.Location = new System.Drawing.Point(367, 284);
-            this.checkBilling.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBilling.Name = "checkBilling";
-            this.checkBilling.Size = new System.Drawing.Size(15, 14);
-            this.checkBilling.TabIndex = 45;
-            this.checkBilling.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(386, 105);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(199, 19);
-            this.label6.TabIndex = 46;
-            this.label6.Text = "Allow Permission to Dashboard";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(386, 131);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(182, 19);
-            this.label7.TabIndex = 47;
-            this.label7.Text = "Allow Permission to Laundry";
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(386, 156);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(186, 19);
-            this.label8.TabIndex = 48;
-            this.label8.Text = "Allow Permission to Schedule";
-            // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(386, 181);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(271, 19);
-            this.label9.TabIndex = 49;
-            this.label9.Text = "Allow Permission to Service and Equipment";
-            // 
-            // label10
-            // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(386, 207);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(191, 19);
-            this.label10.TabIndex = 50;
-            this.label10.Text = "Allow Permission to Inventory";
-            // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(386, 231);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(198, 19);
-            this.label11.TabIndex = 51;
-            this.label11.Text = "Allow Permission to Customers";
-            // 
-            // label12
-            // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(386, 256);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(166, 19);
-            this.label12.TabIndex = 52;
-            this.label12.Text = "Allow Permission to Users";
-            // 
-            // label13
-            // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(386, 280);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(168, 19);
-            this.label13.TabIndex = 53;
-            this.label13.Text = "Allow Permission to Billing";
             // 
             // btnSee
             // 
@@ -452,13 +256,222 @@
             this.txtBoxName.TabIndex = 23;
             this.txtBoxName.UnderlinedStyle = false;
             // 
+            // label14
+            // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(392, 103);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(143, 19);
+            this.label14.TabIndex = 73;
+            this.label14.Text = "Allow Permissions to...";
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(414, 303);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(45, 19);
+            this.label13.TabIndex = 72;
+            this.label13.Text = "Billing";
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(414, 280);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(43, 19);
+            this.label12.TabIndex = 71;
+            this.label12.Text = "Users";
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(414, 255);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(75, 19);
+            this.label11.TabIndex = 70;
+            this.label11.Text = "Customers";
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(414, 231);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(68, 19);
+            this.label10.TabIndex = 69;
+            this.label10.Text = "Inventory";
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(414, 205);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(148, 19);
+            this.label9.TabIndex = 68;
+            this.label9.Text = "Service and Equipment";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(414, 179);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(63, 19);
+            this.label8.TabIndex = 67;
+            this.label8.Text = "Schedule";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(414, 154);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(59, 19);
+            this.label7.TabIndex = 66;
+            this.label7.Text = "Laundry";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(414, 128);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 19);
+            this.label6.TabIndex = 65;
+            this.label6.Text = "Dashboard";
+            // 
+            // checkBilling
+            // 
+            this.checkBilling.AutoSize = true;
+            this.checkBilling.Location = new System.Drawing.Point(395, 307);
+            this.checkBilling.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBilling.Name = "checkBilling";
+            this.checkBilling.Size = new System.Drawing.Size(15, 14);
+            this.checkBilling.TabIndex = 64;
+            this.checkBilling.UseVisualStyleBackColor = true;
+            // 
+            // checkUsers
+            // 
+            this.checkUsers.AutoSize = true;
+            this.checkUsers.Location = new System.Drawing.Point(395, 283);
+            this.checkUsers.Margin = new System.Windows.Forms.Padding(2);
+            this.checkUsers.Name = "checkUsers";
+            this.checkUsers.Size = new System.Drawing.Size(15, 14);
+            this.checkUsers.TabIndex = 63;
+            this.checkUsers.UseVisualStyleBackColor = true;
+            // 
+            // checkCustomers
+            // 
+            this.checkCustomers.AutoSize = true;
+            this.checkCustomers.Location = new System.Drawing.Point(395, 258);
+            this.checkCustomers.Margin = new System.Windows.Forms.Padding(2);
+            this.checkCustomers.Name = "checkCustomers";
+            this.checkCustomers.Size = new System.Drawing.Size(15, 14);
+            this.checkCustomers.TabIndex = 62;
+            this.checkCustomers.UseVisualStyleBackColor = true;
+            // 
+            // checkInventory
+            // 
+            this.checkInventory.AutoSize = true;
+            this.checkInventory.Location = new System.Drawing.Point(395, 234);
+            this.checkInventory.Margin = new System.Windows.Forms.Padding(2);
+            this.checkInventory.Name = "checkInventory";
+            this.checkInventory.Size = new System.Drawing.Size(15, 14);
+            this.checkInventory.TabIndex = 61;
+            this.checkInventory.UseVisualStyleBackColor = true;
+            // 
+            // checkSAndE
+            // 
+            this.checkSAndE.AutoSize = true;
+            this.checkSAndE.Location = new System.Drawing.Point(395, 209);
+            this.checkSAndE.Margin = new System.Windows.Forms.Padding(2);
+            this.checkSAndE.Name = "checkSAndE";
+            this.checkSAndE.Size = new System.Drawing.Size(15, 14);
+            this.checkSAndE.TabIndex = 60;
+            this.checkSAndE.UseVisualStyleBackColor = true;
+            // 
+            // checkSched
+            // 
+            this.checkSched.AutoSize = true;
+            this.checkSched.Location = new System.Drawing.Point(395, 183);
+            this.checkSched.Margin = new System.Windows.Forms.Padding(2);
+            this.checkSched.Name = "checkSched";
+            this.checkSched.Size = new System.Drawing.Size(15, 14);
+            this.checkSched.TabIndex = 59;
+            this.checkSched.UseVisualStyleBackColor = true;
+            // 
+            // checkLaundry
+            // 
+            this.checkLaundry.AutoSize = true;
+            this.checkLaundry.Location = new System.Drawing.Point(395, 158);
+            this.checkLaundry.Margin = new System.Windows.Forms.Padding(2);
+            this.checkLaundry.Name = "checkLaundry";
+            this.checkLaundry.Size = new System.Drawing.Size(15, 14);
+            this.checkLaundry.TabIndex = 58;
+            this.checkLaundry.UseVisualStyleBackColor = true;
+            // 
+            // checkDashboard
+            // 
+            this.checkDashboard.AutoSize = true;
+            this.checkDashboard.Location = new System.Drawing.Point(395, 132);
+            this.checkDashboard.Margin = new System.Windows.Forms.Padding(2);
+            this.checkDashboard.Name = "checkDashboard";
+            this.checkDashboard.Size = new System.Drawing.Size(15, 14);
+            this.checkDashboard.TabIndex = 57;
+            this.checkDashboard.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(392, 78);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(114, 18);
+            this.label5.TabIndex = 56;
+            this.label5.Text = "User Permissions";
+            // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(693, 413);
-            this.Controls.Add(this.btnConfirmSee);
-            this.Controls.Add(this.btnSee);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -476,6 +489,8 @@
             this.Controls.Add(this.checkLaundry);
             this.Controls.Add(this.checkDashboard);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnConfirmSee);
+            this.Controls.Add(this.btnSee);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -508,24 +523,25 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox checkDashboard;
-        private System.Windows.Forms.CheckBox checkLaundry;
-        private System.Windows.Forms.CheckBox checkSched;
-        private System.Windows.Forms.CheckBox checkSAndE;
-        private System.Windows.Forms.CheckBox checkInventory;
-        private System.Windows.Forms.CheckBox checkCustomers;
-        private System.Windows.Forms.CheckBox checkUsers;
-        private System.Windows.Forms.CheckBox checkBilling;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.PictureBox btnSee;
         private System.Windows.Forms.PictureBox btnConfirmSee;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox checkBilling;
+        private System.Windows.Forms.CheckBox checkUsers;
+        private System.Windows.Forms.CheckBox checkCustomers;
+        private System.Windows.Forms.CheckBox checkInventory;
+        private System.Windows.Forms.CheckBox checkSAndE;
+        private System.Windows.Forms.CheckBox checkSched;
+        private System.Windows.Forms.CheckBox checkLaundry;
+        private System.Windows.Forms.CheckBox checkDashboard;
+        private System.Windows.Forms.Label label5;
     }
 }

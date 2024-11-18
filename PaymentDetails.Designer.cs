@@ -245,7 +245,7 @@
             this.radioBtnGcash.Size = new System.Drawing.Size(67, 23);
             this.radioBtnGcash.TabIndex = 1;
             this.radioBtnGcash.TabStop = true;
-            this.radioBtnGcash.Text = "Online";
+            this.radioBtnGcash.Text = "GCash";
             this.radioBtnGcash.UseVisualStyleBackColor = true;
             // 
             // radioBtnCash

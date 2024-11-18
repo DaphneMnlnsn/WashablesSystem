@@ -92,11 +92,11 @@ namespace WashablesSystem
 
         private void btnSeeAll_Click(object sender, EventArgs e)
         {
-            thisParentForm = this.ParentForm;
             loadForm(new Users(new Main(), "Activity Log"));
         }
         private void loadForm(Form m)
         {
+            thisParentForm = this.ParentForm;
             Panel panelTab = (Panel)thisParentForm.Controls.Find("panelPage", true)[0];
             if (panelTab.Controls.Count > 0)
             {
@@ -111,8 +111,7 @@ namespace WashablesSystem
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            ReportView reportView = new ReportView();
-            reportView.ShowDialog();
+            loadForm(new Reports(new Main()));
         }
     }
 }

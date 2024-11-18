@@ -428,6 +428,12 @@
     <Compile Include="Receipt.Designer.cs">
       <DependentUpon>Receipt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -487,6 +493,12 @@
     </Compile>
     <Compile Include="ServiceTypeList.Designer.cs">
       <DependentUpon>ServiceTypeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="TransactionHistory.cs">
       <SubType>Form</SubType>
@@ -708,6 +720,9 @@
     <EmbeddedResource Include="Receipt.resx">
       <DependentUpon>Receipt.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportView.resx">
       <DependentUpon>ReportView.cs</DependentUpon>
     </EmbeddedResource>
@@ -737,6 +752,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ServiceTypeList.resx">
       <DependentUpon>ServiceTypeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransactionList.resx">
       <DependentUpon>TransactionList.cs</DependentUpon>

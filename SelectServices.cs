@@ -33,16 +33,9 @@ namespace WashablesSystem
             serve.Add("(Bed Sheet, Table Cloth, Curtain)");
             serve.Add("(Comforter, Bath Towel)");
             serviceTypeList = new ServiceTypeList();
-            serviceTypeList.setTypeInfo("Wash - Dry - Fold", serve);
+            serviceTypeList.setTypeInfo("Wash-Dry-Fold", serve);
             serviceTypeContainer.Controls.Add(serviceTypeList);
             servicesSelected = serviceTypeList.getSelectedItems();
-
-            ArrayList serve2 = new ArrayList();
-            serve2.Add("(Clothes, Table Napkin, Pillowcase)");
-            serve2.Add("(Bed Sheet, Table Cloth, Curtain)");
-            ServiceTypeList serviceTypeList2 = new ServiceTypeList();
-            serviceTypeList2.setTypeInfo("Wash - Dry - Press", serve2);
-            serviceTypeContainer.Controls.Add(serviceTypeList2);
 
         }
 

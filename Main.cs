@@ -105,5 +105,10 @@ namespace WashablesSystem
             new Login().Show();
             this.Hide();
         }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            new Settings().ShowDialog();
+        }
     }
 }
