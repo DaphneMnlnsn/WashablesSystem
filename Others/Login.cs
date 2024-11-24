@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashablesSystem.Classes;
 
 namespace WashablesSystem
 {
@@ -19,8 +20,14 @@ namespace WashablesSystem
 
         private void cLoginButton_Click(object sender, EventArgs e)
         {
-            new Main().Show();
-            this.Hide();
+            UserClass user = new UserClass(ctxtbxUserName.Text, ctxtbxPass.Text);
+            bool userValid = user.loginUser();
+
+            if (userValid == true)
+            {
+                new Main().Show();
+                this.Hide();
+            }
         }
 
         private void Login_FormClosing(object sender, FormClosingEventArgs e)

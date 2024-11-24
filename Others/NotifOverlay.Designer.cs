@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.notifPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.btnClose = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +70,7 @@
             this.notifPanel.Margin = new System.Windows.Forms.Padding(2);
             this.notifPanel.MaximumSize = new System.Drawing.Size(349, 422);
             this.notifPanel.Name = "notifPanel";
-            this.notifPanel.Size = new System.Drawing.Size(345, 335);
+            this.notifPanel.Size = new System.Drawing.Size(345, 325);
             this.notifPanel.TabIndex = 0;
             // 
             // btnClose
@@ -85,6 +86,16 @@
             this.btnClose.TabStop = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(4, 354);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(343, 13);
+            this.label2.TabIndex = 55;
+            this.label2.Text = "________________________________________________________";
+            // 
             // NotifOverlay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -94,6 +105,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSeeAll);
             this.Controls.Add(this.notifPanel);
+            this.Controls.Add(this.label2);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(349, 400);
             this.Name = "NotifOverlay";
@@ -112,5 +124,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel notifPanel;
         private System.Windows.Forms.PictureBox btnClose;
+        private System.Windows.Forms.Label label2;
     }
 }

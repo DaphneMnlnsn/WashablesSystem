@@ -283,6 +283,16 @@ namespace WashablesSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap NewNotif {
+            get {
+                object obj = ResourceManager.GetObject("NewNotif", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Open_Parcel {
             get {
                 object obj = ResourceManager.GetObject("Open_Parcel", resourceCulture);

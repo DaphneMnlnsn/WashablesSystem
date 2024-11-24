@@ -36,6 +36,42 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Azure.Core, Version=1.38.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
+      <HintPath>packages\Azure.Core.1.38.0\lib\net472\Azure.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Identity, Version=1.11.4.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
+      <HintPath>packages\Azure.Identity.1.11.4\lib\netstandard2.0\Azure.Identity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.SqlClient, Version=5.0.0.0, Culture=neutral, PublicKeyToken=23ec7fc2d6eaa4a5, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Data.SqlClient.5.2.2\lib\net462\Microsoft.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client, Version=4.61.3.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Identity.Client.4.61.3\lib\net462\Microsoft.Identity.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client.Extensions.Msal, Version=4.61.3.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Identity.Client.Extensions.Msal.4.61.3\lib\netstandard2.0\Microsoft.Identity.Client.Extensions.Msal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Abstractions, Version=6.35.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Abstractions.6.35.0\lib\net472\Microsoft.IdentityModel.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.35.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.JsonWebTokens.6.35.0\lib\net472\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.35.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Logging.6.35.0\lib\net472\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols, Version=6.35.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Protocols.6.35.0\lib\net472\Microsoft.IdentityModel.Protocols.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect, Version=6.35.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Protocols.OpenIdConnect.6.35.0\lib\net472\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.35.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Tokens.6.35.0\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -56,7 +92,74 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ClientModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
+      <HintPath>packages\System.ClientModel.1.0.0\lib\netstandard2.0\System.ClientModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=6.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Configuration.ConfigurationManager.6.0.1\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=6.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Diagnostics.DiagnosticSource.6.0.1\lib\net461\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.35.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\System.IdentityModel.Tokens.Jwt.6.35.0\lib\net472\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.FileSystem.AccessControl.5.0.0\lib\net461\System.IO.FileSystem.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory.Data, Version=1.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.Data.1.0.2\lib\net461\System.Memory.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.ProtectedData, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.ProtectedData.4.7.0\lib\net461\System.Security.Cryptography.ProtectedData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Permissions.6.0.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Json.4.7.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -67,644 +170,658 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountList.cs">
+    <Compile Include="Classes\ActivityLogClass.cs" />
+    <Compile Include="Classes\ComplaintsClass.cs" />
+    <Compile Include="Classes\Cryptography.cs" />
+    <Compile Include="Classes\CustomerClass.cs" />
+    <Compile Include="Classes\DashboardClass.cs" />
+    <Compile Include="Classes\EquipmentClass.cs" />
+    <Compile Include="Classes\InventoryClass.cs" />
+    <Compile Include="Classes\LaundryOperationsClass.cs" />
+    <Compile Include="Classes\NotificationClass.cs" />
+    <Compile Include="Classes\PaymentClass.cs" />
+    <Compile Include="Classes\ScheduleClass.cs" />
+    <Compile Include="Classes\UserClass.cs" />
+    <Compile Include="Classes\SessionVariables.cs" />
+    <Compile Include="Users\AccountList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AccountList.Designer.cs">
+    <Compile Include="Users\AccountList.Designer.cs">
       <DependentUpon>AccountList.cs</DependentUpon>
     </Compile>
-    <Compile Include="ActivityLog.cs">
+    <Compile Include="Users\ActivityLog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ActivityLog.Designer.cs">
+    <Compile Include="Users\ActivityLog.Designer.cs">
       <DependentUpon>ActivityLog.cs</DependentUpon>
     </Compile>
-    <Compile Include="activityLogItem.cs">
+    <Compile Include="Users\activityLogItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="activityLogItem.Designer.cs">
+    <Compile Include="Users\activityLogItem.Designer.cs">
       <DependentUpon>activityLogItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="ActivityLogList.cs">
+    <Compile Include="Users\ActivityLogList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ActivityLogList.Designer.cs">
+    <Compile Include="Users\ActivityLogList.Designer.cs">
       <DependentUpon>ActivityLogList.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddComplaint.cs">
+    <Compile Include="Customers\AddComplaint.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddComplaint.Designer.cs">
+    <Compile Include="Customers\AddComplaint.Designer.cs">
       <DependentUpon>AddComplaint.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddCustomer.cs">
+    <Compile Include="Customers\AddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddCustomer.Designer.cs">
+    <Compile Include="Customers\AddCustomer.Designer.cs">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddItem.cs">
+    <Compile Include="Inventory\AddItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddItem.Designer.cs">
+    <Compile Include="Inventory\AddItem.Designer.cs">
       <DependentUpon>AddItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddLaundry.cs">
+    <Compile Include="Laundry Schedule\AddLaundry.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddLaundry.Designer.cs">
+    <Compile Include="Laundry Schedule\AddLaundry.Designer.cs">
       <DependentUpon>AddLaundry.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddService.cs">
+    <Compile Include="ServiceAndEquipment\AddService.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddService.Designer.cs">
+    <Compile Include="ServiceAndEquipment\AddService.Designer.cs">
       <DependentUpon>AddService.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddUnit.cs">
+    <Compile Include="ServiceAndEquipment\AddUnit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddUnit.Designer.cs">
+    <Compile Include="ServiceAndEquipment\AddUnit.Designer.cs">
       <DependentUpon>AddUnit.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddUser.cs">
+    <Compile Include="Users\AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddUser.Designer.cs">
+    <Compile Include="Users\AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="ArchiveInventory.cs">
+    <Compile Include="Inventory\ArchiveInventory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ArchiveInventory.Designer.cs">
+    <Compile Include="Inventory\ArchiveInventory.Designer.cs">
       <DependentUpon>ArchiveInventory.cs</DependentUpon>
     </Compile>
-    <Compile Include="ArchiveInventoryList.cs">
+    <Compile Include="Inventory\ArchiveInventoryList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ArchiveInventoryList.Designer.cs">
+    <Compile Include="Inventory\ArchiveInventoryList.Designer.cs">
       <DependentUpon>ArchiveInventoryList.cs</DependentUpon>
     </Compile>
-    <Compile Include="ArchiveSched.cs">
+    <Compile Include="Laundry Schedule\ArchiveSched.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ArchiveSched.Designer.cs">
+    <Compile Include="Laundry Schedule\ArchiveSched.Designer.cs">
       <DependentUpon>ArchiveSched.cs</DependentUpon>
     </Compile>
-    <Compile Include="ArchiveSchedList.cs">
+    <Compile Include="Laundry Schedule\ArchiveSchedList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ArchiveSchedList.Designer.cs">
+    <Compile Include="Laundry Schedule\ArchiveSchedList.Designer.cs">
       <DependentUpon>ArchiveSchedList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Billing.cs">
+    <Compile Include="Billing\Billing.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Billing.Designer.cs">
+    <Compile Include="Billing\Billing.Designer.cs">
       <DependentUpon>Billing.cs</DependentUpon>
     </Compile>
-    <Compile Include="ComplaintList.cs">
+    <Compile Include="Customers\ComplaintList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ComplaintList.Designer.cs">
+    <Compile Include="Customers\ComplaintList.Designer.cs">
       <DependentUpon>ComplaintList.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomButton.cs">
+    <Compile Include="CustomControls\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CustomComboBox.cs">
+    <Compile Include="CustomControls\CustomComboBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustomDatePicker.cs">
+    <Compile Include="CustomControls\CustomDatePicker.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CustomerArchive.cs">
+    <Compile Include="Customers\CustomerArchive.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerArchive.Designer.cs">
+    <Compile Include="Customers\CustomerArchive.Designer.cs">
       <DependentUpon>CustomerArchive.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerComplaints.cs">
+    <Compile Include="Customers\CustomerComplaints.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerComplaints.Designer.cs">
+    <Compile Include="Customers\CustomerComplaints.Designer.cs">
       <DependentUpon>CustomerComplaints.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerInfo.cs">
+    <Compile Include="Customers\CustomerInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerInfo.Designer.cs">
+    <Compile Include="Customers\CustomerInfo.Designer.cs">
       <DependentUpon>CustomerInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerList.cs">
+    <Compile Include="Customers\CustomerList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustomerList.Designer.cs">
+    <Compile Include="Customers\CustomerList.Designer.cs">
       <DependentUpon>CustomerList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customers.cs">
+    <Compile Include="Customers\Customers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customers.Designer.cs">
+    <Compile Include="Customers\Customers.Designer.cs">
       <DependentUpon>Customers.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomTextbox.cs">
+    <Compile Include="CustomControls\CustomTextbox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustomTextbox.Designer.cs">
+    <Compile Include="CustomControls\CustomTextbox.Designer.cs">
       <DependentUpon>CustomTextbox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard.cs">
+    <Compile Include="Dashboard\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dashboard.Designer.cs">
+    <Compile Include="Dashboard\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditCustomer.cs">
+    <Compile Include="Customers\EditCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditCustomer.Designer.cs">
+    <Compile Include="Customers\EditCustomer.Designer.cs">
       <DependentUpon>EditCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditItem.cs">
+    <Compile Include="Inventory\EditItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditItem.Designer.cs">
+    <Compile Include="Inventory\EditItem.Designer.cs">
       <DependentUpon>EditItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditLaundry.cs">
+    <Compile Include="Laundry Schedule\EditLaundry.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditLaundry.Designer.cs">
+    <Compile Include="Laundry Schedule\EditLaundry.Designer.cs">
       <DependentUpon>EditLaundry.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditService.cs">
+    <Compile Include="ServiceAndEquipment\EditService.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditService.Designer.cs">
+    <Compile Include="ServiceAndEquipment\EditService.Designer.cs">
       <DependentUpon>EditService.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditUnit.cs">
+    <Compile Include="ServiceAndEquipment\EditUnit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditUnit.Designer.cs">
+    <Compile Include="ServiceAndEquipment\EditUnit.Designer.cs">
       <DependentUpon>EditUnit.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditUser.cs">
+    <Compile Include="Users\EditUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditUser.Designer.cs">
+    <Compile Include="Users\EditUser.Designer.cs">
       <DependentUpon>EditUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="FinishedList.cs">
+    <Compile Include="Laundry Schedule\FinishedList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FinishedList.Designer.cs">
+    <Compile Include="Laundry Schedule\FinishedList.Designer.cs">
       <DependentUpon>FinishedList.cs</DependentUpon>
     </Compile>
-    <Compile Include="FinishedSched.cs">
+    <Compile Include="Laundry Schedule\FinishedSched.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FinishedSched.Designer.cs">
+    <Compile Include="Laundry Schedule\FinishedSched.Designer.cs">
       <DependentUpon>FinishedSched.cs</DependentUpon>
     </Compile>
-    <Compile Include="FreeWash.cs">
+    <Compile Include="Customers\FreeWash.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FreeWash.Designer.cs">
+    <Compile Include="Customers\FreeWash.Designer.cs">
       <DependentUpon>FreeWash.cs</DependentUpon>
     </Compile>
-    <Compile Include="InProgLaundryList.cs">
+    <Compile Include="Laundry Schedule\InProgLaundryList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="InProgLaundryList.Designer.cs">
+    <Compile Include="Laundry Schedule\InProgLaundryList.Designer.cs">
       <DependentUpon>InProgLaundryList.cs</DependentUpon>
     </Compile>
-    <Compile Include="InProgressList.cs">
+    <Compile Include="Laundry Schedule\InProgressList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="InProgressList.Designer.cs">
+    <Compile Include="Laundry Schedule\InProgressList.Designer.cs">
       <DependentUpon>InProgressList.cs</DependentUpon>
     </Compile>
-    <Compile Include="InProgressSched.cs">
+    <Compile Include="Laundry Schedule\InProgressSched.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InProgressSched.Designer.cs">
+    <Compile Include="Laundry Schedule\InProgressSched.Designer.cs">
       <DependentUpon>InProgressSched.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inventory.cs">
+    <Compile Include="Inventory\Inventory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inventory.Designer.cs">
+    <Compile Include="Inventory\Inventory.Designer.cs">
       <DependentUpon>Inventory.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemHistory.cs">
+    <Compile Include="Inventory\ItemHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ItemHistory.Designer.cs">
+    <Compile Include="Inventory\ItemHistory.Designer.cs">
       <DependentUpon>ItemHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemHistoryList.cs">
+    <Compile Include="Inventory\ItemHistoryList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ItemHistoryList.Designer.cs">
+    <Compile Include="Inventory\ItemHistoryList.Designer.cs">
       <DependentUpon>ItemHistoryList.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemList.cs">
+    <Compile Include="Inventory\ItemList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ItemList.Designer.cs">
+    <Compile Include="Inventory\ItemList.Designer.cs">
       <DependentUpon>ItemList.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemView.cs">
+    <Compile Include="Inventory\ItemView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ItemView.Designer.cs">
+    <Compile Include="Inventory\ItemView.Designer.cs">
       <DependentUpon>ItemView.cs</DependentUpon>
     </Compile>
-    <Compile Include="LaundryOperations.cs">
+    <Compile Include="Laundry Schedule\LaundryOperations.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LaundryOperations.Designer.cs">
+    <Compile Include="Laundry Schedule\LaundryOperations.Designer.cs">
       <DependentUpon>LaundryOperations.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Others\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Others\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="MachineList.cs">
+    <Compile Include="Laundry Schedule\MachineList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MachineList.Designer.cs">
+    <Compile Include="Laundry Schedule\MachineList.Designer.cs">
       <DependentUpon>MachineList.cs</DependentUpon>
     </Compile>
-    <Compile Include="MachineUnitList.cs">
+    <Compile Include="Laundry Schedule\MachineUnitList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MachineUnitList.Designer.cs">
+    <Compile Include="Laundry Schedule\MachineUnitList.Designer.cs">
       <DependentUpon>MachineUnitList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs">
+    <Compile Include="Others\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
+    <Compile Include="Others\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="MissingItem.cs">
+    <Compile Include="Customers\MissingItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MissingItem.Designer.cs">
+    <Compile Include="Customers\MissingItem.Designer.cs">
       <DependentUpon>MissingItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="NotificationList.cs">
+    <Compile Include="Others\NotificationList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="NotificationList.Designer.cs">
+    <Compile Include="Others\NotificationList.Designer.cs">
       <DependentUpon>NotificationList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Notifications.cs">
+    <Compile Include="Others\Notifications.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Notifications.Designer.cs">
+    <Compile Include="Others\Notifications.Designer.cs">
       <DependentUpon>Notifications.cs</DependentUpon>
     </Compile>
-    <Compile Include="notifItem.cs">
+    <Compile Include="Others\notifItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="notifItem.Designer.cs">
+    <Compile Include="Others\notifItem.Designer.cs">
       <DependentUpon>notifItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="NotifOverlay.cs">
+    <Compile Include="Others\NotifOverlay.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="NotifOverlay.Designer.cs">
+    <Compile Include="Others\NotifOverlay.Designer.cs">
       <DependentUpon>NotifOverlay.cs</DependentUpon>
     </Compile>
-    <Compile Include="PaymentDetails.cs">
+    <Compile Include="Billing\PaymentDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PaymentDetails.Designer.cs">
+    <Compile Include="Billing\PaymentDetails.Designer.cs">
       <DependentUpon>PaymentDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="PendingLaundryList.cs">
+    <Compile Include="Laundry Schedule\PendingLaundryList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PendingLaundryList.Designer.cs">
+    <Compile Include="Laundry Schedule\PendingLaundryList.Designer.cs">
       <DependentUpon>PendingLaundryList.cs</DependentUpon>
     </Compile>
-    <Compile Include="PendingList.cs">
+    <Compile Include="Laundry Schedule\PendingList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PendingList.Designer.cs">
+    <Compile Include="Laundry Schedule\PendingList.Designer.cs">
       <DependentUpon>PendingList.cs</DependentUpon>
     </Compile>
-    <Compile Include="PendingPaymentList.cs">
+    <Compile Include="Billing\PendingPaymentList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PendingPaymentList.Designer.cs">
+    <Compile Include="Billing\PendingPaymentList.Designer.cs">
       <DependentUpon>PendingPaymentList.cs</DependentUpon>
     </Compile>
-    <Compile Include="PendingPayments.cs">
+    <Compile Include="Billing\PendingPayments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PendingPayments.Designer.cs">
+    <Compile Include="Billing\PendingPayments.Designer.cs">
       <DependentUpon>PendingPayments.cs</DependentUpon>
     </Compile>
-    <Compile Include="PendingSched.cs">
+    <Compile Include="Laundry Schedule\PendingSched.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PendingSched.Designer.cs">
+    <Compile Include="Laundry Schedule\PendingSched.Designer.cs">
       <DependentUpon>PendingSched.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Receipt.cs">
+    <Compile Include="Billing\Receipt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Receipt.Designer.cs">
+    <Compile Include="Billing\Receipt.Designer.cs">
       <DependentUpon>Receipt.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports.cs">
+    <Compile Include="Dashboard\Reports.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports.Designer.cs">
+    <Compile Include="Dashboard\Reports.Designer.cs">
       <DependentUpon>Reports.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportView.cs">
+    <Compile Include="Dashboard\ReportView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportView.Designer.cs">
+    <Compile Include="Dashboard\ReportView.Designer.cs">
       <DependentUpon>ReportView.cs</DependentUpon>
     </Compile>
-    <Compile Include="RestockItem.cs">
+    <Compile Include="Inventory\RestockItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RestockItem.Designer.cs">
+    <Compile Include="Inventory\RestockItem.Designer.cs">
       <DependentUpon>RestockItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="SameDateItem.cs">
+    <Compile Include="Customers\SameDateItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SameDateItem.Designer.cs">
+    <Compile Include="Customers\SameDateItem.Designer.cs">
       <DependentUpon>SameDateItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Schedule.cs">
+    <Compile Include="Laundry Schedule\Schedule.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Schedule.Designer.cs">
+    <Compile Include="Laundry Schedule\Schedule.Designer.cs">
       <DependentUpon>Schedule.cs</DependentUpon>
     </Compile>
-    <Compile Include="SelectableUnitList.cs">
+    <Compile Include="Laundry Schedule\SelectableUnitList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SelectableUnitList.Designer.cs">
+    <Compile Include="Laundry Schedule\SelectableUnitList.Designer.cs">
       <DependentUpon>SelectableUnitList.cs</DependentUpon>
     </Compile>
-    <Compile Include="SelectAvailableUnit.cs">
+    <Compile Include="Laundry Schedule\SelectAvailableUnit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SelectAvailableUnit.Designer.cs">
+    <Compile Include="Laundry Schedule\SelectAvailableUnit.Designer.cs">
       <DependentUpon>SelectAvailableUnit.cs</DependentUpon>
     </Compile>
-    <Compile Include="SelectServices.cs">
+    <Compile Include="Laundry Schedule\SelectServices.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SelectServices.Designer.cs">
+    <Compile Include="Laundry Schedule\SelectServices.Designer.cs">
       <DependentUpon>SelectServices.cs</DependentUpon>
     </Compile>
-    <Compile Include="ServiceEquipmentList.cs">
+    <Compile Include="ServiceAndEquipment\ServiceEquipmentList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ServiceEquipmentList.Designer.cs">
+    <Compile Include="ServiceAndEquipment\ServiceEquipmentList.Designer.cs">
       <DependentUpon>ServiceEquipmentList.cs</DependentUpon>
     </Compile>
-    <Compile Include="ServicesAndEquipment.cs">
+    <Compile Include="ServiceAndEquipment\ServicesAndEquipment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ServicesAndEquipment.Designer.cs">
+    <Compile Include="ServiceAndEquipment\ServicesAndEquipment.Designer.cs">
       <DependentUpon>ServicesAndEquipment.cs</DependentUpon>
     </Compile>
-    <Compile Include="ServiceTypeList.cs">
+    <Compile Include="Laundry Schedule\ServiceTypeList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ServiceTypeList.Designer.cs">
+    <Compile Include="Laundry Schedule\ServiceTypeList.Designer.cs">
       <DependentUpon>ServiceTypeList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Settings.cs">
+    <Compile Include="Others\Settings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Settings.Designer.cs">
+    <Compile Include="Others\Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="TransactionHistory.cs">
+    <Compile Include="Billing\TransactionHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TransactionHistory.Designer.cs">
+    <Compile Include="Billing\TransactionHistory.Designer.cs">
       <DependentUpon>TransactionHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="TransactionList.cs">
+    <Compile Include="Billing\TransactionList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TransactionList.Designer.cs">
+    <Compile Include="Billing\TransactionList.Designer.cs">
       <DependentUpon>TransactionList.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserAccount.cs">
+    <Compile Include="Users\UserAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserAccount.Designer.cs">
+    <Compile Include="Users\UserAccount.Designer.cs">
       <DependentUpon>UserAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserArchive.cs">
+    <Compile Include="Users\UserArchive.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserArchive.Designer.cs">
+    <Compile Include="Users\UserArchive.Designer.cs">
       <DependentUpon>UserArchive.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserArchiveList.cs">
+    <Compile Include="Users\UserArchiveList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserArchiveList.Designer.cs">
+    <Compile Include="Users\UserArchiveList.Designer.cs">
       <DependentUpon>UserArchiveList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Users.cs">
+    <Compile Include="Users\Users.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Users.Designer.cs">
+    <Compile Include="Users\Users.Designer.cs">
       <DependentUpon>Users.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AccountList.resx">
+    <EmbeddedResource Include="Users\AccountList.resx">
       <DependentUpon>AccountList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ActivityLog.resx">
+    <EmbeddedResource Include="Users\ActivityLog.resx">
       <DependentUpon>ActivityLog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="activityLogItem.resx">
+    <EmbeddedResource Include="Users\activityLogItem.resx">
       <DependentUpon>activityLogItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ActivityLogList.resx">
+    <EmbeddedResource Include="Users\ActivityLogList.resx">
       <DependentUpon>ActivityLogList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddComplaint.resx">
+    <EmbeddedResource Include="Customers\AddComplaint.resx">
       <DependentUpon>AddComplaint.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddCustomer.resx">
+    <EmbeddedResource Include="Customers\AddCustomer.resx">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddItem.resx">
+    <EmbeddedResource Include="Inventory\AddItem.resx">
       <DependentUpon>AddItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddLaundry.resx">
+    <EmbeddedResource Include="Laundry Schedule\AddLaundry.resx">
       <DependentUpon>AddLaundry.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddService.resx">
+    <EmbeddedResource Include="ServiceAndEquipment\AddService.resx">
       <DependentUpon>AddService.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddUnit.resx">
+    <EmbeddedResource Include="ServiceAndEquipment\AddUnit.resx">
       <DependentUpon>AddUnit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddUser.resx">
+    <EmbeddedResource Include="Users\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ArchiveInventory.resx">
+    <EmbeddedResource Include="Inventory\ArchiveInventory.resx">
       <DependentUpon>ArchiveInventory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ArchiveInventoryList.resx">
+    <EmbeddedResource Include="Inventory\ArchiveInventoryList.resx">
       <DependentUpon>ArchiveInventoryList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ArchiveSched.resx">
+    <EmbeddedResource Include="Laundry Schedule\ArchiveSched.resx">
       <DependentUpon>ArchiveSched.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ArchiveSchedList.resx">
+    <EmbeddedResource Include="Laundry Schedule\ArchiveSchedList.resx">
       <DependentUpon>ArchiveSchedList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Billing.resx">
+    <EmbeddedResource Include="Billing\Billing.resx">
       <DependentUpon>Billing.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ComplaintList.resx">
+    <EmbeddedResource Include="Customers\ComplaintList.resx">
       <DependentUpon>ComplaintList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerArchive.resx">
+    <EmbeddedResource Include="Customers\CustomerArchive.resx">
       <DependentUpon>CustomerArchive.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerComplaints.resx">
+    <EmbeddedResource Include="Customers\CustomerComplaints.resx">
       <DependentUpon>CustomerComplaints.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerInfo.resx">
+    <EmbeddedResource Include="Customers\CustomerInfo.resx">
       <DependentUpon>CustomerInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerList.resx">
+    <EmbeddedResource Include="Customers\CustomerList.resx">
       <DependentUpon>CustomerList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customers.resx">
+    <EmbeddedResource Include="Customers\Customers.resx">
       <DependentUpon>Customers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomTextbox.resx">
+    <EmbeddedResource Include="CustomControls\CustomTextbox.resx">
       <DependentUpon>CustomTextbox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dashboard.resx">
+    <EmbeddedResource Include="Dashboard\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditCustomer.resx">
+    <EmbeddedResource Include="Customers\EditCustomer.resx">
       <DependentUpon>EditCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditItem.resx">
+    <EmbeddedResource Include="Inventory\EditItem.resx">
       <DependentUpon>EditItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditLaundry.resx">
+    <EmbeddedResource Include="Laundry Schedule\EditLaundry.resx">
       <DependentUpon>EditLaundry.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditService.resx">
+    <EmbeddedResource Include="ServiceAndEquipment\EditService.resx">
       <DependentUpon>EditService.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditUnit.resx">
+    <EmbeddedResource Include="ServiceAndEquipment\EditUnit.resx">
       <DependentUpon>EditUnit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditUser.resx">
+    <EmbeddedResource Include="Users\EditUser.resx">
       <DependentUpon>EditUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FinishedList.resx">
+    <EmbeddedResource Include="Laundry Schedule\FinishedList.resx">
       <DependentUpon>FinishedList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FinishedSched.resx">
+    <EmbeddedResource Include="Laundry Schedule\FinishedSched.resx">
       <DependentUpon>FinishedSched.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FreeWash.resx">
+    <EmbeddedResource Include="Customers\FreeWash.resx">
       <DependentUpon>FreeWash.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InProgLaundryList.resx">
+    <EmbeddedResource Include="Laundry Schedule\InProgLaundryList.resx">
       <DependentUpon>InProgLaundryList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InProgressList.resx">
+    <EmbeddedResource Include="Laundry Schedule\InProgressList.resx">
       <DependentUpon>InProgressList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InProgressSched.resx">
+    <EmbeddedResource Include="Laundry Schedule\InProgressSched.resx">
       <DependentUpon>InProgressSched.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inventory.resx">
+    <EmbeddedResource Include="Inventory\Inventory.resx">
       <DependentUpon>Inventory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ItemHistory.resx">
+    <EmbeddedResource Include="Inventory\ItemHistory.resx">
       <DependentUpon>ItemHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ItemHistoryList.resx">
+    <EmbeddedResource Include="Inventory\ItemHistoryList.resx">
       <DependentUpon>ItemHistoryList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ItemList.resx">
+    <EmbeddedResource Include="Inventory\ItemList.resx">
       <DependentUpon>ItemList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ItemView.resx">
+    <EmbeddedResource Include="Inventory\ItemView.resx">
       <DependentUpon>ItemView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LaundryOperations.resx">
+    <EmbeddedResource Include="Laundry Schedule\LaundryOperations.resx">
       <DependentUpon>LaundryOperations.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Others\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MachineList.resx">
+    <EmbeddedResource Include="Laundry Schedule\MachineList.resx">
       <DependentUpon>MachineList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MachineUnitList.resx">
+    <EmbeddedResource Include="Laundry Schedule\MachineUnitList.resx">
       <DependentUpon>MachineUnitList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
+    <EmbeddedResource Include="Others\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MissingItem.resx">
+    <EmbeddedResource Include="Customers\MissingItem.resx">
       <DependentUpon>MissingItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NotificationList.resx">
+    <EmbeddedResource Include="Others\NotificationList.resx">
       <DependentUpon>NotificationList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Notifications.resx">
+    <EmbeddedResource Include="Others\Notifications.resx">
       <DependentUpon>Notifications.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="notifItem.resx">
+    <EmbeddedResource Include="Others\notifItem.resx">
       <DependentUpon>notifItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NotifOverlay.resx">
+    <EmbeddedResource Include="Others\NotifOverlay.resx">
       <DependentUpon>NotifOverlay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PaymentDetails.resx">
+    <EmbeddedResource Include="Billing\PaymentDetails.resx">
       <DependentUpon>PaymentDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PendingLaundryList.resx">
+    <EmbeddedResource Include="Laundry Schedule\PendingLaundryList.resx">
       <DependentUpon>PendingLaundryList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PendingList.resx">
+    <EmbeddedResource Include="Laundry Schedule\PendingList.resx">
       <DependentUpon>PendingList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PendingPaymentList.resx">
+    <EmbeddedResource Include="Billing\PendingPaymentList.resx">
       <DependentUpon>PendingPaymentList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PendingPayments.resx">
+    <EmbeddedResource Include="Billing\PendingPayments.resx">
       <DependentUpon>PendingPayments.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PendingSched.resx">
+    <EmbeddedResource Include="Laundry Schedule\PendingSched.resx">
       <DependentUpon>PendingSched.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -717,58 +834,58 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Receipt.resx">
+    <EmbeddedResource Include="Billing\Receipt.resx">
       <DependentUpon>Receipt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports.resx">
+    <EmbeddedResource Include="Dashboard\Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportView.resx">
+    <EmbeddedResource Include="Dashboard\ReportView.resx">
       <DependentUpon>ReportView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RestockItem.resx">
+    <EmbeddedResource Include="Inventory\RestockItem.resx">
       <DependentUpon>RestockItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SameDateItem.resx">
+    <EmbeddedResource Include="Customers\SameDateItem.resx">
       <DependentUpon>SameDateItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Schedule.resx">
+    <EmbeddedResource Include="Laundry Schedule\Schedule.resx">
       <DependentUpon>Schedule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SelectableUnitList.resx">
+    <EmbeddedResource Include="Laundry Schedule\SelectableUnitList.resx">
       <DependentUpon>SelectableUnitList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SelectAvailableUnit.resx">
+    <EmbeddedResource Include="Laundry Schedule\SelectAvailableUnit.resx">
       <DependentUpon>SelectAvailableUnit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SelectServices.resx">
+    <EmbeddedResource Include="Laundry Schedule\SelectServices.resx">
       <DependentUpon>SelectServices.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ServiceEquipmentList.resx">
+    <EmbeddedResource Include="ServiceAndEquipment\ServiceEquipmentList.resx">
       <DependentUpon>ServiceEquipmentList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ServicesAndEquipment.resx">
+    <EmbeddedResource Include="ServiceAndEquipment\ServicesAndEquipment.resx">
       <DependentUpon>ServicesAndEquipment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ServiceTypeList.resx">
+    <EmbeddedResource Include="Laundry Schedule\ServiceTypeList.resx">
       <DependentUpon>ServiceTypeList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Settings.resx">
+    <EmbeddedResource Include="Others\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TransactionList.resx">
+    <EmbeddedResource Include="Billing\TransactionList.resx">
       <DependentUpon>TransactionList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserAccount.resx">
+    <EmbeddedResource Include="Users\UserAccount.resx">
       <DependentUpon>UserAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserArchive.resx">
+    <EmbeddedResource Include="Users\UserArchive.resx">
       <DependentUpon>UserArchive.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserArchiveList.resx">
+    <EmbeddedResource Include="Users\UserArchiveList.resx">
       <DependentUpon>UserArchiveList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Users.resx">
+    <EmbeddedResource Include="Users\Users.resx">
       <DependentUpon>Users.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -920,11 +1037,16 @@
   <ItemGroup>
     <None Include="Resources\Settings.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewNotif.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props'))" />
+    <Error Condition="!Exists('packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets'))" />
   </Target>
+  <Import Project="packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />
 </Project>

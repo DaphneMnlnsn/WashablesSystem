@@ -184,6 +184,9 @@
   <data name="Name_Tag_Woman_Horizontal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Name Tag Woman Horizontal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="NewNotif" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewNotif.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Open_Parcel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Open Parcel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

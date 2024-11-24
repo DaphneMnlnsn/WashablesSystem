@@ -93,7 +93,7 @@
             this.ctxtbxPass.Multiline = false;
             this.ctxtbxPass.Name = "ctxtbxPass";
             this.ctxtbxPass.Padding = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.ctxtbxPass.PasswordChar = false;
+            this.ctxtbxPass.PasswordChar = true;
             this.ctxtbxPass.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.ctxtbxPass.PlaceholderText = "";
             this.ctxtbxPass.Size = new System.Drawing.Size(277, 32);

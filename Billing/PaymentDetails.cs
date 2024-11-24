@@ -42,5 +42,25 @@ namespace WashablesSystem
             txtBoxWeight.Text = "5.00";
             lblTotal.Text = "140.00";
         }
+
+        private void radioBtnGcash_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioBtnGcash.Checked)
+            {
+                txtBoxReferenceNo.Enabled = true;
+            }
+            else if (!radioBtnGcash.Checked)
+            {
+                txtBoxReferenceNo.Enabled = false;
+            }
+        }
+
+        private void downpaymentRadio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (downpaymentRadio.Checked)
+            {
+                totalAmountLbl.Text = "Downpayment Amount:";
+            }
+        }
     }
 }

@@ -207,7 +207,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 425F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 69F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel1.Controls.Add(this.btnSettings, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.logo, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnNotif, 3, 0);
@@ -226,7 +226,7 @@
             // 
             this.btnSettings.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnSettings.Image = global::WashablesSystem.Properties.Resources.Settings;
-            this.btnSettings.Location = new System.Drawing.Point(962, 16);
+            this.btnSettings.Location = new System.Drawing.Point(961, 16);
             this.btnSettings.Margin = new System.Windows.Forms.Padding(2, 2, 9, 2);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(34, 33);
@@ -249,8 +249,8 @@
             // btnNotif
             // 
             this.btnNotif.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnNotif.Image = global::WashablesSystem.Properties.Resources.Bell;
-            this.btnNotif.Location = new System.Drawing.Point(909, 14);
+            this.btnNotif.Image = global::WashablesSystem.Properties.Resources.NewNotif;
+            this.btnNotif.Location = new System.Drawing.Point(908, 14);
             this.btnNotif.Margin = new System.Windows.Forms.Padding(2, 2, 7, 2);
             this.btnNotif.Name = "btnNotif";
             this.btnNotif.Size = new System.Drawing.Size(37, 36);
@@ -278,7 +278,7 @@
             this.lblProfile.AutoSize = true;
             this.lblProfile.Font = new System.Drawing.Font("Berlin Sans FB", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProfile.ForeColor = System.Drawing.Color.White;
-            this.lblProfile.Location = new System.Drawing.Point(806, 17);
+            this.lblProfile.Location = new System.Drawing.Point(805, 17);
             this.lblProfile.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProfile.Name = "lblProfile";
             this.lblProfile.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -291,7 +291,7 @@
             // 
             this.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnLogout.Image = global::WashablesSystem.Properties.Resources.Logout;
-            this.btnLogout.Location = new System.Drawing.Point(1007, 14);
+            this.btnLogout.Location = new System.Drawing.Point(1006, 14);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(37, 36);

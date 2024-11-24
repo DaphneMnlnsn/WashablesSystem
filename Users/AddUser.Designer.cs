@@ -58,6 +58,8 @@
             this.checkLaundry = new System.Windows.Forms.CheckBox();
             this.checkDashboard = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtBoxFullname = new WashablesSystem.CustomTextbox();
             ((System.ComponentModel.ISupportInitialize)(this.btnSee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConfirmSee)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +70,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(22, 236);
+            this.label4.Location = new System.Drawing.Point(23, 273);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(127, 18);
@@ -81,7 +83,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(22, 157);
+            this.label3.Location = new System.Drawing.Point(23, 207);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 18);
@@ -94,7 +96,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(22, 85);
+            this.label2.Location = new System.Drawing.Point(23, 140);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 18);
@@ -132,7 +134,7 @@
             // 
             this.btnSee.BackColor = System.Drawing.Color.Transparent;
             this.btnSee.Image = global::WashablesSystem.Properties.Resources.Eye;
-            this.btnSee.Location = new System.Drawing.Point(292, 184);
+            this.btnSee.Location = new System.Drawing.Point(293, 234);
             this.btnSee.Margin = new System.Windows.Forms.Padding(2);
             this.btnSee.Name = "btnSee";
             this.btnSee.Size = new System.Drawing.Size(31, 21);
@@ -144,7 +146,7 @@
             // 
             this.btnConfirmSee.BackColor = System.Drawing.Color.Transparent;
             this.btnConfirmSee.Image = global::WashablesSystem.Properties.Resources.Eye;
-            this.btnConfirmSee.Location = new System.Drawing.Point(291, 263);
+            this.btnConfirmSee.Location = new System.Drawing.Point(292, 300);
             this.btnConfirmSee.Margin = new System.Windows.Forms.Padding(2);
             this.btnConfirmSee.Name = "btnConfirmSee";
             this.btnConfirmSee.Size = new System.Drawing.Size(31, 21);
@@ -163,7 +165,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(179, 332);
+            this.btnCancel.Location = new System.Drawing.Point(185, 347);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(116, 29);
@@ -184,7 +186,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(59, 331);
+            this.btnSave.Location = new System.Drawing.Point(65, 346);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(116, 29);
@@ -192,6 +194,7 @@
             this.btnSave.Text = "Save";
             this.btnSave.TextColor = System.Drawing.Color.White;
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtBoxConfirm
             // 
@@ -202,7 +205,7 @@
             this.txtBoxConfirm.BorderSize = 1;
             this.txtBoxConfirm.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxConfirm.ForeColor = System.Drawing.Color.Black;
-            this.txtBoxConfirm.Location = new System.Drawing.Point(20, 259);
+            this.txtBoxConfirm.Location = new System.Drawing.Point(21, 296);
             this.txtBoxConfirm.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxConfirm.Multiline = false;
             this.txtBoxConfirm.Name = "txtBoxConfirm";
@@ -223,7 +226,7 @@
             this.txtBoxPass.BorderSize = 1;
             this.txtBoxPass.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxPass.ForeColor = System.Drawing.Color.Black;
-            this.txtBoxPass.Location = new System.Drawing.Point(20, 181);
+            this.txtBoxPass.Location = new System.Drawing.Point(21, 231);
             this.txtBoxPass.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxPass.Multiline = false;
             this.txtBoxPass.Name = "txtBoxPass";
@@ -244,7 +247,7 @@
             this.txtBoxName.BorderSize = 1;
             this.txtBoxName.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxName.ForeColor = System.Drawing.Color.Black;
-            this.txtBoxName.Location = new System.Drawing.Point(20, 109);
+            this.txtBoxName.Location = new System.Drawing.Point(21, 164);
             this.txtBoxName.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxName.Multiline = false;
             this.txtBoxName.Name = "txtBoxName";
@@ -466,11 +469,47 @@
             this.label5.TabIndex = 56;
             this.label5.Text = "User Permissions";
             // 
+            // label15
+            // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.label15.ForeColor = System.Drawing.Color.Black;
+            this.label15.Location = new System.Drawing.Point(23, 78);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(76, 18);
+            this.label15.TabIndex = 75;
+            this.label15.Text = "Full Name";
+            // 
+            // txtBoxFullname
+            // 
+            this.txtBoxFullname.BackColor = System.Drawing.Color.White;
+            this.txtBoxFullname.BorderColor = System.Drawing.Color.Silver;
+            this.txtBoxFullname.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.txtBoxFullname.BorderRadius = 5;
+            this.txtBoxFullname.BorderSize = 1;
+            this.txtBoxFullname.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxFullname.ForeColor = System.Drawing.Color.Black;
+            this.txtBoxFullname.Location = new System.Drawing.Point(21, 102);
+            this.txtBoxFullname.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxFullname.Multiline = false;
+            this.txtBoxFullname.Name = "txtBoxFullname";
+            this.txtBoxFullname.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
+            this.txtBoxFullname.PasswordChar = false;
+            this.txtBoxFullname.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtBoxFullname.PlaceholderText = "";
+            this.txtBoxFullname.Size = new System.Drawing.Size(307, 26);
+            this.txtBoxFullname.TabIndex = 74;
+            this.txtBoxFullname.UnderlinedStyle = false;
+            // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(693, 413);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.txtBoxFullname);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -543,5 +582,7 @@
         private System.Windows.Forms.CheckBox checkLaundry;
         private System.Windows.Forms.CheckBox checkDashboard;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label15;
+        private CustomTextbox txtBoxFullname;
     }
 }
