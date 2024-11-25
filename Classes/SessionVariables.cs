@@ -10,7 +10,7 @@ namespace WashablesSystem
     internal class SessionVariables
     {
         private static SqlConnection constring = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["SqlConnection"].ConnectionString);
-        private string _loggedIn;
+        private string _loggedIn = "U1";
 
         public SqlConnection Constring
         {

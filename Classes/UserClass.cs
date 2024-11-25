@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,7 +47,7 @@ namespace WashablesSystem.Classes
             constring = sessionVar.Constring;
             this.employeeName = employeeName;
             this.employeeUsername = employeeUsername;
-            this.employeePass = employeePass;
+            this.employeePass = Cryptography.Encrypt(employeePass);
             this.dashboardPermission = dashboardPermission;
             this.laundryPermission = laundryPermission;
             this.schedPermission = schedPermission;
@@ -84,8 +85,9 @@ namespace WashablesSystem.Classes
                 reader1.Close();
                 cmd.Dispose();
 
+                //Query for inserting
                 String query = "INSERT INTO [User] VALUES('" + employeeID + "','" + employeeName + "','"
-                    + employeeUsername + "','" + Cryptography.Encrypt(employeePass) + "','" + dashboardPermission + "','" + laundryPermission + "','"
+                    + employeeUsername + "','" + employeePass + "','" + dashboardPermission + "','" + laundryPermission + "','"
                     + schedPermission + "','" + sAndEPermission + "','" + inventoryPermission + "','" + customerPermission
                     + "','" + userPermission + "','" + billingPermission + "',1);";
 
@@ -116,22 +118,35 @@ namespace WashablesSystem.Classes
             constring.Open();
 
             //Verify if user has credentials
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM [User] WHERE username ='" + employeeUsername + "' AND user_password ='" + employeePass + "' AND archived = 0", constring);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            if (dt.Rows[0][0].ToString() == "1")
+            SqlCommand cmd = new SqlCommand("select * from [User] where username='" + employeeUsername + "'", constring);
+            SqlDataReader sdr = cmd.ExecuteReader();
+            string dbPassword = "";
+            string userID = "";
+            bool exists = false;
+            if (sdr.Read())
             {
-                SqlDataAdapter sda2 = new SqlDataAdapter("SELECT [user_id] FROM [User] WHERE username ='" + employeeUsername + "' AND archived = 0", constring);
-                DataTable dt2 = new DataTable();
-                sda2.Fill(dt2);
-                sessionVar.loggedIn = employeeUsername.ToString();
-                constring.Close();
-                return true;
+                userID = sdr.GetString(0);
+                dbPassword = sdr.GetString(3);  //get the user password from db if the user name exists.  
+                exists = true;
             }
-            else
+            constring.Close();
+            if (exists)  //if record exists in db, it will return true, otherwise it will return false  
             {
-                MessageBox.Show("Invalid username or password!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                constring.Close();
+                if (Cryptography.Decrypt(dbPassword).Equals(employeePass))
+                {
+                    sessionVar.loggedIn = userID;
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username or password!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return false;
+                }
+
+            }
+            else  //showing the error message if user credential is wrong  
+            {
+                MessageBox.Show("Invalid username hehe or password!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
         }
@@ -156,12 +171,26 @@ namespace WashablesSystem.Classes
             if (activity.Equals("Added New User"))
             {
                 constring.Open();
-                string queryAct = "INSERT INTO ActivityLog VALUES('" + sessionVar.loggedIn + "','" + "','added user "
-                            + employeeID + "'," + DateTime.Parse(DateTime.Now.ToString("MM-dd-yyyy hh:mm:ss"))  + ",'Users" + "')";
+                int logID = 0;
+                SqlCommand cmd = new SqlCommand("SELECT TOP 1 [log_id] FROM ActivityLog ORDER BY [log_id] DESC", constring);
+                SqlDataReader reader1;
+                reader1 = cmd.ExecuteReader();
+                if (reader1.Read())
+                {
+                    logID = reader1.GetInt32(0) + 1;
+                }
+                else
+                {
+                    MessageBox.Show("No Data Found");
+                }
+                reader1.Close();
+                cmd.Dispose();
+                string queryAct = "INSERT INTO ActivityLog VALUES('" + logID  + "','" + sessionVar.loggedIn.ToString() + "','added user "
+                            + employeeID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))  + "','Users" + "')";
                 SqlCommand cmdAct = new SqlCommand(queryAct, constring);
                 cmdAct.CommandText = queryAct;
                 cmdAct.ExecuteNonQuery();
-                MessageBox.Show("User added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("User successfully added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 constring.Close();
             }
         }
