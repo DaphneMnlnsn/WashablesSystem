@@ -89,7 +89,7 @@ namespace WashablesSystem.Classes
                 String query = "INSERT INTO [User] VALUES('" + employeeID + "','" + employeeName + "','"
                     + employeeUsername + "','" + employeePass + "','" + dashboardPermission + "','" + laundryPermission + "','"
                     + schedPermission + "','" + sAndEPermission + "','" + inventoryPermission + "','" + customerPermission
-                    + "','" + userPermission + "','" + billingPermission + "',1);";
+                    + "','" + userPermission + "','" + billingPermission + "',0);";
 
                 SqlCommand cmd2 = new SqlCommand(query, constring);
                 cmd2.CommandText = query;
@@ -118,7 +118,7 @@ namespace WashablesSystem.Classes
             constring.Open();
 
             //Verify if user has credentials
-            SqlCommand cmd = new SqlCommand("select * from [User] where username='" + employeeUsername + "'", constring);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM [User] WHERE username='" + employeeUsername + "' AND archived = 0", constring);
             SqlDataReader sdr = cmd.ExecuteReader();
             string dbPassword = "";
             string userID = "";
@@ -162,9 +162,28 @@ namespace WashablesSystem.Classes
         {
 
         }
-        public ArrayList displayUser()
+        public DataTable displayUser()
         {
-            return new ArrayList();
+            constring.Open();
+            string sql = "SELECT * FROM [User] WHERE archived = 0";
+            DataTable users = new DataTable("users");
+            SqlDataAdapter da = new SqlDataAdapter(sql, constring);
+            da.Fill(users);
+            constring.Close();
+            
+            return users;
+
+        }
+        public DataTable displayLog()
+        {
+            constring.Open();
+            string sql = "SELECT * FROM [ActivityLog] INNER JOIN [User] ON [ActivityLog].user_id = [User].user_id";
+            DataTable log = new DataTable("log");
+            SqlDataAdapter da = new SqlDataAdapter(sql, constring);
+            da.Fill(log);
+            constring.Close();
+
+            return log;
         }
         private void logOperation(string activity)
         {

@@ -17,9 +17,10 @@ namespace WashablesSystem
         {
             InitializeComponent();
         }
-        public void setActivityLog(string activitylogName, string activitylogDate, string activitylogDescription)
+        public void setActivityLog(string activityLocation, string activitylogName, string activitylogDate, string activitylogDescription)
         {
             //Displaying customer info
+            lblLocation.Text = activityLocation;
             actlogName.Text = activitylogName;
             actlogDate.Text = activitylogDate;
             actlogDescription.Text = activitylogDescription;           

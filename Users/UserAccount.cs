@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashablesSystem.Classes;
 
 namespace WashablesSystem
 {
@@ -19,13 +20,18 @@ namespace WashablesSystem
 
         private void UserAccount_Load(object sender, EventArgs e)
         {
-            AccountList account1= new AccountList();
-            account1.setUserAccount("U001", "Lyca Max", "Yes", "Yes", "Yes", "No", "No", "Yes", "No", "Yes");
-            accountContainer.Controls.Add(account1);
-
-            AccountList account2 = new AccountList();
-            account2.setUserAccount("U002", "Lyco Max", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes");
-            accountContainer.Controls.Add(account2);
+            UserClass user  = new UserClass();
+            DataTable users = user.displayUser();
+            foreach (DataRow row in users.Rows)
+            {
+                AccountList account = new AccountList();
+                account.setUserAccount(row["user_id"].ToString(), row["username"].ToString(),
+                   row["dashboard_access"].ToString(), row["laundry_access"].ToString(), 
+                   row["schedule_access"].ToString(), row["sAndE_access"].ToString(), 
+                   row["inventory_access"].ToString(), row["customer_access"].ToString(),
+                   row["user_access"].ToString(), row["billing_access"].ToString());
+                accountContainer.Controls.Add(account);
+            }
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)

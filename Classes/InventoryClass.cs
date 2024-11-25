@@ -33,9 +33,9 @@ namespace WashablesSystem.Classes
         {
 
         }
-        public ArrayList displayItem()
+        public DataTable displayItem()
         {
-            return new ArrayList();
+            return new DataTable();
         }
         private void logOperation()
         {

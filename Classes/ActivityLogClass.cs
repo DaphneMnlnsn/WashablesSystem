@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +15,9 @@ namespace WashablesSystem.Classes
         private DateTime activityDate;
         private string activityDesc;
 
-        public ArrayList displayActivity()
+        public DataTable displayActivity()
         {
-            return new ArrayList();
+            return new DataTable();
         }
         private void logOperation()
         {

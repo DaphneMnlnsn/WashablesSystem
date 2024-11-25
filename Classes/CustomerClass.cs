@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,9 +32,9 @@ namespace WashablesSystem.Classes
         {
 
         }
-        public ArrayList displayCustomer()
+        public DataTable displayCustomer()
         {
-            return new ArrayList();
+            return new DataTable();
         }
         private void logOperation()
         {

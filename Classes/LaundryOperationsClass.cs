@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,10 +28,9 @@ namespace WashablesSystem.Classes
         {
 
         }
-        public ArrayList getOperationDetails()
+        public DataTable getOperationDetails()
         {
-            ArrayList operations = null;
-            return operations;
+            return new DataTable();
         }
         private void logOperation()
         {
