@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -8,30 +7,32 @@ using System.Threading.Tasks;
 
 namespace WashablesSystem.Classes
 {
-    internal class EquipmentClass
+    internal class ServiceClass
     {
-        private string unitID;
-        private string unitName;
-        private bool unitStatus;
+        private string serviceID;
+        private string serviceName;
+        private string serviceCategory;
+        private decimal servicePrice;
+        private decimal serviceMinWeight;
         private bool availabilityStatus;
 
-        public void addUnit()
+        public void addService()
         {
 
         }
-        public void editUnit(string unitID)
+        public void editService(string serviceID)
         {
 
         }
-        public void restoreUnit(string unitID)
+        public void restoreService(string serviceID)
         {
 
         }
-        public void archiveUnit(string unitID)
+        public void archiveService(string serviceID)
         {
 
         }
-        public void deleteUnit(string unitID)
+        public void deleteUnit(string serviceID)
         {
 
         }

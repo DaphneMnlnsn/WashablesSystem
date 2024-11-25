@@ -28,6 +28,10 @@ namespace WashablesSystem.Classes
         {
 
         }
+        public void archiveCustomer(string customerID)
+        {
+
+        }
         public void deleteCustomer(string customerID)
         {
 

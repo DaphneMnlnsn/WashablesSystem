@@ -158,6 +158,10 @@ namespace WashablesSystem.Classes
         {
 
         }
+        public void archiveUser(string userID)
+        {
+
+        }
         public void deleteUser(string userID)
         {
 
@@ -172,6 +176,18 @@ namespace WashablesSystem.Classes
             constring.Close();
             
             return users;
+
+        }
+        public DataTable displayUserArchive()
+        {
+            constring.Open();
+            string sql = "SELECT * FROM [User] WHERE archived = 1";
+            DataTable usersArchive = new DataTable("usersArchive");
+            SqlDataAdapter da = new SqlDataAdapter(sql, constring);
+            da.Fill(usersArchive);
+            constring.Close();
+
+            return usersArchive;
 
         }
         public DataTable displayLog()

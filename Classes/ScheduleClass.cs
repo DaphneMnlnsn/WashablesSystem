@@ -10,21 +10,30 @@ namespace WashablesSystem.Classes
 {
     internal class ScheduleClass
     {
+        private string orderID;
+        private string unitID;
+        private string customerID;
         private string serviceID;
-        private string serviceMain;
-        private string serviceTypeName;
-        private decimal ServiceRates;
-        private bool availabilityStatus;
+        private DateTime startTime;
+        private DateTime endTime;
+        private DateTime timeScheduled;
+        private DateTime pickupDate;
+        private DateTime dateFinished;
+        private string status;
 
-        public void addService()
+        public void editSchedule(string serviceID)
         {
 
         }
-        public void editService(string serviceID)
+        public void pauseSchedule(string serviceID)
         {
 
         }
-        public void restoreService(string serviceID)
+        public void playSchedule(string serviceID)
+        {
+
+        }
+        public void cancelSchedule(string serviceID)
         {
 
         }
@@ -32,7 +41,19 @@ namespace WashablesSystem.Classes
         {
 
         }
-        public DataTable displayService()
+        public DataTable displayInProgress()
+        {
+            return new DataTable();
+        }
+        public DataTable displayPending()
+        {
+            return new DataTable();
+        }
+        public DataTable displayFinished()
+        {
+            return new DataTable();
+        }
+        public DataTable displayCancelled()
         {
             return new DataTable();
         }

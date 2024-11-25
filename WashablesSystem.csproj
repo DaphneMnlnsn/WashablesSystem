@@ -184,6 +184,7 @@
     <Compile Include="Classes\NotificationClass.cs" />
     <Compile Include="Classes\PaymentClass.cs" />
     <Compile Include="Classes\ScheduleClass.cs" />
+    <Compile Include="Classes\ServiceClass.cs" />
     <Compile Include="Classes\UserClass.cs" />
     <Compile Include="Classes\SessionVariables.cs" />
     <Compile Include="Users\AccountList.cs">
