@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashablesSystem.Classes;
 
 namespace WashablesSystem
 {
@@ -19,13 +20,17 @@ namespace WashablesSystem
 
         private void CustomerInfo_Load(object sender, EventArgs e)
         {
-            CustomerList customer = new CustomerList();
-            customer.setCustomerInfo("C001", "Quiana Momingo", "momingo@gmail.com", "09132134761", "01 St., Balagtas, Bulacan", WashablesSystem.Properties.Resources.Create, "edit");
-            customerContainer.Controls.Add(customer);
-
-            CustomerList customer2 = new CustomerList();
-            customer2.setCustomerInfo("C002", "Kiana Valerio", "kvalerio@gmail.com", "09132133568", "02 St., Balagtas, Bulacan", WashablesSystem.Properties.Resources.Create, "edit");
-            customerContainer.Controls.Add(customer2);
+            CustomerClass custom = new CustomerClass();
+            DataTable customers = custom.displayCustomer();
+            foreach (DataRow row in customers.Rows)
+            {
+                CustomerList account = new CustomerList();
+                account.setCustomerInfo(row["customer_id"].ToString(), row["customer_name"].ToString(),
+                   row["customer_email"].ToString(), row["customer_phone"].ToString(),
+                   row["customer_address"].ToString(), WashablesSystem.Properties.Resources.Create, "Edit");
+                customerContainer.Controls.Add(account);
+            }
+         
 
         }
 

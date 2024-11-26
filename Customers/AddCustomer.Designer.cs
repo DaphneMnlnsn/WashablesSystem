@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtBoxSearch = new WashablesSystem.CustomTextbox();
+            this.txtBoxName = new WashablesSystem.CustomTextbox();
             this.txtBoxEmail = new WashablesSystem.CustomTextbox();
             this.txtBoxPhone = new WashablesSystem.CustomTextbox();
             this.txtBoxAddress = new WashablesSystem.CustomTextbox();
@@ -42,26 +42,26 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // txtBoxSearch
+            // txtBoxName
             // 
-            this.txtBoxSearch.BackColor = System.Drawing.Color.White;
-            this.txtBoxSearch.BorderColor = System.Drawing.Color.Silver;
-            this.txtBoxSearch.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.txtBoxSearch.BorderRadius = 5;
-            this.txtBoxSearch.BorderSize = 1;
-            this.txtBoxSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxSearch.ForeColor = System.Drawing.Color.Black;
-            this.txtBoxSearch.Location = new System.Drawing.Point(20, 89);
-            this.txtBoxSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBoxSearch.Multiline = false;
-            this.txtBoxSearch.Name = "txtBoxSearch";
-            this.txtBoxSearch.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
-            this.txtBoxSearch.PasswordChar = false;
-            this.txtBoxSearch.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtBoxSearch.PlaceholderText = "";
-            this.txtBoxSearch.Size = new System.Drawing.Size(307, 26);
-            this.txtBoxSearch.TabIndex = 23;
-            this.txtBoxSearch.UnderlinedStyle = false;
+            this.txtBoxName.BackColor = System.Drawing.Color.White;
+            this.txtBoxName.BorderColor = System.Drawing.Color.Silver;
+            this.txtBoxName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.txtBoxName.BorderRadius = 5;
+            this.txtBoxName.BorderSize = 1;
+            this.txtBoxName.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxName.ForeColor = System.Drawing.Color.Black;
+            this.txtBoxName.Location = new System.Drawing.Point(20, 89);
+            this.txtBoxName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxName.Multiline = false;
+            this.txtBoxName.Name = "txtBoxName";
+            this.txtBoxName.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
+            this.txtBoxName.PasswordChar = false;
+            this.txtBoxName.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtBoxName.PlaceholderText = "";
+            this.txtBoxName.Size = new System.Drawing.Size(307, 26);
+            this.txtBoxName.TabIndex = 23;
+            this.txtBoxName.UnderlinedStyle = false;
             // 
             // txtBoxEmail
             // 
@@ -145,6 +145,7 @@
             this.btnAdd.Text = "Add";
             this.btnAdd.TextColor = System.Drawing.Color.White;
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnCancel
             // 
@@ -261,7 +262,7 @@
             this.Controls.Add(this.txtBoxAddress);
             this.Controls.Add(this.txtBoxPhone);
             this.Controls.Add(this.txtBoxEmail);
-            this.Controls.Add(this.txtBoxSearch);
+            this.Controls.Add(this.txtBoxName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddCustomer";
@@ -272,7 +273,7 @@
         }
 
         #endregion
-        private CustomTextbox txtBoxSearch;
+        private CustomTextbox txtBoxName;
         private CustomTextbox txtBoxEmail;
         private CustomTextbox txtBoxPhone;
         private CustomTextbox txtBoxAddress;
