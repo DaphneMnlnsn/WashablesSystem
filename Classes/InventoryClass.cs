@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,14 @@ namespace WashablesSystem.Classes
         private string itemUnit;
         private decimal itemPrice;
         private bool availabilityStatus;
+
+        SessionVariables sessionVar = new SessionVariables();
+        private SqlConnection constring;
+
+        public InventoryClass()
+        {
+            constring = sessionVar.Constring;
+        }
 
         public void addItem()
         {
@@ -40,7 +49,14 @@ namespace WashablesSystem.Classes
         }
         public DataTable displayItem()
         {
-            return new DataTable();
+            constring.Open();
+            string sql = "SELECT * FROM [Item] WHERE archived = 0";
+            DataTable item = new DataTable("item");
+            SqlDataAdapter da = new SqlDataAdapter(sql, constring);
+            da.Fill(item);
+            constring.Close();
+
+            return item;
         }
         private void logOperation()
         {
