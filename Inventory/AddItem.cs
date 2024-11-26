@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashablesSystem.Classes;
 
 namespace WashablesSystem
 {
@@ -41,6 +42,14 @@ namespace WashablesSystem
         private void unitQuantity_SelectionChangeCommitted(object sender, EventArgs e)
         {
             lblPrice.Text = "Price per " + unitQuantity.Text;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+                InventoryClass inventory = new InventoryClass(txtBoxName.Text, cbCategory.Text, decimal.Parse(txtBoxQuantity.Text), decimal.Parse(txtBoxPrice.Text));
+                inventory.addItem();
+                this.Close();
+            
         }
     }
 }
