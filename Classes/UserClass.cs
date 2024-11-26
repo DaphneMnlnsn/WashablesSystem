@@ -146,25 +146,127 @@ namespace WashablesSystem.Classes
             }
             else  //showing the error message if user credential is wrong  
             {
-                MessageBox.Show("Invalid username hehe or password!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Invalid username or password!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
         }
         public void editUser(string userID)
         {
+            constring.Open();
 
+            this.employeeID = userID;
+
+            //Query for editing
+            String query = "UPDATE [User] SET user_fullname='" + employeeName + "',username='"
+                + employeeUsername + "',user_password='" + employeePass + "',dashboard_access='" + dashboardPermission 
+                + "',laundry_access='" + laundryPermission + "',schedule_access='"
+                + schedPermission + "',sAndE_access='" + sAndEPermission + "',inventory_access='" + inventoryPermission 
+                + "',customer_access='" + customerPermission + "',user_access='" + userPermission 
+                + "',billing_access='" + billingPermission + "' WHERE user_id='" + employeeID + "';";
+
+            SqlCommand cmd2 = new SqlCommand(query, constring);
+            cmd2.CommandText = query;
+
+            //If successful, add to activity log
+            if (cmd2.ExecuteNonQuery() == 1)
+            {
+                constring.Close();
+                logOperation("Edited User");
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong. Please try again.");
+                constring.Close();
+            }
+        }
+        public DataTable displaySelectedUser(string userID)
+        {
+            constring.Open();
+            string sql = "SELECT * FROM [User] WHERE user_id = '" + userID + "'";
+            DataTable userInfo = new DataTable("userInfo");
+            SqlDataAdapter da = new SqlDataAdapter(sql, constring);
+            da.Fill(userInfo);
+            constring.Close();
+
+            return userInfo;
         }
         public void restoreUser(string userID)
         {
+            constring.Open();
 
+            this.employeeID = userID;
+
+            String query = "UPDATE [User] SET archived=0 WHERE user_id='" + employeeID + "';";
+
+            SqlCommand cmd2 = new SqlCommand(query, constring);
+            cmd2.CommandText = query;
+
+            //If successful, add to activity log
+            if (cmd2.ExecuteNonQuery() == 1)
+            {
+                constring.Close();
+                logOperation("Restored User");
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong. Please try again.");
+                constring.Close();
+            }
         }
         public void archiveUser(string userID)
         {
+            constring.Open();
 
+            this.employeeID = userID;
+
+            if (!userID.Equals("U1"))
+            {
+                //Query for editing
+                String query = "UPDATE [User] SET archived=1 WHERE user_id='" + employeeID + "';";
+
+                SqlCommand cmd2 = new SqlCommand(query, constring);
+                cmd2.CommandText = query;
+
+                //If successful, add to activity log
+                if (cmd2.ExecuteNonQuery() == 1)
+                {
+                    constring.Close();
+                    logOperation("Archived User");
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong. Please try again.");
+                    constring.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Administrator cannot be deleted!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                constring.Close();
+            }
         }
         public void deleteUser(string userID)
         {
+            constring.Open();
 
+            this.employeeID = userID;
+
+            String query = "DELETE FROM [User] WHERE user_id='" + employeeID + "';";
+
+            SqlCommand cmd2 = new SqlCommand(query, constring);
+            cmd2.CommandText = query;
+
+            //If successful, add to activity log
+            if (cmd2.ExecuteNonQuery() == 1)
+            {
+                constring.Close();
+                logOperation("Deleted User");
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong. Please try again.");
+                constring.Close();
+            }
         }
         public DataTable displayUser()
         {
@@ -193,7 +295,7 @@ namespace WashablesSystem.Classes
         public DataTable displayLog()
         {
             constring.Open();
-            string sql = "SELECT * FROM [ActivityLog] INNER JOIN [User] ON [ActivityLog].user_id = [User].user_id";
+            string sql = "SELECT * FROM [ActivityLog] INNER JOIN [User] ON [ActivityLog].user_id = [User].user_id ORDER BY [log_id] DESC";
             DataTable log = new DataTable("log");
             SqlDataAdapter da = new SqlDataAdapter(sql, constring);
             da.Fill(log);
@@ -203,29 +305,71 @@ namespace WashablesSystem.Classes
         }
         private void logOperation(string activity)
         {
+            constring.Open();
+            int logID = 0;
+            SqlCommand cmd = new SqlCommand("SELECT TOP 1 [log_id] FROM ActivityLog ORDER BY [log_id] DESC", constring);
+            SqlDataReader reader1;
+            reader1 = cmd.ExecuteReader();
+            if (reader1.Read())
+            {
+                logID = reader1.GetInt32(0) + 1;
+            }
+            else
+            {
+                MessageBox.Show("No Data Found");
+            }
+            reader1.Close();
+            cmd.Dispose();
+
             if (activity.Equals("Added New User"))
             {
-                constring.Open();
-                int logID = 0;
-                SqlCommand cmd = new SqlCommand("SELECT TOP 1 [log_id] FROM ActivityLog ORDER BY [log_id] DESC", constring);
-                SqlDataReader reader1;
-                reader1 = cmd.ExecuteReader();
-                if (reader1.Read())
-                {
-                    logID = reader1.GetInt32(0) + 1;
-                }
-                else
-                {
-                    MessageBox.Show("No Data Found");
-                }
-                reader1.Close();
-                cmd.Dispose();
                 string queryAct = "INSERT INTO ActivityLog VALUES('" + logID  + "','" + sessionVar.loggedIn.ToString() + "','added user "
                             + employeeID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))  + "','Users" + "')";
                 SqlCommand cmdAct = new SqlCommand(queryAct, constring);
                 cmdAct.CommandText = queryAct;
                 cmdAct.ExecuteNonQuery();
                 MessageBox.Show("User successfully added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                constring.Close();
+            }
+
+            else if (activity.Equals("Edited User"))
+            {
+                string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','edited user "
+                            + employeeID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Users" + "')";
+                SqlCommand cmdAct = new SqlCommand(queryAct, constring);
+                cmdAct.CommandText = queryAct;
+                cmdAct.ExecuteNonQuery();
+                MessageBox.Show("Edit successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                constring.Close();
+            }
+            else if (activity.Equals("Archived User"))
+            {
+                string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','archived user "
+                            + employeeID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Users" + "')";
+                SqlCommand cmdAct = new SqlCommand(queryAct, constring);
+                cmdAct.CommandText = queryAct;
+                cmdAct.ExecuteNonQuery();
+                MessageBox.Show("User successfully archived!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                constring.Close();
+            }
+            else if (activity.Equals("Restored User"))
+            {
+                string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','restored user "
+                            + employeeID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Users" + "')";
+                SqlCommand cmdAct = new SqlCommand(queryAct, constring);
+                cmdAct.CommandText = queryAct;
+                cmdAct.ExecuteNonQuery();
+                MessageBox.Show("User successfully restored!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                constring.Close();
+            }
+            else if (activity.Equals("Deleted User"))
+            {
+                string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','deleted user "
+                            + employeeID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Users" + "')";
+                SqlCommand cmdAct = new SqlCommand(queryAct, constring);
+                cmdAct.CommandText = queryAct;
+                cmdAct.ExecuteNonQuery();
+                MessageBox.Show("User deleted permanently!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 constring.Close();
             }
         }

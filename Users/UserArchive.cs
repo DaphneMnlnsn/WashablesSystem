@@ -25,7 +25,7 @@ namespace WashablesSystem
             foreach (DataRow row in users.Rows)
             {
                 UserArchiveList archive = new UserArchiveList();
-                archive.setUserArchive(row["user_id"].ToString(), row["username"].ToString());
+                archive.setUserArchive(row["user_id"].ToString(), row["user_fullname"].ToString(), row["username"].ToString());
                 archiveContainer.Controls.Add(archive);
             }
 

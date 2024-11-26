@@ -9,6 +9,7 @@ using System.Runtime.Serialization.Formatters;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashablesSystem.Classes;
 
 namespace WashablesSystem
 {
@@ -35,8 +36,19 @@ namespace WashablesSystem
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            EditUser editUser = new EditUser();
+            EditUser editUser = new EditUser(employeeNo.Text);
             editUser.ShowDialog();
+        }
+
+        private void btnTrash_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this user account?\nThis will be moved to the user archive.", "Confirm Delete", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                UserClass userClass = new UserClass();
+                userClass.archiveUser(employeeNo.Text);
+            }
+
         }
     }
 }
