@@ -21,16 +21,16 @@ namespace WashablesSystem
             InitializeComponent();
         }
 
-        public void setItemInfo(string code, string name, string categ, string quan, string price)
+        public void setItemInfo(string code, string name, string categ, string quan, string price, string measurement)
         {
             //Displaying info
             ItemCode.Text = code;
             ItemName.Text = name;
             Category.Text = categ;
-            Quantity.Text = quan;
-            Price.Text = price;
+            Quantity.Text = quan + measurement;
+            Price.Text = price + "/" + measurement;
 
-            if (quan.Equals("20mL"))
+            if (Quantity.Text.Equals("20mL"))
             {
                 ItemCode.ForeColor = System.Drawing.Color.FromArgb(161, 0, 0);
                 ItemName.ForeColor = System.Drawing.Color.FromArgb(161, 0, 0);
@@ -55,8 +55,13 @@ namespace WashablesSystem
 
         private void tableLayoutPanel2_Click(object sender, EventArgs e)
         {
-            ItemHistory itemHistory = new ItemHistory();
+            ItemHistory itemHistory = new ItemHistory(ItemCode.Text);
             itemHistory.ShowDialog();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            //call archive method here
         }
     }
 }

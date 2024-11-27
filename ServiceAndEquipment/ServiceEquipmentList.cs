@@ -17,11 +17,18 @@ namespace WashablesSystem
             InitializeComponent();
         }
 
-        public void setRowInfo(string code, string category, string rs, string weight, string kind, Image editOrRestore)
+        public void setRowInfo(string code, string name, string rs, string s_or_e, string weight, string kind, Image editOrRestore)
         {
             lblCode.Text = code;
-            ulblSE.Text = category;
-            ulblRS.Text = "Php " + rs + "/kgs" + " (" + weight + "kgs min.)";
+            ulblSE.Text = name;
+            if (s_or_e.Equals("Service"))
+            {
+                ulblRS.Text = "Php " + rs + "/kgs" + " (" + weight + "kgs min.)";
+            }
+            else
+            {
+                ulblRS.Text = rs;
+            }
             what.Text = kind;
             btnEdit.Image = editOrRestore;
         }
@@ -39,8 +46,21 @@ namespace WashablesSystem
                 EditUnit editUnit = new EditUnit();
                 editUnit.ShowDialog();
             }
-            else
+            else if (what.Text.Equals("Restore"))
             {
+                //call restore method here
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (what.Text.Equals("Edit"))
+            {
+               //call archive method here
+            }
+            else if (what.Text.Equals("Restore"))
+            {
+               //call delete method here
             }
         }
     }

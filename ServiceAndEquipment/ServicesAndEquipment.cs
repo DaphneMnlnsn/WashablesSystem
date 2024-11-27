@@ -62,13 +62,12 @@ namespace WashablesSystem
                 ///
                 containerSE.Controls.Clear();
                 equipmentU = new EquipmentClass(cbSE.Text);
-                EquipmentClass equipments = new EquipmentClass();
-                DataTable equipment = equipments.displayUnit();
+                DataTable equipment = equipmentU.displayUnit(cbSE.Text);
                 foreach (DataRow row in equipment.Rows)
                 {
                     ServiceEquipmentList equipmentList = new ServiceEquipmentList();
                     equipmentList.setRowInfo(row["unit_id"].ToString(), row["unit_name"].ToString(),
-                       row["availability_status"].ToString(), "" , "Edit", WashablesSystem.Properties.Resources.Create);
+                       row["availability_status"].ToString(), "Equipment", "" , "Edit", WashablesSystem.Properties.Resources.Create);
                     containerSE.Controls.Add(equipmentList);
                 }
 
@@ -91,12 +90,12 @@ namespace WashablesSystem
                 /// 
                 containerSE.Controls.Clear();
                 service = new ServiceClass(cbSE.Text);
-                DataTable services = service.displayUnit();
+                DataTable services = service.displayService();
                 foreach (DataRow row in services.Rows)
                 {
                     ServiceEquipmentList serviceList = new ServiceEquipmentList();
                     serviceList.setRowInfo(row["service_id"].ToString(), row["service_name"].ToString(),
-                       row["service_rate"].ToString(), row["service_minWeight"].ToString(),
+                       row["service_rate"].ToString(), "Service", row["service_minWeight"].ToString(),
                        "Edit", WashablesSystem.Properties.Resources.Create);
                     containerSE.Controls.Add(serviceList);
                 }
@@ -109,18 +108,17 @@ namespace WashablesSystem
             ///
             if (btnEquipment.Text.Equals("EQUIPMENT"))
             {
-                ServiceEquipmentList row1 = new ServiceEquipmentList();
-                service = new ServiceClass(cbSE.Text); 
                 ///
                 /// display services
                 /// 
                 containerSE.Controls.Clear();
-                DataTable services = service.displayUnit();
+                service = new ServiceClass(cbSE.Text);
+                DataTable services = service.displayService();
                 foreach (DataRow row in services.Rows)
                 {
                     ServiceEquipmentList serviceList = new ServiceEquipmentList();
                     serviceList.setRowInfo(row["service_id"].ToString(), row["service_name"].ToString(),
-                       row["service_rate"].ToString(), row["service_minWeight"].ToString(),
+                       row["service_rate"].ToString(), "Service", row["service_minWeight"].ToString(),
                        "Edit", WashablesSystem.Properties.Resources.Create);
                     containerSE.Controls.Add(serviceList);
                 }
@@ -131,13 +129,13 @@ namespace WashablesSystem
                 /// display equipment
                 /// 
                 containerSE.Controls.Clear();
-                EquipmentClass equipments = new EquipmentClass();
-                DataTable equipment = equipments.displayUnit();
+                equipmentU = new EquipmentClass();
+                DataTable equipment = equipmentU.displayUnit(cbSE.Text);
                 foreach (DataRow row in equipment.Rows)
                 {
                     ServiceEquipmentList equipmentList = new ServiceEquipmentList();
                     equipmentList.setRowInfo(row["unit_id"].ToString(), row["unit_name"].ToString(),
-                       row["availability_status"].ToString(), "", "Edit", WashablesSystem.Properties.Resources.Create);
+                       row["availability_status"].ToString(), "Equipment", "", "Edit", WashablesSystem.Properties.Resources.Create);
                     containerSE.Controls.Add(equipmentList);
                 }
             }

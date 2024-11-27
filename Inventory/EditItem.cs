@@ -19,14 +19,17 @@ namespace WashablesSystem
 
         private void EditItem_Load(object sender, EventArgs e)
         {
-            txtBoxName.Text = "Surf Powder";
-            txtBoxPrice.Text = "200.00";
-            cbCategory.SelectedIndex = 0;
+            //call displayselectedinfo method here
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            //call edit method here
         }
     }
 }

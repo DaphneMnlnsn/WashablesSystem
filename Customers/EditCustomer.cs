@@ -24,10 +24,12 @@ namespace WashablesSystem
 
         private void EditCustomer_Load(object sender, EventArgs e)
         {
-            txtBoxName.Text = "Quiana Momingo";
-            txtBoxEmail.Text = "momingo@gmail.com";
-            txtBoxPhone.Text = "09132134761";
-            txtBoxAddress.Text = "01 St., Balagtas, Bulacan";
+            //call displayselectedinfo method here
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            //call edit method here
         }
     }
 }

@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashablesSystem.Classes;
 
 namespace WashablesSystem
 {
     public partial class ItemHistory : Form
     {
-        public ItemHistory()
+        string selectedItemID;
+        public ItemHistory(string itemID)
         {
             InitializeComponent();
+            this.selectedItemID = itemID;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -24,17 +27,15 @@ namespace WashablesSystem
 
         private void ItemHistory_Load(object sender, EventArgs e)
         {
-            ItemHistoryList activity1 = new ItemHistoryList();
-            activity1.setItemHistory("Roxanne Rose", "10/12/2024 8:38PM", "used 1mL");
-            activityContainer.Controls.Add(activity1);
-
-            ItemHistoryList activity2 = new ItemHistoryList();
-            activity2.setItemHistory("Roxanne Rose", "10/12/2024 7:34PM", "used 2g");
-            activityContainer.Controls.Add(activity2);
-
-            ItemHistoryList activity3 = new ItemHistoryList();
-            activity3.setItemHistory("Roxanne Rose", "10/12/2024 7:30PM", "added 3kg");
-            activityContainer.Controls.Add(activity3);
+            InventoryClass inventory = new InventoryClass();
+            DataTable itemHistoryTbl = inventory.displayItemHistory(selectedItemID);
+            foreach (DataRow row in itemHistoryTbl.Rows)
+            {
+                ItemHistoryList itemHistory = new ItemHistoryList();
+                itemHistory.setItemHistory(row["username"].ToString(), row["history_date"].ToString(),
+                   row["description"].ToString());
+                activityContainer.Controls.Add(itemHistory);
+            }
         }
     }
 }

@@ -39,7 +39,7 @@
             this.lblHeader = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancel = new WashablesSystem.CustomButton();
-            this.btnAdd = new WashablesSystem.CustomButton();
+            this.btnSave = new WashablesSystem.CustomButton();
             this.txtBoxRate = new WashablesSystem.CustomTextbox();
             this.txtBoxName = new WashablesSystem.CustomTextbox();
             this.txtBoxMin = new System.Windows.Forms.NumericUpDown();
@@ -210,25 +210,26 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnAdd
+            // btnSave
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.btnAdd.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.btnAdd.BorderColor = System.Drawing.Color.Transparent;
-            this.btnAdd.BorderRadius = 15;
-            this.btnAdd.BorderSize = 0;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(58, 299);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(116, 29);
-            this.btnAdd.TabIndex = 224;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.TextColor = System.Drawing.Color.White;
-            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.btnSave.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.btnSave.BorderColor = System.Drawing.Color.Transparent;
+            this.btnSave.BorderRadius = 15;
+            this.btnSave.BorderSize = 0;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(58, 299);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(116, 29);
+            this.btnSave.TabIndex = 224;
+            this.btnSave.Text = "Save";
+            this.btnSave.TextColor = System.Drawing.Color.White;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtBoxRate
             // 
@@ -303,7 +304,7 @@
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtBoxRate);
             this.Controls.Add(this.txtBoxName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -330,7 +331,7 @@
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label label1;
         private CustomButton btnCancel;
-        private CustomButton btnAdd;
+        private CustomButton btnSave;
         private CustomTextbox txtBoxRate;
         private CustomTextbox txtBoxName;
         private System.Windows.Forms.NumericUpDown txtBoxMin;

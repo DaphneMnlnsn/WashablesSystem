@@ -26,7 +26,7 @@ namespace WashablesSystem.Classes
         {
 
         }
-        public void missingItem()
+        public void missingItem(string order_date)
         {
 
         }

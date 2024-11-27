@@ -46,10 +46,9 @@ namespace WashablesSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-                InventoryClass inventory = new InventoryClass(txtBoxName.Text, cbCategory.Text, decimal.Parse(txtBoxQuantity.Text), decimal.Parse(txtBoxPrice.Text));
+                InventoryClass inventory = new InventoryClass(txtBoxName.Text, cbCategory.Text, decimal.Parse(txtBoxQuantity.Text), decimal.Parse(txtBoxPrice.Text), unitQuantity.Text);
                 inventory.addItem();
                 this.Close();
-            
         }
     }
 }

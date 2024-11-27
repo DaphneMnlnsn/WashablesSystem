@@ -40,10 +40,22 @@ namespace WashablesSystem
                 DialogResult dialogResult = MessageBox.Show("Restore this information?", "Confirm Restore", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("Customer information restored successfully!");
+                    //call restore method here
                 }
             }
             
+        }
+
+        private void btnTrash_Click(object sender, EventArgs e)
+        {
+            if (what.Text.Equals("edit"))
+            {
+                //call archive method here
+            }
+            else
+            {
+                //call delete method here
+            }
         }
     }
 }

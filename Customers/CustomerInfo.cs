@@ -30,8 +30,6 @@ namespace WashablesSystem
                    row["customer_address"].ToString(), WashablesSystem.Properties.Resources.Create, "Edit");
                 customerContainer.Controls.Add(account);
             }
-         
-
         }
 
         private void btnAddCustomer_Click(object sender, EventArgs e)

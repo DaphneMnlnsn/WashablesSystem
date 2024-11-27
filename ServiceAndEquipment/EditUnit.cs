@@ -23,9 +23,12 @@ namespace WashablesSystem
 
         private void EditUnit_Load(object sender, EventArgs e)
         {
-            cbEquipment.SelectedIndex = 0;
-            txtBoxName.Text = "Unit IV";
-            cbStatus.SelectedIndex = 0;
+            //call displayselectedinfo method here
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            //call edit method here
         }
     }
 }

@@ -96,6 +96,7 @@
             this.btnSave.Text = "Save";
             this.btnSave.TextColor = System.Drawing.Color.White;
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtBoxPrice
             // 

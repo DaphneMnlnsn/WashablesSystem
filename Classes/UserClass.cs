@@ -316,7 +316,7 @@ namespace WashablesSystem.Classes
             }
             else
             {
-                MessageBox.Show("No Data Found");
+                logID = 1;
             }
             reader1.Close();
             cmd.Dispose();

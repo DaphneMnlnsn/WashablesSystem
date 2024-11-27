@@ -23,10 +23,12 @@ namespace WashablesSystem
 
         private void EditService_Load(object sender, EventArgs e)
         {
-            cbService.SelectedIndex = 0;
-            txtBoxName.Text = "Curtains, Pillows";
-            txtBoxRate.Text = "70.00";
-            txtBoxMin.Value = 3;
+            //call displayselectedinfo method here
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            //call edit method here
         }
     }
 }

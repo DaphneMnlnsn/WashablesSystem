@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
@@ -44,35 +45,31 @@ namespace WashablesSystem.Classes
             int IDNum;
             constring.Open();
 
+            ///
+            /// unit code generator
+            /// 
+            string input = unitCategory;
+            string acronym = "";
+            char[] separators = new char[] { '-', ' ' };
+            string[] words = input.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+            foreach (string word in words)
+            {
+                acronym += word[0];
+            }
+
             //Add Unit to Database
-            SqlCommand cmd = new SqlCommand("SELECT TOP 1 [unit_name],[unit_id] FROM [Unit] ORDER BY [unit_id] DESC", constring);
+            SqlCommand cmd = new SqlCommand("SELECT TOP 1 [unit_name],[unit_id] FROM [Unit] WHERE [unit_category] = '" + unitCategory + "' ORDER BY [unit_id] DESC", constring);
             SqlDataReader reader1;
             reader1 = cmd.ExecuteReader();
             if (reader1.Read())
             {
                 unitID = reader1.GetString(1);
-                MessageBox.Show(unitID);
                 IDNum = int.Parse(string.Join("", unitID.Where(Char.IsDigit))) + 1;
-               
-                ///
-                /// unit code generator
-                /// 
-                string input = unitCategory;
-                string acronym = "";
-                char[] separators = new char[] { '-' };
-                string[] words = input.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-                foreach (string word in words)
-                {
-                    acronym += word[0];
-                }
                 unitID = acronym + "U" + IDNum;
-                ///
-                ///
-                ///
             }
             else
             {
-                MessageBox.Show("NO DATA FOUND");
+                unitID = acronym + "U1";
             }
             reader1.Close();
             cmd.Dispose();
@@ -101,6 +98,10 @@ namespace WashablesSystem.Classes
         {
 
         }
+        public DataTable displaySelectedUnit(string unitID)
+        {
+            return new DataTable();
+        }
         public void restoreUnit(string unitID)
         {
 
@@ -113,8 +114,9 @@ namespace WashablesSystem.Classes
         {
 
         }
-        public DataTable displayUnit()
+        public DataTable displayUnit(string unit_category)
         {
+            this.unitCategory = unit_category;
             constring.Open();
             string sql = "SELECT * FROM [Unit] WHERE archived = 0 AND unit_category = '" + unitCategory + "'";
             DataTable equipment = new DataTable("Unit");
@@ -124,31 +126,78 @@ namespace WashablesSystem.Classes
 
             return equipment;
         }
+        public DataTable displayUnitArchive()
+        {
+            return new DataTable();
+
+        }
         private void logOperation(string activity)
         {
+            constring.Open();
+            int logID = 0;
+            SqlCommand cmd = new SqlCommand("SELECT TOP 1 [log_id] FROM ActivityLog ORDER BY [log_id] DESC", constring);
+            SqlDataReader reader1;
+            reader1 = cmd.ExecuteReader();
+            if (reader1.Read())
+            {
+                logID = reader1.GetInt32(0) + 1;
+            }
+            else
+            {
+                logID = 1;
+            }
+            reader1.Close();
+            cmd.Dispose();
+
             if (activity.Equals("Added New Unit"))
             {
-                constring.Open();
-                int logID = 0;
-                SqlCommand cmd = new SqlCommand("SELECT TOP 1 [unit_id] FROM ActivityLog ORDER BY [unit_id] DESC", constring);
-                SqlDataReader reader1;
-                reader1 = cmd.ExecuteReader();
-                if (reader1.Read())
-                {
-                    logID = reader1.GetInt32(0) + 1;
-                }
-                else
-                {
-                    MessageBox.Show("No Data Found");
-                }
-                reader1.Close();
-                cmd.Dispose();
                 string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','added unit "
-                            + unitID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Equipment" + "')";
+                            + unitID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Unit" + "')";
                 SqlCommand cmdAct = new SqlCommand(queryAct, constring);
                 cmdAct.CommandText = queryAct;
                 cmdAct.ExecuteNonQuery();
                 MessageBox.Show("Unit successfully added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                constring.Close();
+            }
+
+            else if (activity.Equals("Edited Unit"))
+            {
+                string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','edited unit "
+                            + unitID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Unit" + "')";
+                SqlCommand cmdAct = new SqlCommand(queryAct, constring);
+                cmdAct.CommandText = queryAct;
+                cmdAct.ExecuteNonQuery();
+                MessageBox.Show("Unit successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                constring.Close();
+            }
+            else if (activity.Equals("Archived Unit"))
+            {
+                string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','archived unit "
+                            + unitID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Unit" + "')";
+                SqlCommand cmdAct = new SqlCommand(queryAct, constring);
+                cmdAct.CommandText = queryAct;
+                cmdAct.ExecuteNonQuery();
+                MessageBox.Show("Unit successfully archived!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                constring.Close();
+            }
+            else if (activity.Equals("Restored Unit"))
+            {
+                string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','restored unit "
+                            + unitID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Unit" + "')";
+                SqlCommand cmdAct = new SqlCommand(queryAct, constring);
+                cmdAct.CommandText = queryAct;
+                cmdAct.ExecuteNonQuery();
+                MessageBox.Show("Unit successfully restored!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                constring.Close();
+            }
+            else if (activity.Equals("Deleted Unit"))
+            {
+                string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','deleted unit "
+                            + unitID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Unit" + "')";
+                SqlCommand cmdAct = new SqlCommand(queryAct, constring);
+                cmdAct.CommandText = queryAct;
+                cmdAct.ExecuteNonQuery();
+                MessageBox.Show("Unit deleted permanently!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 constring.Close();
             }
         }

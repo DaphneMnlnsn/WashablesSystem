@@ -28,5 +28,15 @@ namespace WashablesSystem
             Quantity.Text = quan;
             Price.Text = price;
         }
+
+        private void btnRestore_Click(object sender, EventArgs e)
+        {
+            //call restore method here
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            //call delete method here
+        }
     }
 }

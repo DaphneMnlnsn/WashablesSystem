@@ -173,7 +173,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\ActivityLogClass.cs" />
     <Compile Include="Classes\ComplaintsClass.cs" />
     <Compile Include="Classes\Cryptography.cs" />
     <Compile Include="Classes\CustomerClass.cs" />

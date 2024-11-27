@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -45,33 +46,31 @@ namespace WashablesSystem.Classes
             int IDNum;
             constring.Open();
 
+            ///
+            /// service code generator
+            /// 
+            string input = serviceCategory;
+            string acronym = "";
+            char[] separators = new char[] { '-' };
+            string[] words = input.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+            foreach (string word in words)
+            {
+                acronym += word[0];
+            }
+
             //Add Service to Database
-            SqlCommand cmd = new SqlCommand("SELECT TOP 1 [service_name],[service_id] FROM [Service] ORDER BY [service_id] DESC", constring);
+            SqlCommand cmd = new SqlCommand("SELECT TOP 1 [service_name],[service_id] FROM [Service] WHERE [service_category] = '" + serviceCategory + "' ORDER BY [service_id] DESC", constring);
             SqlDataReader reader1;
             reader1 = cmd.ExecuteReader();
             if (reader1.Read())
             { 
                 serviceID = reader1.GetString(1);
                 IDNum = int.Parse(string.Join("", serviceID.Where(Char.IsDigit))) + 1;
-                ///
-                /// service code generator
-                /// 
-                string input = serviceCategory;
-                string acronym = "";
-                char[] separators = new char[] {'-'};
-                string[] words = input.Split(separators,StringSplitOptions.RemoveEmptyEntries);
-                foreach(string word in words)
-                {
-                    acronym += word[0];
-                }
                 serviceID = acronym + IDNum;
-                ///
-                ///
-                ///
             }
             else
             {
-                MessageBox.Show("NO DATA FOUND");
+                serviceID = acronym + "1";
             }
             reader1.Close();
             cmd.Dispose();
@@ -98,7 +97,11 @@ namespace WashablesSystem.Classes
         }
         public void editService(string serviceID)
         {
-
+            
+        }
+        public DataTable displaySelectedItem(string itemID)
+        {
+            return new DataTable();
         }
         public void restoreService(string serviceID)
         {
@@ -108,11 +111,11 @@ namespace WashablesSystem.Classes
         {
 
         }
-        public void deleteUnit(string serviceID)
+        public void deleteService(string serviceID)
         {
 
         }
-        public DataTable displayUnit()
+        public DataTable displayService()
         {
             constring.Open();
             string sql = "SELECT * FROM [Service] WHERE archived = 0 AND service_category = '" + serviceCategory + "'";
@@ -123,31 +126,78 @@ namespace WashablesSystem.Classes
 
             return service;
         }
+        public DataTable displayServiceArchive()
+        {
+            return new DataTable();
+
+        }
         private void logOperation(string activity)
         {
+            constring.Open();
+            int logID = 0;
+            SqlCommand cmd = new SqlCommand("SELECT TOP 1 [log_id] FROM ActivityLog ORDER BY [log_id] DESC", constring);
+            SqlDataReader reader1;
+            reader1 = cmd.ExecuteReader();
+            if (reader1.Read())
+            {
+                logID = reader1.GetInt32(0) + 1;
+            }
+            else
+            {
+                logID = 1;
+            }
+            reader1.Close();
+            cmd.Dispose();
+
             if (activity.Equals("Added New Service"))
             {
-                constring.Open();
-                int logID = 0;
-                SqlCommand cmd = new SqlCommand("SELECT TOP 1 [log_id] FROM ActivityLog ORDER BY [log_id] DESC", constring);
-                SqlDataReader reader1;
-                reader1 = cmd.ExecuteReader();
-                if (reader1.Read())
-                {
-                    logID = reader1.GetInt32(0) + 1;
-                }
-                else
-                {
-                    MessageBox.Show("No Data Found");
-                }
-                reader1.Close();
-                cmd.Dispose();
                 string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','added service "
                             + serviceID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Services" + "')";
                 SqlCommand cmdAct = new SqlCommand(queryAct, constring);
                 cmdAct.CommandText = queryAct;
                 cmdAct.ExecuteNonQuery();
                 MessageBox.Show("Service successfully added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                constring.Close();
+            }
+
+            else if (activity.Equals("Edited Service"))
+            {
+                string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','edited service "
+                            + serviceID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Services" + "')";
+                SqlCommand cmdAct = new SqlCommand(queryAct, constring);
+                cmdAct.CommandText = queryAct;
+                cmdAct.ExecuteNonQuery();
+                MessageBox.Show("Edit successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                constring.Close();
+            }
+            else if (activity.Equals("Archived Service"))
+            {
+                string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','archived service "
+                            + serviceID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Services" + "')";
+                SqlCommand cmdAct = new SqlCommand(queryAct, constring);
+                cmdAct.CommandText = queryAct;
+                cmdAct.ExecuteNonQuery();
+                MessageBox.Show("Service successfully archived!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                constring.Close();
+            }
+            else if (activity.Equals("Restored Service"))
+            {
+                string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','restored service "
+                            + serviceID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Services" + "')";
+                SqlCommand cmdAct = new SqlCommand(queryAct, constring);
+                cmdAct.CommandText = queryAct;
+                cmdAct.ExecuteNonQuery();
+                MessageBox.Show("Service successfully restored!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                constring.Close();
+            }
+            else if (activity.Equals("Deleted Service"))
+            {
+                string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','deleted service "
+                            + serviceID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Services" + "')";
+                SqlCommand cmdAct = new SqlCommand(queryAct, constring);
+                cmdAct.CommandText = queryAct;
+                cmdAct.ExecuteNonQuery();
+                MessageBox.Show("Service deleted permanently!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 constring.Close();
             }
         }
