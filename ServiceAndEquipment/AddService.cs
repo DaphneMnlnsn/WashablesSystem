@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashablesSystem.Classes;
 
 namespace WashablesSystem
 {
     public partial class AddService : Form
     {
+        
         public AddService()
         {
             InitializeComponent();
@@ -19,6 +21,13 @@ namespace WashablesSystem
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ServiceClass service = new ServiceClass(cbService.Text, txtBoxName.Text, 
+                decimal.Parse(txtBoxRate.Text), decimal.Parse(txtBoxMin.Text));
+            service.addService();
         }
     }
 }

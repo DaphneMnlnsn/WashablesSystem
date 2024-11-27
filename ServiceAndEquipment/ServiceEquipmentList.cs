@@ -17,11 +17,11 @@ namespace WashablesSystem
             InitializeComponent();
         }
 
-        public void setRowInfo(string code, string category, string rs, string kind, Image editOrRestore)
+        public void setRowInfo(string code, string category, string rs, string weight, string kind, Image editOrRestore)
         {
             lblCode.Text = code;
             ulblSE.Text = category;
-            ulblRS.Text = rs;
+            ulblRS.Text = "Php " + rs + "/kgs" + " (" + weight + "kgs min.)";
             what.Text = kind;
             btnEdit.Image = editOrRestore;
         }
