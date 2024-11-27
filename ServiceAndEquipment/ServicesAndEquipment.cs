@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashablesSystem.Classes;
 
 namespace WashablesSystem
 {
@@ -14,6 +15,8 @@ namespace WashablesSystem
     {
         Image edit = WashablesSystem.Properties.Resources.Create;
         Image restore = WashablesSystem.Properties.Resources.Restore;
+        ServiceClass service;
+        EquipmentClass equipmentU;
         public ServicesAndEquipment(Main parentForm)
         {
             InitializeComponent();
@@ -28,6 +31,10 @@ namespace WashablesSystem
             lblSE.Text = "SERVICES";
             lblRS.Text = "RATES";
             cbSE.SelectedIndex = 0;
+            ///
+            /// call display event
+            /// 
+            cbSE_SelectedIndexChanged(sender, e);
         }
 
         private void btnEquipment_Click(object sender, EventArgs e)
@@ -50,6 +57,21 @@ namespace WashablesSystem
                 cbSE.Items.Add("IRON");
                 cbSE.Items.Add("ARCHIVE");
                 cbSE.SelectedIndex = 0;
+                ///
+                /// EQUIPMENT DISPLAY
+                ///
+                containerSE.Controls.Clear();
+                equipmentU = new EquipmentClass(cbSE.Text);
+                EquipmentClass equipments = new EquipmentClass();
+                DataTable equipment = equipments.displayUnit();
+                foreach (DataRow row in equipment.Rows)
+                {
+                    ServiceEquipmentList equipmentList = new ServiceEquipmentList();
+                    equipmentList.setRowInfo(row["unit_id"].ToString(), row["unit_name"].ToString(),
+                       row["availability_status"].ToString(), "" , "Edit", WashablesSystem.Properties.Resources.Create);
+                    containerSE.Controls.Add(equipmentList);
+                }
+
             }
             else if (btnEquipment.Text.Equals("SERVICES"))
             {
@@ -64,6 +86,20 @@ namespace WashablesSystem
                 cbSE.Items.Add("WASH-DRY-PRESS");
                 cbSE.Items.Add("ARCHIVE");
                 cbSE.SelectedIndex = 0;
+                ///
+                /// services display
+                /// 
+                containerSE.Controls.Clear();
+                service = new ServiceClass(cbSE.Text);
+                DataTable services = service.displayUnit();
+                foreach (DataRow row in services.Rows)
+                {
+                    ServiceEquipmentList serviceList = new ServiceEquipmentList();
+                    serviceList.setRowInfo(row["service_id"].ToString(), row["service_name"].ToString(),
+                       row["service_rate"].ToString(), row["service_minWeight"].ToString(),
+                       "Edit", WashablesSystem.Properties.Resources.Create);
+                    containerSE.Controls.Add(serviceList);
+                }
             }
         }
         public void check()
@@ -74,92 +110,36 @@ namespace WashablesSystem
             if (btnEquipment.Text.Equals("EQUIPMENT"))
             {
                 ServiceEquipmentList row1 = new ServiceEquipmentList();
+                service = new ServiceClass(cbSE.Text); 
+                ///
+                /// display services
+                /// 
                 containerSE.Controls.Clear();
-                row1.setRowInfo("WDF001", "Clothes, Table Napkin, Pillowcase", "Php 28.00/kgs (5kgs min.)", "Edit", edit);
-                containerSE.Controls.Add(row1);
-                /// combobox selector
-                switch (cbSE.Text.ToString())
+                DataTable services = service.displayUnit();
+                foreach (DataRow row in services.Rows)
                 {
-                    case "WASH-DRY-FOLD":
-                        containerSE.Controls.Clear();
-                        row1.setRowInfo("WDF001", "Clothes, Table Napkin, Pillowcase", "Php 28.00/kgs (5kgs min.)", "Edit", edit);
-                        containerSE.Controls.Add(row1);
-
-                        ServiceEquipmentList row2 = new ServiceEquipmentList();
-                        row2.setRowInfo("WDF002", "Bed sheet, Table Cloth, Curtain", "Php 50.00/kgs (3kgs min.)", "Edit", edit);
-                        containerSE.Controls.Add(row2);
-                        break;
-                    case "WASH-DRY-PRESS":
-                        containerSE.Controls.Clear();
-                        row1.setRowInfo("WDP001", "Clothes, Table Napkin, Pillowcase", "Php 80.00/kgs (5kgs min.)", "Edit", edit);
-                        containerSE.Controls.Add(row1);
-
-                        row2 = new ServiceEquipmentList();
-                        row2.setRowInfo("WDP002", "Bedsheet, Tablecloth, Curtain", "Php 100.00/kgs (3kgs min.)", "Edit", edit);
-                        containerSE.Controls.Add(row2);
-                        break;
-                    case "ARCHIVE":
-                        containerSE.Controls.Clear();
-                        row1.setRowInfo("Wash-Dry-Fold\nWDF04", "Clothes, Pillowcase", "Php 10.00/kgs (5kgs min.)", "Restore", restore);
-                        containerSE.Controls.Add(row1);
-
-                        row2 = new ServiceEquipmentList();
-                        row2.setRowInfo("Wash-Dry-Fold\nWDF05", "Bedsheet, Tablecloth", "Php 200.00/kgs (3kgs min.)", "Restore", restore);
-                        containerSE.Controls.Add(row2);
-                        break;
+                    ServiceEquipmentList serviceList = new ServiceEquipmentList();
+                    serviceList.setRowInfo(row["service_id"].ToString(), row["service_name"].ToString(),
+                       row["service_rate"].ToString(), row["service_minWeight"].ToString(),
+                       "Edit", WashablesSystem.Properties.Resources.Create);
+                    containerSE.Controls.Add(serviceList);
                 }
             }
             else if (btnEquipment.Text.Equals("SERVICES"))
             {
-                ServiceEquipmentList Erow1 = new ServiceEquipmentList();
+                ///
+                /// display equipment
+                /// 
                 containerSE.Controls.Clear();
-                Erow1.setRowInfo("WMU1", "Unit I", "Available", "Edit", edit);
-                containerSE.Controls.Add(Erow1);
-                /// combobox selector
-                switch (cbSE.Text.ToString())
+                EquipmentClass equipments = new EquipmentClass();
+                DataTable equipment = equipments.displayUnit();
+                foreach (DataRow row in equipment.Rows)
                 {
-                    case "WASHING MACHINE":
-                        containerSE.Controls.Clear();
-                        Erow1.setRowInfo("WMU1", "Unit I", "Available", "Edit", edit);
-                        containerSE.Controls.Add(Erow1);
-
-                        ServiceEquipmentList Erow2 = new ServiceEquipmentList();
-                        Erow2.setRowInfo("WMU2", "Unit II", "Available", "Edit", edit);
-                        containerSE.Controls.Add(Erow2);
-
-                        ServiceEquipmentList Erow3 = new ServiceEquipmentList();
-                        Erow3.setRowInfo("WMU3", "Unit III", "Available", "Edit", edit);
-                        containerSE.Controls.Add(Erow3);
-                        break;
-                    case "DRYER":
-                        containerSE.Controls.Clear();
-                        Erow1.setRowInfo("DRU1", "Unit I", "Available", "Edit", edit);
-                        containerSE.Controls.Add(Erow1);
-
-                        Erow2 = new ServiceEquipmentList();
-                        Erow2.setRowInfo("DRU2", "Unit II", "Available", "Edit", edit);
-                        containerSE.Controls.Add(Erow2);
-
-                        Erow3 = new ServiceEquipmentList();
-                        Erow3.setRowInfo("DRU3", "Unit III", "Available", "Edit", edit);
-                        containerSE.Controls.Add(Erow3);
-                        break;
-                    case "IRON":
-                        containerSE.Controls.Clear();
-                        Erow1.setRowInfo("IR1", "Unit I", "Available", "Edit", edit);
-                        containerSE.Controls.Add(Erow1);
-                        break;
-                    case "ARCHIVE":
-                        containerSE.Controls.Clear();
-                        Erow1.setRowInfo("Dryer\nDRU5", "Unit V", "Available", "Restore", restore);
-                        containerSE.Controls.Add(Erow1);
-
-                        Erow2 = new ServiceEquipmentList();
-                        Erow2.setRowInfo("Washing Machine\nWMU7", "Unit VII", "Available", "Restore", restore);
-                        containerSE.Controls.Add(Erow2);
-                        break;
+                    ServiceEquipmentList equipmentList = new ServiceEquipmentList();
+                    equipmentList.setRowInfo(row["unit_id"].ToString(), row["unit_name"].ToString(),
+                       row["availability_status"].ToString(), "", "Edit", WashablesSystem.Properties.Resources.Create);
+                    containerSE.Controls.Add(equipmentList);
                 }
-
             }
         }
 
@@ -182,6 +162,7 @@ namespace WashablesSystem
                     addUnit.ShowDialog();
                     break;
             }
+            
         }
     }
 }

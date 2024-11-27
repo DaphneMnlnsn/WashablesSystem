@@ -229,6 +229,7 @@
             this.btnAdd.Text = "Add";
             this.btnAdd.TextColor = System.Drawing.Color.White;
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtBoxRate
             // 
