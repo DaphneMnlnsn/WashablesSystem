@@ -67,7 +67,7 @@ namespace WashablesSystem
                     DataTable users = equipmentArchive.displayUnitArchive();
                     foreach (DataRow row in users.Rows)
                     {
-                        ServiceEquipmentList archive = new ServiceEquipmentList();
+                        ServiceEquipmentList archive = new ServiceEquipmentList(this);
                         archive.setRowInfo(row["unit_id"].ToString(), row["unit_name"].ToString(),
                           row["availability_status"].ToString(), "Equipment", "", "Restore", WashablesSystem.Properties.Resources.Restore);
                         containerSE.Controls.Add(archive);
@@ -79,7 +79,7 @@ namespace WashablesSystem
                     DataTable equipment = equipmentU.displayUnit(cbSE.Text);
                     foreach (DataRow row in equipment.Rows)
                     {
-                        ServiceEquipmentList equipmentList = new ServiceEquipmentList();
+                        ServiceEquipmentList equipmentList = new ServiceEquipmentList(this);
                         equipmentList.setRowInfo(row["unit_id"].ToString(), row["unit_name"].ToString(),
                           row["availability_status"].ToString(), "Equipment", "", "Edit", WashablesSystem.Properties.Resources.Create);
                         containerSE.Controls.Add(equipmentList);
@@ -107,7 +107,7 @@ namespace WashablesSystem
                 DataTable services = service.displayService();
                 foreach (DataRow row in services.Rows)
                 {
-                    ServiceEquipmentList serviceList = new ServiceEquipmentList();
+                    ServiceEquipmentList serviceList = new ServiceEquipmentList(this);
                     serviceList.setRowInfo(row["service_id"].ToString(), row["service_name"].ToString(),
                        row["service_rate"].ToString(), "Service", row["service_minWeight"].ToString(),
                        "Edit", WashablesSystem.Properties.Resources.Create);
@@ -133,7 +133,7 @@ namespace WashablesSystem
                     DataTable service = serviceArchive.displayServiceArchive();
                     foreach (DataRow row in service.Rows)
                     {
-                        ServiceEquipmentList archive = new ServiceEquipmentList();
+                        ServiceEquipmentList archive = new ServiceEquipmentList(this);
                         archive.setRowInfo(row["service_id"].ToString(), row["service_name"].ToString(),
                             row["service_rate"].ToString(), "Service", row["service_minWeight"].ToString(),
                             "Restore", WashablesSystem.Properties.Resources.Restore);
@@ -146,7 +146,7 @@ namespace WashablesSystem
                     DataTable services = service.displayService();
                     foreach (DataRow row in services.Rows)
                     {
-                        ServiceEquipmentList serviceList = new ServiceEquipmentList();
+                        ServiceEquipmentList serviceList = new ServiceEquipmentList(this);
                         serviceList.setRowInfo(row["service_id"].ToString(), row["service_name"].ToString(),
                            row["service_rate"].ToString(), "Service", row["service_minWeight"].ToString(),
                            "Edit", WashablesSystem.Properties.Resources.Create);
@@ -168,7 +168,7 @@ namespace WashablesSystem
                     DataTable users = equipmentArchive.displayUnitArchive();
                     foreach (DataRow row in users.Rows)
                     {
-                        ServiceEquipmentList archive = new ServiceEquipmentList();
+                        ServiceEquipmentList archive = new ServiceEquipmentList(this);
                         archive.setRowInfo(row["unit_id"].ToString(), row["unit_name"].ToString(),
                           row["availability_status"].ToString(), "Equipment", "", "Restore", WashablesSystem.Properties.Resources.Restore);
                         containerSE.Controls.Add(archive);
@@ -180,7 +180,7 @@ namespace WashablesSystem
                     DataTable equipment = equipmentU.displayUnit(cbSE.Text);
                     foreach (DataRow row in equipment.Rows)
                     {
-                        ServiceEquipmentList equipmentList = new ServiceEquipmentList();
+                        ServiceEquipmentList equipmentList = new ServiceEquipmentList(this);
                         equipmentList.setRowInfo(row["unit_id"].ToString(), row["unit_name"].ToString(),
                           row["availability_status"].ToString(), "Equipment", "", "Edit", WashablesSystem.Properties.Resources.Create);
                         containerSE.Controls.Add(equipmentList);
@@ -209,6 +209,10 @@ namespace WashablesSystem
                     break;
             }
             
+        }
+        public void RefreshPanel()
+        {
+            containerSE.Refresh();
         }
     }
 }

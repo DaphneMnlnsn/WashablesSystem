@@ -63,7 +63,7 @@ namespace WashablesSystem
         private void btnDelete_Click(object sender, EventArgs e)
         {
             //call archive method here
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this user account?\nThis will be moved to the user archive.", "Confirm Delete", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this item?\nThis will be moved to the item archive.", "Confirm Archive", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 InventoryClass inventoryClass = new InventoryClass();

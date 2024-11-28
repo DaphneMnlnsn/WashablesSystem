@@ -33,7 +33,7 @@ namespace WashablesSystem
         private void btnRestore_Click(object sender, EventArgs e)
         {
             //call restore method here
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to restore this user account?\nThis will be moved to User Accounts.", "Confirm Delete", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to restore this item?\nThis will be moved to item view.", "Confirm Restore", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 InventoryClass inventoryClass = new InventoryClass();

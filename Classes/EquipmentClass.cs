@@ -260,7 +260,7 @@ namespace WashablesSystem.Classes
                 SqlCommand cmdAct = new SqlCommand(queryAct, constring);
                 cmdAct.CommandText = queryAct;
                 cmdAct.ExecuteNonQuery();
-                MessageBox.Show("Unit successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Edit successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 constring.Close();
             }
             else if (activity.Equals("Archived Unit"))

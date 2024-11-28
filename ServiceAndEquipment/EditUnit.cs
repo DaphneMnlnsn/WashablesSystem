@@ -14,9 +14,11 @@ namespace WashablesSystem
     public partial class EditUnit : Form
     {
         private string unit_selected;
-        public EditUnit(string unitSelected)
+        private ServicesAndEquipment _parentForm = new ServicesAndEquipment(new Main());
+        public EditUnit(ServicesAndEquipment parentForm, string unitSelected)
         {
             InitializeComponent();
+            _parentForm = parentForm;
             this.unit_selected = unitSelected;
         }
        
@@ -45,6 +47,7 @@ namespace WashablesSystem
             //call edit method here
             EquipmentClass equipmentClass = new EquipmentClass(cbEquipment.Text, txtBoxName.Text, cbStatus.Text);
             equipmentClass.editUnit(unit_selected);
+            _parentForm.RefreshPanel();
             this.Close();
         }
     }

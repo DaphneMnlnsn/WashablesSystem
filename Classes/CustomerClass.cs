@@ -243,7 +243,7 @@ namespace WashablesSystem.Classes
             if (activity.Equals("Added New Customer"))
             {
                 string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','added customer "
-                            + customerID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Customers" + "')";
+                            + customerID + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','Customers" + "')";
                 SqlCommand cmdAct = new SqlCommand(queryAct, constring);
                 cmdAct.CommandText = queryAct;
                 cmdAct.ExecuteNonQuery();
@@ -254,7 +254,7 @@ namespace WashablesSystem.Classes
             else if (activity.Equals("Edited Customer"))
             {
                 string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','edited customer "
-                            + customerID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Customers" + "')";
+                            + customerID + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','Customers" + "')";
                 SqlCommand cmdAct = new SqlCommand(queryAct, constring);
                 cmdAct.CommandText = queryAct;
                 cmdAct.ExecuteNonQuery();
@@ -264,7 +264,7 @@ namespace WashablesSystem.Classes
             else if (activity.Equals("Archived Customer"))
             {
                 string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','archived customer "
-                            + customerID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Customers" + "')";
+                            + customerID + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','Customers" + "')";
                 SqlCommand cmdAct = new SqlCommand(queryAct, constring);
                 cmdAct.CommandText = queryAct;
                 cmdAct.ExecuteNonQuery();
@@ -274,7 +274,7 @@ namespace WashablesSystem.Classes
             else if (activity.Equals("Restored Customer"))
             {
                 string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','restored customer "
-                            + customerID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Customers" + "')";
+                            + customerID + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','Customers" + "')";
                 SqlCommand cmdAct = new SqlCommand(queryAct, constring);
                 cmdAct.CommandText = queryAct;
                 cmdAct.ExecuteNonQuery();
@@ -284,7 +284,7 @@ namespace WashablesSystem.Classes
             else if (activity.Equals("Deleted Customer"))
             {
                 string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','deleted customer "
-                            + customerID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Customers" + "')";
+                            + customerID + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','Customers" + "')";
                 SqlCommand cmdAct = new SqlCommand(queryAct, constring);
                 cmdAct.CommandText = queryAct;
                 cmdAct.ExecuteNonQuery();

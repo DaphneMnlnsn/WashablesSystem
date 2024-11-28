@@ -38,7 +38,7 @@ namespace WashablesSystem
             }
             else
             {
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to restore this customer information?\nThis will be moved to customer information.", "Confirm Delete", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to restore this customer information?\nThis will be moved to customer information.", "Confirm Restore", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     CustomerClass customerClass = new CustomerClass();
@@ -53,7 +53,7 @@ namespace WashablesSystem
         {
             if (what.Text.Equals("Edit"))
             {
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this customer information?\nThis will be moved to the user archive.", "Confirm Delete", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this customer information?\nThis will be moved to the user archive.", "Confirm Archive", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     CustomerClass customerClass = new CustomerClass();

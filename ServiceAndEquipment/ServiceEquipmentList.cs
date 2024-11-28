@@ -13,9 +13,11 @@ namespace WashablesSystem
 {
     public partial class ServiceEquipmentList : UserControl
     {
-        public ServiceEquipmentList()
+        private readonly ServicesAndEquipment _parentForm;
+        public ServiceEquipmentList(ServicesAndEquipment parentForm)
         {
             InitializeComponent();
+            _parentForm = parentForm;
         }
 
         public void setRowInfo(string code, string name, string rs, string s_or_e, string weight, string kind, Image editOrRestore)
@@ -44,13 +46,13 @@ namespace WashablesSystem
             }
             else if (what.Text.Equals("Edit") && lblHeader.Text.Equals("Equipment"))
             {
-                EditUnit editUnit = new EditUnit(lblCode.Text);
+                EditUnit editUnit = new EditUnit(_parentForm, lblCode.Text);
                 editUnit.ShowDialog();
             }
             else if (what.Text.Equals("Restore") && lblHeader.Text.Equals("Services"))
             {
                 //call restore method
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to restore this service?\nThis will be moved to Service page.", "Confirm Delete", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to restore this service?\nThis will be moved to service page.", "Confirm Restore", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     ServiceClass serviceClass = new ServiceClass();
@@ -59,7 +61,7 @@ namespace WashablesSystem
             }
             else if(what.Text.Equals("Restore") && lblHeader.Text.Equals("Equipment"))
             { 
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to restore this unit?\nThis will be moved to Equipment Page.", "Confirm Delete", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to restore this unit?\nThis will be moved to equipment Page.", "Confirm Restore", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     EquipmentClass equipmentClass = new EquipmentClass();
@@ -75,7 +77,7 @@ namespace WashablesSystem
             if (what.Text.Equals("Edit") && lblHeader.Text.Equals("Services"))
             {
                 //call archive method
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this service?\nThis will be moved to the service archive.", "Confirm Delete", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this service?\nThis will be moved to the service archive.", "Confirm Archive", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     ServiceClass serviceClass = new ServiceClass();
@@ -84,7 +86,7 @@ namespace WashablesSystem
             }
             else if (what.Text.Equals("Edit") && lblHeader.Text.Equals("Equipment"))
             {
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this unit?\nThis will be moved to the unit archive.", "Confirm Delete", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this unit?\nThis will be moved to the unit archive.", "Confirm Archive", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     EquipmentClass equipmentClass = new EquipmentClass();
