@@ -1,7 +1,13 @@
-﻿using System;
+﻿
+using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
+using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WashablesSystem.Classes
@@ -58,7 +64,7 @@ namespace WashablesSystem.Classes
             SqlDataReader reader1;
             reader1 = cmd.ExecuteReader();
             if (reader1.Read())
-            {
+            { 
                 serviceID = reader1.GetString(1);
                 IDNum = int.Parse(string.Join("", serviceID.Where(Char.IsDigit))) + 1;
                 serviceID = acronym + IDNum;
@@ -92,11 +98,40 @@ namespace WashablesSystem.Classes
         }
         public void editService(string serviceID)
         {
+            constring.Open();
 
+            this.serviceID = serviceID;
+
+            //Query for editing
+            String query = "UPDATE [Service] SET service_name='" + serviceName + "',service_category='"
+                + serviceCategory + "',service_rate='" + servicePrice + "',service_minWeight='" + serviceMinWeight
+                + "' WHERE service_id='" + serviceID + "';";
+
+            SqlCommand cmd2 = new SqlCommand(query, constring);
+            cmd2.CommandText = query;
+
+            //If successful, add to activity log
+            if (cmd2.ExecuteNonQuery() == 1)
+            {
+                constring.Close();
+                logOperation("Edited Service");
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong. Please try again.");
+                constring.Close();
+            }
         }
-        public DataTable displaySelectedItem(string itemID)
+        public DataTable displaySelectedService(string serviceID)
         {
-            return new DataTable();
+            constring.Open();
+            string sql = "SELECT * FROM [Service] WHERE service_id = '" + serviceID + "'";
+            DataTable serviceInfo = new DataTable("serviceInfo");
+            SqlDataAdapter da = new SqlDataAdapter(sql, constring);
+            da.Fill(serviceInfo);
+            constring.Close();
+
+            return serviceInfo;
         }
         public void restoreService(string serviceID)
         {
@@ -120,7 +155,6 @@ namespace WashablesSystem.Classes
                 MessageBox.Show("Something went wrong. Please try again.");
                 constring.Close();
             }
-
         }
         public void archiveService(string serviceID)
         {
@@ -145,7 +179,6 @@ namespace WashablesSystem.Classes
                 MessageBox.Show("Something went wrong. Please try again.");
                 constring.Close();
             }
-
         }
         public void deleteService(string serviceID)
         {
@@ -169,7 +202,6 @@ namespace WashablesSystem.Classes
                 MessageBox.Show("Something went wrong. Please try again.");
                 constring.Close();
             }
-
         }
         public DataTable displayService()
         {
@@ -192,7 +224,6 @@ namespace WashablesSystem.Classes
             constring.Close();
 
             return serviceInfo;
-
         }
         private void logOperation(string activity)
         {

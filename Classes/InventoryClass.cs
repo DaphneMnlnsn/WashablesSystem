@@ -67,8 +67,8 @@ namespace WashablesSystem.Classes
                 cmd.Dispose();
 
                 //Query for inserting
-                String query = "INSERT INTO [Item] VALUES('" + itemID + "','" + itemName + "','"
-                    + itemCategory + "','" + itemQuantity + "','" + itemPrice + "','" + itemUnit +  "',0);";
+                string query = "INSERT INTO [Item] VALUES('" + itemID + "','" + itemName + "','"
+                                 + itemCategory + "','" + itemQuantity + "','" + itemPrice + "',0,'" + itemUnit + "');";
 
                 SqlCommand cmd2 = new SqlCommand(query, constring);
                 cmd2.CommandText = query;
@@ -94,15 +94,64 @@ namespace WashablesSystem.Classes
         }
         public void editItem(string itemID)
         {
-            
+            constring.Open();
+
+            this.itemID = itemID;
+
+            //Query for editing
+            String query = "UPDATE [Item] SET item_name='"
+                + itemName + "',item_category='" + itemCategory + "',item_quantity='" + itemQuantity
+                + "',item_price='" + itemPrice + "',item_measurement='"
+                + itemUnit + "' WHERE item_id='" + itemID + "'";
+
+            SqlCommand cmd2 = new SqlCommand(query, constring);
+            cmd2.CommandText = query;
+
+            //If successful, add to activity log
+            if (cmd2.ExecuteNonQuery() == 1)
+            {
+                constring.Close();
+                logOperation("Edited Item");
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong. Please try again.");
+                constring.Close();
+            }
         }
         public DataTable displaySelectedItem(string itemID)
         {
-            return new DataTable();
+            constring.Open();
+            string sql = "SELECT * FROM [Item] WHERE item_id = '" + itemID + "'";
+            DataTable itemInfo = new DataTable("itemInfo");
+            SqlDataAdapter da = new SqlDataAdapter(sql, constring);
+            da.Fill(itemInfo);
+            constring.Close();
+
+            return itemInfo;
         }
         public void restoreItem(string itemID)
         {
-            
+            constring.Open();
+
+            this.itemID = itemID;
+
+            String query = "UPDATE [Item] SET archived=0 WHERE item_id='" + itemID + "';";
+
+            SqlCommand cmd2 = new SqlCommand(query, constring);
+            cmd2.CommandText = query;
+
+            //If successful, add to activity log
+            if (cmd2.ExecuteNonQuery() == 1)
+            {
+                constring.Close();
+                logOperation("Restored Item");
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong. Please try again.");
+                constring.Close();
+            }
         }
         public void restockItem(string itemID)
         {
@@ -110,11 +159,49 @@ namespace WashablesSystem.Classes
         }
         public void archiveItem(string itemID)
         {
+            constring.Open();
 
+            this.itemID = itemID;
+
+            String query = "UPDATE [Item] SET archived=1 WHERE item_id='" + itemID + "';";
+
+            SqlCommand cmd2 = new SqlCommand(query, constring);
+            cmd2.CommandText = query;
+
+            //If successful, add to activity log
+            if (cmd2.ExecuteNonQuery() == 1)
+            {
+                constring.Close();
+                logOperation("Restored Item");
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong. Please try again.");
+                constring.Close();
+            }
         }
         public void deleteItem(string itemID)
         {
+            constring.Open();
 
+            this.itemID = itemID;
+
+            String query = "DELETE FROM [Item] WHERE item_id='" + itemID + "';";
+
+            SqlCommand cmd2 = new SqlCommand(query, constring);
+            cmd2.CommandText = query;
+
+            //If successful, add to activity log
+            if (cmd2.ExecuteNonQuery() == 1)
+            {
+                constring.Close();
+                logOperation("Deleted Item");
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong. Please try again.");
+                constring.Close();
+            }
         }
         public DataTable displayItem()
         {
@@ -129,7 +216,14 @@ namespace WashablesSystem.Classes
         }
         public DataTable displayItemArchive()
         {
-            return new DataTable();
+            constring.Open();
+            string sql = "SELECT * FROM [Item] WHERE archived = 1";
+            DataTable itemInfo = new DataTable("itemInfo");
+            SqlDataAdapter da = new SqlDataAdapter(sql, constring);
+            da.Fill(itemInfo);
+            constring.Close();
+
+            return itemInfo;
         }
         public DataTable displayItemHistory(string itemID)
         {
@@ -163,7 +257,7 @@ namespace WashablesSystem.Classes
             if (activity.Equals("Added New Item"))
             {
                 string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','added item "
-                            + itemID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Inventory" + "')";
+             + itemID + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','Inventory" + "')";
                 SqlCommand cmdAct = new SqlCommand(queryAct, constring);
                 cmdAct.CommandText = queryAct;
                 cmdAct.ExecuteNonQuery();
@@ -174,7 +268,7 @@ namespace WashablesSystem.Classes
             else if (activity.Equals("Edited Item"))
             {
                 string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','edited item "
-                            + itemID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Inventory" + "')";
+                            + itemID + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','Inventory" + "')";
                 SqlCommand cmdAct = new SqlCommand(queryAct, constring);
                 cmdAct.CommandText = queryAct;
                 cmdAct.ExecuteNonQuery();
@@ -184,7 +278,7 @@ namespace WashablesSystem.Classes
             else if (activity.Equals("Archived Item"))
             {
                 string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','archived item "
-                            + itemID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Inventory" + "')";
+                            + itemID + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','Inventory" + "')";
                 SqlCommand cmdAct = new SqlCommand(queryAct, constring);
                 cmdAct.CommandText = queryAct;
                 cmdAct.ExecuteNonQuery();
@@ -194,13 +288,13 @@ namespace WashablesSystem.Classes
             else if (activity.Equals("Restocked Item"))
             {
                 string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','restocked item"
-                            + itemID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Inventory" + "')";
+                            + itemID + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','Inventory" + "')";
                 SqlCommand cmdAct = new SqlCommand(queryAct, constring);
                 cmdAct.CommandText = queryAct;
                 cmdAct.ExecuteNonQuery();
 
                 string queryAddHistory = "INSERT INTO ItemHistory VALUES('" + sessionVar.loggedIn.ToString() + "','" + itemID +  "','" 
-                    + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','added " + itemQuantity + itemUnit + "')";
+                    + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + itemQuantity + itemUnit + "')";
                 SqlCommand cmdAddHistory = new SqlCommand(queryAddHistory, constring);
                 cmdAddHistory.CommandText = queryAddHistory;
                 cmdAddHistory.ExecuteNonQuery();
@@ -210,7 +304,7 @@ namespace WashablesSystem.Classes
             else if (activity.Equals("Restored Item"))
             {
                 string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','restored item "
-                            + itemID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Inventory" + "')";
+                            + itemID + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','Inventory" + "')";
                 SqlCommand cmdAct = new SqlCommand(queryAct, constring);
                 cmdAct.CommandText = queryAct;
                 cmdAct.ExecuteNonQuery();
@@ -220,7 +314,7 @@ namespace WashablesSystem.Classes
             else if (activity.Equals("Deleted Item"))
             {
                 string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','deleted item "
-                            + itemID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Inventory" + "')";
+                            + itemID + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','Inventory" + "')";
                 SqlCommand cmdAct = new SqlCommand(queryAct, constring);
                 cmdAct.CommandText = queryAct;
                 cmdAct.ExecuteNonQuery();

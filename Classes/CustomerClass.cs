@@ -91,23 +91,112 @@ namespace WashablesSystem.Classes
         }
         public void editCustomer(string customerID)
         {
+            constring.Open();
 
+            this.customerID = customerID;
+
+            //Query for editing
+            String query = "UPDATE [Customer] SET customer_name='" + customerName + "',customer_email='"
+                + customerEmail + "',customer_phone='" + customerPhone + "',customer_address='" + customerAddress +
+                  "' WHERE customer_id='" + customerID + "';";
+
+            SqlCommand cmd2 = new SqlCommand(query, constring);
+            cmd2.CommandText = query;
+
+            //If successful, add to activity log
+            if (cmd2.ExecuteNonQuery() == 1)
+            {
+                constring.Close();
+                logOperation("Edited Customer");
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong. Please try again.");
+                constring.Close();
+            }
         }
         public DataTable displaySelectedCustomer(string customerID)
         {
-            return new DataTable();
+            constring.Open();
+            string sql = "SELECT * FROM [Customer] WHERE customer_id = '" + customerID + "'";
+            DataTable customerInfo = new DataTable("customerInfo");
+            SqlDataAdapter da = new SqlDataAdapter(sql, constring);
+            da.Fill(customerInfo);
+            constring.Close();
+
+            return customerInfo;
+         
+            
         }
         public void restoreCustomer(string customerID)
         {
-            
+            constring.Open();
+
+            this.customerID = customerID;
+
+            String query = "UPDATE [Customer] SET archived=0 WHERE customer_id='" + customerID + "';";
+
+            SqlCommand cmd2 = new SqlCommand(query, constring);
+            cmd2.CommandText = query;
+
+            //If successful, add to activity log
+            if (cmd2.ExecuteNonQuery() == 1)
+            {
+                constring.Close();
+                logOperation("Restored Customer");
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong. Please try again.");
+                constring.Close();
+            }
         }
         public void archiveCustomer(string customerID)
         {
+            constring.Open();
 
+            this.customerID = customerID;
+
+                //Query for editing
+                String query = "UPDATE [Customer] SET archived=1 WHERE customer_id='" + customerID + "';";
+
+                SqlCommand cmd2 = new SqlCommand(query, constring);
+                cmd2.CommandText = query;
+
+                //If successful, add to activity log
+                if (cmd2.ExecuteNonQuery() == 1)
+                {
+                    constring.Close();
+                    logOperation("Archived Customer");
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong. Please try again.");
+                    constring.Close();
+                }
         }
         public void deleteCustomer(string customerID)
         {
+            constring.Open();
 
+            this.customerID = customerID;
+
+            string query = "DELETE FROM [Customer] WHERE customer_id='" + customerID + "';";
+
+            SqlCommand cmd2 = new SqlCommand(query, constring);
+            cmd2.CommandText = query;
+
+            //If successful, add to activity log
+            if (cmd2.ExecuteNonQuery() == 1)
+            {
+                constring.Close();
+                logOperation("Deleted Customer");
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong. Please try again.");
+                constring.Close();
+            }
         }
         public DataTable displayCustomer()
         {
@@ -123,7 +212,15 @@ namespace WashablesSystem.Classes
         }
         public DataTable displayCustomerArchive()
         {
-            return new DataTable();
+            constring.Open();
+            string sql = "SELECT * FROM [Customer] WHERE archived = 1";
+            DataTable customerInfo = new DataTable("customerInfo");
+            SqlDataAdapter da = new SqlDataAdapter(sql, constring);
+            da.Fill(customerInfo);
+            constring.Close();
+
+            return customerInfo;
+            
         }
         private void logOperation(string activity)
         {
