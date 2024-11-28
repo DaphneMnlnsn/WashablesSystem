@@ -61,16 +61,30 @@ namespace WashablesSystem
                 /// EQUIPMENT DISPLAY
                 ///
                 containerSE.Controls.Clear();
-                equipmentU = new EquipmentClass(cbSE.Text);
-                DataTable equipment = equipmentU.displayUnit(cbSE.Text);
-                foreach (DataRow row in equipment.Rows)
+                if (cbSE.Text.Equals("ARCHIVE"))
                 {
-                    ServiceEquipmentList equipmentList = new ServiceEquipmentList();
-                    equipmentList.setRowInfo(row["unit_id"].ToString(), row["unit_name"].ToString(),
-                       row["availability_status"].ToString(), "Equipment", "" , "Edit", WashablesSystem.Properties.Resources.Create);
-                    containerSE.Controls.Add(equipmentList);
+                    EquipmentClass equipmentArchive = new EquipmentClass();
+                    DataTable users = equipmentArchive.displayUnitArchive();
+                    foreach (DataRow row in users.Rows)
+                    {
+                        ServiceEquipmentList archive = new ServiceEquipmentList();
+                        archive.setRowInfo(row["unit_id"].ToString(), row["unit_name"].ToString(),
+                          row["availability_status"].ToString(), "Equipment", "", "Restore", WashablesSystem.Properties.Resources.Restore);
+                        containerSE.Controls.Add(archive);
+                    }
                 }
-
+                else
+                {
+                    equipmentU = new EquipmentClass(cbSE.Text);
+                    DataTable equipment = equipmentU.displayUnit(cbSE.Text);
+                    foreach (DataRow row in equipment.Rows)
+                    {
+                        ServiceEquipmentList equipmentList = new ServiceEquipmentList();
+                        equipmentList.setRowInfo(row["unit_id"].ToString(), row["unit_name"].ToString(),
+                          row["availability_status"].ToString(), "Equipment", "", "Edit", WashablesSystem.Properties.Resources.Create);
+                        containerSE.Controls.Add(equipmentList);
+                    }
+                }
             }
             else if (btnEquipment.Text.Equals("SERVICES"))
             {
@@ -112,16 +126,34 @@ namespace WashablesSystem
                 /// display services
                 /// 
                 containerSE.Controls.Clear();
-                service = new ServiceClass(cbSE.Text);
-                DataTable services = service.displayService();
-                foreach (DataRow row in services.Rows)
+
+                if (cbSE.Text.Equals("ARCHIVE"))
                 {
-                    ServiceEquipmentList serviceList = new ServiceEquipmentList();
-                    serviceList.setRowInfo(row["service_id"].ToString(), row["service_name"].ToString(),
-                       row["service_rate"].ToString(), "Service", row["service_minWeight"].ToString(),
-                       "Edit", WashablesSystem.Properties.Resources.Create);
-                    containerSE.Controls.Add(serviceList);
+                    ServiceClass serviceArchive = new ServiceClass();
+                    DataTable service = serviceArchive.displayServiceArchive();
+                    foreach (DataRow row in service.Rows)
+                    {
+                        ServiceEquipmentList archive = new ServiceEquipmentList();
+                        archive.setRowInfo(row["service_id"].ToString(), row["service_name"].ToString(),
+                            row["service_rate"].ToString(), "Service", row["service_minWeight"].ToString(),
+                            "Restore", WashablesSystem.Properties.Resources.Restore);
+                        containerSE.Controls.Add(archive);
+                    }
                 }
+                else
+                {
+                    service = new ServiceClass(cbSE.Text);
+                    DataTable services = service.displayService();
+                    foreach (DataRow row in services.Rows)
+                    {
+                        ServiceEquipmentList serviceList = new ServiceEquipmentList();
+                        serviceList.setRowInfo(row["service_id"].ToString(), row["service_name"].ToString(),
+                           row["service_rate"].ToString(), "Service", row["service_minWeight"].ToString(),
+                           "Edit", WashablesSystem.Properties.Resources.Create);
+                        containerSE.Controls.Add(serviceList);
+                    }
+                }
+
             }
             else if (btnEquipment.Text.Equals("SERVICES"))
             {
@@ -129,15 +161,31 @@ namespace WashablesSystem
                 /// display equipment
                 /// 
                 containerSE.Controls.Clear();
-                equipmentU = new EquipmentClass();
-                DataTable equipment = equipmentU.displayUnit(cbSE.Text);
-                foreach (DataRow row in equipment.Rows)
+
+                if (cbSE.Text.Equals("ARCHIVE"))
                 {
-                    ServiceEquipmentList equipmentList = new ServiceEquipmentList();
-                    equipmentList.setRowInfo(row["unit_id"].ToString(), row["unit_name"].ToString(),
-                       row["availability_status"].ToString(), "Equipment", "", "Edit", WashablesSystem.Properties.Resources.Create);
-                    containerSE.Controls.Add(equipmentList);
+                    EquipmentClass equipmentArchive = new EquipmentClass();
+                    DataTable users = equipmentArchive.displayUnitArchive();
+                    foreach (DataRow row in users.Rows)
+                    {
+                        ServiceEquipmentList archive = new ServiceEquipmentList();
+                        archive.setRowInfo(row["unit_id"].ToString(), row["unit_name"].ToString(),
+                          row["availability_status"].ToString(), "Equipment", "", "Restore", WashablesSystem.Properties.Resources.Restore);
+                        containerSE.Controls.Add(archive);
+                    }
                 }
+                else
+                {
+                    equipmentU = new EquipmentClass(cbSE.Text);
+                    DataTable equipment = equipmentU.displayUnit(cbSE.Text);
+                    foreach (DataRow row in equipment.Rows)
+                    {
+                        ServiceEquipmentList equipmentList = new ServiceEquipmentList();
+                        equipmentList.setRowInfo(row["unit_id"].ToString(), row["unit_name"].ToString(),
+                          row["availability_status"].ToString(), "Equipment", "", "Edit", WashablesSystem.Properties.Resources.Create);
+                        containerSE.Controls.Add(equipmentList);
+                    }
+                }            
             }
         }
 

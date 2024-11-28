@@ -28,6 +28,8 @@ namespace WashablesSystem
             ServiceClass service = new ServiceClass(cbService.Text, txtBoxName.Text, 
                 decimal.Parse(txtBoxRate.Text), decimal.Parse(txtBoxMin.Text));
             service.addService();
+
+            this.Close();
         }
     }
 }
