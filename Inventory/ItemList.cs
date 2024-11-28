@@ -11,6 +11,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Diagnostics;
 using System.Windows.Media;
+using WashablesSystem.Classes;
 
 namespace WashablesSystem
 {
@@ -43,7 +44,7 @@ namespace WashablesSystem
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            EditItem editItem = new EditItem();
+            EditItem editItem = new EditItem(ItemCode.Text);
             editItem.ShowDialog();
         }
 
@@ -62,6 +63,12 @@ namespace WashablesSystem
         private void btnDelete_Click(object sender, EventArgs e)
         {
             //call archive method here
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this user account?\nThis will be moved to the user archive.", "Confirm Delete", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                InventoryClass inventoryClass = new InventoryClass();
+                inventoryClass.archiveItem(ItemCode.Text);
+            }
         }
     }
 }

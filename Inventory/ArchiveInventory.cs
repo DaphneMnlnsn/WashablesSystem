@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashablesSystem.Classes;
 
 namespace WashablesSystem
 {
@@ -19,17 +20,14 @@ namespace WashablesSystem
 
         private void ArchiveInventory_Load(object sender, EventArgs e)
         {
-            ArchiveInventoryList ArchiInventoryList = new ArchiveInventoryList();
-            ArchiInventoryList.setInventoryInfo("ITM0001", "Surf Powder", "Powder", "20kg", "200.00/kg");
-            ArchivedItemsContainer.Controls.Add(ArchiInventoryList);
-
-            ArchiveInventoryList ArchiInventoryList2 = new ArchiveInventoryList();
-            ArchiInventoryList2.setInventoryInfo("ITM0002", "Champion Liquid", "Liquid", "20L", "45.00/L");
-            ArchivedItemsContainer.Controls.Add(ArchiInventoryList2);
-
-            ArchiveInventoryList ArchiInventoryList3 = new ArchiveInventoryList();
-            ArchiInventoryList3.setInventoryInfo("ITM0003", "Zonrox", "Liquid", "20L", "30.00/L");
-            ArchivedItemsContainer.Controls.Add(ArchiInventoryList3);
+            InventoryClass inventoryArchive = new InventoryClass();
+            DataTable inventory = inventoryArchive.displayItemArchive();
+            foreach (DataRow row in inventory.Rows)
+            {
+                ArchiveInventoryList archive = new ArchiveInventoryList();
+                archive.setInventoryInfo(row["item_id"].ToString(), row["item_name"].ToString(), row["item_category"].ToString(), row["item_quantity"].ToString(), row["item_price"].ToString());
+                ArchivedItemsContainer.Controls.Add(archive);
+            }
         }
     }
 }
