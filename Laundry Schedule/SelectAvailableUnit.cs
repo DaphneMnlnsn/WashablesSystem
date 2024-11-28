@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashablesSystem.Classes;
 
 namespace WashablesSystem
 {
@@ -25,23 +26,28 @@ namespace WashablesSystem
 
         private void SelectAvailableUnit_Load(object sender, EventArgs e)
         {
+            string machineType = "";
             if (lblMachine.Text.Equals("Washing Machine"))
             {
-                SelectableUnitList Wmachine = new SelectableUnitList();
-                Wmachine.setMachineInfo("Unit I", "Available");
-                unitPanel.Controls.Add(Wmachine);
+                machineType = "Washing Machine";
+            }
+            if (lblMachine.Text.Equals("Dryer"))
+            {
+                machineType = "Dryer";
+            }
+            if (lblMachine.Text.Equals("Iron"))
+            {
+                machineType = "Iron";
+            }
 
-                SelectableUnitList Wmachine2 = new SelectableUnitList();
-                Wmachine2.setMachineInfo("Unit II", "Available");
-                unitPanel.Controls.Add(Wmachine2);
-
-                SelectableUnitList Wmachine3 = new SelectableUnitList();
-                Wmachine3.setMachineInfo("Unit III", "Occupied");
-                unitPanel.Controls.Add(Wmachine3);
-
-                Wmachine.ButtonClicked += ButtonControl_ButtonClicked;
-                Wmachine2.ButtonClicked += ButtonControl_ButtonClicked;
-                Wmachine3.ButtonClicked += ButtonControl_ButtonClicked;
+            LaundryOperationsClass laundryOperationsClass = new LaundryOperationsClass();
+            DataTable units = laundryOperationsClass.getUnitDetails(machineType);
+            foreach (DataRow row in units.Rows)
+            {
+                SelectableUnitList unit = new SelectableUnitList();
+                unit.setMachineInfo(row["unit_name"].ToString(), row["availability_status"].ToString(), bool.Parse(row["occupied"].ToString()));
+                unitPanel.Controls.Add(unit);
+                unit.ButtonClicked += ButtonControl_ButtonClicked;
             }
         }
         private void ButtonControl_ButtonClicked(object sender, EventArgs e)

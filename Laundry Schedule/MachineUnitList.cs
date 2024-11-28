@@ -17,7 +17,7 @@ namespace WashablesSystem
         {
             InitializeComponent();
         }
-        public void setMachineInfo(string unitName, string availability, string machine, Image picture)
+        public void setMachineInfo(string unitName, string availability, bool occupied, string machine, Image picture)
         {
             //Displaying machine info
             lblUnit.Text = unitName;
@@ -25,17 +25,20 @@ namespace WashablesSystem
             unitPicture.Image = picture;
             machineType.Text = machine;
 
-            if (availability.Equals("Available"))
+            if (availability.Equals("Available") && !occupied)
             {
                 btnAvailability.BackColor = Color.FromArgb(117, 238, 131);
+                btnAvailability.Enabled = true;
             }
-            else if (availability.Equals("Occupied"))
+            else if (occupied)
             {
                 btnAvailability.BackColor = Color.FromArgb(255, 0, 0);
+                btnAvailability.Enabled = false;
             }
             else if (availability.Equals("Not Available"))
             {
                 btnAvailability.BackColor = Color.FromArgb(217, 217, 217);
+                btnAvailability.Enabled = false;
             }
 
         }

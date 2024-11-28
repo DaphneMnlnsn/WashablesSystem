@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashablesSystem.Classes;
 
 namespace WashablesSystem
 {
@@ -24,21 +25,15 @@ namespace WashablesSystem
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            activityLogItem activity = new activityLogItem();
-            //string message = "Staff " + row["employee_num"] + " " + row["activity_performed"] + " at " + DateTime.Parse(row["activity_time"].ToString()).ToString() + ".";
-            string message = "Roxanne Rose finished a laundry order at 10/13/2024 5:12PM";
-            activity.setActivity(message);
-            activityPanel.Controls.Add(activity);
-
-            activityLogItem activity2 = new activityLogItem();
-            string message2 = "Roxanne Rose started a laundry order at 10/13/2024 5:12PM";
-            activity2.setActivity(message2);
-            activityPanel.Controls.Add(activity2);
-
-            activityLogItem activity3 = new activityLogItem();
-            string message3 = "Roxanne Rose scheduled a laundry order at 10/13/2024 5:12PM";
-            activity3.setActivity(message3);
-            activityPanel.Controls.Add(activity3);
+            DashboardClass dashboard = new DashboardClass();
+            DataTable log = dashboard.generateActLog();
+            foreach (DataRow row in log.Rows)
+            {
+                activityLogItem logList = new activityLogItem();
+                logList.setActivity(row["user_fullname"].ToString() + " " +
+                   row["activity"].ToString() + " at " + row["activity_date"].ToString());
+                activityPanel.Controls.Add(logList);
+            }
 
             setChartSales();
             setChartKgs();

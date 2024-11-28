@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,13 @@ namespace WashablesSystem.Classes
         private DateTime pickupDate;
         private string status;
 
+        SessionVariables sessionVar = new SessionVariables();
+        private SqlConnection constring;
+
+        public LaundryOperationsClass()
+        {
+            constring = sessionVar.Constring;
+        }
         public void startLaundry(string orderID)
         {
 
@@ -31,6 +39,17 @@ namespace WashablesSystem.Classes
         public DataTable getOperationDetails()
         {
             return new DataTable();
+        }
+        public DataTable getUnitDetails(string category)
+        {
+            constring.Open();
+            string sql = "SELECT * FROM [Unit] WHERE archived = 0 AND unit_category = '" + category + "'";
+            DataTable units = new DataTable("units");
+            SqlDataAdapter da = new SqlDataAdapter(sql, constring);
+            da.Fill(units);
+            constring.Close();
+
+            return units;
         }
         private void logOperation()
         {

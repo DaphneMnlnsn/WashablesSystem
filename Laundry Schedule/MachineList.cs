@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashablesSystem.Classes;
 
 namespace WashablesSystem
 {
@@ -19,45 +20,31 @@ namespace WashablesSystem
 
         private void MachineList_Load(object sender, EventArgs e)
         {
+            string machineType = "";
+            Image machine = WashablesSystem.Properties.Resources.Washing_Machine;
             if (lblMachine.Text.Equals("Washing Machine"))
             {
-                string machineType = "Washing Machine";
-                Image washing = WashablesSystem.Properties.Resources.Washing_Machine;
-                MachineUnitList Wmachine = new MachineUnitList();
-                Wmachine.setMachineInfo("Unit I", "Available", machineType, washing);
-                machineContainer.Controls.Add(Wmachine);
-
-                MachineUnitList Wmachine2 = new MachineUnitList();
-                Wmachine2.setMachineInfo("Unit II", "Available", machineType, washing);
-                machineContainer.Controls.Add(Wmachine2);
-
-                MachineUnitList Wmachine3 = new MachineUnitList();
-                Wmachine3.setMachineInfo("Unit III", "Occupied", machineType, washing);
-                machineContainer.Controls.Add(Wmachine3);
+                machineType = "Washing Machine";
+                machine = WashablesSystem.Properties.Resources.Washing_Machine;
             }
             else if (lblMachine.Text.Equals("Dryer"))
             {
-                string machineType = "Dryer";
-                Image dryer = WashablesSystem.Properties.Resources.Tumble_Dryer;
-                MachineUnitList Wmachine = new MachineUnitList();
-                Wmachine.setMachineInfo("Unit I", "Available", machineType, dryer);
-                machineContainer.Controls.Add(Wmachine);
-
-                MachineUnitList Wmachine2 = new MachineUnitList();
-                Wmachine2.setMachineInfo("Unit II", "Available", machineType, dryer);
-                machineContainer.Controls.Add(Wmachine2);
-
-                MachineUnitList Wmachine3 = new MachineUnitList();
-                Wmachine3.setMachineInfo("Unit III", "Available", machineType, dryer);
-                machineContainer.Controls.Add(Wmachine3);
+                machineType = "Dryer";
+                machine = WashablesSystem.Properties.Resources.Tumble_Dryer;
             }
             else if (lblMachine.Text.Equals("Iron"))
             {
-                string machineType = "Iron";
-                Image iron = WashablesSystem.Properties.Resources.Iron;
-                MachineUnitList Wmachine = new MachineUnitList();
-                Wmachine.setMachineInfo("Unit I", "Available", machineType, iron);
-                machineContainer.Controls.Add(Wmachine);
+                machineType = "Iron";
+                machine = WashablesSystem.Properties.Resources.Iron;
+            }
+            LaundryOperationsClass laundryOperationsClass = new LaundryOperationsClass();
+            DataTable units = laundryOperationsClass.getUnitDetails(machineType);
+            foreach (DataRow row in units.Rows)
+            {
+                MachineUnitList unit = new MachineUnitList();
+                unit.setMachineInfo(row["unit_name"].ToString(), row["availability_status"].ToString(),
+                   bool.Parse(row["occupied"].ToString()),machineType, machine);
+                machineContainer.Controls.Add(unit);
             }
         }
         public void setMachine(string unit)

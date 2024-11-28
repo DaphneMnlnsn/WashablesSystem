@@ -12,29 +12,31 @@ namespace WashablesSystem
 {
     public partial class SelectableUnitList : UserControl
     {
-        string unitAvailability;
+        string availabilityStatus;
+        bool unitOccupied;
         public event EventHandler ButtonClicked;
         public SelectableUnitList()
         {
             InitializeComponent();
             btnUnit.Click += btnUnit_Click;
         }
-        public void setMachineInfo(string unitName, string availability)
+        public void setMachineInfo(string unitName, string availability_status, bool occupied)
         {
             //Displaying machine info
             btnUnit.Text = unitName;
-            unitAvailability = availability;
+            unitOccupied = occupied;
+            availabilityStatus = availability_status;
 
-            if (availability.Equals("Available"))
+            if (!occupied && availability_status.Equals("Available"))
             {
                 btnUnit.BackColor = Color.FromArgb(117, 238, 131);
             }
-            else if (availability.Equals("Occupied"))
+            else if (!occupied && availability_status.Equals("Available"))
             {
                 btnUnit.BackColor = Color.FromArgb(255, 0, 0);
                 btnUnit.Enabled = false;
             }
-            else if (availability.Equals("Not Available"))
+            else if (availability_status.Equals("Not Available"))
             {
                 btnUnit.BackColor = Color.FromArgb(217, 217, 217);
                 btnUnit.Enabled= false;
@@ -55,17 +57,19 @@ namespace WashablesSystem
         // Method to unselect the button
         public void DeselectButton()
         {
-            if (unitAvailability.Equals("Available"))
+            if (!unitOccupied && availabilityStatus.Equals("Available"))
             {
                 btnUnit.BackColor = Color.FromArgb(117, 238, 131);
             }
-            else if (unitAvailability.Equals("Occupied"))
+            else if (!unitOccupied && availabilityStatus.Equals("Available"))
             {
                 btnUnit.BackColor = Color.FromArgb(255, 0, 0);
+                btnUnit.Enabled = false;
             }
-            else if (unitAvailability.Equals("Not Available"))
+            else if (availabilityStatus.Equals("Not Available"))
             {
                 btnUnit.BackColor = Color.FromArgb(217, 217, 217);
+                btnUnit.Enabled = false;
             }
             btnUnit.ForeColor = Color.Black;
         }

@@ -44,7 +44,6 @@
             this.unitPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.unitPicture.TabIndex = 0;
             this.unitPicture.TabStop = false;
-            this.unitPicture.Click += new System.EventHandler(this.btnAvailability_Click);
             // 
             // lblUnit
             // 
@@ -57,7 +56,6 @@
             this.lblUnit.Size = new System.Drawing.Size(54, 26);
             this.lblUnit.TabIndex = 5;
             this.lblUnit.Text = "Unit";
-            this.lblUnit.Click += new System.EventHandler(this.btnAvailability_Click);
             // 
             // btnAvailability
             // 
@@ -104,7 +102,6 @@
             this.Controls.Add(this.unitPicture);
             this.Name = "MachineUnitList";
             this.Size = new System.Drawing.Size(182, 230);
-            this.Click += new System.EventHandler(this.btnAvailability_Click);
             ((System.ComponentModel.ISupportInitialize)(this.unitPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
