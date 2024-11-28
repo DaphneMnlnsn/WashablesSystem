@@ -39,7 +39,7 @@ namespace WashablesSystem
             Label lblHeader = (Label)this.FindForm().Controls.Find("lblHeader", true)[0];
             if (what.Text.Equals("Edit") && lblHeader.Text.Equals("Services"))
             {
-                EditService editService = new EditService();
+                EditService editService = new EditService(lblCode.Text);
                 editService.ShowDialog();
             }
             else if (what.Text.Equals("Edit") && lblHeader.Text.Equals("Equipment"))

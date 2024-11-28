@@ -14,10 +14,6 @@ namespace WashablesSystem
     public partial class EditService : Form
     {
         private string service_selected;
-        public EditService()
-        {
-            InitializeComponent();
-        }
         public EditService(string serviceSelected)
         {
             InitializeComponent();
