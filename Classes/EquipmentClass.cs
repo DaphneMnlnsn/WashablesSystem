@@ -96,23 +96,109 @@ namespace WashablesSystem.Classes
         }
         public void editUnit(string unitID)
         {
+            constring.Open();
 
+            this.unitID = unitID;
+
+            //Query for editing
+            String query = "UPDATE [Unit] SET unit_name ='" + unitName + "',unit_category ='"
+                + unitCategory + "',availability_status ='" + availabilityStatus + "' WHERE unit_id='" + unitID + "';";
+
+            SqlCommand cmd2 = new SqlCommand(query, constring);
+            cmd2.CommandText = query;
+
+            //If successful, add to activity log
+            if (cmd2.ExecuteNonQuery() == 1)
+            {
+                constring.Close();
+                logOperation("Edited Unit");
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong. Please try again.");
+                constring.Close();
+            }
         }
         public DataTable displaySelectedUnit(string unitID)
         {
-            return new DataTable();
+            constring.Open();
+            string sql = "SELECT * FROM [Unit] WHERE unit_id = '" + unitID + "'";
+            DataTable equipmentInfo = new DataTable("equipmentInfo");
+            SqlDataAdapter da = new SqlDataAdapter(sql, constring);
+            da.Fill(equipmentInfo);
+            constring.Close();
+
+            return equipmentInfo;
         }
         public void restoreUnit(string unitID)
         {
+            constring.Open();
 
+            this.unitID = unitID;
+
+            String query = "UPDATE [Unit] SET archived=0 WHERE unit_id='" + unitID + "';";
+
+            SqlCommand cmd2 = new SqlCommand(query, constring);
+            cmd2.CommandText = query;
+
+            //If successful, add to activity log
+            if (cmd2.ExecuteNonQuery() == 1)
+            {
+                constring.Close();
+                logOperation("Restored Unit");
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong. Please try again.");
+                constring.Close();
+            }
         }
         public void archiveUnit(string unitID)
         {
+            constring.Open();
 
+            this.unitID = unitID;
+           
+                //Query for editing
+                String query = "UPDATE [Unit] SET archived=1 WHERE unit_id='" + unitID + "';";
+
+                SqlCommand cmd2 = new SqlCommand(query, constring);
+                cmd2.CommandText = query;
+
+                //If successful, add to activity log
+                if (cmd2.ExecuteNonQuery() == 1)
+                {
+                    constring.Close();
+                    logOperation("Archived Unit");
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong. Please try again.");
+                    constring.Close();
+                }
         }
         public void deleteUnit(string unitID)
         {
+            constring.Open();
 
+            this.unitID = unitID;
+
+            String query = "DELETE FROM [Unit] WHERE unit_id='" + unitID + "';";
+
+            SqlCommand cmd2 = new SqlCommand(query, constring);
+            cmd2.CommandText = query;
+
+            //If successful, add to activity log
+            if (cmd2.ExecuteNonQuery() == 1)
+            {
+                constring.Close();
+                logOperation("Deleted Unit");
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong. Please try again.");
+                constring.Close();
+            }
         }
         public DataTable displayUnit(string unit_category)
         {
@@ -128,7 +214,14 @@ namespace WashablesSystem.Classes
         }
         public DataTable displayUnitArchive()
         {
-            return new DataTable();
+            constring.Open();
+            string sql = "SELECT * FROM [Unit] WHERE archived = 1";
+            DataTable unitInfo = new DataTable("unitInfo");
+            SqlDataAdapter da = new SqlDataAdapter(sql, constring);
+            da.Fill(unitInfo);
+            constring.Close();
+
+            return unitInfo;
 
         }
         private void logOperation(string activity)
@@ -152,7 +245,7 @@ namespace WashablesSystem.Classes
             if (activity.Equals("Added New Unit"))
             {
                 string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','added unit "
-                            + unitID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Unit" + "')";
+                            + unitID + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','Unit" + "')";
                 SqlCommand cmdAct = new SqlCommand(queryAct, constring);
                 cmdAct.CommandText = queryAct;
                 cmdAct.ExecuteNonQuery();
@@ -163,7 +256,7 @@ namespace WashablesSystem.Classes
             else if (activity.Equals("Edited Unit"))
             {
                 string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','edited unit "
-                            + unitID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Unit" + "')";
+                            + unitID + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','Unit" + "')";
                 SqlCommand cmdAct = new SqlCommand(queryAct, constring);
                 cmdAct.CommandText = queryAct;
                 cmdAct.ExecuteNonQuery();
@@ -173,7 +266,7 @@ namespace WashablesSystem.Classes
             else if (activity.Equals("Archived Unit"))
             {
                 string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','archived unit "
-                            + unitID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Unit" + "')";
+                            + unitID + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','Unit" + "')";
                 SqlCommand cmdAct = new SqlCommand(queryAct, constring);
                 cmdAct.CommandText = queryAct;
                 cmdAct.ExecuteNonQuery();
@@ -183,7 +276,7 @@ namespace WashablesSystem.Classes
             else if (activity.Equals("Restored Unit"))
             {
                 string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','restored unit "
-                            + unitID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Unit" + "')";
+                            + unitID + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','Unit" + "')";
                 SqlCommand cmdAct = new SqlCommand(queryAct, constring);
                 cmdAct.CommandText = queryAct;
                 cmdAct.ExecuteNonQuery();
@@ -193,7 +286,7 @@ namespace WashablesSystem.Classes
             else if (activity.Equals("Deleted Unit"))
             {
                 string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','deleted unit "
-                            + unitID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Unit" + "')";
+                            + unitID + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','Unit" + "')";
                 SqlCommand cmdAct = new SqlCommand(queryAct, constring);
                 cmdAct.CommandText = queryAct;
                 cmdAct.ExecuteNonQuery();
