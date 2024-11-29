@@ -41,13 +41,15 @@ namespace WashablesSystem
             Label lblHeader = (Label)this.FindForm().Controls.Find("lblHeader", true)[0];
             if (what.Text.Equals("Edit") && lblHeader.Text.Equals("Services"))
             {
-                EditService editService = new EditService(lblCode.Text);
+                EditService editService = new EditService(_parentForm, lblCode.Text);
                 editService.ShowDialog();
+                _parentForm.RefreshPanel();
             }
             else if (what.Text.Equals("Edit") && lblHeader.Text.Equals("Equipment"))
             {
                 EditUnit editUnit = new EditUnit(_parentForm, lblCode.Text);
                 editUnit.ShowDialog();
+                _parentForm.RefreshPanel();
             }
             else if (what.Text.Equals("Restore") && lblHeader.Text.Equals("Services"))
             {
@@ -57,15 +59,17 @@ namespace WashablesSystem
                 {
                     ServiceClass serviceClass = new ServiceClass();
                     serviceClass.restoreService(lblCode.Text);
+                    _parentForm.RefreshPanel();
                 }
             }
             else if(what.Text.Equals("Restore") && lblHeader.Text.Equals("Equipment"))
-            { 
+            {
                 DialogResult dialogResult = MessageBox.Show("Are you sure you want to restore this unit?\nThis will be moved to equipment Page.", "Confirm Restore", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     EquipmentClass equipmentClass = new EquipmentClass();
                     equipmentClass.restoreUnit(lblCode.Text);
+                    _parentForm.RefreshPanel();
                 }
             }
         }
@@ -82,6 +86,7 @@ namespace WashablesSystem
                 {
                     ServiceClass serviceClass = new ServiceClass();
                     serviceClass.archiveService(lblCode.Text);
+                    _parentForm.RefreshPanel();
                 }
             }
             else if (what.Text.Equals("Edit") && lblHeader.Text.Equals("Equipment"))
@@ -91,6 +96,7 @@ namespace WashablesSystem
                 {
                     EquipmentClass equipmentClass = new EquipmentClass();
                     equipmentClass.archiveUnit(lblCode.Text);
+                    _parentForm.RefreshPanel();
                 }
             }
             else if (what.Text.Equals("Restore") && lblHeader.Text.Equals("Services"))
@@ -101,6 +107,7 @@ namespace WashablesSystem
                 {
                     ServiceClass serviceClass = new ServiceClass();
                     serviceClass.deleteService(lblCode.Text);
+                    _parentForm.RefreshPanel();
                 }
             }
             else if(what.Text.Equals("Restore") && lblHeader.Text.Equals("Equipment"))
@@ -110,6 +117,7 @@ namespace WashablesSystem
                 {
                     EquipmentClass equipmentClass = new EquipmentClass();
                     equipmentClass.deleteUnit(lblCode.Text);
+                    _parentForm.RefreshPanel();
                 }
             }
         }

@@ -15,9 +15,11 @@ namespace WashablesSystem
 {
     public partial class AccountList : UserControl
     {
-        public AccountList()
+        private UserAccount _parentForm = new UserAccount();
+        public AccountList(UserAccount parentForm)
         {
             InitializeComponent();
+            _parentForm = parentForm;
         }
         public void setUserAccount(string employeeNum, string empName, string dashboardChecked,string laundryChecked, string scheduleChecked, string serviceEqChecked, string inventoryChecked, string customersChecked, string usersChecked, string billingChecked)
         {
@@ -36,17 +38,18 @@ namespace WashablesSystem
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            EditUser editUser = new EditUser(employeeNo.Text);
+            EditUser editUser = new EditUser(_parentForm, employeeNo.Text);
             editUser.ShowDialog();
         }
 
         private void btnTrash_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this user account?\nThis will be moved to the user archive.", "Confirm Delete", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to archive this user account?\nThis will be moved to the user archive.", "Confirm Delete", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 UserClass userClass = new UserClass();
                 userClass.archiveUser(employeeNo.Text);
+                _parentForm.RefreshPanel();
             }
 
         }

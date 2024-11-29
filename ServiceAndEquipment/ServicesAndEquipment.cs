@@ -200,11 +200,11 @@ namespace WashablesSystem
             switch (btnAddService.Text)
             {
                 case "+ Add Service":
-                    AddService addService = new AddService();
+                    AddService addService = new AddService(this);
                     addService.ShowDialog();
                     break;
                 case "+ Add Unit":
-                    AddUnit addUnit = new AddUnit();
+                    AddUnit addUnit = new AddUnit(this);
                     addUnit.ShowDialog();
                     break;
             }
@@ -212,7 +212,7 @@ namespace WashablesSystem
         }
         public void RefreshPanel()
         {
-            containerSE.Refresh();
+            check();
         }
     }
 }

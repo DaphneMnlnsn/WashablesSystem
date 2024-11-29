@@ -14,10 +14,12 @@ namespace WashablesSystem
    
     public partial class EditCustomer : Form
     {
+        CustomerInfo _parentForm = new CustomerInfo();
         private string customer_selected;
-        public EditCustomer(string customerSelected)
+        public EditCustomer(CustomerInfo parentForm, string customerSelected)
         {
             InitializeComponent();
+            this._parentForm = parentForm;
             this.customer_selected = customerSelected;
         }
         private void btnCancel_Click(object sender, EventArgs e)
@@ -45,8 +47,9 @@ namespace WashablesSystem
         private void btnSave_Click(object sender, EventArgs e)
         {
             //call edit method here
-            CustomerClass customerClass = new CustomerClass(txtBoxName.Text, txtBoxEmail.Text, txtBoxPhone.Text, txtBoxAddress.Text);               
+            CustomerClass customerClass = new CustomerClass(txtBoxName.Text, txtBoxPhone.Text, txtBoxEmail.Text, txtBoxAddress.Text);               
             customerClass.editCustomer(customer_selected);
+            _parentForm.RefreshPanel();
             this.Close();
         }
     }

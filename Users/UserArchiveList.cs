@@ -15,10 +15,12 @@ namespace WashablesSystem
     public partial class UserArchiveList : UserControl
     {
         UserClass userClass;
-        public UserArchiveList()
+        private UserArchive _parentForm = new UserArchive();
+        public UserArchiveList(UserArchive parentForm)
         {
             InitializeComponent();
             userClass = new UserClass();
+            _parentForm = parentForm;
         }
         public void setUserArchive(string userArchiveNum, string userArchiveFullName, string userArchiveName)
         {
@@ -34,6 +36,7 @@ namespace WashablesSystem
             if (dialogResult == DialogResult.Yes)
             {
                 userClass.restoreUser(userArchNo.Text);
+                _parentForm.RefreshPanel();
             }
         }
 
@@ -43,6 +46,7 @@ namespace WashablesSystem
             if (dialogResult == DialogResult.Yes)
             {
                 userClass.deleteUser(userArchNo.Text);
+                _parentForm.RefreshPanel();
             }
         }
     }

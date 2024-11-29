@@ -20,14 +20,19 @@ namespace WashablesSystem
 
         private void ArchiveInventory_Load(object sender, EventArgs e)
         {
+            ArchivedItemsContainer.Controls.Clear();
             InventoryClass inventoryArchive = new InventoryClass();
             DataTable inventory = inventoryArchive.displayItemArchive();
             foreach (DataRow row in inventory.Rows)
             {
-                ArchiveInventoryList archive = new ArchiveInventoryList();
+                ArchiveInventoryList archive = new ArchiveInventoryList(this);
                 archive.setInventoryInfo(row["item_id"].ToString(), row["item_name"].ToString(), row["item_category"].ToString(), row["item_quantity"].ToString(), row["item_price"].ToString());
                 ArchivedItemsContainer.Controls.Add(archive);
             }
+        }
+        public void RefreshPanel()
+        {
+            ArchiveInventory_Load(null, null);
         }
     }
 }

@@ -13,9 +13,11 @@ namespace WashablesSystem
 {
     public partial class AddUser : Form
     {
-        public AddUser()
+        private UserAccount _parentForm = new UserAccount();
+        public AddUser(UserAccount parentForm)
         {
             InitializeComponent();
+            _parentForm = parentForm;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -30,6 +32,7 @@ namespace WashablesSystem
                 UserClass userClass = new UserClass(txtBoxFullname.Text, txtBoxName.Text, txtBoxPass.Text, checkDashboard.Checked, checkLaundry.Checked,
                                 checkSched.Checked, checkSAndE.Checked, checkInventory.Checked, checkCustomers.Checked, checkUsers.Checked, checkBilling.Checked);
                 userClass.addUser();
+                _parentForm.RefreshPanel();
                 this.Close();
             }
             else

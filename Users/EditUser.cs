@@ -14,10 +14,12 @@ namespace WashablesSystem
 {
     public partial class EditUser : Form
     {
+        private UserAccount _parentForm = new UserAccount();
         private string user_selected;
-        public EditUser(string userSelected)
+        public EditUser(UserAccount parentForm, string userSelected)
         {
             InitializeComponent();
+            this._parentForm = parentForm;
             this.user_selected = userSelected;
         }
 
@@ -57,6 +59,7 @@ namespace WashablesSystem
                 UserClass userClass = new UserClass(txtBoxFullname.Text, txtBoxName.Text, txtBoxPass.Text, checkDashboard.Checked, checkLaundry.Checked,
                                 checkSched.Checked, checkSAndE.Checked, checkInventory.Checked, checkCustomers.Checked, checkUsers.Checked, checkBilling.Checked);
                 userClass.editUser(user_selected);
+                _parentForm.RefreshPanel();
                 this.Close();
             }
             else

@@ -29,6 +29,12 @@ namespace WashablesSystem.Classes
             constring = sessionVar.Constring;
         }
 
+        public InventoryClass(decimal restockQuantity)
+        {
+            constring = sessionVar.Constring;
+            this.itemQuantity = restockQuantity;
+        }
+
         public InventoryClass(string ItemName, string Category, decimal Quantity, decimal Price, string Unit)
         {
             constring = sessionVar.Constring;
@@ -100,9 +106,8 @@ namespace WashablesSystem.Classes
 
             //Query for editing
             String query = "UPDATE [Item] SET item_name='"
-                + itemName + "',item_category='" + itemCategory + "',item_quantity='" + itemQuantity
-                + "',item_price='" + itemPrice + "',item_measurement='"
-                + itemUnit + "' WHERE item_id='" + itemID + "'";
+                + itemName + "',item_category='" + itemCategory + "',item_price='" + itemPrice 
+                + "' WHERE item_id='" + itemID + "'";
 
             SqlCommand cmd2 = new SqlCommand(query, constring);
             cmd2.CommandText = query;
@@ -155,7 +160,28 @@ namespace WashablesSystem.Classes
         }
         public void restockItem(string itemID)
         {
+            constring.Open();
 
+            this.itemID = itemID;
+
+            //Query for editing
+            String query = "UPDATE [Item] SET item_quantity = item_quantity + "
+                + itemQuantity + " WHERE item_id='" + itemID + "'";
+
+            SqlCommand cmd2 = new SqlCommand(query, constring);
+            cmd2.CommandText = query;
+
+            //If successful, add to activity log
+            if (cmd2.ExecuteNonQuery() == 1)
+            {
+                constring.Close();
+                logOperation("Restocked Item");
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong. Please try again.");
+                constring.Close();
+            }
         }
         public void archiveItem(string itemID)
         {
@@ -172,7 +198,7 @@ namespace WashablesSystem.Classes
             if (cmd2.ExecuteNonQuery() == 1)
             {
                 constring.Close();
-                logOperation("Restored Item");
+                logOperation("Archived Item");
             }
             else
             {
@@ -191,8 +217,13 @@ namespace WashablesSystem.Classes
             SqlCommand cmd2 = new SqlCommand(query, constring);
             cmd2.CommandText = query;
 
+            String query2 = "DELETE FROM [ItemHistory] WHERE item_id='" + itemID + "';";
+
+            SqlCommand cmd3 = new SqlCommand(query2, constring);
+            cmd3.CommandText = query2;
+
             //If successful, add to activity log
-            if (cmd2.ExecuteNonQuery() == 1)
+            if (cmd2.ExecuteNonQuery() == 1 && cmd3.ExecuteNonQuery() == 1)
             {
                 constring.Close();
                 logOperation("Deleted Item");
@@ -294,7 +325,7 @@ namespace WashablesSystem.Classes
                 cmdAct.ExecuteNonQuery();
 
                 string queryAddHistory = "INSERT INTO ItemHistory VALUES('" + sessionVar.loggedIn.ToString() + "','" + itemID +  "','" 
-                    + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + itemQuantity + itemUnit + "')";
+                    + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "',' added " + itemQuantity + itemUnit + "')";
                 SqlCommand cmdAddHistory = new SqlCommand(queryAddHistory, constring);
                 cmdAddHistory.CommandText = queryAddHistory;
                 cmdAddHistory.ExecuteNonQuery();

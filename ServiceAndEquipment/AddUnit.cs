@@ -13,9 +13,12 @@ namespace WashablesSystem
 {
     public partial class AddUnit : Form
     {
-        public AddUnit()
+        private ServicesAndEquipment _parentForm = new ServicesAndEquipment(new Main());
+
+        public AddUnit(ServicesAndEquipment parentForm)
         {
             InitializeComponent();
+            _parentForm = parentForm;
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -26,6 +29,7 @@ namespace WashablesSystem
         {
             EquipmentClass equipmentClass = new EquipmentClass(cbEquipment.Text, txtBoxName.Text, cbStatus.Text);
             equipmentClass.addUnit();
+            _parentForm.RefreshPanel();
             this.Close();
         }
     }

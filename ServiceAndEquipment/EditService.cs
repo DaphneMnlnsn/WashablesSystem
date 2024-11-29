@@ -13,10 +13,12 @@ namespace WashablesSystem
 {
     public partial class EditService : Form
     {
+        private ServicesAndEquipment _parentForm = new ServicesAndEquipment(new Main());
         private string service_selected;
-        public EditService(string serviceSelected)
+        public EditService(ServicesAndEquipment parentForm, string serviceSelected)
         {
             InitializeComponent();
+            _parentForm = parentForm;
             this.service_selected = serviceSelected;
         }
         private void btnCancel_Click(object sender, EventArgs e)
@@ -43,6 +45,7 @@ namespace WashablesSystem
         {
             ServiceClass serviceClass = new ServiceClass(cbService.Text, txtBoxName.Text, decimal.Parse(txtBoxRate.Text), decimal.Parse(txtBoxMin.Text));
             serviceClass.editService(service_selected);
+            _parentForm.RefreshPanel();
             this.Close();
         }
     }

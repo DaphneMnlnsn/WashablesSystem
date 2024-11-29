@@ -17,9 +17,11 @@ namespace WashablesSystem
 {
     public partial class ItemList : UserControl
     {
-        public ItemList()
+        private ItemView _parentForm = new ItemView();
+        public ItemList(ItemView parentForm)
         {
             InitializeComponent();
+            _parentForm = parentForm;
         }
 
         public void setItemInfo(string code, string name, string categ, string quan, string price, string measurement)
@@ -44,13 +46,13 @@ namespace WashablesSystem
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            EditItem editItem = new EditItem(ItemCode.Text);
+            EditItem editItem = new EditItem(_parentForm, ItemCode.Text);
             editItem.ShowDialog();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            RestockItem restockItem = new RestockItem();
+            RestockItem restockItem = new RestockItem(_parentForm, ItemCode.Text);
             restockItem.ShowDialog();
         }
 
@@ -63,11 +65,12 @@ namespace WashablesSystem
         private void btnDelete_Click(object sender, EventArgs e)
         {
             //call archive method here
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this item?\nThis will be moved to the item archive.", "Confirm Archive", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to archive this item?\nThis will be moved to the item archive.", "Confirm Archive", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 InventoryClass inventoryClass = new InventoryClass();
                 inventoryClass.archiveItem(ItemCode.Text);
+                _parentForm.RefreshPanel();
             }
         }
     }

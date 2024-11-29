@@ -20,11 +20,12 @@ namespace WashablesSystem
 
         private void ItemView_Load(object sender, EventArgs e)
         {
+            ItemContainer.Controls.Clear();
             InventoryClass inventory = new InventoryClass();
             DataTable items = inventory.displayItem();
             foreach (DataRow row in items.Rows)
             {
-                ItemList item = new ItemList();
+                ItemList item = new ItemList(this);
                 item.setItemInfo(row["item_id"].ToString(), row["item_name"].ToString(),
                    row["item_category"].ToString(), row["item_quantity"].ToString(),
                    row["item_price"].ToString(), row["item_measurement"].ToString());
@@ -36,6 +37,10 @@ namespace WashablesSystem
         {
             AddItem addItem = new AddItem();
             addItem.ShowDialog();
+        }
+        public void RefreshPanel()
+        {
+            ItemView_Load(null, null);
         }
     }
 }

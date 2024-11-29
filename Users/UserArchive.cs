@@ -20,15 +20,20 @@ namespace WashablesSystem
 
         private void UserArchive_Load(object sender, EventArgs e)
         {
+            archiveContainer.Controls.Clear();
             UserClass userArchive = new UserClass();
             DataTable users = userArchive.displayUserArchive();
             foreach (DataRow row in users.Rows)
             {
-                UserArchiveList archive = new UserArchiveList();
+                UserArchiveList archive = new UserArchiveList(this);
                 archive.setUserArchive(row["user_id"].ToString(), row["user_fullname"].ToString(), row["username"].ToString());
                 archiveContainer.Controls.Add(archive);
             }
 
+        }
+        public void RefreshPanel()
+        {
+            UserArchive_Load(null, null);
         }
     }
 }

@@ -13,10 +13,14 @@ namespace WashablesSystem
 {
     public partial class EditItem : Form
     {
+        private ItemView _parentForm = new ItemView();
         private string item_selected;
-        public EditItem(string itemSelected)
+        private decimal item_quantity;
+        private string item_unit;
+        public EditItem(ItemView parentForm, string itemSelected)
         {
             InitializeComponent();
+            _parentForm = parentForm;
             this.item_selected = itemSelected;
         }
 
@@ -32,7 +36,8 @@ namespace WashablesSystem
                 txtBoxName.Text = row["item_name"].ToString();
                 cbCategory.Text = row["item_category"].ToString();
                 txtBoxPrice.Text = row["item_price"].ToString();
-               
+                item_quantity = decimal.Parse(row["item_quantity"].ToString());
+                item_unit = row["item_measurement"].ToString();
             }
         }
 
@@ -44,8 +49,9 @@ namespace WashablesSystem
         private void btnSave_Click(object sender, EventArgs e)
         {
             //call edit method here
-            InventoryClass inventory = new InventoryClass(txtBoxName.Text, cbCategory.Text,0, decimal.Parse(txtBoxPrice.Text), "");
+            InventoryClass inventory = new InventoryClass(txtBoxName.Text, cbCategory.Text,item_quantity, decimal.Parse(txtBoxPrice.Text), item_unit);
             inventory.editItem(item_selected);
+            _parentForm.RefreshPanel();
             this.Close();
         }
     }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashablesSystem.Classes;
 
 namespace WashablesSystem
 {
@@ -21,20 +22,30 @@ namespace WashablesSystem
 
         private void CustomerComplaints_Load(object sender, EventArgs e)
         {
-            ComplaintList complaint = new ComplaintList();
-            complaint.setComplaintInfo("R001", "Roxanne Rose", "Quiana Momingo", "Missing Item", "10/12/2024", "---", "Not Resolved");
-            complaintContainer.Controls.Add(complaint);
+            complaintContainer.Controls.Clear();
 
-            ComplaintList complaint2 = new ComplaintList();
-            complaint2.setComplaintInfo("R002", "Roxanne Rose", "Lei Mar", "Remaining Stain", "10/12/2024", "---", "Not Resolved");
-            complaintContainer.Controls.Add(complaint2);
+            ComplaintsClass complaintsClass = new ComplaintsClass();
+            DataTable complaints = complaintsClass.displayComplaint();
+            foreach (DataRow row in complaints.Rows)
+            {
+                ComplaintList complaint = new ComplaintList(this);
+                complaint.setComplaintInfo(row["complaint_id"].ToString(), row["user_id"].ToString(),
+                   row["customer_id"].ToString(), row["problem"].ToString(),
+                   row["date_complained"].ToString(), row["date_resolved"].ToString(), row["resolved_status"].ToString());
+                complaintContainer.Controls.Add(complaint);
+            }
 
         }
 
         private void btnAddComplaint_Click(object sender, EventArgs e)
         {
-            AddComplaint addComplaint = new AddComplaint();
+            AddComplaint addComplaint = new AddComplaint(this);
             addComplaint.ShowDialog();
+        }
+
+        public void RefreshPanel()
+        {
+            CustomerComplaints_Load(null, null);
         }
     }
 }

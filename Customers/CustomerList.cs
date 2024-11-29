@@ -13,9 +13,17 @@ namespace WashablesSystem
 {
     public partial class CustomerList : UserControl
     {
-        public CustomerList()
+        CustomerInfo _parentForm = new CustomerInfo();
+        CustomerArchive _archiveForm = new CustomerArchive();
+        public CustomerList(CustomerInfo parentForm)
         {
             InitializeComponent();
+            _parentForm = parentForm;
+        }
+        public CustomerList(CustomerArchive parentForm)
+        {
+            InitializeComponent();
+            _archiveForm = parentForm;
         }
         public void setCustomerInfo(string customerNum, string customerName, string customerEmail, string customerPhone, string customerAddress, Image image, string kind)
         {
@@ -33,7 +41,7 @@ namespace WashablesSystem
         {
             if(what.Text.Equals("Edit"))
             {
-                EditCustomer editCustomer = new EditCustomer(custNo.Text);
+                EditCustomer editCustomer = new EditCustomer(_parentForm, custNo.Text);
                 editCustomer.ShowDialog();
             }
             else
@@ -43,6 +51,7 @@ namespace WashablesSystem
                 {
                     CustomerClass customerClass = new CustomerClass();
                     customerClass.restoreCustomer(custNo.Text);
+                    _archiveForm.RefreshPanel();
                 }
 
             }
@@ -58,8 +67,8 @@ namespace WashablesSystem
                 {
                     CustomerClass customerClass = new CustomerClass();
                     customerClass.archiveCustomer(custNo.Text);
+                    _parentForm.RefreshPanel();
                 }
-                //call archive method here
             }
             else
             {
@@ -69,6 +78,7 @@ namespace WashablesSystem
                 {
                     CustomerClass customerClass = new CustomerClass();
                     customerClass.deleteCustomer(custNo.Text);
+                    _archiveForm.RefreshPanel();
                 }
             }
         }

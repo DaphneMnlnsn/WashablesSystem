@@ -36,8 +36,8 @@
             this.dateComplained = new WashablesSystem.CustomDatePicker();
             this.btnCancel = new WashablesSystem.CustomButton();
             this.btnAdd = new WashablesSystem.CustomButton();
-            this.txtBoxSearch = new WashablesSystem.CustomTextbox();
-            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.cbIssue = new System.Windows.Forms.ComboBox();
+            this.cbCustomerName = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label4
@@ -160,50 +160,44 @@
             this.btnAdd.Text = "Add";
             this.btnAdd.TextColor = System.Drawing.Color.White;
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // txtBoxSearch
+            // cbIssue
             // 
-            this.txtBoxSearch.BackColor = System.Drawing.Color.White;
-            this.txtBoxSearch.BorderColor = System.Drawing.Color.Silver;
-            this.txtBoxSearch.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.txtBoxSearch.BorderRadius = 5;
-            this.txtBoxSearch.BorderSize = 1;
-            this.txtBoxSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.txtBoxSearch.ForeColor = System.Drawing.Color.Black;
-            this.txtBoxSearch.Location = new System.Drawing.Point(20, 89);
-            this.txtBoxSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBoxSearch.Multiline = false;
-            this.txtBoxSearch.Name = "txtBoxSearch";
-            this.txtBoxSearch.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
-            this.txtBoxSearch.PasswordChar = false;
-            this.txtBoxSearch.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtBoxSearch.PlaceholderText = "";
-            this.txtBoxSearch.Size = new System.Drawing.Size(307, 30);
-            this.txtBoxSearch.TabIndex = 23;
-            this.txtBoxSearch.UnderlinedStyle = false;
-            // 
-            // cbCategory
-            // 
-            this.cbCategory.BackColor = System.Drawing.SystemColors.Control;
-            this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCategory.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cbCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Items.AddRange(new object[] {
+            this.cbIssue.BackColor = System.Drawing.SystemColors.Control;
+            this.cbIssue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbIssue.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cbIssue.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.cbIssue.FormattingEnabled = true;
+            this.cbIssue.Items.AddRange(new object[] {
             "Missing Item",
             "Remaining Stains"});
-            this.cbCategory.Location = new System.Drawing.Point(21, 160);
-            this.cbCategory.Margin = new System.Windows.Forms.Padding(2);
-            this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(307, 25);
-            this.cbCategory.TabIndex = 203;
+            this.cbIssue.Location = new System.Drawing.Point(21, 160);
+            this.cbIssue.Margin = new System.Windows.Forms.Padding(2);
+            this.cbIssue.Name = "cbIssue";
+            this.cbIssue.Size = new System.Drawing.Size(307, 25);
+            this.cbIssue.TabIndex = 203;
+            // 
+            // cbCustomerName
+            // 
+            this.cbCustomerName.BackColor = System.Drawing.SystemColors.Control;
+            this.cbCustomerName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCustomerName.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cbCustomerName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.cbCustomerName.FormattingEnabled = true;
+            this.cbCustomerName.Location = new System.Drawing.Point(21, 94);
+            this.cbCustomerName.Margin = new System.Windows.Forms.Padding(2);
+            this.cbCustomerName.Name = "cbCustomerName";
+            this.cbCustomerName.Size = new System.Drawing.Size(307, 25);
+            this.cbCustomerName.TabIndex = 204;
             // 
             // AddComplaint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(363, 346);
-            this.Controls.Add(this.cbCategory);
+            this.Controls.Add(this.cbCustomerName);
+            this.Controls.Add(this.cbIssue);
             this.Controls.Add(this.dateComplained);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -212,7 +206,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.txtBoxSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddComplaint";
@@ -223,7 +216,6 @@
         }
 
         #endregion
-        private CustomTextbox txtBoxSearch;
         private CustomButton btnAdd;
         private CustomButton btnCancel;
         private System.Windows.Forms.Label label4;
@@ -232,6 +224,7 @@
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label label1;
         private CustomDatePicker dateComplained;
-        private System.Windows.Forms.ComboBox cbCategory;
+        private System.Windows.Forms.ComboBox cbIssue;
+        private System.Windows.Forms.ComboBox cbCustomerName;
     }
 }

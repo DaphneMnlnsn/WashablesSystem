@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashablesSystem.Classes;
 
 namespace WashablesSystem
 {
     public partial class RestockItem : Form
     {
-        public RestockItem()
+        private string item_selected;
+        private ItemView _parentForm = new ItemView();
+        public RestockItem(ItemView parentForm, string itemSelected)
         {
             InitializeComponent();
+            item_selected = itemSelected;
+            _parentForm = parentForm;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -24,12 +29,23 @@ namespace WashablesSystem
 
         private void RestockItem_Load(object sender, EventArgs e)
         {
-            //call displayselectedinfo here
+            InventoryClass editItem = new InventoryClass();
+            DataTable items = new DataTable();
+            items = editItem.displaySelectedItem(item_selected);
+
+            foreach (DataRow row in items.Rows)
+            {
+                txtBoxRemaining.Text = row["item_quantity"].ToString();
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             //call restock method here
+            InventoryClass itemClass = new InventoryClass(decimal.Parse(txtBoxQuantity.Text));
+            itemClass.restockItem(item_selected);
+            _parentForm.RefreshPanel();
+            this.Close();
         }
     }
 }

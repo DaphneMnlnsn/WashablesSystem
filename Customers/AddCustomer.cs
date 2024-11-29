@@ -13,9 +13,11 @@ namespace WashablesSystem
 {
     public partial class AddCustomer : Form
     {
-        public AddCustomer()
+        CustomerInfo _parentForm = new CustomerInfo();
+        public AddCustomer(CustomerInfo parentForm)
         {
             InitializeComponent();
+            _parentForm = parentForm;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -27,6 +29,7 @@ namespace WashablesSystem
         {
             CustomerClass customerClass = new CustomerClass(txtBoxName.Text, txtBoxPhone.Text, txtBoxEmail.Text, txtBoxAddress.Text);
             customerClass.addCustomer();
+            _parentForm.RefreshPanel();
             this.Close();
         }
     }

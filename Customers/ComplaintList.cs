@@ -13,9 +13,15 @@ namespace WashablesSystem
 {
     public partial class ComplaintList : UserControl
     {
+        private CustomerComplaints _parentForm = new CustomerComplaints(new Main());
         public ComplaintList()
         {
             InitializeComponent();
+        }
+        public ComplaintList(CustomerComplaints parentForm)
+        {
+            InitializeComponent();
+            _parentForm = parentForm;
         }
         public void setComplaintInfo(string complaintNum, string handled, string custName, string problem, string dateComp, string dateRes, string status)
         {

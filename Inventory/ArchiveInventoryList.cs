@@ -16,9 +16,11 @@ namespace WashablesSystem
 {
     public partial class ArchiveInventoryList : UserControl
     {
-        public ArchiveInventoryList()
+        private ArchiveInventory _parentForm = new ArchiveInventory();
+        public ArchiveInventoryList(ArchiveInventory parentForm)
         {
             InitializeComponent();
+            _parentForm = parentForm;
         }
         public void setInventoryInfo(string code, string name, string categ, string quan, string price)
         {
@@ -38,6 +40,7 @@ namespace WashablesSystem
             {
                 InventoryClass inventoryClass = new InventoryClass();
                 inventoryClass.restoreItem(ItemCode.Text);
+                _parentForm.RefreshPanel();
             }
         }
 
@@ -49,6 +52,7 @@ namespace WashablesSystem
             {
                 InventoryClass inventoryClass = new InventoryClass();
                 inventoryClass.deleteItem(ItemCode.Text);
+                _parentForm.RefreshPanel();
             }
         }
     }

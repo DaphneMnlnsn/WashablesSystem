@@ -20,11 +20,12 @@ namespace WashablesSystem
 
         private void CustomerInfo_Load(object sender, EventArgs e)
         {
+            customerContainer.Controls.Clear();
             CustomerClass custom = new CustomerClass();
             DataTable customers = custom.displayCustomer();
             foreach (DataRow row in customers.Rows)
             {
-                CustomerList account = new CustomerList();
+                CustomerList account = new CustomerList(this);
                 account.setCustomerInfo(row["customer_id"].ToString(), row["customer_name"].ToString(),
                    row["customer_email"].ToString(), row["customer_phone"].ToString(),
                    row["customer_address"].ToString(), WashablesSystem.Properties.Resources.Create, "Edit");
@@ -32,9 +33,14 @@ namespace WashablesSystem
             }
         }
 
+        public void RefreshPanel()
+        {
+            this.CustomerInfo_Load(null, null);
+        }
+
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            AddCustomer addCustomer = new AddCustomer();
+            AddCustomer addCustomer = new AddCustomer(this);
             addCustomer.ShowDialog();
         }
     }
