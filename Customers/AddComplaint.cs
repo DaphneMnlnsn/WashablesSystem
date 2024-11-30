@@ -26,10 +26,24 @@ namespace WashablesSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ComplaintsClass complaintsClass = new ComplaintsClass(cbCustomerName.Text, cbIssue.Text, DateTime.Parse(dateComplained.Text));
+            ComplaintsClass complaintsClass = new ComplaintsClass(cbCustomerName.SelectedValue.ToString(), cbIssue.Text, DateTime.Parse(dateComplained.Text));
             complaintsClass.addComplaint();
             _parentForm.RefreshPanel();
             this.Close();
+        }
+
+        private void AddComplaint_Load(object sender, EventArgs e)
+        {
+            Dictionary<string, string> data = new Dictionary<string, string>();
+            CustomerClass customer = new CustomerClass();
+            DataTable customers = customer.displayCustomer();
+            foreach (DataRow row in customers.Rows)
+            {
+                data.Add(row["customer_id"].ToString(), row["customer_name"].ToString());
+            }
+            cbCustomerName.DataSource = data.ToArray();
+            cbCustomerName.DisplayMember = "Value";
+            cbCustomerName.ValueMember = "Key";
         }
     }
 }

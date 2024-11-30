@@ -44,7 +44,7 @@ namespace WashablesSystem
                 MissingItem findItem = new MissingItem(grandparentForm);
                 findItem.ShowDialog();
             }
-            if (lblProblem.Text.Equals("Remaining Stain"))
+            if (lblProblem.Text.Equals("Remaining Stains"))
             {
                 FreeWash freeWash = new FreeWash();
                 freeWash.ShowDialog();

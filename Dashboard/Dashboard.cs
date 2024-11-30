@@ -30,7 +30,7 @@ namespace WashablesSystem
             foreach (DataRow row in log.Rows)
             {
                 activityLogItem logList = new activityLogItem();
-                logList.setActivity(row["user_fullname"].ToString() + " " +
+                logList.setActivity(row["username"].ToString() + " " +
                    row["activity"].ToString() + " at " + row["activity_date"].ToString());
                 activityPanel.Controls.Add(logList);
             }

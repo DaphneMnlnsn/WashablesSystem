@@ -28,10 +28,25 @@ namespace WashablesSystem
             DataTable complaints = complaintsClass.displayComplaint();
             foreach (DataRow row in complaints.Rows)
             {
+                string dateResolved = "";
+                string resolvedStatus = "";
                 ComplaintList complaint = new ComplaintList(this);
-                complaint.setComplaintInfo(row["complaint_id"].ToString(), row["user_id"].ToString(),
-                   row["customer_id"].ToString(), row["problem"].ToString(),
-                   row["date_complained"].ToString(), row["date_resolved"].ToString(), row["resolved_status"].ToString());
+                if (Convert.ToDateTime(row["date_resolved"]).ToShortDateString().Equals("1/1/1900"))
+                {
+                    dateResolved = "-";
+                }
+                if (row["resolved_status"].ToString().Equals("False"))
+                {
+                    resolvedStatus = "Not Resolved";
+                }
+                else
+                {
+                    resolvedStatus = "Resolved";
+                }
+                complaint.setComplaintInfo(row["complaint_id"].ToString(), row["user_fullname"].ToString(),
+                   row["customer_name"].ToString(), row["problem"].ToString(),
+                   Convert.ToDateTime(row["date_complained"]).ToShortDateString(), 
+                   dateResolved, resolvedStatus);
                 complaintContainer.Controls.Add(complaint);
             }
 

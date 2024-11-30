@@ -57,7 +57,7 @@ namespace WashablesSystem.Classes
 
                 //Query for inserting
                 String query = "INSERT INTO [Complaints] VALUES('" + complaintID + "','" + sessionVar.loggedIn + "','"
-                    + customerID + "','" + complaintIssue + "','" + complaintDate + "','','Not Resolved')";
+                    + customerID + "','" + complaintIssue + "','" + complaintDate + "','','0')";
 
                 SqlCommand cmd2 = new SqlCommand(query, constring);
                 cmd2.CommandText = query;
@@ -90,7 +90,7 @@ namespace WashablesSystem.Classes
         public DataTable displayComplaint()
         {
             constring.Open();
-            string sql = "SELECT * FROM [Complaints]";
+            string sql = "SELECT * FROM [Complaints] INNER JOIN [Customer] ON [Complaints].customer_id = [Customer].customer_id INNER JOIN [User] ON [Complaints].user_id = [User].user_id";
 
             DataTable complaints = new DataTable("complaints");
             SqlDataAdapter da = new SqlDataAdapter(sql, constring);
