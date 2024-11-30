@@ -34,7 +34,10 @@ namespace WashablesSystem
 
         private void AddComplaint_Load(object sender, EventArgs e)
         {
-            Dictionary<string, string> data = new Dictionary<string, string>();
+            Dictionary<string, string> data = new Dictionary<string, string>
+            {
+                { "placeholder", "<Select Customer Name>" }
+            };
             CustomerClass customer = new CustomerClass();
             DataTable customers = customer.displayCustomer();
             foreach (DataRow row in customers.Rows)

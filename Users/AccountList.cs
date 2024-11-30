@@ -21,12 +21,11 @@ namespace WashablesSystem
             InitializeComponent();
             _parentForm = parentForm;
         }
-        public void setUserAccount(string employeeNum, string empName, string dashboardChecked,string laundryChecked, string scheduleChecked, string serviceEqChecked, string inventoryChecked, string customersChecked, string usersChecked, string billingChecked)
+        public void setUserAccount(string employeeNum, string empName, string laundryChecked, string scheduleChecked, string serviceEqChecked, string inventoryChecked, string customersChecked, string usersChecked, string billingChecked)
         {
             //Displaying customer info
             employeeNo.Text = employeeNum;
             employeeName.Text = empName;
-            lblDashboard.Text = dashboardChecked;
             lblLaundry.Text = laundryChecked;
             lblSchedule.Text = scheduleChecked;
             lblSerEq.Text = serviceEqChecked;

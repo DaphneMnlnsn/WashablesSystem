@@ -44,7 +44,6 @@
             this.lblSerEq = new System.Windows.Forms.Label();
             this.lblSchedule = new System.Windows.Forms.Label();
             this.lblLaundry = new System.Windows.Forms.Label();
-            this.lblDashboard = new System.Windows.Forms.Label();
             this.employeeName = new System.Windows.Forms.Label();
             this.employeeNo = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
@@ -63,7 +62,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 171F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 115F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 176F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
@@ -82,7 +81,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(142, 9);
+            this.label1.Location = new System.Drawing.Point(141, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 19);
@@ -108,7 +107,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(377, 9);
+            this.label3.Location = new System.Drawing.Point(376, 9);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 19);
@@ -121,7 +120,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(545, 9);
+            this.label5.Location = new System.Drawing.Point(544, 9);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 19);
@@ -134,7 +133,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(687, 9);
+            this.label6.Location = new System.Drawing.Point(686, 9);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 19);
@@ -173,8 +172,8 @@
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel2.ColumnCount = 12;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 213F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 9F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
@@ -191,7 +190,6 @@
             this.tableLayoutPanel2.Controls.Add(this.lblSerEq, 5, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblSchedule, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblLaundry, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lblDashboard, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnEdit, 10, 0);
             this.tableLayoutPanel2.Controls.Add(this.employeeName, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.employeeNo, 0, 0);
@@ -295,25 +293,12 @@
             this.lblLaundry.Text = "Laundry";
             this.lblLaundry.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblDashboard
-            // 
-            this.lblDashboard.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblDashboard.AutoSize = true;
-            this.lblDashboard.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDashboard.Location = new System.Drawing.Point(204, 9);
-            this.lblDashboard.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblDashboard.Name = "lblDashboard";
-            this.lblDashboard.Size = new System.Drawing.Size(76, 19);
-            this.lblDashboard.TabIndex = 91;
-            this.lblDashboard.Text = "Dashboard";
-            this.lblDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // employeeName
             // 
             this.employeeName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.employeeName.AutoSize = true;
             this.employeeName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeeName.Location = new System.Drawing.Point(96, 9);
+            this.employeeName.Location = new System.Drawing.Point(136, 9);
             this.employeeName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.employeeName.Name = "employeeName";
             this.employeeName.Size = new System.Drawing.Size(71, 19);
@@ -340,7 +325,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AccountList";
             this.Size = new System.Drawing.Size(941, 44);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -370,7 +355,6 @@
         private System.Windows.Forms.Label lblSerEq;
         private System.Windows.Forms.Label lblSchedule;
         private System.Windows.Forms.Label lblLaundry;
-        private System.Windows.Forms.Label lblDashboard;
         private System.Windows.Forms.Label employeeName;
         private System.Windows.Forms.Label employeeNo;
     }

@@ -20,7 +20,6 @@ namespace WashablesSystem.Classes
         private string employeeName;
         private string employeeUsername;
         private string employeePass;
-        private bool dashboardPermission;
         private bool laundryPermission;
         private bool schedPermission;
         private bool sAndEPermission;
@@ -42,13 +41,12 @@ namespace WashablesSystem.Classes
             this.employeeUsername = employeeUsername;
             this.employeePass = employeePass;
         }
-        public UserClass(string employeeName, string employeeUsername, string employeePass, bool dashboardPermission, bool laundryPermission, bool schedPermission, bool sAndEPermission, bool inventoryPermission, bool customerPermission, bool userPermission, bool billingPermission)
+        public UserClass(string employeeName, string employeeUsername, string employeePass, bool laundryPermission, bool schedPermission, bool sAndEPermission, bool inventoryPermission, bool customerPermission, bool userPermission, bool billingPermission)
         {
             constring = sessionVar.Constring;
             this.employeeName = employeeName;
             this.employeeUsername = employeeUsername;
             this.employeePass = Cryptography.Encrypt(employeePass);
-            this.dashboardPermission = dashboardPermission;
             this.laundryPermission = laundryPermission;
             this.schedPermission = schedPermission;
             this.sAndEPermission = sAndEPermission;
@@ -87,7 +85,7 @@ namespace WashablesSystem.Classes
 
                 //Query for inserting
                 String query = "INSERT INTO [User] VALUES('" + employeeID + "','" + employeeName + "','"
-                    + employeeUsername + "','" + employeePass + "','" + dashboardPermission + "','" + laundryPermission + "','"
+                    + employeeUsername + "','" + employeePass + "','" + laundryPermission + "','"
                     + schedPermission + "','" + sAndEPermission + "','" + inventoryPermission + "','" + customerPermission
                     + "','" + userPermission + "','" + billingPermission + "',0);";
 
@@ -158,11 +156,10 @@ namespace WashablesSystem.Classes
 
             //Query for editing
             String query = "UPDATE [User] SET user_fullname='" + employeeName + "',username='"
-                + employeeUsername + "',user_password='" + employeePass + "',dashboard_access='" + dashboardPermission 
-                + "',laundry_access='" + laundryPermission + "',schedule_access='"
-                + schedPermission + "',sAndE_access='" + sAndEPermission + "',inventory_access='" + inventoryPermission 
-                + "',customer_access='" + customerPermission + "',user_access='" + userPermission 
-                + "',billing_access='" + billingPermission + "' WHERE user_id='" + employeeID + "';";
+                + employeeUsername + "',user_password='" + employeePass + "',laundry_access='" + laundryPermission 
+                + "',schedule_access='" + schedPermission + "',sAndE_access='" + sAndEPermission 
+                + "',inventory_access='" + inventoryPermission + "',customer_access='" + customerPermission 
+                + "',user_access='" + userPermission + "',billing_access='" + billingPermission + "' WHERE user_id='" + employeeID + "';";
 
             SqlCommand cmd2 = new SqlCommand(query, constring);
             cmd2.CommandText = query;

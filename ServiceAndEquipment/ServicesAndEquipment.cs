@@ -97,6 +97,7 @@ namespace WashablesSystem
                 cbSE.Items.Clear();
                 cbSE.Items.Add("WASH-DRY-FOLD");
                 cbSE.Items.Add("WASH-DRY-PRESS");
+                cbSE.Items.Add("DRY ONLY");
                 cbSE.Items.Add("ARCHIVE");
                 cbSE.SelectedIndex = 0;
                 ///

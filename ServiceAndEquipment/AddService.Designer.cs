@@ -117,7 +117,8 @@
             this.cbService.FormattingEnabled = true;
             this.cbService.Items.AddRange(new object[] {
             "Wash-Dry-Fold",
-            "Wash-Dry-Press"});
+            "Wash-Dry-Press",
+            "Dry Only"});
             this.cbService.Location = new System.Drawing.Point(20, 92);
             this.cbService.Margin = new System.Windows.Forms.Padding(2);
             this.cbService.Name = "cbService";

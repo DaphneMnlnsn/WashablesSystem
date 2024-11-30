@@ -40,8 +40,6 @@ namespace WashablesSystem
                 txtBoxName.Text = row["username"].ToString();
                 txtBoxPass.Text = Cryptography.Decrypt(row["user_password"].ToString());
                 txtBoxConfirm.Text = txtBoxPass.Text;
-                
-                checkDashboard.Checked = bool.Parse(row["dashboard_access"].ToString());
                 checkLaundry.Checked = bool.Parse(row["laundry_access"].ToString());
                 checkSched.Checked = bool.Parse(row["schedule_access"].ToString());
                 checkSAndE.Checked = bool.Parse(row["sAndE_access"].ToString());
@@ -56,7 +54,7 @@ namespace WashablesSystem
         {
             if (txtBoxPass.Text.Equals(txtBoxConfirm.Text))
             {
-                UserClass userClass = new UserClass(txtBoxFullname.Text, txtBoxName.Text, txtBoxPass.Text, checkDashboard.Checked, checkLaundry.Checked,
+                UserClass userClass = new UserClass(txtBoxFullname.Text, txtBoxName.Text, txtBoxPass.Text, checkLaundry.Checked,
                                 checkSched.Checked, checkSAndE.Checked, checkInventory.Checked, checkCustomers.Checked, checkUsers.Checked, checkBilling.Checked);
                 userClass.editUser(user_selected);
                 _parentForm.RefreshPanel();

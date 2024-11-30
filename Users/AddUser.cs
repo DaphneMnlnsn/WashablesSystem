@@ -29,7 +29,7 @@ namespace WashablesSystem
         {
             if (txtBoxPass.Text.Equals(txtBoxConfirm.Text))
             {
-                UserClass userClass = new UserClass(txtBoxFullname.Text, txtBoxName.Text, txtBoxPass.Text, checkDashboard.Checked, checkLaundry.Checked,
+                UserClass userClass = new UserClass(txtBoxFullname.Text, txtBoxName.Text, txtBoxPass.Text, checkLaundry.Checked,
                                 checkSched.Checked, checkSAndE.Checked, checkInventory.Checked, checkCustomers.Checked, checkUsers.Checked, checkBilling.Checked);
                 userClass.addUser();
                 _parentForm.RefreshPanel();
