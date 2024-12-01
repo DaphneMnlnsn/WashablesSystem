@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashablesSystem.Classes;
 
 namespace WashablesSystem
 {
@@ -15,11 +16,13 @@ namespace WashablesSystem
     {
         private Form parentForm;
         private ArrayList servicesSelected;
+        private string mainService;
         ServiceTypeList serviceTypeList;
-        public SelectServices(Form parentForm)
+        public SelectServices(Form parentForm, string mainService)
         {
             InitializeComponent();
             this.parentForm = parentForm;
+            this.mainService = mainService;
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -29,11 +32,14 @@ namespace WashablesSystem
         private void SelectServices_Load(object sender, EventArgs e)
         {
             ArrayList serve = new ArrayList();
-            serve.Add("(Clothes, Table Napkin, Pillowcase)");
-            serve.Add("(Bed Sheet, Table Cloth, Curtain)");
-            serve.Add("(Comforter, Bath Towel)");
+            ServiceClass serviceClass = new ServiceClass(mainService);
+            DataTable services = serviceClass.displayService();
+            foreach (DataRow row in services.Rows)
+            {
+                serve.Add(row["service_id"].ToString());
+            }
             serviceTypeList = new ServiceTypeList();
-            serviceTypeList.setTypeInfo("Wash-Dry-Fold", serve);
+            serviceTypeList.setTypeInfo(mainService, serve);
             serviceTypeContainer.Controls.Add(serviceTypeList);
             servicesSelected = serviceTypeList.getSelectedItems();
 
@@ -47,10 +53,10 @@ namespace WashablesSystem
             servicesSelected = serviceTypeList.getSelectedItems();
             foreach (string services in servicesSelected)
             {
-                serviceBtn.Text += string.Join(", ", services);
+                serviceBtn.Text += services + "|";
             }
-            CustomTextbox weight2 = (CustomTextbox)parentForm.Controls.Find("txtWeight2", true)[0];
-            CustomTextbox weight3 = (CustomTextbox)parentForm.Controls.Find("txtWeight3", true)[0];
+            NumericUpDown weight2 = (NumericUpDown)parentForm.Controls.Find("txtWeight2", true)[0];
+            NumericUpDown weight3 = (NumericUpDown)parentForm.Controls.Find("txtWeight3", true)[0];
             if (servicesSelected.Count == 1)
             {
                 weight2.Enabled = false;

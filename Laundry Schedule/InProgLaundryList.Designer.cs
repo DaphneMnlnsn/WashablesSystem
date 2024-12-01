@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblUnit = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblCustomer = new System.Windows.Forms.Label();
@@ -36,9 +37,11 @@
             this.custName = new System.Windows.Forms.Label();
             this.serviceType = new System.Windows.Forms.Label();
             this.timeLeft = new System.Windows.Forms.Label();
-            this.btnStatus = new System.Windows.Forms.PictureBox();
+            this.btnFinish = new System.Windows.Forms.PictureBox();
             this.lblButton = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.btnStatus)).BeginInit();
+            this.orderNum = new System.Windows.Forms.Label();
+            this.timeLeftTimer = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.btnFinish)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUnit
@@ -115,12 +118,12 @@
             // serviceType
             // 
             this.serviceType.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.serviceType.AutoSize = true;
+            this.serviceType.AutoEllipsis = true;
             this.serviceType.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.serviceType.Location = new System.Drawing.Point(100, 79);
             this.serviceType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.serviceType.Name = "serviceType";
-            this.serviceType.Size = new System.Drawing.Size(53, 19);
+            this.serviceType.Size = new System.Drawing.Size(129, 19);
             this.serviceType.TabIndex = 82;
             this.serviceType.Text = "service";
             this.serviceType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -133,20 +136,20 @@
             this.timeLeft.Location = new System.Drawing.Point(80, 115);
             this.timeLeft.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.timeLeft.Name = "timeLeft";
-            this.timeLeft.Size = new System.Drawing.Size(62, 19);
+            this.timeLeft.Size = new System.Drawing.Size(0, 19);
             this.timeLeft.TabIndex = 83;
-            this.timeLeft.Text = "time left";
             this.timeLeft.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnStatus
+            // btnFinish
             // 
-            this.btnStatus.Image = global::WashablesSystem.Properties.Resources.Finish;
-            this.btnStatus.Location = new System.Drawing.Point(234, 94);
-            this.btnStatus.Name = "btnStatus";
-            this.btnStatus.Size = new System.Drawing.Size(52, 40);
-            this.btnStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnStatus.TabIndex = 84;
-            this.btnStatus.TabStop = false;
+            this.btnFinish.Image = global::WashablesSystem.Properties.Resources.Finish;
+            this.btnFinish.Location = new System.Drawing.Point(234, 94);
+            this.btnFinish.Name = "btnFinish";
+            this.btnFinish.Size = new System.Drawing.Size(52, 40);
+            this.btnFinish.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnFinish.TabIndex = 84;
+            this.btnFinish.TabStop = false;
+            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
             // 
             // lblButton
             // 
@@ -159,13 +162,33 @@
             this.lblButton.TabIndex = 85;
             this.lblButton.Text = "Finish now";
             // 
+            // orderNum
+            // 
+            this.orderNum.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.orderNum.AutoSize = true;
+            this.orderNum.Font = new System.Drawing.Font("Segoe UI Semibold", 3F, System.Drawing.FontStyle.Bold);
+            this.orderNum.Location = new System.Drawing.Point(290, 23);
+            this.orderNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.orderNum.Name = "orderNum";
+            this.orderNum.Size = new System.Drawing.Size(9, 5);
+            this.orderNum.TabIndex = 86;
+            this.orderNum.Text = "or #";
+            this.orderNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.orderNum.Visible = false;
+            // 
+            // timeLeftTimer
+            // 
+            this.timeLeftTimer.Interval = 1000;
+            this.timeLeftTimer.Tick += new System.EventHandler(this.timeLeftTimer_Tick);
+            // 
             // InProgLaundryList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.orderNum);
             this.Controls.Add(this.lblButton);
-            this.Controls.Add(this.btnStatus);
+            this.Controls.Add(this.btnFinish);
             this.Controls.Add(this.timeLeft);
             this.Controls.Add(this.serviceType);
             this.Controls.Add(this.custName);
@@ -176,7 +199,8 @@
             this.Controls.Add(this.lblUnit);
             this.Name = "InProgLaundryList";
             this.Size = new System.Drawing.Size(310, 165);
-            ((System.ComponentModel.ISupportInitialize)(this.btnStatus)).EndInit();
+            this.Load += new System.EventHandler(this.InProgLaundryList_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.btnFinish)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,7 +216,9 @@
         private System.Windows.Forms.Label custName;
         private System.Windows.Forms.Label serviceType;
         private System.Windows.Forms.Label timeLeft;
-        private System.Windows.Forms.PictureBox btnStatus;
+        private System.Windows.Forms.PictureBox btnFinish;
         private System.Windows.Forms.Label lblButton;
+        private System.Windows.Forms.Label orderNum;
+        private System.Windows.Forms.Timer timeLeftTimer;
     }
 }

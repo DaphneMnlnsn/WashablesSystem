@@ -31,10 +31,10 @@
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.txtDryOtherHour = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.txtDryOtherMin = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             this.timeDryerCustomHr = new System.Windows.Forms.RadioButton();
             this.timeDryer30 = new System.Windows.Forms.RadioButton();
@@ -54,10 +54,10 @@
             this.btnService = new WashablesSystem.CustomTextbox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.txtWashOtherHour = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtOtherHr = new System.Windows.Forms.NumericUpDown();
+            this.txtWashOtherMin = new System.Windows.Forms.NumericUpDown();
             this.timeWash = new System.Windows.Forms.Label();
             this.timeWashingCustomHr = new System.Windows.Forms.RadioButton();
             this.timeWashing30 = new System.Windows.Forms.RadioButton();
@@ -86,18 +86,18 @@
             this.btnAdd = new WashablesSystem.CustomButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.txtPressOtherHr = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.txtPressOtherMin = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
             this.timeIronCustomHr = new System.Windows.Forms.RadioButton();
             this.timeIron30 = new System.Windows.Forms.RadioButton();
             this.timeIron1 = new System.Windows.Forms.RadioButton();
             this.timeIronCustomMin = new System.Windows.Forms.RadioButton();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDryOtherHour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDryOtherMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quantity3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quantity2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quantity1)).BeginInit();
@@ -105,11 +105,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtWeight2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtWeight)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOtherHr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWashOtherHour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWashOtherMin)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPressOtherHr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPressOtherMin)).BeginInit();
             this.SuspendLayout();
             // 
             // label17
@@ -128,10 +128,10 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.numericUpDown2);
+            this.groupBox2.Controls.Add(this.txtDryOtherHour);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.numericUpDown3);
+            this.groupBox2.Controls.Add(this.txtDryOtherMin);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.timeDryerCustomHr);
             this.groupBox2.Controls.Add(this.timeDryer30);
@@ -156,19 +156,19 @@
             this.label3.TabIndex = 225;
             this.label3.Text = "hours";
             // 
-            // numericUpDown2
+            // txtDryOtherHour
             // 
-            this.numericUpDown2.DecimalPlaces = 2;
-            this.numericUpDown2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.numericUpDown2.Location = new System.Drawing.Point(24, 89);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.txtDryOtherHour.DecimalPlaces = 2;
+            this.txtDryOtherHour.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtDryOtherHour.Location = new System.Drawing.Point(24, 89);
+            this.txtDryOtherHour.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(57, 25);
-            this.numericUpDown2.TabIndex = 224;
+            this.txtDryOtherHour.Name = "txtDryOtherHour";
+            this.txtDryOtherHour.Size = new System.Drawing.Size(57, 25);
+            this.txtDryOtherHour.TabIndex = 224;
             // 
             // label9
             // 
@@ -196,19 +196,19 @@
             this.label10.TabIndex = 222;
             this.label10.Text = "30 minutes";
             // 
-            // numericUpDown3
+            // txtDryOtherMin
             // 
-            this.numericUpDown3.DecimalPlaces = 2;
-            this.numericUpDown3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.numericUpDown3.Location = new System.Drawing.Point(24, 59);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
+            this.txtDryOtherMin.DecimalPlaces = 2;
+            this.txtDryOtherMin.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtDryOtherMin.Location = new System.Drawing.Point(24, 59);
+            this.txtDryOtherMin.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(57, 25);
-            this.numericUpDown3.TabIndex = 221;
+            this.txtDryOtherMin.Name = "txtDryOtherMin";
+            this.txtDryOtherMin.Size = new System.Drawing.Size(57, 25);
+            this.txtDryOtherMin.TabIndex = 221;
             // 
             // label11
             // 
@@ -298,12 +298,14 @@
             this.cbService.ForeColor = System.Drawing.SystemColors.MenuText;
             this.cbService.FormattingEnabled = true;
             this.cbService.Items.AddRange(new object[] {
+            "Wash-Dry-Fold",
             "Wash-Dry-Press",
-            "Wash-Dry-Fold"});
+            "Dry Only"});
             this.cbService.Location = new System.Drawing.Point(30, 136);
             this.cbService.Name = "cbService";
             this.cbService.Size = new System.Drawing.Size(114, 25);
             this.cbService.TabIndex = 283;
+            this.cbService.SelectedIndexChanged += new System.EventHandler(this.cbService_SelectedIndexChanged);
             // 
             // quantity3
             // 
@@ -393,14 +395,11 @@
             // 
             this.cbUnit.BackColor = System.Drawing.SystemColors.Control;
             this.cbUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbUnit.Enabled = false;
             this.cbUnit.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbUnit.Font = new System.Drawing.Font("Berlin Sans FB", 11F);
             this.cbUnit.ForeColor = System.Drawing.SystemColors.MenuText;
             this.cbUnit.FormattingEnabled = true;
-            this.cbUnit.Items.AddRange(new object[] {
-            "Unit I",
-            "Unit II",
-            "Unit III"});
             this.cbUnit.Location = new System.Drawing.Point(151, 80);
             this.cbUnit.Name = "cbUnit";
             this.cbUnit.Size = new System.Drawing.Size(90, 25);
@@ -444,10 +443,10 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.txtWashOtherHour);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtOtherHr);
+            this.groupBox1.Controls.Add(this.txtWashOtherMin);
             this.groupBox1.Controls.Add(this.timeWash);
             this.groupBox1.Controls.Add(this.timeWashingCustomHr);
             this.groupBox1.Controls.Add(this.timeWashing30);
@@ -472,19 +471,19 @@
             this.label8.TabIndex = 225;
             this.label8.Text = "hours";
             // 
-            // numericUpDown1
+            // txtWashOtherHour
             // 
-            this.numericUpDown1.DecimalPlaces = 2;
-            this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.numericUpDown1.Location = new System.Drawing.Point(24, 89);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.txtWashOtherHour.DecimalPlaces = 2;
+            this.txtWashOtherHour.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtWashOtherHour.Location = new System.Drawing.Point(24, 89);
+            this.txtWashOtherHour.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(57, 25);
-            this.numericUpDown1.TabIndex = 224;
+            this.txtWashOtherHour.Name = "txtWashOtherHour";
+            this.txtWashOtherHour.Size = new System.Drawing.Size(57, 25);
+            this.txtWashOtherHour.TabIndex = 224;
             // 
             // label5
             // 
@@ -512,19 +511,19 @@
             this.label4.TabIndex = 222;
             this.label4.Text = "30 minutes";
             // 
-            // txtOtherHr
+            // txtWashOtherMin
             // 
-            this.txtOtherHr.DecimalPlaces = 2;
-            this.txtOtherHr.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.txtOtherHr.Location = new System.Drawing.Point(24, 59);
-            this.txtOtherHr.Maximum = new decimal(new int[] {
+            this.txtWashOtherMin.DecimalPlaces = 2;
+            this.txtWashOtherMin.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtWashOtherMin.Location = new System.Drawing.Point(24, 59);
+            this.txtWashOtherMin.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.txtOtherHr.Name = "txtOtherHr";
-            this.txtOtherHr.Size = new System.Drawing.Size(57, 25);
-            this.txtOtherHr.TabIndex = 221;
+            this.txtWashOtherMin.Name = "txtWashOtherMin";
+            this.txtWashOtherMin.Size = new System.Drawing.Size(57, 25);
+            this.txtWashOtherMin.TabIndex = 221;
             // 
             // timeWash
             // 
@@ -635,7 +634,7 @@
             this.cbCust.BackColor = System.Drawing.SystemColors.Control;
             this.cbCust.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCust.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cbCust.Font = new System.Drawing.Font("Berlin Sans FB", 11F);
+            this.cbCust.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
             this.cbCust.ForeColor = System.Drawing.SystemColors.MenuText;
             this.cbCust.FormattingEnabled = true;
             this.cbCust.Items.AddRange(new object[] {
@@ -644,15 +643,16 @@
             "Lei Mar",
             "Dap Man",
             "Natasha Valerio"});
-            this.cbCust.Location = new System.Drawing.Point(30, 198);
+            this.cbCust.Location = new System.Drawing.Point(30, 195);
             this.cbCust.Name = "cbCust";
-            this.cbCust.Size = new System.Drawing.Size(276, 25);
+            this.cbCust.Size = new System.Drawing.Size(276, 27);
             this.cbCust.TabIndex = 269;
             // 
             // cbMachine
             // 
             this.cbMachine.BackColor = System.Drawing.SystemColors.Control;
             this.cbMachine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMachine.Enabled = false;
             this.cbMachine.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbMachine.Font = new System.Drawing.Font("Berlin Sans FB", 11F);
             this.cbMachine.ForeColor = System.Drawing.SystemColors.MenuText;
@@ -750,12 +750,12 @@
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.lblQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.lblQuantity.Location = new System.Drawing.Point(240, 383);
+            this.lblQuantity.Location = new System.Drawing.Point(214, 383);
             this.lblQuantity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(66, 18);
+            this.lblQuantity.Size = new System.Drawing.Size(116, 18);
             this.lblQuantity.TabIndex = 261;
-            this.lblQuantity.Text = "Quantity";
+            this.lblQuantity.Text = "Quantity (mL/g)";
             // 
             // lblWeight
             // 
@@ -893,10 +893,10 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.numericUpDown4);
+            this.groupBox3.Controls.Add(this.txtPressOtherHr);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.numericUpDown5);
+            this.groupBox3.Controls.Add(this.txtPressOtherMin);
             this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.Controls.Add(this.timeIronCustomHr);
             this.groupBox3.Controls.Add(this.timeIron30);
@@ -921,19 +921,19 @@
             this.label13.TabIndex = 225;
             this.label13.Text = "hours";
             // 
-            // numericUpDown4
+            // txtPressOtherHr
             // 
-            this.numericUpDown4.DecimalPlaces = 2;
-            this.numericUpDown4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.numericUpDown4.Location = new System.Drawing.Point(24, 89);
-            this.numericUpDown4.Maximum = new decimal(new int[] {
+            this.txtPressOtherHr.DecimalPlaces = 2;
+            this.txtPressOtherHr.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtPressOtherHr.Location = new System.Drawing.Point(24, 89);
+            this.txtPressOtherHr.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(57, 25);
-            this.numericUpDown4.TabIndex = 224;
+            this.txtPressOtherHr.Name = "txtPressOtherHr";
+            this.txtPressOtherHr.Size = new System.Drawing.Size(57, 25);
+            this.txtPressOtherHr.TabIndex = 224;
             // 
             // label14
             // 
@@ -961,19 +961,19 @@
             this.label15.TabIndex = 222;
             this.label15.Text = "30 minutes";
             // 
-            // numericUpDown5
+            // txtPressOtherMin
             // 
-            this.numericUpDown5.DecimalPlaces = 2;
-            this.numericUpDown5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.numericUpDown5.Location = new System.Drawing.Point(24, 59);
-            this.numericUpDown5.Maximum = new decimal(new int[] {
+            this.txtPressOtherMin.DecimalPlaces = 2;
+            this.txtPressOtherMin.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtPressOtherMin.Location = new System.Drawing.Point(24, 59);
+            this.txtPressOtherMin.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(57, 25);
-            this.numericUpDown5.TabIndex = 221;
+            this.txtPressOtherMin.Name = "txtPressOtherMin";
+            this.txtPressOtherMin.Size = new System.Drawing.Size(57, 25);
+            this.txtPressOtherMin.TabIndex = 221;
             // 
             // label16
             // 
@@ -1074,10 +1074,11 @@
             this.Name = "AddLaundry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddLaundry";
+            this.Load += new System.EventHandler(this.AddLaundry_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDryOtherHour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDryOtherMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quantity3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quantity2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quantity1)).EndInit();
@@ -1086,12 +1087,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtWeight)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOtherHr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWashOtherHour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWashOtherMin)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPressOtherHr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPressOtherMin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1102,10 +1103,10 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown txtDryOtherHour;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown txtDryOtherMin;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.RadioButton timeDryerCustomHr;
         private System.Windows.Forms.RadioButton timeDryer30;
@@ -1125,10 +1126,10 @@
         private CustomTextbox btnService;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown txtWashOtherHour;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown txtOtherHr;
+        private System.Windows.Forms.NumericUpDown txtWashOtherMin;
         private System.Windows.Forms.Label timeWash;
         private System.Windows.Forms.RadioButton timeWashingCustomHr;
         private System.Windows.Forms.RadioButton timeWashing30;
@@ -1157,10 +1158,10 @@
         private CustomButton btnAdd;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.NumericUpDown txtPressOtherHr;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.NumericUpDown numericUpDown5;
+        private System.Windows.Forms.NumericUpDown txtPressOtherMin;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.RadioButton timeIronCustomHr;
         private System.Windows.Forms.RadioButton timeIron30;

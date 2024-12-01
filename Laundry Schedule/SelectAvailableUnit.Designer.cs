@@ -34,8 +34,8 @@
             this.lblHeader = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.unitPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblStartTime = new System.Windows.Forms.Label();
+            this.lblEndTime = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -80,6 +80,7 @@
             this.btnStart.Text = "Start";
             this.btnStart.TextColor = System.Drawing.Color.White;
             this.btnStart.UseVisualStyleBackColor = false;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // lblMachine
             // 
@@ -128,31 +129,31 @@
             this.unitPanel.Size = new System.Drawing.Size(326, 114);
             this.unitPanel.TabIndex = 207;
             // 
-            // label2
+            // lblStartTime
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(176, 226);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 19);
-            this.label2.TabIndex = 208;
-            this.label2.Text = "00:00:00 PM";
+            this.lblStartTime.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblStartTime.AutoSize = true;
+            this.lblStartTime.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.lblStartTime.ForeColor = System.Drawing.Color.Black;
+            this.lblStartTime.Location = new System.Drawing.Point(176, 226);
+            this.lblStartTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblStartTime.Name = "lblStartTime";
+            this.lblStartTime.Size = new System.Drawing.Size(88, 19);
+            this.lblStartTime.TabIndex = 208;
+            this.lblStartTime.Text = "00:00:00 PM";
             // 
-            // label3
+            // lblEndTime
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(176, 251);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 19);
-            this.label3.TabIndex = 209;
-            this.label3.Text = "00:00:00 PM";
+            this.lblEndTime.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblEndTime.AutoSize = true;
+            this.lblEndTime.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.lblEndTime.ForeColor = System.Drawing.Color.Black;
+            this.lblEndTime.Location = new System.Drawing.Point(176, 251);
+            this.lblEndTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEndTime.Name = "lblEndTime";
+            this.lblEndTime.Size = new System.Drawing.Size(88, 19);
+            this.lblEndTime.TabIndex = 209;
+            this.lblEndTime.Text = "00:00:00 PM";
             // 
             // label4
             // 
@@ -187,8 +188,8 @@
             this.ClientSize = new System.Drawing.Size(363, 357);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblEndTime);
+            this.Controls.Add(this.lblStartTime);
             this.Controls.Add(this.unitPanel);
             this.Controls.Add(this.lblMachine);
             this.Controls.Add(this.lblHeader);
@@ -212,8 +213,8 @@
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel unitPanel;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblStartTime;
+        private System.Windows.Forms.Label lblEndTime;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
     }

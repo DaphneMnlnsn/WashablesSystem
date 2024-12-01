@@ -33,11 +33,13 @@ namespace WashablesSystem
             else if (occupied)
             {
                 btnAvailability.BackColor = Color.FromArgb(255, 0, 0);
+                btnAvailability.Text = "Occupied";
                 btnAvailability.Enabled = false;
             }
             else if (availability.Equals("Not Available"))
             {
                 btnAvailability.BackColor = Color.FromArgb(217, 217, 217);
+                btnAvailability.Text = "Not Available";
                 btnAvailability.Enabled = false;
             }
 

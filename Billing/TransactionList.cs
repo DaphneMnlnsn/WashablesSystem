@@ -30,7 +30,7 @@ namespace WashablesSystem
 
         private void btnReceipt_Click(object sender, EventArgs e)
         {
-            Receipt receipt = new Receipt();
+            Receipt receipt = new Receipt(lblPNo.Text);
             receipt.ShowDialog();
         }
     }

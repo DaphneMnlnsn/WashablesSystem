@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label19 = new System.Windows.Forms.Label();
+            this.lblChange = new System.Windows.Forms.Label();
             this.lblPaymentReceived = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -40,9 +40,9 @@
             this.lblCustomerName = new System.Windows.Forms.Label();
             this.lblPickupTime = new System.Windows.Forms.Label();
             this.lblStaff = new System.Windows.Forms.Label();
-            this.lblReceipt = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.lblChange = new System.Windows.Forms.Label();
+            this.lblLine = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -51,41 +51,41 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
             this.btnCancel = new WashablesSystem.CustomButton();
             this.btnPrint = new WashablesSystem.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label19
+            // lblChange
             // 
-            this.label19.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
-            this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(176, 422);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(82, 18);
-            this.label19.TabIndex = 152;
-            this.label19.Text = "<<Change>>";
+            this.lblChange.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblChange.AutoSize = true;
+            this.lblChange.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.lblChange.ForeColor = System.Drawing.Color.Black;
+            this.lblChange.Location = new System.Drawing.Point(176, 420);
+            this.lblChange.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblChange.Name = "lblChange";
+            this.lblChange.Size = new System.Drawing.Size(96, 19);
+            this.lblChange.TabIndex = 152;
+            this.lblChange.Text = "<<Change>>";
             // 
             // lblPaymentReceived
             // 
             this.lblPaymentReceived.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblPaymentReceived.AutoSize = true;
-            this.lblPaymentReceived.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.lblPaymentReceived.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lblPaymentReceived.ForeColor = System.Drawing.Color.Black;
-            this.lblPaymentReceived.Location = new System.Drawing.Point(176, 393);
+            this.lblPaymentReceived.Location = new System.Drawing.Point(176, 391);
             this.lblPaymentReceived.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPaymentReceived.Name = "lblPaymentReceived";
-            this.lblPaymentReceived.Size = new System.Drawing.Size(156, 18);
+            this.lblPaymentReceived.Size = new System.Drawing.Size(163, 19);
             this.lblPaymentReceived.TabIndex = 151;
             this.lblPaymentReceived.Text = "<<Payment Received>>";
             // 
@@ -95,7 +95,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(36, 422);
+            this.label17.Location = new System.Drawing.Point(36, 420);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(62, 18);
@@ -108,7 +108,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(36, 393);
+            this.label16.Location = new System.Drawing.Point(36, 391);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(136, 18);
@@ -119,12 +119,12 @@
             // 
             this.lblAdditionalCharge.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblAdditionalCharge.AutoSize = true;
-            this.lblAdditionalCharge.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.lblAdditionalCharge.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lblAdditionalCharge.ForeColor = System.Drawing.Color.Black;
-            this.lblAdditionalCharge.Location = new System.Drawing.Point(176, 363);
+            this.lblAdditionalCharge.Location = new System.Drawing.Point(176, 358);
             this.lblAdditionalCharge.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAdditionalCharge.Name = "lblAdditionalCharge";
-            this.lblAdditionalCharge.Size = new System.Drawing.Size(151, 18);
+            this.lblAdditionalCharge.Size = new System.Drawing.Size(162, 19);
             this.lblAdditionalCharge.TabIndex = 148;
             this.lblAdditionalCharge.Text = "<<Additional Charge>>";
             // 
@@ -132,12 +132,12 @@
             // 
             this.lblReference.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblReference.AutoSize = true;
-            this.lblReference.Font = new System.Drawing.Font("Berlin Sans FB", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReference.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lblReference.ForeColor = System.Drawing.Color.Black;
-            this.lblReference.Location = new System.Drawing.Point(181, 333);
+            this.lblReference.Location = new System.Drawing.Point(181, 327);
             this.lblReference.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReference.Name = "lblReference";
-            this.lblReference.Size = new System.Drawing.Size(111, 17);
+            this.lblReference.Size = new System.Drawing.Size(134, 19);
             this.lblReference.TabIndex = 147;
             this.lblReference.Text = "<<Reference No>>";
             // 
@@ -145,12 +145,12 @@
             // 
             this.lblPaymentMethod.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblPaymentMethod.AutoSize = true;
-            this.lblPaymentMethod.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.lblPaymentMethod.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lblPaymentMethod.ForeColor = System.Drawing.Color.Black;
-            this.lblPaymentMethod.Location = new System.Drawing.Point(176, 305);
+            this.lblPaymentMethod.Location = new System.Drawing.Point(176, 299);
             this.lblPaymentMethod.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPaymentMethod.Name = "lblPaymentMethod";
-            this.lblPaymentMethod.Size = new System.Drawing.Size(146, 18);
+            this.lblPaymentMethod.Size = new System.Drawing.Size(156, 19);
             this.lblPaymentMethod.TabIndex = 146;
             this.lblPaymentMethod.Text = "<<Payment Method>>";
             // 
@@ -158,12 +158,12 @@
             // 
             this.lblWeight.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblWeight.AutoSize = true;
-            this.lblWeight.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.lblWeight.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lblWeight.ForeColor = System.Drawing.Color.Black;
             this.lblWeight.Location = new System.Drawing.Point(176, 268);
             this.lblWeight.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblWeight.Name = "lblWeight";
-            this.lblWeight.Size = new System.Drawing.Size(79, 18);
+            this.lblWeight.Size = new System.Drawing.Size(95, 19);
             this.lblWeight.TabIndex = 145;
             this.lblWeight.Text = "<<Weight>>";
             // 
@@ -171,12 +171,12 @@
             // 
             this.lblServiceType.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblServiceType.AutoSize = true;
-            this.lblServiceType.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.lblServiceType.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lblServiceType.ForeColor = System.Drawing.Color.Black;
             this.lblServiceType.Location = new System.Drawing.Point(176, 233);
             this.lblServiceType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblServiceType.Name = "lblServiceType";
-            this.lblServiceType.Size = new System.Drawing.Size(113, 18);
+            this.lblServiceType.Size = new System.Drawing.Size(128, 19);
             this.lblServiceType.TabIndex = 144;
             this.lblServiceType.Text = "<<Service Type>>";
             // 
@@ -184,12 +184,12 @@
             // 
             this.lblCustomerName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblCustomerName.AutoSize = true;
-            this.lblCustomerName.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.lblCustomerName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lblCustomerName.ForeColor = System.Drawing.Color.Black;
             this.lblCustomerName.Location = new System.Drawing.Point(176, 200);
             this.lblCustomerName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCustomerName.Name = "lblCustomerName";
-            this.lblCustomerName.Size = new System.Drawing.Size(138, 18);
+            this.lblCustomerName.Size = new System.Drawing.Size(150, 19);
             this.lblCustomerName.TabIndex = 143;
             this.lblCustomerName.Text = "<<Customer Name>>";
             // 
@@ -197,12 +197,12 @@
             // 
             this.lblPickupTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblPickupTime.AutoSize = true;
-            this.lblPickupTime.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.lblPickupTime.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lblPickupTime.ForeColor = System.Drawing.Color.Black;
             this.lblPickupTime.Location = new System.Drawing.Point(122, 150);
             this.lblPickupTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPickupTime.Name = "lblPickupTime";
-            this.lblPickupTime.Size = new System.Drawing.Size(119, 18);
+            this.lblPickupTime.Size = new System.Drawing.Size(131, 19);
             this.lblPickupTime.TabIndex = 142;
             this.lblPickupTime.Text = "<<Pick-up Time>>";
             // 
@@ -210,27 +210,27 @@
             // 
             this.lblStaff.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblStaff.AutoSize = true;
-            this.lblStaff.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.lblStaff.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lblStaff.ForeColor = System.Drawing.Color.Black;
             this.lblStaff.Location = new System.Drawing.Point(116, 116);
             this.lblStaff.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStaff.Name = "lblStaff";
-            this.lblStaff.Size = new System.Drawing.Size(63, 18);
+            this.lblStaff.Size = new System.Drawing.Size(79, 19);
             this.lblStaff.TabIndex = 141;
             this.lblStaff.Text = "<<Staff>>";
             // 
-            // lblReceipt
+            // lblTotal
             // 
-            this.lblReceipt.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblReceipt.AutoSize = true;
-            this.lblReceipt.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
-            this.lblReceipt.ForeColor = System.Drawing.Color.Black;
-            this.lblReceipt.Location = new System.Drawing.Point(318, 462);
-            this.lblReceipt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblReceipt.Name = "lblReceipt";
-            this.lblReceipt.Size = new System.Drawing.Size(122, 18);
-            this.lblReceipt.TabIndex = 140;
-            this.lblReceipt.Text = "<<Total Amount>>";
+            this.lblTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.lblTotal.ForeColor = System.Drawing.Color.Black;
+            this.lblTotal.Location = new System.Drawing.Point(318, 462);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(134, 19);
+            this.lblTotal.TabIndex = 140;
+            this.lblTotal.Text = "<<Total Amount>>";
             // 
             // label15
             // 
@@ -245,18 +245,18 @@
             this.label15.TabIndex = 139;
             this.label15.Text = "Total Amount:";
             // 
-            // lblChange
+            // lblLine
             // 
-            this.lblChange.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblChange.AutoSize = true;
-            this.lblChange.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChange.ForeColor = System.Drawing.Color.Black;
-            this.lblChange.Location = new System.Drawing.Point(19, 430);
-            this.lblChange.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblChange.Name = "lblChange";
-            this.lblChange.Size = new System.Drawing.Size(426, 21);
-            this.lblChange.TabIndex = 138;
-            this.lblChange.Text = "____________________________________________________";
+            this.lblLine.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblLine.AutoSize = true;
+            this.lblLine.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLine.ForeColor = System.Drawing.Color.Black;
+            this.lblLine.Location = new System.Drawing.Point(19, 432);
+            this.lblLine.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLine.Name = "lblLine";
+            this.lblLine.Size = new System.Drawing.Size(426, 21);
+            this.lblLine.TabIndex = 138;
+            this.lblLine.Text = "____________________________________________________";
             // 
             // label13
             // 
@@ -264,7 +264,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(36, 363);
+            this.label13.Location = new System.Drawing.Point(36, 358);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(131, 18);
@@ -277,7 +277,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Berlin Sans FB", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(64, 333);
+            this.label12.Location = new System.Drawing.Point(64, 327);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(98, 17);
@@ -290,7 +290,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(36, 305);
+            this.label9.Location = new System.Drawing.Point(36, 299);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(126, 18);
@@ -306,9 +306,9 @@
             this.label8.Location = new System.Drawing.Point(36, 268);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 18);
+            this.label8.Size = new System.Drawing.Size(96, 18);
             this.label8.TabIndex = 134;
-            this.label8.Text = "Weight:";
+            this.label8.Text = "Total Weight:";
             // 
             // label7
             // 
@@ -319,9 +319,9 @@
             this.label7.Location = new System.Drawing.Point(36, 233);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 18);
+            this.label7.Size = new System.Drawing.Size(56, 18);
             this.label7.TabIndex = 133;
-            this.label7.Text = "Service Type:";
+            this.label7.Text = "Service:";
             // 
             // label6
             // 
@@ -345,9 +345,9 @@
             this.label4.Location = new System.Drawing.Point(24, 150);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 18);
+            this.label4.Size = new System.Drawing.Size(100, 18);
             this.label4.TabIndex = 127;
-            this.label4.Text = "Pick-up Time:";
+            this.label4.Text = "Pick-up Date:";
             // 
             // label11
             // 
@@ -361,19 +361,6 @@
             this.label11.Size = new System.Drawing.Size(426, 21);
             this.label11.TabIndex = 131;
             this.label11.Text = "____________________________________________________";
-            // 
-            // label10
-            // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(346, 75);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(85, 21);
-            this.label10.TabIndex = 130;
-            this.label10.Text = "11/4/2024";
             // 
             // pictureBox1
             // 
@@ -451,6 +438,19 @@
             this.label1.TabIndex = 124;
             this.label1.Text = "____________________________________________________";
             // 
+            // lblDate
+            // 
+            this.lblDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblDate.ForeColor = System.Drawing.Color.Black;
+            this.lblDate.Location = new System.Drawing.Point(346, 76);
+            this.lblDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(75, 19);
+            this.lblDate.TabIndex = 130;
+            this.lblDate.Text = "11/4/2024";
+            // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.Transparent;
@@ -498,7 +498,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(464, 548);
-            this.Controls.Add(this.label19);
+            this.Controls.Add(this.lblChange);
             this.Controls.Add(this.lblPaymentReceived);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
@@ -510,9 +510,9 @@
             this.Controls.Add(this.lblCustomerName);
             this.Controls.Add(this.lblPickupTime);
             this.Controls.Add(this.lblStaff);
-            this.Controls.Add(this.lblReceipt);
+            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.lblChange);
+            this.Controls.Add(this.lblLine);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label9);
@@ -521,7 +521,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.lblDate);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -534,6 +534,7 @@
             this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "Receipt";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.Receipt_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -542,7 +543,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label lblChange;
         private System.Windows.Forms.Label lblPaymentReceived;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
@@ -554,9 +555,9 @@
         private System.Windows.Forms.Label lblCustomerName;
         private System.Windows.Forms.Label lblPickupTime;
         private System.Windows.Forms.Label lblStaff;
-        private System.Windows.Forms.Label lblReceipt;
+        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label lblChange;
+        private System.Windows.Forms.Label lblLine;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label9;
@@ -565,7 +566,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
@@ -574,5 +574,6 @@
         private System.Windows.Forms.Label label1;
         private CustomButton btnCancel;
         private CustomButton btnPrint;
+        private System.Windows.Forms.Label lblDate;
     }
 }

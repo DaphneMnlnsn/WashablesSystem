@@ -14,9 +14,13 @@ namespace WashablesSystem
     public partial class SelectAvailableUnit : Form
     {
         private SelectableUnitList selectedButtonControl = null;
-        public SelectAvailableUnit()
+        private string orderID = "";
+        ScheduleClass scheduleClass;
+        public SelectAvailableUnit(string orderID)
         {
             InitializeComponent();
+            this.orderID = orderID;
+            scheduleClass = new ScheduleClass();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -27,16 +31,36 @@ namespace WashablesSystem
         private void SelectAvailableUnit_Load(object sender, EventArgs e)
         {
             string machineType = "";
-            if (lblMachine.Text.Equals("Washing Machine"))
+            string order_status = "";
+
+            DateTime startTime = DateTime.Now;
+            TimeSpan washTime = TimeSpan.Zero, dryTime = TimeSpan.Zero, ironTime = TimeSpan.Zero;
+
+            DataTable orders = scheduleClass.displaySelectedOrder(orderID);
+            foreach (DataRow row in orders.Rows)
             {
+                order_status = row["order_status"].ToString();
+                washTime = TimeSpan.Parse(row["wash_time"].ToString());
+                dryTime = TimeSpan.Parse(row["dry_time"].ToString());
+                ironTime = TimeSpan.Parse(row["iron_time"].ToString());
+            }
+            lblStartTime.Text = startTime.ToShortTimeString();
+            if (order_status.Equals("Pending Wash"))
+            {
+                lblMachine.Text.Equals("Washingg Machine");
+                lblEndTime.Text = (startTime + washTime).ToShortTimeString();
                 machineType = "Washing Machine";
             }
-            if (lblMachine.Text.Equals("Dryer"))
+            else if (order_status.Equals("Pending Dry"))
             {
+                lblMachine.Text.Equals("Dryer");
+                lblEndTime.Text = (startTime + dryTime).ToShortTimeString();
                 machineType = "Dryer";
             }
-            if (lblMachine.Text.Equals("Iron"))
+            else if (order_status.Equals("Pending Press"))
             {
+                lblMachine.Text.Equals("Iron");
+                lblEndTime.Text = (startTime + ironTime).ToShortTimeString();
                 machineType = "Iron";
             }
 
@@ -45,7 +69,7 @@ namespace WashablesSystem
             foreach (DataRow row in units.Rows)
             {
                 SelectableUnitList unit = new SelectableUnitList();
-                unit.setMachineInfo(row["unit_name"].ToString(), row["availability_status"].ToString(), bool.Parse(row["occupied"].ToString()));
+                unit.setMachineInfo(row["unit_name"].ToString(), row["unit_id"].ToString(), row["availability_status"].ToString(), bool.Parse(row["occupied"].ToString()));
                 unitPanel.Controls.Add(unit);
                 unit.ButtonClicked += ButtonControl_ButtonClicked;
             }
@@ -61,6 +85,13 @@ namespace WashablesSystem
             // Select the clicked button
             selectedButtonControl = (SelectableUnitList)sender;
             selectedButtonControl.SelectButton();
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            string unitID = selectedButtonControl.getSelectedButton();
+            scheduleClass.startSchedule(orderID, unitID);
+            this.Close();
         }
     }
 }

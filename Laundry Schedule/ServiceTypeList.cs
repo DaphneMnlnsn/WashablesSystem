@@ -36,7 +36,6 @@ namespace WashablesSystem
             // Determine if there are any items checked.  
             if (checkBoxCtrl.CheckedItems.Count != 0)
             {
-                selectedItems.Add(lblHeader.Text + " ");
                 //If so, loop through all checked items and print results.  
                 foreach(string checkedService in checkBoxCtrl.CheckedItems)
                 {

@@ -30,7 +30,7 @@ namespace WashablesSystem
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            PaymentDetails details = new PaymentDetails();
+            PaymentDetails details = new PaymentDetails(new PendingPayments(), lblPNo.Text);
             details.ShowDialog();
         }
     }

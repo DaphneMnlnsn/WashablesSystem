@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 
 namespace WashablesSystem
@@ -18,7 +19,7 @@ namespace WashablesSystem
         {
             InitializeComponent();
         }
-        public void setScheduleInfo(string OrNum, string customerName, string unitUsed, string services, string weights, string SchedTime, string pickUpDate, string timeLeft, Image billImage)
+        public void setScheduleInfo(string OrNum, string customerName, string unitUsed, string services, string weights, string SchedTime, string totalDuration, string pickUpDate, string finishedOn, Image billImage)
         {
             //Displaying Schedule info
             ORNo.Text = OrNum;
@@ -28,9 +29,10 @@ namespace WashablesSystem
             Weights.Text = weights;
 
             ScheduleTime.Text = SchedTime;
-            PickUpDate.Text = pickUpDate;
+            actualTime.Text = totalDuration;
+            PickUpDate.Text = DateTime.Parse(pickUpDate).ToShortDateString();
             btnBill.Image = billImage;
-            TimeLeft.Text = timeLeft;
+            FinishedOn.Text = finishedOn;
 
 
         }

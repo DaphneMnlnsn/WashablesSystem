@@ -28,18 +28,6 @@ namespace WashablesSystem.Classes
         {
             constring = sessionVar.Constring;
         }
-        public void startLaundry(string orderID)
-        {
-
-        }
-        public void finishLaundry(string orderID)
-        {
-
-        }
-        public DataTable getOperationDetails()
-        {
-            return new DataTable();
-        }
         public DataTable getUnitDetails(string category)
         {
             constring.Open();

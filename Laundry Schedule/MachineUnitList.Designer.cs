@@ -47,15 +47,15 @@
             // 
             // lblUnit
             // 
-            this.lblUnit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblUnit.AutoSize = true;
+            this.lblUnit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUnit.Font = new System.Drawing.Font("Berlin Sans FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnit.Location = new System.Drawing.Point(57, 145);
+            this.lblUnit.Location = new System.Drawing.Point(-1, 145);
             this.lblUnit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUnit.Name = "lblUnit";
-            this.lblUnit.Size = new System.Drawing.Size(54, 26);
+            this.lblUnit.Size = new System.Drawing.Size(184, 26);
             this.lblUnit.TabIndex = 5;
             this.lblUnit.Text = "Unit";
+            this.lblUnit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnAvailability
             // 

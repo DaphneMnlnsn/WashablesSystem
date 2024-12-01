@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashablesSystem.Classes;
 
 namespace WashablesSystem
 {
@@ -20,23 +21,27 @@ namespace WashablesSystem
         public PendingPayments(string ORNum)
         {
             InitializeComponent();
-            PaymentDetails paymentDetails = new PaymentDetails(ORNum);
+            PaymentDetails paymentDetails = new PaymentDetails(this, ORNum);
             paymentDetails.ShowDialog();
         }
 
         private void PendingPayments_Load(object sender, EventArgs e)
         {
-            PendingPaymentList pending1 = new PendingPaymentList();
-            pending1.setPendingInfo("P0001", "OR341", "Daphne Manalansan", "Unit I", "Wash-Day-Fold", "5.00", "Pending");
-            PendingContainer.Controls.Add(pending1);
-
-            PendingPaymentList pending2 = new PendingPaymentList();
-            pending2.setPendingInfo("P0001", "OR341", "Kate Maxime Valerio", "Unit II", "Wash", "5.00", "Pending");
-            PendingContainer.Controls.Add(pending2);
-
-            PendingPaymentList pending3 = new PendingPaymentList();
-            pending3.setPendingInfo("P0001", "OR341", "Kiana Martin", "Unit II", "Wash", "5.00", "Pending");
-            PendingContainer.Controls.Add(pending3);
+            PendingContainer.Controls.Clear();
+            PaymentClass paymentClass = new PaymentClass();
+            DataTable payments = paymentClass.getBills();
+            foreach (DataRow row in payments.Rows)
+            {
+                PendingPaymentList payment = new PendingPaymentList();
+                payment.setPendingInfo(row["transaction_id"].ToString(), row["order_id"].ToString(),
+                   row["customer_name"].ToString(), row["unit_id"].ToString(),
+                   row["service_id"].ToString(), row["weight"].ToString(), row["payment_status"].ToString());
+                PendingContainer.Controls.Add(payment);
+            }
+        }
+        public void RefreshPanel(object sender, EventArgs e)
+        {
+            PendingPayments_Load(sender, e);
         }
     }
 }

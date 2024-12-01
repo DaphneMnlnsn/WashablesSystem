@@ -17,18 +17,19 @@ namespace WashablesSystem
         {
             InitializeComponent();
         }
-        public void setStatus(string order, string customer, string service, string scheduled, string date)
+        public void setStatus(string order, string customer, string service, string status, string scheduled, string date)
         {
             lblOR.Text = order;
             custName.Text = customer;
             serviceType.Text = service;
-            timeScheduled.Text = scheduled;
-            pickup.Text = date;
+            lblStatus.Text = status;
+            timeScheduled.Text = DateTime.Parse(scheduled).ToString();
+            pickup.Text = DateTime.Parse(date).ToShortDateString();
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            SelectAvailableUnit select = new SelectAvailableUnit();
+            SelectAvailableUnit select = new SelectAvailableUnit(lblOR.Text);
             select.ShowDialog();
         }
     }

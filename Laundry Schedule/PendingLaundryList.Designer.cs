@@ -117,12 +117,12 @@
             // serviceType
             // 
             this.serviceType.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.serviceType.AutoSize = true;
+            this.serviceType.AutoEllipsis = true;
             this.serviceType.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.serviceType.Location = new System.Drawing.Point(100, 73);
             this.serviceType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.serviceType.Name = "serviceType";
-            this.serviceType.Size = new System.Drawing.Size(53, 19);
+            this.serviceType.Size = new System.Drawing.Size(136, 19);
             this.serviceType.TabIndex = 82;
             this.serviceType.Text = "service";
             this.serviceType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

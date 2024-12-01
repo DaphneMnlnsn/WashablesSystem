@@ -27,15 +27,13 @@ namespace WashablesSystem
         {
             if (cbCategory.Text.Equals("Liquid"))
             {
-                unitQuantity.Items.Clear();
-                unitQuantity.Items.Add("mL");
-                unitQuantity.Items.Add("L");
+                unitQuantity.Text = "L";
+                unitQuantity.Enabled = false;
             }
             else
             {
-                unitQuantity.Items.Clear();
-                unitQuantity.Items.Add("g");
-                unitQuantity.Items.Add("kg");
+                unitQuantity.Text = "kg";
+                unitQuantity.Enabled = false;
             }
         }
 

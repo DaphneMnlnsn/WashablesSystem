@@ -1,4 +1,5 @@
-﻿using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
+﻿using Microsoft.IdentityModel.Tokens;
+using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -96,6 +97,80 @@ namespace WashablesSystem.Classes
             {
                 MessageBox.Show("Item name already exists!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 constring.Close();
+            }
+        }
+        public void subtractItem(string itemID, string itemID2, string itemID3, decimal quantity1, decimal quantity2, decimal quantity3)
+        {
+
+            //for Item1
+            this.itemID = itemID;
+            this.itemQuantity = quantity1;
+            //Query for editing
+            String query = "UPDATE [Item] SET item_quantity = item_quantity - "
+                + itemQuantity /1000 + " WHERE item_id='" + itemID + "'";
+
+            SqlCommand cmd2 = new SqlCommand(query, constring);
+            cmd2.CommandText = query;
+
+            //If successful, add to activity log
+            if (cmd2.ExecuteNonQuery() == 1)
+            {
+                constring.Close();
+                logOperation("Subtracted Item");
+            }
+            else
+            {
+                constring.Close();
+                MessageBox.Show("Something went wrong. Please try again.");
+            }
+
+            if (!itemID2.IsNullOrEmpty())
+            {
+                //for Item2
+                this.itemID = itemID2;
+                this.itemQuantity = quantity2;
+
+                //Query for editing
+                query = "UPDATE [Item] SET item_quantity = item_quantity + "
+                    + itemQuantity /1000 + " WHERE item_id='" + itemID2 + "'";
+
+                cmd2 = new SqlCommand(query, constring);
+                cmd2.CommandText = query;
+
+                //If successful, add to activity log
+                if (cmd2.ExecuteNonQuery() == 1)
+                {
+                    logOperation("Subtracted Item");
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong. Please try again.");
+                }
+            }
+            if (!itemID3.IsNullOrEmpty())
+            {
+                //for Item3
+                this.itemID = itemID3;
+                this.itemQuantity = quantity3;
+
+                //Query for editing
+                query = "UPDATE [Item] SET item_quantity = item_quantity + "
+                    + itemQuantity /1000 + " WHERE item_id='" + itemID3 + "'";
+
+                cmd2 = new SqlCommand(query, constring);
+                cmd2.CommandText = query;
+
+                //If successful, add to activity log
+                if (cmd2.ExecuteNonQuery() == 1)
+                {
+                    constring.Close();
+                    logOperation("Subtracted Item");
+                }
+                else
+                {
+                    constring.Close();
+                    MessageBox.Show("Something went wrong. Please try again.");
+                }
             }
         }
         public void editItem(string itemID)
@@ -331,6 +406,14 @@ namespace WashablesSystem.Classes
                 cmdAddHistory.ExecuteNonQuery();
                 MessageBox.Show("Item successfully restocked!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 constring.Close();
+            }
+            else if (activity.Equals("Subtracted Item"))
+            {
+                string queryAddHistory = "INSERT INTO ItemHistory VALUES('" + sessionVar.loggedIn.ToString() + "','" + itemID + "','"
+                    + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "',' used " + itemQuantity + "mL/g')";
+                SqlCommand cmdAddHistory = new SqlCommand(queryAddHistory, constring);
+                cmdAddHistory.CommandText = queryAddHistory;
+                cmdAddHistory.ExecuteNonQuery();
             }
             else if (activity.Equals("Restored Item"))
             {

@@ -20,10 +20,11 @@ namespace WashablesSystem
             InitializeComponent();
             btnUnit.Click += btnUnit_Click;
         }
-        public void setMachineInfo(string unitName, string availability_status, bool occupied)
+        public void setMachineInfo(string unitName, string unitID, string availability_status, bool occupied)
         {
             //Displaying machine info
             btnUnit.Text = unitName;
+            lblUnit.Text = unitID;
             unitOccupied = occupied;
             availabilityStatus = availability_status;
 
@@ -54,6 +55,11 @@ namespace WashablesSystem
             btnUnit.ForeColor = Color.White;
         }
 
+        public string getSelectedButton()
+        {
+            return lblUnit.Text;
+        }
+
         // Method to unselect the button
         public void DeselectButton()
         {
@@ -61,7 +67,7 @@ namespace WashablesSystem
             {
                 btnUnit.BackColor = Color.FromArgb(117, 238, 131);
             }
-            else if (!unitOccupied && availabilityStatus.Equals("Available"))
+            else if (unitOccupied && availabilityStatus.Equals("Available"))
             {
                 btnUnit.BackColor = Color.FromArgb(255, 0, 0);
                 btnUnit.Enabled = false;

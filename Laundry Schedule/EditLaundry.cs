@@ -38,7 +38,7 @@ namespace WashablesSystem
         }
         private void btnService_Click(object sender, EventArgs e)
         {
-            SelectServices select = new SelectServices(this);
+            SelectServices select = new SelectServices(this, btnService.Text);
             select.ShowDialog();
         }
     }
