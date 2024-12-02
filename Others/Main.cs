@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.ReportingServices.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -109,6 +110,22 @@ namespace WashablesSystem
         private void btnSettings_Click(object sender, EventArgs e)
         {
             new Settings().ShowDialog();
+        }
+
+        private void showNotif()
+        {
+            notifItem notification = new notifItem(this);
+            notifPanel.Controls.Add(notification); // Add to the Panel
+            notifPanel.Visible = true;
+            Timer timer = new Timer();
+            timer.Interval = 5000; // Display for 5 seconds
+            timer.Tick += (s, e) =>
+            {
+                notifPanel.Controls.Remove(notification);
+                notifPanel.Visible = false;
+                timer.Stop();
+            };
+            timer.Start();
         }
     }
 }

@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.activityText = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.notifTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // activityText
@@ -64,6 +66,10 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "________________________________________________________";
             // 
+            // notifTimer
+            // 
+            this.notifTimer.Interval = 1000;
+            // 
             // notifItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -86,5 +92,6 @@
         private System.Windows.Forms.Label activityText;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer notifTimer;
     }
 }

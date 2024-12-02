@@ -102,6 +102,7 @@
             this.btnTrash.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnTrash.TabIndex = 93;
             this.btnTrash.TabStop = false;
+            this.btnTrash.Click += new System.EventHandler(this.btnTrash_Click);
             // 
             // lblReceived
             // 

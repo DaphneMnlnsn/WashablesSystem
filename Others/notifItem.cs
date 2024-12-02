@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashablesSystem.Classes;
 
 namespace WashablesSystem
 {
@@ -14,27 +15,45 @@ namespace WashablesSystem
     {
         Main grandparentForm;
         NotifOverlay notifOverlay;
+        string notificationID;
+        string category;
         public notifItem(Main grandparentForm, NotifOverlay notifOverlay)
         {
             InitializeComponent();
             this.grandparentForm = grandparentForm;
             this.notifOverlay = notifOverlay;
         }
-        public void setNotif(string notif)
+        public notifItem(Main grandparentForm)
         {
+            InitializeComponent();
+            this.grandparentForm = grandparentForm;
+            showNotifWithTimer();
+        }
+        public void setNotif(string notif, bool read, string notificationID, string category)
+        {
+            this.notificationID = notificationID;
             activityText.Text = notif;
+            this.category = category;
+
+            if (read)
+            {
+                panel1.Dispose();
+            }
         }
 
         private void activityText_Click(object sender, EventArgs e)
         {
+            NotificationClass  notificationClass = new NotificationClass();
             PictureBox btn = (PictureBox)grandparentForm.FindForm().Controls.Find("btnNotif", true)[0];
             btn.Enabled = true;
-            if(activityText.Text.Equals("ITM003 Zonrox is low in stock! Restock now!"))
+            if(category.Equals("Inventory"))
             {
+                notificationClass.readNotification(notificationID);
                 loadForm(new Inventory(grandparentForm));
             }
             else
             {
+                notificationClass.readNotification(notificationID);
                 loadForm(new Schedule(grandparentForm, "Finished"));
             }
             
@@ -52,6 +71,11 @@ namespace WashablesSystem
             panelPage.Controls.Add(m);
             panelPage.Tag = m;
             m.Show();
+        }
+
+        private void showNotifWithTimer()
+        {
+
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using WashablesSystem.Classes;
 
 namespace WashablesSystem
 {
@@ -16,15 +17,21 @@ namespace WashablesSystem
             this.readStatus = read;
             this.pageLocation = loc;
             lblNo.Text = Num;
-            if (order_id != null)
+            if (!order_id.Equals(""))
             {
                 lblSubject.Text = unit_id + " " + Subject + " " + order_id;
             }
-            else if (item_id != null)
+            else if (!item_id.Equals(""))
             {
                 lblSubject.Text = item_id + " " + item_name + " " + Subject;
             }
             lblReceived.Text = Received;
+        }
+
+        private void btnTrash_Click(object sender, System.EventArgs e)
+        {
+            NotificationClass notificationClass = new NotificationClass();
+            notificationClass.deleteNotification(lblNo.Text);
         }
     }
 }

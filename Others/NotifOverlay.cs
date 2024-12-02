@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashablesSystem.Classes;
 
 namespace WashablesSystem
 {
@@ -62,21 +63,21 @@ namespace WashablesSystem
                 }
             }
 
-            notifItem activity = new notifItem(parentForm, this);
-            string message = "Unit I has finished Laundry OR1003 at 10/13/2024 5:12PM";
-            activity.setNotif(message);
-            notifPanel.Controls.Add(activity);
-
-            notifItem activity2 = new notifItem(parentForm, this);
-            string message2 = "Unit II has finished Laundry OR1004 at 10/14/2024 4:30PM";
-            activity2.setNotif(message2);
-            notifPanel.Controls.Add(activity2);
-
-            notifItem activity3 = new notifItem(parentForm, this);
-            string message3 = "ITM003 Zonrox is low in stock! Restock now!";
-            activity3.setNotif(message3);
-            notifPanel.Controls.Add(activity3);
-            
+            NotificationClass notifClass = new NotificationClass();
+            DataTable notifications = notifClass.displayNotification();
+            foreach (DataRow row in notifications.Rows)
+            {
+                notifItem notif = new notifItem(parentForm, this);
+                if (!row["order_id"].ToString().Equals(""))
+                {
+                   notif.setNotif("Laundry " + row["order_id"].ToString() + " " + row["notification_subject"].ToString() + ".", bool.Parse(row["read_status"].ToString()), row["notification_id"].ToString(), "Schedule");
+                }
+                else if (!row["item_id"].ToString().Equals(""))
+                {
+                    notif.setNotif(row["item_id"].ToString() + " " + row["item_name"].ToString() + " " + row["notification_subject"].ToString() + ". Restock now!", bool.Parse(row["read_status"].ToString()), row["notification_id"].ToString(), "Inventory");
+                }
+                notifPanel.Controls.Add(notif);
+            }
         }
     }
 }

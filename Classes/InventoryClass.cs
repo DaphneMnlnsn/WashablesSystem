@@ -334,7 +334,7 @@ namespace WashablesSystem.Classes
         public DataTable displayItemHistory(string itemID)
         {
             constring.Open();
-            string sql = "SELECT * FROM [ItemHistory] INNER JOIN [User] ON [ItemHistory].[user_id] = [User].[user_id] WHERE [item_id] = '" + itemID + "'";
+            string sql = "SELECT * FROM [ItemHistory] INNER JOIN [User] ON [ItemHistory].[user_id] = [User].[user_id] WHERE [item_id] = '" + itemID + "' ORDER BY history_date DESC";
             DataTable itemHistory = new DataTable("item");
             SqlDataAdapter da = new SqlDataAdapter(sql, constring);
             da.Fill(itemHistory);

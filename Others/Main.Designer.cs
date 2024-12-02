@@ -48,6 +48,7 @@
             this.lblProfile = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.notifPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnInventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCustomers)).BeginInit();
@@ -207,7 +208,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 425F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71F));
             this.tableLayoutPanel1.Controls.Add(this.btnSettings, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.logo, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnNotif, 3, 0);
@@ -226,7 +227,7 @@
             // 
             this.btnSettings.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnSettings.Image = global::WashablesSystem.Properties.Resources.Settings;
-            this.btnSettings.Location = new System.Drawing.Point(961, 16);
+            this.btnSettings.Location = new System.Drawing.Point(960, 16);
             this.btnSettings.Margin = new System.Windows.Forms.Padding(2, 2, 9, 2);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(34, 33);
@@ -250,7 +251,7 @@
             // 
             this.btnNotif.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnNotif.Image = global::WashablesSystem.Properties.Resources.NewNotif;
-            this.btnNotif.Location = new System.Drawing.Point(908, 14);
+            this.btnNotif.Location = new System.Drawing.Point(907, 14);
             this.btnNotif.Margin = new System.Windows.Forms.Padding(2, 2, 7, 2);
             this.btnNotif.Name = "btnNotif";
             this.btnNotif.Size = new System.Drawing.Size(37, 36);
@@ -278,7 +279,7 @@
             this.lblProfile.AutoSize = true;
             this.lblProfile.Font = new System.Drawing.Font("Berlin Sans FB", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProfile.ForeColor = System.Drawing.Color.White;
-            this.lblProfile.Location = new System.Drawing.Point(805, 17);
+            this.lblProfile.Location = new System.Drawing.Point(804, 17);
             this.lblProfile.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProfile.Name = "lblProfile";
             this.lblProfile.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -291,7 +292,7 @@
             // 
             this.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnLogout.Image = global::WashablesSystem.Properties.Resources.Logout;
-            this.btnLogout.Location = new System.Drawing.Point(1006, 14);
+            this.btnLogout.Location = new System.Drawing.Point(1005, 14);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(37, 36);
@@ -311,11 +312,23 @@
             this.pictureBox4.TabIndex = 15;
             this.pictureBox4.TabStop = false;
             // 
+            // notifPanel
+            // 
+            this.notifPanel.AutoSize = true;
+            this.notifPanel.BackColor = System.Drawing.Color.Transparent;
+            this.notifPanel.Location = new System.Drawing.Point(713, 73);
+            this.notifPanel.MaximumSize = new System.Drawing.Size(364, 322);
+            this.notifPanel.Name = "notifPanel";
+            this.notifPanel.Size = new System.Drawing.Size(364, 44);
+            this.notifPanel.TabIndex = 1;
+            this.notifPanel.Visible = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1079, 595);
+            this.Controls.Add(this.notifPanel);
             this.Controls.Add(this.panelPage);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -344,6 +357,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -368,6 +382,7 @@
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label lblProfile;
         private System.Windows.Forms.PictureBox btnLogout;
+        private System.Windows.Forms.FlowLayoutPanel notifPanel;
     }
 }
 
