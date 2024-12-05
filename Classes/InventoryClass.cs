@@ -49,55 +49,62 @@ namespace WashablesSystem.Classes
 
         public void addItem()
         {
-            constring.Open();
-
-            //Verify if item name exists
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM [Item] WHERE item_name ='" + itemName + "'", constring);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            if (dt.Rows[0][0].ToString() == "0")
+            try
             {
-                //Add Item to Database
-                SqlCommand cmd = new SqlCommand("SELECT TOP 1 [item_id] FROM [Item] ORDER BY [item_id] DESC", constring);
-                SqlDataReader reader1;
-                reader1 = cmd.ExecuteReader();
-                if (reader1.Read())
+                constring.Open();
+
+                //Verify if item name exists
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM [Item] WHERE item_name ='" + itemName + "'", constring);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                if (dt.Rows[0][0].ToString() == "0")
                 {
-                    itemID = reader1.GetString(0);
-                    int num = int.Parse(string.Join("", itemID.Where(Char.IsDigit))) + 1;
-                    itemID = "ITM" + num;
+                    //Add Item to Database
+                    SqlCommand cmd = new SqlCommand("SELECT TOP 1 [item_id] FROM [Item] ORDER BY [item_id] DESC", constring);
+                    SqlDataReader reader1;
+                    reader1 = cmd.ExecuteReader();
+                    if (reader1.Read())
+                    {
+                        itemID = reader1.GetString(0);
+                        int num = int.Parse(string.Join("", itemID.Where(Char.IsDigit))) + 1;
+                        itemID = "ITM" + num;
+                    }
+                    else
+                    {
+                        itemID = "ITM1";
+                    }
+                    reader1.Close();
+                    cmd.Dispose();
+
+                    //Query for inserting
+                    string query = "INSERT INTO [Item] VALUES('" + itemID + "','" + itemName + "','"
+                                     + itemCategory + "','" + itemQuantity + "','" + itemPrice + "',0,'" + itemUnit + "');";
+
+                    SqlCommand cmd2 = new SqlCommand(query, constring);
+                    cmd2.CommandText = query;
+
+                    //If successful, add to activity log
+                    if (cmd2.ExecuteNonQuery() == 1)
+                    {
+                        constring.Close();
+                        logOperation("Added New Item");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong. Please try again.");
+                        constring.Close();
+                    }
                 }
                 else
                 {
-                    itemID = "ITM1";
-                }
-                reader1.Close();
-                cmd.Dispose();
-
-                //Query for inserting
-                string query = "INSERT INTO [Item] VALUES('" + itemID + "','" + itemName + "','"
-                                 + itemCategory + "','" + itemQuantity + "','" + itemPrice + "',0,'" + itemUnit + "');";
-
-                SqlCommand cmd2 = new SqlCommand(query, constring);
-                cmd2.CommandText = query;
-
-                //If successful, add to activity log
-                if (cmd2.ExecuteNonQuery() == 1)
-                {
-                    constring.Close();
-                    logOperation("Added New Item");
-
-                }
-                else
-                {
-                    MessageBox.Show("Something went wrong. Please try again.");
+                    MessageBox.Show("Item name already exists!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     constring.Close();
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Item name already exists!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                constring.Close();
+                MessageBox.Show("Invalid input! Error: " + ex, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
         public void subtractItem(string itemID, string itemID2, string itemID3, decimal quantity1, decimal quantity2, decimal quantity3)

@@ -37,42 +37,49 @@ namespace WashablesSystem.Classes
 
         public void addComplaint()
         {
-            constring.Open();
-            //Add User to Database
-            SqlCommand cmd = new SqlCommand("SELECT TOP 1 [complaint_id] FROM [Complaints] ORDER BY [complaint_id] DESC", constring);
-            SqlDataReader reader1;
-            reader1 = cmd.ExecuteReader();
-            if (reader1.Read())
+            try
             {
-                complaintID = reader1.GetString(0);
-                int IDNum = int.Parse(string.Join("", complaintID.Where(Char.IsDigit))) + 1;
-                complaintID = "CC" + IDNum;
+                constring.Open();
+                //Add User to Database
+                SqlCommand cmd = new SqlCommand("SELECT TOP 1 [complaint_id] FROM [Complaints] ORDER BY [complaint_id] DESC", constring);
+                SqlDataReader reader1;
+                reader1 = cmd.ExecuteReader();
+                if (reader1.Read())
+                {
+                    complaintID = reader1.GetString(0);
+                    int IDNum = int.Parse(string.Join("", complaintID.Where(Char.IsDigit))) + 1;
+                    complaintID = "CC" + IDNum;
+                }
+                else
+                {
+                    complaintID = "CC1";
+                }
+                reader1.Close();
+                cmd.Dispose();
+
+                //Query for inserting
+                String query = "INSERT INTO [Complaints] VALUES('" + complaintID + "','" + sessionVar.loggedIn + "','"
+                    + customerID + "','" + complaintIssue + "','" + complaintDate + "','','0')";
+
+                SqlCommand cmd2 = new SqlCommand(query, constring);
+                cmd2.CommandText = query;
+
+                //If successful, add to activity log
+                if (cmd2.ExecuteNonQuery() == 1)
+                {
+                    constring.Close();
+                    logOperation("Added New Complaint");
+
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong. Please try again.");
+                    constring.Close();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                complaintID = "CC1";
-            }
-            reader1.Close();
-            cmd.Dispose();
-
-            //Query for inserting
-            String query = "INSERT INTO [Complaints] VALUES('" + complaintID + "','" + sessionVar.loggedIn + "','"
-                + customerID + "','" + complaintIssue + "','" + complaintDate + "','','0')";
-
-            SqlCommand cmd2 = new SqlCommand(query, constring);
-            cmd2.CommandText = query;
-
-            //If successful, add to activity log
-            if (cmd2.ExecuteNonQuery() == 1)
-            {
-                constring.Close();
-                logOperation("Added New Complaint");
-
-            }
-            else
-            {
-                MessageBox.Show("Something went wrong. Please try again.");
-                constring.Close();
+                MessageBox.Show("Invalid input! Error: " + ex, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
         public void resolveComplaint(string complaintID, string problem)

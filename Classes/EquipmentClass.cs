@@ -43,80 +43,94 @@ namespace WashablesSystem.Classes
         public void addUnit()
         {
             int IDNum;
-            constring.Open();
-
-            ///
-            /// unit code generator
-            /// 
-            string input = unitCategory;
-            string acronym = "";
-            char[] separators = new char[] { '-', ' ' };
-            string[] words = input.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-            foreach (string word in words)
+            try
             {
-                acronym += word[0];
+                constring.Open();
+
+                ///
+                /// unit code generator
+                /// 
+                string input = unitCategory;
+                string acronym = "";
+                char[] separators = new char[] { '-', ' ' };
+                string[] words = input.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+                foreach (string word in words)
+                {
+                    acronym += word[0];
+                }
+
+                //Add Unit to Database
+                SqlCommand cmd = new SqlCommand("SELECT TOP 1 [unit_name],[unit_id] FROM [Unit] WHERE [unit_category] = '" + unitCategory + "' ORDER BY [unit_id] DESC", constring);
+                SqlDataReader reader1;
+                reader1 = cmd.ExecuteReader();
+                if (reader1.Read())
+                {
+                    unitID = reader1.GetString(1);
+                    IDNum = int.Parse(string.Join("", unitID.Where(Char.IsDigit))) + 1;
+                    unitID = acronym + "U" + IDNum;
+                }
+                else
+                {
+                    unitID = acronym + "U1";
+                }
+                reader1.Close();
+                cmd.Dispose();
+
+                //Query for inserting
+                String query = "INSERT INTO [Unit] VALUES('" + unitID + "','" + unitName + "','"
+                    + unitCategory + "','" + availabilityStatus + "',0,0);";
+
+                SqlCommand cmd2 = new SqlCommand(query, constring);
+                cmd2.CommandText = query;
+
+                //If successful, add to activity log
+                if (cmd2.ExecuteNonQuery() == 1)
+                {
+                    constring.Close();
+                    logOperation("Added New Unit");
+
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong. Please try again.");
+                    constring.Close();
+                }
             }
-
-            //Add Unit to Database
-            SqlCommand cmd = new SqlCommand("SELECT TOP 1 [unit_name],[unit_id] FROM [Unit] WHERE [unit_category] = '" + unitCategory + "' ORDER BY [unit_id] DESC", constring);
-            SqlDataReader reader1;
-            reader1 = cmd.ExecuteReader();
-            if (reader1.Read())
+            catch (Exception ex)
             {
-                unitID = reader1.GetString(1);
-                IDNum = int.Parse(string.Join("", unitID.Where(Char.IsDigit))) + 1;
-                unitID = acronym + "U" + IDNum;
-            }
-            else
-            {
-                unitID = acronym + "U1";
-            }
-            reader1.Close();
-            cmd.Dispose();
-
-            //Query for inserting
-            String query = "INSERT INTO [Unit] VALUES('" + unitID + "','" + unitName + "','"
-                + unitCategory + "','" + availabilityStatus + "',0,0);";
-
-            SqlCommand cmd2 = new SqlCommand(query, constring);
-            cmd2.CommandText = query;
-
-            //If successful, add to activity log
-            if (cmd2.ExecuteNonQuery() == 1)
-            {
-                constring.Close();
-                logOperation("Added New Unit");
-
-            }
-            else
-            {
-                MessageBox.Show("Something went wrong. Please try again.");
-                constring.Close();
+                MessageBox.Show("Invalid input! Error: " + ex, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
         public void editUnit(string unitID)
         {
-            constring.Open();
-
-            this.unitID = unitID;
-
-            //Query for editing
-            String query = "UPDATE [Unit] SET unit_name ='" + unitName + "',unit_category ='"
-                + unitCategory + "',availability_status ='" + availabilityStatus + "' WHERE unit_id='" + unitID + "';";
-
-            SqlCommand cmd2 = new SqlCommand(query, constring);
-            cmd2.CommandText = query;
-
-            //If successful, add to activity log
-            if (cmd2.ExecuteNonQuery() == 1)
+            try
             {
-                constring.Close();
-                logOperation("Edited Unit");
+                constring.Open();
+
+                this.unitID = unitID;
+
+                //Query for editing
+                String query = "UPDATE [Unit] SET unit_name ='" + unitName + "',unit_category ='"
+                    + unitCategory + "',availability_status ='" + availabilityStatus + "' WHERE unit_id='" + unitID + "';";
+
+                SqlCommand cmd2 = new SqlCommand(query, constring);
+                cmd2.CommandText = query;
+
+                //If successful, add to activity log
+                if (cmd2.ExecuteNonQuery() == 1)
+                {
+                    constring.Close();
+                    logOperation("Edited Unit");
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong. Please try again.");
+                    constring.Close();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Something went wrong. Please try again.");
-                constring.Close();
+                MessageBox.Show("Invalid input! Error: " + ex, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
         public DataTable displaySelectedUnit(string unitID)

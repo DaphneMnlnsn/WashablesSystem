@@ -48,11 +48,18 @@ namespace WashablesSystem
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //call edit method here
-            InventoryClass inventory = new InventoryClass(txtBoxName.Text, cbCategory.Text,item_quantity, decimal.Parse(txtBoxPrice.Text), item_unit);
-            inventory.editItem(item_selected);
-            _parentForm.RefreshPanel();
-            this.Close();
+            try
+            {
+                //call edit method here
+                InventoryClass inventory = new InventoryClass(txtBoxName.Text, cbCategory.Text, item_quantity, decimal.Parse(txtBoxPrice.Text), item_unit);
+                inventory.editItem(item_selected);
+                _parentForm.RefreshPanel();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid input!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

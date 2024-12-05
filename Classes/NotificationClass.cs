@@ -26,54 +26,61 @@ namespace WashablesSystem.Classes
 
         public void sendNotification(string num, string type)
         {
-            constring.Open();
+            try
+            {
+                constring.Open();
 
-            SqlCommand cmd = new SqlCommand("SELECT TOP 1 [notification_id] FROM [Notification] ORDER BY [datetime_received] DESC", constring);
-            SqlDataReader reader1;
-            reader1 = cmd.ExecuteReader();
-            if (reader1.Read())
-            {
-                notificationID = reader1.GetString(0);
-                int IDNum = int.Parse(string.Join("", notificationID.Where(Char.IsDigit))) + 1;
-                notificationID = IDNum.ToString();
-            }
-            else
-            {
-                notificationID = "1";
-            }
-            reader1.Close();
-            cmd.Dispose();
+                SqlCommand cmd = new SqlCommand("SELECT TOP 1 [notification_id] FROM [Notification] ORDER BY [datetime_received] DESC", constring);
+                SqlDataReader reader1;
+                reader1 = cmd.ExecuteReader();
+                if (reader1.Read())
+                {
+                    notificationID = reader1.GetString(0);
+                    int IDNum = int.Parse(string.Join("", notificationID.Where(Char.IsDigit))) + 1;
+                    notificationID = IDNum.ToString();
+                }
+                else
+                {
+                    notificationID = "1";
+                }
+                reader1.Close();
+                cmd.Dispose();
 
-            string query = "";
-            string description = "";
-            if (type.Equals("Laundry Finished"))
-            {
-                description = "has finished";
-                //Query for inserting
-                query = "INSERT INTO [Notification] VALUES('" + notificationID + "','" + num + "',null,'"
-                    + description + "','Laundry Operations',0,'" + DateTime.Now + "')";
-            }
-            else if (type.Equals("Low on Stock"))
-            {
-                description = "is low on stock";
-                //Query for inserting
-                query = "INSERT INTO [Notification] VALUES('" + notificationID + "',null,'" + num + "','"
-                    + description + "','Inventory',0,'" + DateTime.Now + "')";
-            }
+                string query = "";
+                string description = "";
+                if (type.Equals("Laundry Finished"))
+                {
+                    description = "has finished";
+                    //Query for inserting
+                    query = "INSERT INTO [Notification] VALUES('" + notificationID + "','" + num + "',null,'"
+                        + description + "','Laundry Operations',0,'" + DateTime.Now + "')";
+                }
+                else if (type.Equals("Low on Stock"))
+                {
+                    description = "is low on stock";
+                    //Query for inserting
+                    query = "INSERT INTO [Notification] VALUES('" + notificationID + "',null,'" + num + "','"
+                        + description + "','Inventory',0,'" + DateTime.Now + "')";
+                }
 
-            SqlCommand cmd2 = new SqlCommand(query, constring);
-            cmd2.CommandText = query;
+                SqlCommand cmd2 = new SqlCommand(query, constring);
+                cmd2.CommandText = query;
 
-            //If successful, add to activity log
-            if (cmd2.ExecuteNonQuery() == 1)
-            {
-                new Main(num + " " + description);
-                constring.Close();
+                //If successful, add to activity log
+                if (cmd2.ExecuteNonQuery() == 1)
+                {
+                    new Main(num + " " + description);
+                    constring.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong. Please try again.");
+                    constring.Close();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Something went wrong. Please try again.");
-                constring.Close();
+                MessageBox.Show("Invalid input! Error: " + ex, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
         }

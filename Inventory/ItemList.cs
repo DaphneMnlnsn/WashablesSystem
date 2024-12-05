@@ -41,8 +41,13 @@ namespace WashablesSystem
                 Quantity.ForeColor = System.Drawing.Color.FromArgb(161, 0, 0);
                 Price.ForeColor = System.Drawing.Color.FromArgb(161, 0, 0);
 
-                NotificationClass notification = new NotificationClass();
-                notification.sendNotification(ItemCode.Text, "Low on Stock");
+                SessionVariables sessionVariables = new SessionVariables();
+                if (!sessionVariables.notified2)
+                {
+                    NotificationClass notification = new NotificationClass();
+                    notification.sendNotification(ItemCode.Text, "Low on Stock");
+                    sessionVariables.notified2 = true;
+                }
             }
         }
 

@@ -27,10 +27,17 @@ namespace WashablesSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            CustomerClass customerClass = new CustomerClass(txtBoxName.Text, txtBoxPhone.Text, txtBoxEmail.Text, txtBoxAddress.Text);
-            customerClass.addCustomer();
-            _parentForm.RefreshPanel();
-            this.Close();
+            try
+            {
+                CustomerClass customerClass = new CustomerClass(txtBoxName.Text, txtBoxPhone.Text, txtBoxEmail.Text, txtBoxAddress.Text);
+                customerClass.addCustomer();
+                _parentForm.RefreshPanel();
+                this.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Invalid input!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

@@ -16,11 +16,13 @@ namespace WashablesSystem
         private SelectableUnitList selectedButtonControl = null;
         private string batchID = "";
         ScheduleClass scheduleClass;
-        public SelectAvailableUnit(string batchID)
+        LaundryOperations _parentForm;
+        public SelectAvailableUnit(string batchID, LaundryOperations parentForm)
         {
             InitializeComponent();
             this.batchID = batchID;
             scheduleClass = new ScheduleClass();
+            _parentForm = parentForm;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -92,6 +94,7 @@ namespace WashablesSystem
             string unitID = selectedButtonControl.getSelectedButton();
             scheduleClass.startSchedule(batchID, unitID);
             this.Close();
+            _parentForm.RefreshPanel();
         }
     }
 }

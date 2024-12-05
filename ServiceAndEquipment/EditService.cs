@@ -43,10 +43,17 @@ namespace WashablesSystem
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            ServiceClass serviceClass = new ServiceClass(cbService.Text, txtBoxName.Text, decimal.Parse(txtBoxRate.Text), decimal.Parse(txtBoxMin.Text));
-            serviceClass.editService(service_selected);
-            _parentForm.RefreshPanel();
-            this.Close();
+            try
+            {
+                ServiceClass serviceClass = new ServiceClass(cbService.Text, txtBoxName.Text, decimal.Parse(txtBoxRate.Text), decimal.Parse(txtBoxMin.Text));
+                serviceClass.editService(service_selected);
+                _parentForm.RefreshPanel();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid input!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

@@ -51,7 +51,7 @@ namespace WashablesSystem.Classes
                 query = @"SELECT DATEPART(day, transaction_date) AS Day, SUM(total_amount) AS TotalSales
                   FROM Billing
                   WHERE DATEPART(week, transaction_date) = DATEPART(week, GETDATE())
-                    AND YEAR(transaction_date) = YEAR(GETDATE())
+                    AND YEAR(transaction_date) = YEAR(GETDATE()) AND total_amount != 0.00
                   GROUP BY DATEPART(day, transaction_date)";
             }
             else if (filter.Equals("This Month"))

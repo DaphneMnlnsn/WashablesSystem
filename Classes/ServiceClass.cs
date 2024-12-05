@@ -45,81 +45,96 @@ namespace WashablesSystem.Classes
         public void addService()
         {
             int IDNum;
-            constring.Open();
 
-            ///
-            /// service code generator
-            /// 
-            string input = serviceCategory;
-            string acronym = "";
-            char[] separators = new char[] { '-' };
-            string[] words = input.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-            foreach (string word in words)
+            try
             {
-                acronym += word[0];
+                constring.Open();
+
+                ///
+                /// service code generator
+                /// 
+                string input = serviceCategory;
+                string acronym = "";
+                char[] separators = new char[] { '-' };
+                string[] words = input.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+                foreach (string word in words)
+                {
+                    acronym += word[0];
+                }
+
+                //Add Service to Database
+                SqlCommand cmd = new SqlCommand("SELECT TOP 1 [service_name],[service_id] FROM [Service] WHERE [service_category] = '" + serviceCategory + "' ORDER BY [service_id] DESC", constring);
+                SqlDataReader reader1;
+                reader1 = cmd.ExecuteReader();
+                if (reader1.Read())
+                {
+                    serviceID = reader1.GetString(1);
+                    IDNum = int.Parse(string.Join("", serviceID.Where(Char.IsDigit))) + 1;
+                    serviceID = acronym + IDNum;
+                }
+                else
+                {
+                    serviceID = acronym + "1";
+                }
+                reader1.Close();
+                cmd.Dispose();
+
+                //Query for inserting
+                String query = "INSERT INTO [Service] VALUES('" + serviceID + "','" + serviceName + "','"
+                    + serviceCategory + "','" + servicePrice + "','" + serviceMinWeight + "',0);";
+
+                SqlCommand cmd2 = new SqlCommand(query, constring);
+                cmd2.CommandText = query;
+
+                //If successful, add to activity log
+                if (cmd2.ExecuteNonQuery() == 1)
+                {
+                    constring.Close();
+                    logOperation("Added New Service");
+
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong. Please try again.");
+                    constring.Close();
+                }
             }
-
-            //Add Service to Database
-            SqlCommand cmd = new SqlCommand("SELECT TOP 1 [service_name],[service_id] FROM [Service] WHERE [service_category] = '" + serviceCategory + "' ORDER BY [service_id] DESC", constring);
-            SqlDataReader reader1;
-            reader1 = cmd.ExecuteReader();
-            if (reader1.Read())
+            catch(Exception ex)
             {
-                serviceID = reader1.GetString(1);
-                IDNum = int.Parse(string.Join("", serviceID.Where(Char.IsDigit))) + 1;
-                serviceID = acronym + IDNum;
-            }
-            else
-            {
-                serviceID = acronym + "1";
-            }
-            reader1.Close();
-            cmd.Dispose();
-
-            //Query for inserting
-            String query = "INSERT INTO [Service] VALUES('" + serviceID + "','" + serviceName + "','"
-                + serviceCategory + "','" + servicePrice + "','" + serviceMinWeight + "',0);";
-
-            SqlCommand cmd2 = new SqlCommand(query, constring);
-            cmd2.CommandText = query;
-
-            //If successful, add to activity log
-            if (cmd2.ExecuteNonQuery() == 1)
-            {
-                constring.Close();
-                logOperation("Added New Service");
-
-            }
-            else
-            {
-                MessageBox.Show("Something went wrong. Please try again.");
-                constring.Close();
+                MessageBox.Show("Invalid input! Error: " + ex, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
         public void editService(string serviceID)
         {
-            constring.Open();
-
-            this.serviceID = serviceID;
-
-            //Query for editing
-            String query = "UPDATE [Service] SET service_name='" + serviceName + "',service_category='"
-                + serviceCategory + "',service_rate='" + servicePrice + "',service_minWeight='" + serviceMinWeight
-                + "' WHERE service_id='" + serviceID + "';";
-
-            SqlCommand cmd2 = new SqlCommand(query, constring);
-            cmd2.CommandText = query;
-
-            //If successful, add to activity log
-            if (cmd2.ExecuteNonQuery() == 1)
+            try
             {
-                constring.Close();
-                logOperation("Edited Service");
+                constring.Open();
+
+                this.serviceID = serviceID;
+
+                //Query for editing
+                String query = "UPDATE [Service] SET service_name='" + serviceName + "',service_category='"
+                    + serviceCategory + "',service_rate='" + servicePrice + "',service_minWeight='" + serviceMinWeight
+                    + "' WHERE service_id='" + serviceID + "';";
+
+                SqlCommand cmd2 = new SqlCommand(query, constring);
+                cmd2.CommandText = query;
+
+                //If successful, add to activity log
+                if (cmd2.ExecuteNonQuery() == 1)
+                {
+                    constring.Close();
+                    logOperation("Edited Service");
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong. Please try again.");
+                    constring.Close();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Something went wrong. Please try again.");
-                constring.Close();
+                MessageBox.Show("Invalid input! Error: " + ex, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
         public DataTable displaySelectedService(string serviceID)

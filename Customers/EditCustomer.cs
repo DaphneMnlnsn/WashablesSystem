@@ -46,11 +46,18 @@ namespace WashablesSystem
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //call edit method here
-            CustomerClass customerClass = new CustomerClass(txtBoxName.Text, txtBoxPhone.Text, txtBoxEmail.Text, txtBoxAddress.Text);               
-            customerClass.editCustomer(customer_selected);
-            _parentForm.RefreshPanel();
-            this.Close();
+            try
+            {
+                //call edit method here
+                CustomerClass customerClass = new CustomerClass(txtBoxName.Text, txtBoxPhone.Text, txtBoxEmail.Text, txtBoxAddress.Text);
+                customerClass.editCustomer(customer_selected);
+                _parentForm.RefreshPanel();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid input!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

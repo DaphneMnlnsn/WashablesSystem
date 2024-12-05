@@ -178,65 +178,72 @@ namespace WashablesSystem
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            TimeSpan washTime = TimeSpan.Zero;
-            if (timeWashing30.Checked)
+            try
             {
-                washTime = TimeSpan.FromMinutes(30);
-            }
-            else if (timeWashing1.Checked)
-            {
-                washTime = TimeSpan.FromMinutes(60);
-            }
-            else if (timeWashingCustomMin.Checked)
-            {
-                washTime = TimeSpan.FromMinutes(double.Parse(txtWashOtherMin.Text));
-            }
-            else if (timeWashingCustomHr.Checked)
-            {
-                washTime = TimeSpan.FromHours(double.Parse(txtWashOtherHour.Text));
-            }
+                TimeSpan washTime = TimeSpan.Zero;
+                if (timeWashing30.Checked)
+                {
+                    washTime = TimeSpan.FromMinutes(30);
+                }
+                else if (timeWashing1.Checked)
+                {
+                    washTime = TimeSpan.FromMinutes(60);
+                }
+                else if (timeWashingCustomMin.Checked)
+                {
+                    washTime = TimeSpan.FromMinutes(double.Parse(txtWashOtherMin.Text));
+                }
+                else if (timeWashingCustomHr.Checked)
+                {
+                    washTime = TimeSpan.FromHours(double.Parse(txtWashOtherHour.Text));
+                }
 
-            TimeSpan dryTime = TimeSpan.Zero;
-            if (timeDryer30.Checked)
-            {
-                dryTime = TimeSpan.FromMinutes(30);
-            }
-            else if (timeDryer1.Checked)
-            {
-                dryTime = TimeSpan.FromMinutes(60);
-            }
-            else if (timeDryerCustomMin.Checked)
-            {
-                dryTime = TimeSpan.FromMinutes(double.Parse(txtDryOtherMin.Text));
-            }
-            else if (timeDryerCustomHr.Checked)
-            {
-                dryTime = TimeSpan.FromHours(double.Parse(txtDryOtherHour.Text));
-            }
+                TimeSpan dryTime = TimeSpan.Zero;
+                if (timeDryer30.Checked)
+                {
+                    dryTime = TimeSpan.FromMinutes(30);
+                }
+                else if (timeDryer1.Checked)
+                {
+                    dryTime = TimeSpan.FromMinutes(60);
+                }
+                else if (timeDryerCustomMin.Checked)
+                {
+                    dryTime = TimeSpan.FromMinutes(double.Parse(txtDryOtherMin.Text));
+                }
+                else if (timeDryerCustomHr.Checked)
+                {
+                    dryTime = TimeSpan.FromHours(double.Parse(txtDryOtherHour.Text));
+                }
 
-            TimeSpan ironTime = TimeSpan.Zero;
-            if (timeIron30.Checked)
-            {
-                ironTime = TimeSpan.FromMinutes(30);
-            }
-            else if (timeIron1.Checked)
-            {
-                ironTime = TimeSpan.FromMinutes(60);
-            }
-            else if (timeIronCustomMin.Checked)
-            {
-                ironTime = TimeSpan.FromMinutes(double.Parse(txtPressOtherMin.Text));
-            }
-            else if (timeIronCustomHr.Checked)
-            {
-                ironTime = TimeSpan.FromHours(double.Parse(txtPressOtherHr.Text));
-            }
+                TimeSpan ironTime = TimeSpan.Zero;
+                if (timeIron30.Checked)
+                {
+                    ironTime = TimeSpan.FromMinutes(30);
+                }
+                else if (timeIron1.Checked)
+                {
+                    ironTime = TimeSpan.FromMinutes(60);
+                }
+                else if (timeIronCustomMin.Checked)
+                {
+                    ironTime = TimeSpan.FromMinutes(double.Parse(txtPressOtherMin.Text));
+                }
+                else if (timeIronCustomHr.Checked)
+                {
+                    ironTime = TimeSpan.FromHours(double.Parse(txtPressOtherHr.Text));
+                }
 
-            ScheduleClass scheduleClass = new ScheduleClass("", "", "", "", "0.00", "0.00", "0.00", "",
-            DateTime.Now, DateTime.Parse(pickupDate.Text), cbItem1.SelectedValue.ToString(), cbItem2.SelectedValue.ToString(),
-            cbItem3.SelectedValue.ToString(), quantity1.Text, quantity2.Text, quantity3.Text, washTime, dryTime, ironTime);
-            scheduleClass.editSchedule(orderID);
-            this.Close();
+                ScheduleClass scheduleClass = new ScheduleClass("", "", "", "", "0.00", "0.00", "0.00", "",
+                DateTime.Now, DateTime.Parse(pickupDate.Text), cbItem1.SelectedValue.ToString(), cbItem2.SelectedValue.ToString(),
+                cbItem3.SelectedValue.ToString(), quantity1.Text, quantity2.Text, quantity3.Text, washTime, dryTime, ironTime);
+                scheduleClass.editSchedule(orderID);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid input!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

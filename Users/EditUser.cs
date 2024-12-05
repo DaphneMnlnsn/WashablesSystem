@@ -52,17 +52,24 @@ namespace WashablesSystem
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtBoxPass.Text.Equals(txtBoxConfirm.Text))
+            try
             {
-                UserClass userClass = new UserClass(txtBoxFullname.Text, txtBoxName.Text, txtBoxPass.Text, checkLaundry.Checked,
-                                checkSched.Checked, checkSAndE.Checked, checkInventory.Checked, checkCustomers.Checked, checkUsers.Checked, checkBilling.Checked);
-                userClass.editUser(user_selected);
-                _parentForm.RefreshPanel();
-                this.Close();
+                if (txtBoxPass.Text.Equals(txtBoxConfirm.Text))
+                {
+                    UserClass userClass = new UserClass(txtBoxFullname.Text, txtBoxName.Text, txtBoxPass.Text, checkLaundry.Checked,
+                                    checkSched.Checked, checkSAndE.Checked, checkInventory.Checked, checkCustomers.Checked, checkUsers.Checked, checkBilling.Checked);
+                    userClass.editUser(user_selected);
+                    _parentForm.RefreshPanel();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Passwords do not match!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Passwords do not match!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Invalid input!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

@@ -58,57 +58,64 @@ namespace WashablesSystem.Classes
 
         public void addUser()
         {
-            constring.Open();
-
-            //Verify if username exists
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM [User] WHERE username ='" + employeeUsername + "'", constring);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            if (dt.Rows[0][0].ToString() == "0")
+            try
             {
-                //Add User to Database
-                SqlCommand cmd = new SqlCommand("SELECT TOP 1 [user_id] FROM [User] ORDER BY [user_id] DESC", constring);
-                SqlDataReader reader1;
-                reader1 = cmd.ExecuteReader();
-                if (reader1.Read())
+                constring.Open();
+
+                //Verify if username exists
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM [User] WHERE username ='" + employeeUsername + "'", constring);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                if (dt.Rows[0][0].ToString() == "0")
                 {
-                    employeeID = reader1.GetString(0);
-                    IDNum = int.Parse(string.Join("", employeeID.Where(Char.IsDigit))) + 1;
-                    employeeID = "U" + IDNum;
+                    //Add User to Database
+                    SqlCommand cmd = new SqlCommand("SELECT TOP 1 [user_id] FROM [User] ORDER BY [user_id] DESC", constring);
+                    SqlDataReader reader1;
+                    reader1 = cmd.ExecuteReader();
+                    if (reader1.Read())
+                    {
+                        employeeID = reader1.GetString(0);
+                        IDNum = int.Parse(string.Join("", employeeID.Where(Char.IsDigit))) + 1;
+                        employeeID = "U" + IDNum;
+                    }
+                    else
+                    {
+                        MessageBox.Show("NO DATA FOUND");
+                    }
+                    reader1.Close();
+                    cmd.Dispose();
+
+                    //Query for inserting
+                    String query = "INSERT INTO [User] VALUES('" + employeeID + "','" + employeeName + "','"
+                        + employeeUsername + "','" + employeePass + "','" + laundryPermission + "','"
+                        + schedPermission + "','" + sAndEPermission + "','" + inventoryPermission + "','" + customerPermission
+                        + "','" + userPermission + "','" + billingPermission + "',0);";
+
+                    SqlCommand cmd2 = new SqlCommand(query, constring);
+                    cmd2.CommandText = query;
+
+                    //If successful, add to activity log
+                    if (cmd2.ExecuteNonQuery() == 1)
+                    {
+                        constring.Close();
+                        logOperation("Added New User");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong. Please try again.");
+                        constring.Close();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("NO DATA FOUND");
-                }
-                reader1.Close();
-                cmd.Dispose();
-
-                //Query for inserting
-                String query = "INSERT INTO [User] VALUES('" + employeeID + "','" + employeeName + "','"
-                    + employeeUsername + "','" + employeePass + "','" + laundryPermission + "','"
-                    + schedPermission + "','" + sAndEPermission + "','" + inventoryPermission + "','" + customerPermission
-                    + "','" + userPermission + "','" + billingPermission + "',0);";
-
-                SqlCommand cmd2 = new SqlCommand(query, constring);
-                cmd2.CommandText = query;
-
-                //If successful, add to activity log
-                if (cmd2.ExecuteNonQuery() == 1)
-                {
-                    constring.Close();
-                    logOperation("Added New User");
-
-                }
-                else
-                {
-                    MessageBox.Show("Something went wrong. Please try again.");
+                    MessageBox.Show("Username already exists!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     constring.Close();
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Username already exists!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                constring.Close();
+                MessageBox.Show("Invalid input! Error: " + ex, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
         public bool loginUser()
@@ -150,30 +157,37 @@ namespace WashablesSystem.Classes
         }
         public void editUser(string userID)
         {
-            constring.Open();
-
-            this.employeeID = userID;
-
-            //Query for editing
-            String query = "UPDATE [User] SET user_fullname='" + employeeName + "',username='"
-                + employeeUsername + "',user_password='" + employeePass + "',laundry_access='" + laundryPermission
-                + "',schedule_access='" + schedPermission + "',sAndE_access='" + sAndEPermission
-                + "',inventory_access='" + inventoryPermission + "',customer_access='" + customerPermission
-                + "',user_access='" + userPermission + "',billing_access='" + billingPermission + "' WHERE user_id='" + employeeID + "';";
-
-            SqlCommand cmd2 = new SqlCommand(query, constring);
-            cmd2.CommandText = query;
-
-            //If successful, add to activity log
-            if (cmd2.ExecuteNonQuery() == 1)
+            try
             {
-                constring.Close();
-                logOperation("Edited User");
+                constring.Open();
+
+                this.employeeID = userID;
+
+                //Query for editing
+                String query = "UPDATE [User] SET user_fullname='" + employeeName + "',username='"
+                    + employeeUsername + "',user_password='" + employeePass + "',laundry_access='" + laundryPermission
+                    + "',schedule_access='" + schedPermission + "',sAndE_access='" + sAndEPermission
+                    + "',inventory_access='" + inventoryPermission + "',customer_access='" + customerPermission
+                    + "',user_access='" + userPermission + "',billing_access='" + billingPermission + "' WHERE user_id='" + employeeID + "';";
+
+                SqlCommand cmd2 = new SqlCommand(query, constring);
+                cmd2.CommandText = query;
+
+                //If successful, add to activity log
+                if (cmd2.ExecuteNonQuery() == 1)
+                {
+                    constring.Close();
+                    logOperation("Edited User");
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong. Please try again.");
+                    constring.Close();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Something went wrong. Please try again.");
-                constring.Close();
+                MessageBox.Show("Invalid input! Error: " + ex, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
         public DataTable displaySelectedUser(string userID)

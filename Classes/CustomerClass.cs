@@ -37,34 +37,78 @@ namespace WashablesSystem.Classes
         }
         public void addCustomer()
         {
-            constring.Open();
-
-            //Verify if Customername exists
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM [Customer] WHERE customer_id ='" + customerID + "'", constring);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            if (dt.Rows[0][0].ToString() == "0")
+            
+            try
             {
-                //Add User to Database
-                SqlCommand cmd = new SqlCommand("SELECT TOP 1 [customer_id] FROM [Customer] ORDER BY [customer_id] DESC", constring);
-                SqlDataReader reader1;
-                reader1 = cmd.ExecuteReader();
-                if (reader1.Read())
+                constring.Open();
+
+                //Verify if Customername exists
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM [Customer] WHERE customer_id ='" + customerID + "'", constring);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                if (dt.Rows[0][0].ToString() == "0")
                 {
-                    customerID = reader1.GetString(0);
-                    int IDNum = int.Parse(string.Join("", customerID.Where(Char.IsDigit))) + 1;
-                    customerID = "C" + IDNum;
+                    //Add User to Database
+                    SqlCommand cmd = new SqlCommand("SELECT TOP 1 [customer_id] FROM [Customer] ORDER BY [customer_id] DESC", constring);
+                    SqlDataReader reader1;
+                    reader1 = cmd.ExecuteReader();
+                    if (reader1.Read())
+                    {
+                        customerID = reader1.GetString(0);
+                        int IDNum = int.Parse(string.Join("", customerID.Where(Char.IsDigit))) + 1;
+                        customerID = "C" + IDNum;
+                    }
+                    else
+                    {
+                        MessageBox.Show("NO DATA FOUND");
+                    }
+                    reader1.Close();
+                    cmd.Dispose();
+
+                    //Query for inserting
+                    String query = "INSERT INTO [Customer] VALUES('" + customerID + "','" + customerName + "','"
+                        + customerEmail + "','" + customerPhone + "','" + customerAddress + "',0)";
+
+                    SqlCommand cmd2 = new SqlCommand(query, constring);
+                    cmd2.CommandText = query;
+
+                    //If successful, add to activity log
+                    if (cmd2.ExecuteNonQuery() == 1)
+                    {
+                        constring.Close();
+                        logOperation("Added New Customer");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong. Please try again.");
+                        constring.Close();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("NO DATA FOUND");
+                    MessageBox.Show("Username already exists!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    constring.Close();
                 }
-                reader1.Close();
-                cmd.Dispose();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Invalid input! Error: " + ex, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
 
-                //Query for inserting
-                String query = "INSERT INTO [Customer] VALUES('" + customerID + "','" + customerName + "','"
-                    + customerEmail + "','" + customerPhone + "','" + customerAddress + "',0)";
+        }
+        public void editCustomer(string customerID)
+        {
+            try
+            {
+                constring.Open();
+
+                this.customerID = customerID;
+
+                //Query for editing
+                String query = "UPDATE [Customer] SET customer_name='" + customerName + "',customer_email='"
+                    + customerEmail + "',customer_phone='" + customerPhone + "',customer_address='" + customerAddress +
+                      "' WHERE customer_id='" + customerID + "';";
 
                 SqlCommand cmd2 = new SqlCommand(query, constring);
                 cmd2.CommandText = query;
@@ -73,8 +117,7 @@ namespace WashablesSystem.Classes
                 if (cmd2.ExecuteNonQuery() == 1)
                 {
                     constring.Close();
-                    logOperation("Added New Customer");
-
+                    logOperation("Edited Customer");
                 }
                 else
                 {
@@ -82,37 +125,9 @@ namespace WashablesSystem.Classes
                     constring.Close();
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Username already exists!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                constring.Close();
-            }
-
-        }
-        public void editCustomer(string customerID)
-        {
-            constring.Open();
-
-            this.customerID = customerID;
-
-            //Query for editing
-            String query = "UPDATE [Customer] SET customer_name='" + customerName + "',customer_email='"
-                + customerEmail + "',customer_phone='" + customerPhone + "',customer_address='" + customerAddress +
-                  "' WHERE customer_id='" + customerID + "';";
-
-            SqlCommand cmd2 = new SqlCommand(query, constring);
-            cmd2.CommandText = query;
-
-            //If successful, add to activity log
-            if (cmd2.ExecuteNonQuery() == 1)
-            {
-                constring.Close();
-                logOperation("Edited Customer");
-            }
-            else
-            {
-                MessageBox.Show("Something went wrong. Please try again.");
-                constring.Close();
+                MessageBox.Show("Invalid input! Error: " + ex, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
         public DataTable displaySelectedCustomer(string customerID)

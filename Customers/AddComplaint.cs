@@ -26,10 +26,17 @@ namespace WashablesSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ComplaintsClass complaintsClass = new ComplaintsClass(cbCustomerName.SelectedValue.ToString(), cbIssue.Text, DateTime.Parse(dateComplained.Text));
-            complaintsClass.addComplaint();
-            _parentForm.RefreshPanel();
-            this.Close();
+            try
+            {
+                ComplaintsClass complaintsClass = new ComplaintsClass(cbCustomerName.SelectedValue.ToString(), cbIssue.Text, DateTime.Parse(dateComplained.Text));
+                complaintsClass.addComplaint();
+                _parentForm.RefreshPanel();
+                this.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Invalid input!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void AddComplaint_Load(object sender, EventArgs e)

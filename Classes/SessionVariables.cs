@@ -15,6 +15,8 @@ namespace WashablesSystem
         private static decimal _downpaymentRate;
         private static decimal _balanceDueRate;
         private static bool _allRead;
+        private static bool _notified1 = false;
+        private static bool _notified2 = false;
 
         public SessionVariables()
         {
@@ -66,6 +68,16 @@ namespace WashablesSystem
         {
             get { return _balanceDueRate; }
             set { _balanceDueRate = value; }
+        }
+        public bool notified1
+        {
+            get { return _notified1; }
+            set { _notified1 = value; }
+        }
+        public bool notified2
+        {
+            get { return _notified2; }
+            set { _notified2 = value; }
         }
     }
 }

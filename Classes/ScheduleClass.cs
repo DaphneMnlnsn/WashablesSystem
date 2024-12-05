@@ -101,268 +101,296 @@ namespace WashablesSystem.Classes
         }
         public void addLaundry()
         {
-            constring.Open();
-
-            //Add Item to Database
-            SqlCommand cmd = new SqlCommand("SELECT TOP 1 [order_id] FROM [Order] ORDER BY [order_id] DESC", constring);
-            SqlDataReader reader1;
-            reader1 = cmd.ExecuteReader();
-            if (reader1.Read())
+            try
             {
-                orderID = reader1.GetString(0);
-                int num = int.Parse(string.Join("", orderID.Where(Char.IsDigit))) + 1;
-                orderID = "OR" + num;
-            }
-            else
-            {
-                orderID = "OR1";
-            }
-            reader1.Close();
-            cmd.Dispose();
+                constring.Open();
 
-            //Query for inserting
-            string query = @"INSERT INTO [Order] VALUES(@orderID, @customerID, @serviceID1, @serviceID2, @serviceID3, null, null, null," +
-                "@washTime, @dryTime, @ironTime, @weight1, @weight2, @weight3, @status, @timeScheduled, null, null, null, @pickupDate, @item1, @item2, @item3,"
-                + "@itemQuan1, @itemQuan2, @itemQuan3, null)";
-
-            using (SqlCommand cmd2 = new SqlCommand(query, constring))
-            {
-                // Add parameters
-                cmd2.Parameters.AddWithValue("@orderID", orderID);
-                cmd2.Parameters.AddWithValue("@customerID", customerID);
-                cmd2.Parameters.AddWithValue("@serviceId1", serviceID1);
-                cmd2.Parameters.AddWithValue("@serviceId2", serviceID2 ?? (object)DBNull.Value);
-                cmd2.Parameters.AddWithValue("@serviceId3", serviceID3 ?? (object)DBNull.Value);
-                cmd2.Parameters.AddWithValue("@washTime", washTime.ToString());
-                cmd2.Parameters.AddWithValue("@dryTime", dryTime.ToString());
-                cmd2.Parameters.AddWithValue("@ironTime", ironTime.ToString());
-                cmd2.Parameters.AddWithValue("@weight1", weight1);
-                cmd2.Parameters.AddWithValue("@weight2", weight2);
-                cmd2.Parameters.AddWithValue("@weight3", weight3);
-                cmd2.Parameters.AddWithValue("@status", status);
-                cmd2.Parameters.AddWithValue("@timeScheduled", timeScheduled);
-                cmd2.Parameters.AddWithValue("@pickupDate", pickupDate);
-                cmd2.Parameters.AddWithValue("@item1", item1);
-                cmd2.Parameters.AddWithValue("@item2", item2 ?? (object)DBNull.Value);
-                cmd2.Parameters.AddWithValue("@item3", item3 ?? (object)DBNull.Value);
-                cmd2.Parameters.AddWithValue("@itemQuan1", itemQuan1);
-                cmd2.Parameters.AddWithValue("@itemQuan2", itemQuan2);
-                cmd2.Parameters.AddWithValue("@itemQuan3", itemQuan3);
-
-                //If successful, add to activity log and generate bill
-                if (cmd2.ExecuteNonQuery() == 1)
+                //Add Item to Database
+                SqlCommand cmd = new SqlCommand("SELECT TOP 1 [order_id] FROM [Order] ORDER BY [order_id] DESC", constring);
+                SqlDataReader reader1;
+                reader1 = cmd.ExecuteReader();
+                if (reader1.Read())
                 {
-                    constring.Close();
-                    PaymentClass paymentClass = new PaymentClass();
-                    paymentClass.addBill(orderID);
-                    BatchClass batchClass = new BatchClass(orderID, status);
-                    batchClass.batchLaundry();
-                    logOperation("Added New Laundry");
+                    orderID = reader1.GetString(0);
+                    int num = int.Parse(string.Join("", orderID.Where(Char.IsDigit))) + 1;
+                    orderID = "OR" + num;
                 }
                 else
                 {
-                    MessageBox.Show("Something went wrong. Please try again.");
-                    constring.Close();
+                    orderID = "OR1";
                 }
+                reader1.Close();
+                cmd.Dispose();
+
+                //Query for inserting
+                string query = @"INSERT INTO [Order] VALUES(@orderID, @customerID, @serviceID1, @serviceID2, @serviceID3, null, null, null," +
+                    "@washTime, @dryTime, @ironTime, @weight1, @weight2, @weight3, @status, @timeScheduled, null, null, null, @pickupDate, @item1, @item2, @item3,"
+                    + "@itemQuan1, @itemQuan2, @itemQuan3, null)";
+
+                using (SqlCommand cmd2 = new SqlCommand(query, constring))
+                {
+                    // Add parameters
+                    cmd2.Parameters.AddWithValue("@orderID", orderID);
+                    cmd2.Parameters.AddWithValue("@customerID", customerID);
+                    cmd2.Parameters.AddWithValue("@serviceId1", serviceID1);
+                    cmd2.Parameters.AddWithValue("@serviceId2", serviceID2 ?? (object)DBNull.Value);
+                    cmd2.Parameters.AddWithValue("@serviceId3", serviceID3 ?? (object)DBNull.Value);
+                    cmd2.Parameters.AddWithValue("@washTime", washTime.ToString());
+                    cmd2.Parameters.AddWithValue("@dryTime", dryTime.ToString());
+                    cmd2.Parameters.AddWithValue("@ironTime", ironTime.ToString());
+                    cmd2.Parameters.AddWithValue("@weight1", weight1);
+                    cmd2.Parameters.AddWithValue("@weight2", weight2);
+                    cmd2.Parameters.AddWithValue("@weight3", weight3);
+                    cmd2.Parameters.AddWithValue("@status", status);
+                    cmd2.Parameters.AddWithValue("@timeScheduled", timeScheduled);
+                    cmd2.Parameters.AddWithValue("@pickupDate", pickupDate);
+                    cmd2.Parameters.AddWithValue("@item1", item1);
+                    cmd2.Parameters.AddWithValue("@item2", item2 ?? (object)DBNull.Value);
+                    cmd2.Parameters.AddWithValue("@item3", item3 ?? (object)DBNull.Value);
+                    cmd2.Parameters.AddWithValue("@itemQuan1", itemQuan1);
+                    cmd2.Parameters.AddWithValue("@itemQuan2", itemQuan2);
+                    cmd2.Parameters.AddWithValue("@itemQuan3", itemQuan3);
+
+                    //If successful, add to activity log and generate bill
+                    if (cmd2.ExecuteNonQuery() == 1)
+                    {
+                        constring.Close();
+                        PaymentClass paymentClass = new PaymentClass();
+                        paymentClass.addBill(orderID);
+                        BatchClass batchClass = new BatchClass(orderID, status);
+                        batchClass.batchLaundry();
+                        logOperation("Added New Laundry");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong. Please try again.");
+                        constring.Close();
+                    }
+                }
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("Invalid input! Error: " + ex, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
         public void addLaundry(string specificUnit, string machineType)
         {
-            constring.Open();
-
-            //Add Item to Database
-            SqlCommand cmd = new SqlCommand("SELECT TOP 1 [order_id] FROM [Order] ORDER BY [order_id] DESC", constring);
-            SqlDataReader reader1;
-            reader1 = cmd.ExecuteReader();
-            if (reader1.Read())
+            try
             {
-                orderID = reader1.GetString(0);
-                int num = int.Parse(string.Join("", orderID.Where(Char.IsDigit))) + 1;
-                orderID = "OR" + num;
-            }
-            else
-            {
-                orderID = "OR1";
-            }
-            reader1.Close();
-            cmd.Dispose();
+                constring.Open();
 
-            //Query for inserting
-            string query = @"INSERT INTO [Order] VALUES(@orderID, @customerID, @serviceID1, @serviceID2, @serviceID3, null, null, null," +
-                "@washTime, @dryTime, @ironTime, @weight1, @weight2, @weight3, @status, @timeScheduled, null, null, null, @pickupDate, @item1, @item2, @item3,"
-                + "@itemQuan1, @itemQuan2, @itemQuan3, null)";
-
-            using (SqlCommand cmd2 = new SqlCommand(query, constring))
-            {
-                // Add parameters
-                cmd2.Parameters.AddWithValue("@orderID", orderID);
-                cmd2.Parameters.AddWithValue("@customerID", customerID);
-                cmd2.Parameters.AddWithValue("@serviceId1", serviceID1);
-                cmd2.Parameters.AddWithValue("@serviceId2", serviceID2 ?? (object)DBNull.Value);
-                cmd2.Parameters.AddWithValue("@serviceId3", serviceID3 ?? (object)DBNull.Value);
-                cmd2.Parameters.AddWithValue("@washTime", washTime.ToString());
-                cmd2.Parameters.AddWithValue("@dryTime", dryTime.ToString());
-                cmd2.Parameters.AddWithValue("@ironTime", ironTime.ToString());
-                cmd2.Parameters.AddWithValue("@weight1", weight1);
-                cmd2.Parameters.AddWithValue("@weight2", weight2);
-                cmd2.Parameters.AddWithValue("@weight3", weight3);
-                if (serviceCategory.Equals("Wash-Dry-Fold") || serviceCategory.Equals("Wash-Dry-Press"))
+                //Add Item to Database
+                SqlCommand cmd = new SqlCommand("SELECT TOP 1 [order_id] FROM [Order] ORDER BY [order_id] DESC", constring);
+                SqlDataReader reader1;
+                reader1 = cmd.ExecuteReader();
+                if (reader1.Read())
                 {
-                    cmd2.Parameters.AddWithValue("@status", "Wash In-Progress");
+                    orderID = reader1.GetString(0);
+                    int num = int.Parse(string.Join("", orderID.Where(Char.IsDigit))) + 1;
+                    orderID = "OR" + num;
                 }
                 else
                 {
-                    cmd2.Parameters.AddWithValue("@status", "Dry In-Progress");
+                    orderID = "OR1";
                 }
-                cmd2.Parameters.AddWithValue("@timeScheduled", timeScheduled);
-                cmd2.Parameters.AddWithValue("@pickupDate", pickupDate);
-                cmd2.Parameters.AddWithValue("@item1", item1);
-                cmd2.Parameters.AddWithValue("@item2", item2 ?? (object)DBNull.Value);
-                cmd2.Parameters.AddWithValue("@item3", item3 ?? (object)DBNull.Value);
-                cmd2.Parameters.AddWithValue("@itemQuan1", itemQuan1);
-                cmd2.Parameters.AddWithValue("@itemQuan2", itemQuan2);
-                cmd2.Parameters.AddWithValue("@itemQuan3", itemQuan3);
+                reader1.Close();
+                cmd.Dispose();
 
-                //If successful, add to activity log and generate bill
-                if (cmd2.ExecuteNonQuery() == 1)
+                //Query for inserting
+                string query = @"INSERT INTO [Order] VALUES(@orderID, @customerID, @serviceID1, @serviceID2, @serviceID3, null, null, null," +
+                    "@washTime, @dryTime, @ironTime, @weight1, @weight2, @weight3, @status, @timeScheduled, null, null, null, @pickupDate, @item1, @item2, @item3,"
+                    + "@itemQuan1, @itemQuan2, @itemQuan3, null)";
+
+                using (SqlCommand cmd2 = new SqlCommand(query, constring))
                 {
-                    cmd2.Dispose();
-                    constring.Close();
-                    PaymentClass paymentClass = new PaymentClass();
-
-                    paymentClass.addBill(orderID);
-                    BatchClass batchClass = new BatchClass(orderID, status);
-                    batchClass.batchLaundry();
-                    logOperation("Added New Laundry");
-
-                    constring.Open();
-                    string batchToStart = "";
-                    SqlCommand cmd3 = new SqlCommand("SELECT TOP 1 [batch_id] FROM [OrderBatch] WHERE [order_id] = '" + orderID + "' ORDER BY [batch_id] ASC", constring);
-                    SqlDataReader reader2;
-                    reader2 = cmd3.ExecuteReader();
-                    if (reader2.Read())
+                    // Add parameters
+                    cmd2.Parameters.AddWithValue("@orderID", orderID);
+                    cmd2.Parameters.AddWithValue("@customerID", customerID);
+                    cmd2.Parameters.AddWithValue("@serviceId1", serviceID1);
+                    cmd2.Parameters.AddWithValue("@serviceId2", serviceID2 ?? (object)DBNull.Value);
+                    cmd2.Parameters.AddWithValue("@serviceId3", serviceID3 ?? (object)DBNull.Value);
+                    cmd2.Parameters.AddWithValue("@washTime", washTime.ToString());
+                    cmd2.Parameters.AddWithValue("@dryTime", dryTime.ToString());
+                    cmd2.Parameters.AddWithValue("@ironTime", ironTime.ToString());
+                    cmd2.Parameters.AddWithValue("@weight1", weight1);
+                    cmd2.Parameters.AddWithValue("@weight2", weight2);
+                    cmd2.Parameters.AddWithValue("@weight3", weight3);
+                    if (serviceCategory.Equals("Wash-Dry-Fold") || serviceCategory.Equals("Wash-Dry-Press"))
                     {
-                        batchToStart = reader2.GetString(0);
+                        cmd2.Parameters.AddWithValue("@status", "Wash In-Progress");
                     }
                     else
                     {
+                        cmd2.Parameters.AddWithValue("@status", "Dry In-Progress");
+                    }
+                    cmd2.Parameters.AddWithValue("@timeScheduled", timeScheduled);
+                    cmd2.Parameters.AddWithValue("@pickupDate", pickupDate);
+                    cmd2.Parameters.AddWithValue("@item1", item1);
+                    cmd2.Parameters.AddWithValue("@item2", item2 ?? (object)DBNull.Value);
+                    cmd2.Parameters.AddWithValue("@item3", item3 ?? (object)DBNull.Value);
+                    cmd2.Parameters.AddWithValue("@itemQuan1", itemQuan1);
+                    cmd2.Parameters.AddWithValue("@itemQuan2", itemQuan2);
+                    cmd2.Parameters.AddWithValue("@itemQuan3", itemQuan3);
+
+                    //If successful, add to activity log and generate bill
+                    if (cmd2.ExecuteNonQuery() == 1)
+                    {
+                        cmd2.Dispose();
+                        constring.Close();
+                        PaymentClass paymentClass = new PaymentClass();
+
+                        paymentClass.addBill(orderID);
+                        BatchClass batchClass = new BatchClass(orderID, status);
+                        batchClass.batchLaundry();
+                        logOperation("Added New Laundry");
+
+                        constring.Open();
+                        string batchToStart = "";
+                        SqlCommand cmd3 = new SqlCommand("SELECT TOP 1 [batch_id] FROM [OrderBatch] WHERE [order_id] = '" + orderID + "' ORDER BY [batch_id] ASC", constring);
+                        SqlDataReader reader2;
+                        reader2 = cmd3.ExecuteReader();
+                        if (reader2.Read())
+                        {
+                            batchToStart = reader2.GetString(0);
+                        }
+                        else
+                        {
+
+                        }
+                        reader2.Close();
+                        cmd3.Dispose();
+                        constring.Close();
+                        startSchedule(batchToStart, specificUnit);
 
                     }
-                    reader2.Close();
-                    cmd3.Dispose();
-                    constring.Close();
-                    startSchedule(batchToStart, specificUnit);
-
+                    else
+                    {
+                        MessageBox.Show("Something went wrong. Please try again.");
+                        constring.Close();
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Something went wrong. Please try again.");
-                    constring.Close();
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid input! Error: " + ex, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
         public void addFreeWash()
         {
-            constring.Open();
-
-            //Add Item to Database
-            SqlCommand cmd = new SqlCommand("SELECT TOP 1 [order_id] FROM [Order] ORDER BY [order_id] DESC", constring);
-            SqlDataReader reader1;
-            reader1 = cmd.ExecuteReader();
-            if (reader1.Read())
+            try
             {
-                orderID = reader1.GetString(0);
-                int num = int.Parse(string.Join("", orderID.Where(Char.IsDigit))) + 1;
-                orderID = "OR" + num;
-            }
-            else
-            {
-                orderID = "OR1";
-            }
-            reader1.Close();
-            cmd.Dispose();
+                constring.Open();
 
-            //Query for inserting
-            string query = @"INSERT INTO [Order] VALUES(@orderID, @customerID, @serviceID1, @serviceID2, @serviceID3, null, null, null," +
-                "@washTime, @dryTime, @ironTime, @weight1, @weight2, @weight3, @status, @timeScheduled, null, null, null, @pickupDate, @item1, @item2, @item3,"
-                + "@itemQuan1, @itemQuan2, @itemQuan3, null)";
-
-            using (SqlCommand cmd2 = new SqlCommand(query, constring))
-            {
-                // Add parameters
-                cmd2.Parameters.AddWithValue("@orderID", orderID);
-                cmd2.Parameters.AddWithValue("@customerID", customerID);
-                cmd2.Parameters.AddWithValue("@serviceId1", serviceID1);
-                cmd2.Parameters.AddWithValue("@serviceId2", serviceID2 ?? (object)DBNull.Value);
-                cmd2.Parameters.AddWithValue("@serviceId3", serviceID3 ?? (object)DBNull.Value);
-                cmd2.Parameters.AddWithValue("@washTime", washTime.ToString());
-                cmd2.Parameters.AddWithValue("@dryTime", dryTime.ToString());
-                cmd2.Parameters.AddWithValue("@ironTime", ironTime.ToString());
-                cmd2.Parameters.AddWithValue("@weight1", weight1);
-                cmd2.Parameters.AddWithValue("@weight2", weight2);
-                cmd2.Parameters.AddWithValue("@weight3", weight3);
-                cmd2.Parameters.AddWithValue("@status", status);
-                cmd2.Parameters.AddWithValue("@timeScheduled", timeScheduled);
-                cmd2.Parameters.AddWithValue("@pickupDate", pickupDate);
-                cmd2.Parameters.AddWithValue("@item1", item1);
-                cmd2.Parameters.AddWithValue("@item2", item2 ?? (object)DBNull.Value);
-                cmd2.Parameters.AddWithValue("@item3", item3 ?? (object)DBNull.Value);
-                cmd2.Parameters.AddWithValue("@itemQuan1", itemQuan1);
-                cmd2.Parameters.AddWithValue("@itemQuan2", itemQuan2);
-                cmd2.Parameters.AddWithValue("@itemQuan3", itemQuan3);
-
-                //If successful, add to activity log and generate bill
-                if (cmd2.ExecuteNonQuery() == 1)
+                //Add Item to Database
+                SqlCommand cmd = new SqlCommand("SELECT TOP 1 [order_id] FROM [Order] ORDER BY [order_id] DESC", constring);
+                SqlDataReader reader1;
+                reader1 = cmd.ExecuteReader();
+                if (reader1.Read())
                 {
-                    constring.Close();
-                    PaymentClass paymentClass = new PaymentClass();
-                    paymentClass.addFreeBill(orderID);
-                    BatchClass batchClass = new BatchClass(orderID, status);
-                    batchClass.batchLaundry();
-                    logOperation("Added Free Laundry");
+                    orderID = reader1.GetString(0);
+                    int num = int.Parse(string.Join("", orderID.Where(Char.IsDigit))) + 1;
+                    orderID = "OR" + num;
                 }
                 else
                 {
-                    MessageBox.Show("Something went wrong. Please try again.");
-                    constring.Close();
+                    orderID = "OR1";
                 }
+                reader1.Close();
+                cmd.Dispose();
+
+                //Query for inserting
+                string query = @"INSERT INTO [Order] VALUES(@orderID, @customerID, @serviceID1, @serviceID2, @serviceID3, null, null, null," +
+                    "@washTime, @dryTime, @ironTime, @weight1, @weight2, @weight3, @status, @timeScheduled, null, null, null, @pickupDate, @item1, @item2, @item3,"
+                    + "@itemQuan1, @itemQuan2, @itemQuan3, null)";
+
+                using (SqlCommand cmd2 = new SqlCommand(query, constring))
+                {
+                    // Add parameters
+                    cmd2.Parameters.AddWithValue("@orderID", orderID);
+                    cmd2.Parameters.AddWithValue("@customerID", customerID);
+                    cmd2.Parameters.AddWithValue("@serviceId1", serviceID1);
+                    cmd2.Parameters.AddWithValue("@serviceId2", serviceID2 ?? (object)DBNull.Value);
+                    cmd2.Parameters.AddWithValue("@serviceId3", serviceID3 ?? (object)DBNull.Value);
+                    cmd2.Parameters.AddWithValue("@washTime", washTime.ToString());
+                    cmd2.Parameters.AddWithValue("@dryTime", dryTime.ToString());
+                    cmd2.Parameters.AddWithValue("@ironTime", ironTime.ToString());
+                    cmd2.Parameters.AddWithValue("@weight1", weight1);
+                    cmd2.Parameters.AddWithValue("@weight2", weight2);
+                    cmd2.Parameters.AddWithValue("@weight3", weight3);
+                    cmd2.Parameters.AddWithValue("@status", status);
+                    cmd2.Parameters.AddWithValue("@timeScheduled", timeScheduled);
+                    cmd2.Parameters.AddWithValue("@pickupDate", pickupDate);
+                    cmd2.Parameters.AddWithValue("@item1", item1);
+                    cmd2.Parameters.AddWithValue("@item2", item2 ?? (object)DBNull.Value);
+                    cmd2.Parameters.AddWithValue("@item3", item3 ?? (object)DBNull.Value);
+                    cmd2.Parameters.AddWithValue("@itemQuan1", itemQuan1);
+                    cmd2.Parameters.AddWithValue("@itemQuan2", itemQuan2);
+                    cmd2.Parameters.AddWithValue("@itemQuan3", itemQuan3);
+
+                    //If successful, add to activity log and generate bill
+                    if (cmd2.ExecuteNonQuery() == 1)
+                    {
+                        constring.Close();
+                        PaymentClass paymentClass = new PaymentClass();
+                        paymentClass.addFreeBill(orderID);
+                        BatchClass batchClass = new BatchClass(orderID, status);
+                        batchClass.batchLaundry();
+                        logOperation("Added Free Laundry");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong. Please try again.");
+                        constring.Close();
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Invalid input! Error: " + ex, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
         public void editSchedule(string orderID)
         {
-            constring.Open();
+            try
+            {
+                constring.Open();
 
-            this.orderID = orderID;
+                this.orderID = orderID;
 
-            string query = @"UPDATE [Order] SET pickup_date = @pickupDate, item_id = @item1, item_id2 = @item2, item_id3 = @item3,
+                string query = @"UPDATE [Order] SET pickup_date = @pickupDate, item_id = @item1, item_id2 = @item2, item_id3 = @item3,
                             item1_quantity = @itemQuan1, item2_quantity = @itemQuan2, item3_quantity = @itemQuan3, wash_time = @washTime,
                             dry_time = @dryTime, iron_time = @ironTime WHERE order_id = '" + orderID + "'";
 
-            using (SqlCommand cmd2 = new SqlCommand(query, constring))
-            {
-                // Add parameters
-                cmd2.Parameters.AddWithValue("@washTime", washTime.ToString());
-                cmd2.Parameters.AddWithValue("@dryTime", dryTime.ToString());
-                cmd2.Parameters.AddWithValue("@ironTime", ironTime.ToString());
-                cmd2.Parameters.AddWithValue("@pickupDate", pickupDate);
-                cmd2.Parameters.AddWithValue("@item1", item1);
-                cmd2.Parameters.AddWithValue("@item2", item2 ?? (object)DBNull.Value);
-                cmd2.Parameters.AddWithValue("@item3", item3 ?? (object)DBNull.Value);
-                cmd2.Parameters.AddWithValue("@itemQuan1", itemQuan1);
-                cmd2.Parameters.AddWithValue("@itemQuan2", itemQuan2);
-                cmd2.Parameters.AddWithValue("@itemQuan3", itemQuan3);
+                using (SqlCommand cmd2 = new SqlCommand(query, constring))
+                {
+                    // Add parameters
+                    cmd2.Parameters.AddWithValue("@washTime", washTime.ToString());
+                    cmd2.Parameters.AddWithValue("@dryTime", dryTime.ToString());
+                    cmd2.Parameters.AddWithValue("@ironTime", ironTime.ToString());
+                    cmd2.Parameters.AddWithValue("@pickupDate", pickupDate);
+                    cmd2.Parameters.AddWithValue("@item1", item1);
+                    cmd2.Parameters.AddWithValue("@item2", item2 ?? (object)DBNull.Value);
+                    cmd2.Parameters.AddWithValue("@item3", item3 ?? (object)DBNull.Value);
+                    cmd2.Parameters.AddWithValue("@itemQuan1", itemQuan1);
+                    cmd2.Parameters.AddWithValue("@itemQuan2", itemQuan2);
+                    cmd2.Parameters.AddWithValue("@itemQuan3", itemQuan3);
 
-                //If successful, add to activity log and generate bill
-                if (cmd2.ExecuteNonQuery() == 1)
-                {
-                    constring.Close();
-                    logOperation("Edited Laundry");
+                    //If successful, add to activity log and generate bill
+                    if (cmd2.ExecuteNonQuery() == 1)
+                    {
+                        constring.Close();
+                        logOperation("Edited Laundry");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong. Please try again.");
+                        constring.Close();
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Something went wrong. Please try again.");
-                    constring.Close();
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid input! Error: " + ex, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
         public void markPickUp(string orderID)

@@ -51,7 +51,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(179, 298);
+            this.btnCancel.Location = new System.Drawing.Point(197, 298);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(116, 29);
@@ -72,7 +72,7 @@
             this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStart.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStart.ForeColor = System.Drawing.Color.White;
-            this.btnStart.Location = new System.Drawing.Point(59, 298);
+            this.btnStart.Location = new System.Drawing.Point(77, 298);
             this.btnStart.Margin = new System.Windows.Forms.Padding(2);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(116, 29);
@@ -117,16 +117,16 @@
             this.label1.Location = new System.Drawing.Point(16, 34);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(330, 21);
+            this.label1.Size = new System.Drawing.Size(378, 21);
             this.label1.TabIndex = 205;
-            this.label1.Text = "________________________________________";
+            this.label1.Text = "______________________________________________";
             // 
             // unitPanel
             // 
             this.unitPanel.AutoScroll = true;
             this.unitPanel.Location = new System.Drawing.Point(20, 98);
             this.unitPanel.Name = "unitPanel";
-            this.unitPanel.Size = new System.Drawing.Size(326, 114);
+            this.unitPanel.Size = new System.Drawing.Size(371, 114);
             this.unitPanel.TabIndex = 207;
             // 
             // lblStartTime
@@ -135,7 +135,7 @@
             this.lblStartTime.AutoSize = true;
             this.lblStartTime.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lblStartTime.ForeColor = System.Drawing.Color.Black;
-            this.lblStartTime.Location = new System.Drawing.Point(176, 226);
+            this.lblStartTime.Location = new System.Drawing.Point(203, 226);
             this.lblStartTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStartTime.Name = "lblStartTime";
             this.lblStartTime.Size = new System.Drawing.Size(88, 19);
@@ -148,7 +148,7 @@
             this.lblEndTime.AutoSize = true;
             this.lblEndTime.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lblEndTime.ForeColor = System.Drawing.Color.Black;
-            this.lblEndTime.Location = new System.Drawing.Point(176, 251);
+            this.lblEndTime.Location = new System.Drawing.Point(203, 251);
             this.lblEndTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEndTime.Name = "lblEndTime";
             this.lblEndTime.Size = new System.Drawing.Size(88, 19);
@@ -161,7 +161,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Berlin Sans FB", 11F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.label4.Location = new System.Drawing.Point(85, 226);
+            this.label4.Location = new System.Drawing.Point(112, 226);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 17);
@@ -174,7 +174,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Berlin Sans FB", 11F);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.label5.Location = new System.Drawing.Point(85, 253);
+            this.label5.Location = new System.Drawing.Point(112, 253);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 17);
@@ -185,7 +185,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(363, 357);
+            this.ClientSize = new System.Drawing.Size(416, 357);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblEndTime);

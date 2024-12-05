@@ -16,6 +16,12 @@ namespace WashablesSystem
     {
         bool specificUnit;
         string unitSelected;
+        LaundryOperations _parentForm;
+        public AddLaundry(LaundryOperations parentForm)
+        {
+            InitializeComponent();
+            _parentForm = parentForm;
+        }
         public AddLaundry()
         {
             InitializeComponent();
@@ -32,110 +38,118 @@ namespace WashablesSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            /// collect details
-            string unit = txtBoxUnit.Text;
-            string serviceCategory = cbService.Text;
+            try
+            {
+                /// collect details
+                string unit = txtBoxUnit.Text;
+                string serviceCategory = cbService.Text;
 
-            string service = btnService.Text;
-            string service1 = "", service2 = "", service3 = "";
-            string input = service;
-            char[] separators = new char[] { '|' };
-            string[] types = input.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-            if (types.Length == 1)
-            {
-                service1 = types[0];
-            }
-            else if (types.Length == 2)
-            {
-                service1 = types[0];
-                service2 = types[1];
-            }
-            else if (types.Length == 3)
-            {
-                service1 = types[0];
-                service2 = types[1];
-                service3 = types[2];
-            }
+                string service = btnService.Text;
+                string service1 = "", service2 = "", service3 = "";
+                string input = service;
+                char[] separators = new char[] { '|' };
+                string[] types = input.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+                if (types.Length == 1)
+                {
+                    service1 = types[0];
+                }
+                else if (types.Length == 2)
+                {
+                    service1 = types[0];
+                    service2 = types[1];
+                }
+                else if (types.Length == 3)
+                {
+                    service1 = types[0];
+                    service2 = types[1];
+                    service3 = types[2];
+                }
 
-            string custID = cbCust.SelectedValue.ToString();
-            string weight = txtWeight.Text;
-            string weight2 = txtWeight2.Text;
-            string weight3 = txtWeight3.Text;
+                string custID = cbCust.SelectedValue.ToString();
+                string weight = txtWeight.Text;
+                string weight2 = txtWeight2.Text;
+                string weight3 = txtWeight3.Text;
 
-            DateTime pickUp = DateTime.Parse(pickupDate.Text);
-            string item1 = cbItem1.SelectedValue.ToString();
-            string item2 = cbItem2.SelectedValue.ToString();
-            string item3 = cbItem3.SelectedValue.ToString();
+                DateTime pickUp = DateTime.Parse(pickupDate.Text);
+                string item1 = cbItem1.SelectedValue.ToString();
+                string item2 = cbItem2.SelectedValue.ToString();
+                string item3 = cbItem3.SelectedValue.ToString();
 
-            string itemQuan1 = quantity1.Text;
-            string itemQuan2 = quantity2.Text;
-            string itemQuan3 = quantity3.Text;
+                string itemQuan1 = quantity1.Text;
+                string itemQuan2 = quantity2.Text;
+                string itemQuan3 = quantity3.Text;
 
-            TimeSpan washTime = TimeSpan.Zero;
-            if (timeWashing30.Checked)
-            {
-                washTime = TimeSpan.FromMinutes(30);
-            }
-            else if (timeWashing1.Checked)
-            {
-                washTime = TimeSpan.FromMinutes(60);
-            }
-            else if (timeWashingCustomMin.Checked)
-            {
-                washTime = TimeSpan.FromMinutes(double.Parse(txtWashOtherMin.Text));
-            }
-            else if (timeWashingCustomHr.Checked)
-            {
-                washTime = TimeSpan.FromHours(double.Parse(txtWashOtherHour.Text));
-            }
+                TimeSpan washTime = TimeSpan.Zero;
+                if (timeWashing30.Checked)
+                {
+                    washTime = TimeSpan.FromMinutes(30);
+                }
+                else if (timeWashing1.Checked)
+                {
+                    washTime = TimeSpan.FromMinutes(60);
+                }
+                else if (timeWashingCustomMin.Checked)
+                {
+                    washTime = TimeSpan.FromMinutes(double.Parse(txtWashOtherMin.Text));
+                }
+                else if (timeWashingCustomHr.Checked)
+                {
+                    washTime = TimeSpan.FromHours(double.Parse(txtWashOtherHour.Text));
+                }
 
-            TimeSpan dryTime = TimeSpan.Zero;
-            if (timeDryer30.Checked)
-            {
-                dryTime = TimeSpan.FromMinutes(30);
-            }
-            else if (timeDryer1.Checked)
-            {
-                dryTime = TimeSpan.FromMinutes(60);
-            }
-            else if (timeDryerCustomMin.Checked)
-            {
-                dryTime = TimeSpan.FromMinutes(double.Parse(txtDryOtherMin.Text));
-            }
-            else if (timeDryerCustomHr.Checked)
-            {
-                dryTime = TimeSpan.FromHours(double.Parse(txtDryOtherHour.Text));
-            }
+                TimeSpan dryTime = TimeSpan.Zero;
+                if (timeDryer30.Checked)
+                {
+                    dryTime = TimeSpan.FromMinutes(30);
+                }
+                else if (timeDryer1.Checked)
+                {
+                    dryTime = TimeSpan.FromMinutes(60);
+                }
+                else if (timeDryerCustomMin.Checked)
+                {
+                    dryTime = TimeSpan.FromMinutes(double.Parse(txtDryOtherMin.Text));
+                }
+                else if (timeDryerCustomHr.Checked)
+                {
+                    dryTime = TimeSpan.FromHours(double.Parse(txtDryOtherHour.Text));
+                }
 
-            TimeSpan ironTime = TimeSpan.Zero;
-            if (timeIron30.Checked)
-            {
-                ironTime = TimeSpan.FromMinutes(30);
-            }
-            else if (timeIron1.Checked)
-            {
-                ironTime = TimeSpan.FromMinutes(60);
-            }
-            else if (timeIronCustomMin.Checked)
-            {
-                ironTime = TimeSpan.FromMinutes(double.Parse(txtPressOtherMin.Text));
-            }
-            else if (timeIronCustomHr.Checked)
-            {
-                ironTime = TimeSpan.FromHours(double.Parse(txtPressOtherHr.Text));
-            }
+                TimeSpan ironTime = TimeSpan.Zero;
+                if (timeIron30.Checked)
+                {
+                    ironTime = TimeSpan.FromMinutes(30);
+                }
+                else if (timeIron1.Checked)
+                {
+                    ironTime = TimeSpan.FromMinutes(60);
+                }
+                else if (timeIronCustomMin.Checked)
+                {
+                    ironTime = TimeSpan.FromMinutes(double.Parse(txtPressOtherMin.Text));
+                }
+                else if (timeIronCustomHr.Checked)
+                {
+                    ironTime = TimeSpan.FromHours(double.Parse(txtPressOtherHr.Text));
+                }
 
-            ScheduleClass schedule = new ScheduleClass(serviceCategory, service1, service2, service3, weight, weight2, weight3, custID, DateTime.Now, pickUp, item1, item2, item3, itemQuan1, itemQuan2, itemQuan3, washTime, dryTime, ironTime);
-            if (specificUnit)
-            {
-                schedule.addLaundry(unitSelected, cbMachine.Text);
-            }
-            else
-            {
-                schedule.addLaundry();
-            }
+                ScheduleClass schedule = new ScheduleClass(serviceCategory, service1, service2, service3, weight, weight2, weight3, custID, DateTime.Now, pickUp, item1, item2, item3, itemQuan1, itemQuan2, itemQuan3, washTime, dryTime, ironTime);
+                if (specificUnit)
+                {
+                    schedule.addLaundry(unitSelected, cbMachine.Text);
+                }
+                else
+                {
+                    schedule.addLaundry();
+                }
 
-            this.Close();
+                this.Close();
+                _parentForm.RefreshPanel();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid input!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
 
         }
 

@@ -34,23 +34,30 @@ namespace WashablesSystem
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            constring.Open();
-            string query = "UPDATE [Settings] SET downpayment_rate='" + decimal.Parse(txtRate1.Text) / 100 + "',balancedue_rate='"
-                + decimal.Parse(txtRate2.Text) / 100 + "';";
-
-            SqlCommand cmd2 = new SqlCommand(query, constring);
-            cmd2.CommandText = query;
-
-            //If successful, add to activity log
-            if (cmd2.ExecuteNonQuery() == 1)
+            try
             {
-                MessageBox.Show("Configured Successfully!");
-                constring.Close();
+                constring.Open();
+                string query = "UPDATE [Settings] SET downpayment_rate='" + decimal.Parse(txtRate1.Text) / 100 + "',balancedue_rate='"
+                    + decimal.Parse(txtRate2.Text) / 100 + "';";
+
+                SqlCommand cmd2 = new SqlCommand(query, constring);
+                cmd2.CommandText = query;
+
+                //If successful, add to activity log
+                if (cmd2.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Configured Successfully!");
+                    constring.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong. Please try again.");
+                    constring.Close();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Something went wrong. Please try again.");
-                constring.Close();
+                MessageBox.Show("Invalid input!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

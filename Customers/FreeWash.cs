@@ -53,50 +53,57 @@ namespace WashablesSystem
 
         private void btnSched_Click(object sender, EventArgs e)
         {
-            ComplaintsClass complaintClass = new ComplaintsClass();
-            complaintClass.resolveComplaint(complaintID, "Remaining Stains");
+            try
+            {
+                ComplaintsClass complaintClass = new ComplaintsClass();
+                complaintClass.resolveComplaint(complaintID, "Remaining Stains");
 
-            TimeSpan washTime = TimeSpan.Zero;
-            if (timeWashing30.Checked)
-            {
-                washTime = TimeSpan.FromMinutes(30);
-            }
-            else if (timeWashing1.Checked)
-            {
-                washTime = TimeSpan.FromMinutes(60);
-            }
-            else if (timeWashingCustomMin.Checked)
-            {
-                washTime = TimeSpan.FromMinutes(double.Parse(txtWashOtherMin.Text));
-            }
-            else if (timeWashingCustomHr.Checked)
-            {
-                washTime = TimeSpan.FromHours(double.Parse(txtWashOtherHour.Text));
-            }
+                TimeSpan washTime = TimeSpan.Zero;
+                if (timeWashing30.Checked)
+                {
+                    washTime = TimeSpan.FromMinutes(30);
+                }
+                else if (timeWashing1.Checked)
+                {
+                    washTime = TimeSpan.FromMinutes(60);
+                }
+                else if (timeWashingCustomMin.Checked)
+                {
+                    washTime = TimeSpan.FromMinutes(double.Parse(txtWashOtherMin.Text));
+                }
+                else if (timeWashingCustomHr.Checked)
+                {
+                    washTime = TimeSpan.FromHours(double.Parse(txtWashOtherHour.Text));
+                }
 
-            TimeSpan dryTime = TimeSpan.Zero;
-            if (timeDryer30.Checked)
-            {
-                dryTime = TimeSpan.FromMinutes(30);
-            }
-            else if (timeDryer1.Checked)
-            {
-                dryTime = TimeSpan.FromMinutes(60);
-            }
-            else if (timeDryerCustomMin.Checked)
-            {
-                dryTime = TimeSpan.FromMinutes(double.Parse(txtDryOtherMin.Text));
-            }
-            else if (timeDryerCustomHr.Checked)
-            {
-                dryTime = TimeSpan.FromHours(double.Parse(txtDryOtherHour.Text));
-            }
+                TimeSpan dryTime = TimeSpan.Zero;
+                if (timeDryer30.Checked)
+                {
+                    dryTime = TimeSpan.FromMinutes(30);
+                }
+                else if (timeDryer1.Checked)
+                {
+                    dryTime = TimeSpan.FromMinutes(60);
+                }
+                else if (timeDryerCustomMin.Checked)
+                {
+                    dryTime = TimeSpan.FromMinutes(double.Parse(txtDryOtherMin.Text));
+                }
+                else if (timeDryerCustomHr.Checked)
+                {
+                    dryTime = TimeSpan.FromHours(double.Parse(txtDryOtherHour.Text));
+                }
 
-            ScheduleClass scheduleClass = new ScheduleClass("Wash-Dry-Fold", "WDF101", "", "",
-            txtBoxWeight.Text, "0.00", "0.00", customerID,
-            DateTime.Now, DateTime.Parse(datePickup.Text), cbItem1.SelectedValue.ToString(), cbItem2.SelectedValue.ToString(),
-            cbItem3.SelectedValue.ToString(), quantity1.Text, quantity2.Text, quantity3.Text, washTime, dryTime, TimeSpan.Zero);
-            scheduleClass.addFreeWash();
+                ScheduleClass scheduleClass = new ScheduleClass("Wash-Dry-Fold", "WDF101", "", "",
+                txtBoxWeight.Text, "0.00", "0.00", customerID,
+                DateTime.Now, DateTime.Parse(datePickup.Text), cbItem1.SelectedValue.ToString(), cbItem2.SelectedValue.ToString(),
+                cbItem3.SelectedValue.ToString(), quantity1.Text, quantity2.Text, quantity3.Text, washTime, dryTime, TimeSpan.Zero);
+                scheduleClass.addFreeWash();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid input!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

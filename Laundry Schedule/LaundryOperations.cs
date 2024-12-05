@@ -36,7 +36,7 @@ namespace WashablesSystem
             DataTable orders = scheduleClass.displayPendingBatches();
             foreach (DataRow row in orders.Rows)
             {
-                PendingLaundryList pending = new PendingLaundryList();
+                PendingLaundryList pending = new PendingLaundryList(this);
                 pending.setStatus(row["order_id"].ToString() + "-", row["batch_id"].ToString(), row["customer_name"].ToString(),
                     row["service_category"] + "(" + row["service_name"].ToString() + ")", row["weight"].ToString(), row["status"].ToString(),
                    row["scheduled_time"].ToString(), row["pickup_date"].ToString());
@@ -59,7 +59,7 @@ namespace WashablesSystem
             {
                 if (row["status"].ToString().Equals("Wash In-Progress"))
                 {
-                    InProgLaundryList inProg = new InProgLaundryList();
+                    InProgLaundryList inProg = new InProgLaundryList(this);
                     inProg.setStatus(row["order_id"].ToString(), row["batch_id"].ToString(), row["unit_name"].ToString(),
                        row["customer_name"].ToString(), row["service_category"] + "(" + row["service_name"].ToString() + ")",
                        row["weight"].ToString(), row["status"].ToString(), row["end_time"].ToString());
@@ -72,7 +72,7 @@ namespace WashablesSystem
             {
                 if (row["status"].ToString().Equals("Dry In-Progress"))
                 {
-                    InProgLaundryList inProg = new InProgLaundryList();
+                    InProgLaundryList inProg = new InProgLaundryList(this);
                     inProg.setStatus(row["order_id"].ToString(), row["batch_id"].ToString(), row["unit_name"].ToString(),
                        row["customer_name"].ToString(), row["service_category"] + "(" + row["service_name"].ToString() + ")",
                        row["weight"].ToString(), row["status"].ToString(), row["end_time"].ToString());
@@ -85,7 +85,7 @@ namespace WashablesSystem
             {
                 if (row["status"].ToString().Equals("Press In-Progress"))
                 {
-                    InProgLaundryList inProg = new InProgLaundryList();
+                    InProgLaundryList inProg = new InProgLaundryList(this);
                     inProg.setStatus(row["order_id"].ToString(), row["batch_id"].ToString(), row["unit_name"].ToString(),
                        row["customer_name"].ToString(), row["service_category"] + "(" + row["service_name"].ToString() + ")",
                        row["weight"].ToString(), row["status"].ToString(), row["end_time"].ToString());
@@ -97,6 +97,7 @@ namespace WashablesSystem
 
         private void LaundryOperations_Load(object sender, EventArgs e)
         {
+            machinePanel.Controls.Clear();
             /// List of Machines
             MachineList WM = new MachineList();
             WM.setMachine("Washing Machine");
@@ -118,7 +119,7 @@ namespace WashablesSystem
         }
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            AddLaundry laundryForm = new AddLaundry();
+            AddLaundry laundryForm = new AddLaundry(this);
             laundryForm.ShowDialog();
         }
 
@@ -129,12 +130,16 @@ namespace WashablesSystem
             DataTable orders = scheduleClass.displayPendingBatchesSort(cbSort.SelectedIndex);
             foreach (DataRow row in orders.Rows)
             {
-                PendingLaundryList pending = new PendingLaundryList();
+                PendingLaundryList pending = new PendingLaundryList(this);
                 pending.setStatus(row["order_id"].ToString() + "-", row["batch_id"].ToString(), row["customer_name"].ToString(),
                      row["service_category"] + "(" + row["service_name"].ToString() + ")", row["weight"].ToString(), row["status"].ToString(),
                      row["scheduled_time"].ToString(), row["pickup_date"].ToString());
                 laundryContainer.Controls.Add(pending);
             }
+        }
+        public void RefreshPanel()
+        {
+            LaundryOperations_Load(null, null);
         }
     }
 }

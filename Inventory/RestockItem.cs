@@ -41,11 +41,18 @@ namespace WashablesSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //call restock method here
-            InventoryClass itemClass = new InventoryClass(decimal.Parse(txtBoxQuantity.Text));
-            itemClass.restockItem(item_selected);
-            _parentForm.RefreshPanel();
-            this.Close();
+            try
+            {
+                //call restock method here
+                InventoryClass itemClass = new InventoryClass(decimal.Parse(txtBoxQuantity.Text));
+                itemClass.restockItem(item_selected);
+                _parentForm.RefreshPanel();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid input!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

@@ -51,97 +51,111 @@ namespace WashablesSystem.Classes
 
         public void addBill(string orderID)
         {
-            constring.Open();
-
-            this.orderID = orderID;
-
-            //Add Item to Database
-            SqlCommand cmd = new SqlCommand("SELECT TOP 1 [transaction_id] FROM [Billing] ORDER BY [transaction_id] DESC", constring);
-            SqlDataReader reader1;
-            reader1 = cmd.ExecuteReader();
-            if (reader1.Read())
+            try
             {
-                transactionID = reader1.GetString(0);
-                int num = int.Parse(string.Join("", transactionID.Where(Char.IsDigit))) + 1;
-                transactionID = "T" + num;
-            }
-            else
-            {
-                transactionID = "T1";
-            }
-            reader1.Close();
-            cmd.Dispose();
+                constring.Open();
 
-            //Query for inserting
-            string query = @"INSERT INTO [Billing](transaction_id, user_id, order_id, total_amount, payment_status) VALUES(@transactionID, @userID, @orderID, @totalAmount, 'Pending')";
+                this.orderID = orderID;
 
-            using (SqlCommand cmd2 = new SqlCommand(query, constring))
-            {
-                // Add parameters
-                cmd2.Parameters.AddWithValue("@transactionID", transactionID);
-                cmd2.Parameters.AddWithValue("@orderID", orderID);
-                cmd2.Parameters.AddWithValue("@userID", sessionVar.loggedIn);
-                cmd2.Parameters.AddWithValue("@totalAmount", computeAmount(orderID));
-
-                //If successful, add to activity log and generate bill
-                if (cmd2.ExecuteNonQuery() == 1)
+                //Add Item to Database
+                SqlCommand cmd = new SqlCommand("SELECT TOP 1 [transaction_id] FROM [Billing] ORDER BY [transaction_id] DESC", constring);
+                SqlDataReader reader1;
+                reader1 = cmd.ExecuteReader();
+                if (reader1.Read())
                 {
-                    constring.Close();
-                    logOperation("Generated Bill");
+                    transactionID = reader1.GetString(0);
+                    int num = int.Parse(string.Join("", transactionID.Where(Char.IsDigit))) + 1;
+                    transactionID = "T" + num;
                 }
                 else
                 {
-                    MessageBox.Show("Something went wrong. Please try again.");
-                    constring.Close();
+                    transactionID = "T1";
                 }
+                reader1.Close();
+                cmd.Dispose();
+
+                //Query for inserting
+                string query = @"INSERT INTO [Billing](transaction_id, user_id, order_id, total_amount, payment_status) VALUES(@transactionID, @userID, @orderID, @totalAmount, 'Pending')";
+
+                using (SqlCommand cmd2 = new SqlCommand(query, constring))
+                {
+                    // Add parameters
+                    cmd2.Parameters.AddWithValue("@transactionID", transactionID);
+                    cmd2.Parameters.AddWithValue("@orderID", orderID);
+                    cmd2.Parameters.AddWithValue("@userID", sessionVar.loggedIn);
+                    cmd2.Parameters.AddWithValue("@totalAmount", computeAmount(orderID));
+
+                    //If successful, add to activity log and generate bill
+                    if (cmd2.ExecuteNonQuery() == 1)
+                    {
+                        constring.Close();
+                        logOperation("Generated Bill");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong. Please try again.");
+                        constring.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid! Error: " + ex, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
         public void addFreeBill(string orderID)
         {
-            constring.Open();
-
-            this.orderID = orderID;
-
-            //Add Item to Database
-            SqlCommand cmd = new SqlCommand("SELECT TOP 1 [transaction_id] FROM [Billing] ORDER BY [transaction_id] DESC", constring);
-            SqlDataReader reader1;
-            reader1 = cmd.ExecuteReader();
-            if (reader1.Read())
+            try
             {
-                transactionID = reader1.GetString(0);
-                int num = int.Parse(string.Join("", transactionID.Where(Char.IsDigit))) + 1;
-                transactionID = "T" + num;
-            }
-            else
-            {
-                transactionID = "T1";
-            }
-            reader1.Close();
-            cmd.Dispose();
+                constring.Open();
 
-            //Query for inserting
-            string query = @"INSERT INTO [Billing](transaction_id, user_id, order_id, total_amount, transaction_date, payment_method, payment_status) VALUES(@transactionID, @userID, @orderID, @totalAmount, @transaction_date, 'Free', 'Paid')";
+                this.orderID = orderID;
 
-            using (SqlCommand cmd2 = new SqlCommand(query, constring))
-            {
-                // Add parameters
-                cmd2.Parameters.AddWithValue("@transactionID", transactionID);
-                cmd2.Parameters.AddWithValue("@orderID", orderID);
-                cmd2.Parameters.AddWithValue("@userID", sessionVar.loggedIn);
-                cmd2.Parameters.AddWithValue("@totalAmount", "0.00");
-                cmd2.Parameters.AddWithValue("@transactionDate", DateTime.Now);
-
-                //If successful, add to activity log and generate bill
-                if (cmd2.ExecuteNonQuery() == 1)
+                //Add Item to Database
+                SqlCommand cmd = new SqlCommand("SELECT TOP 1 [transaction_id] FROM [Billing] ORDER BY [transaction_id] DESC", constring);
+                SqlDataReader reader1;
+                reader1 = cmd.ExecuteReader();
+                if (reader1.Read())
                 {
-                    constring.Close();
-                    logOperation("Generated Bill");
+                    transactionID = reader1.GetString(0);
+                    int num = int.Parse(string.Join("", transactionID.Where(Char.IsDigit))) + 1;
+                    transactionID = "T" + num;
                 }
                 else
                 {
-                    MessageBox.Show("Something went wrong. Please try again.");
-                    constring.Close();
+                    transactionID = "T1";
                 }
+                reader1.Close();
+                cmd.Dispose();
+
+                //Query for inserting
+                string query = @"INSERT INTO [Billing](transaction_id, user_id, order_id, total_amount, transaction_date, payment_method, payment_status) VALUES(@transactionID, @userID, @orderID, @totalAmount, @transaction_date, 'Free', 'Paid')";
+
+                using (SqlCommand cmd2 = new SqlCommand(query, constring))
+                {
+                    // Add parameters
+                    cmd2.Parameters.AddWithValue("@transactionID", transactionID);
+                    cmd2.Parameters.AddWithValue("@orderID", orderID);
+                    cmd2.Parameters.AddWithValue("@userID", sessionVar.loggedIn);
+                    cmd2.Parameters.AddWithValue("@totalAmount", "0.00");
+                    cmd2.Parameters.AddWithValue("@transactionDate", DateTime.Now);
+
+                    //If successful, add to activity log and generate bill
+                    if (cmd2.ExecuteNonQuery() == 1)
+                    {
+                        constring.Close();
+                        logOperation("Generated Bill");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong. Please try again.");
+                        constring.Close();
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Invalid! Error: " + ex, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
         public DataTable getBillingDetails(string transactionID)

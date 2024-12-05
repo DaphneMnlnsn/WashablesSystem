@@ -13,9 +13,11 @@ namespace WashablesSystem
 {
     public partial class PendingLaundryList : UserControl
     {
-        public PendingLaundryList()
+        LaundryOperations _parentForm;
+        public PendingLaundryList(LaundryOperations parentForm)
         {
             InitializeComponent();
+            _parentForm = parentForm;
         }
         public void setStatus(string order, string batch, string customer, string service, string weight, string status, string scheduled, string date)
         {
@@ -31,7 +33,7 @@ namespace WashablesSystem
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            SelectAvailableUnit select = new SelectAvailableUnit(lblBatch.Text);
+            SelectAvailableUnit select = new SelectAvailableUnit(lblBatch.Text, _parentForm);
             select.ShowDialog();
         }
     }

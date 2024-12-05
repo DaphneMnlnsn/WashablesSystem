@@ -27,11 +27,18 @@ namespace WashablesSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ServiceClass service = new ServiceClass(cbService.Text, txtBoxName.Text, 
-                decimal.Parse(txtBoxRate.Text), decimal.Parse(txtBoxMin.Text));
-            service.addService();
-            _parentForm.RefreshPanel();
-            this.Close();
+            try
+            {
+                ServiceClass service = new ServiceClass(cbService.Text, txtBoxName.Text,
+                    decimal.Parse(txtBoxRate.Text), decimal.Parse(txtBoxMin.Text));
+                service.addService();
+                _parentForm.RefreshPanel();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid input!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

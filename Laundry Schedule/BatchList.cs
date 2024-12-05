@@ -111,7 +111,6 @@ namespace WashablesSystem.Laundry_Schedule
                     timeLeftTimer.Stop();
                     time_left = TimeSpan.Zero;
                     UpdateTimeDisplay(time_left);
-
                     this.status = "Finished";
                 }
             }
@@ -119,12 +118,13 @@ namespace WashablesSystem.Laundry_Schedule
         }
         private void UpdateTimeDisplay(TimeSpan timeLeft)
         {
-
+            SessionVariables sessionVariables = new SessionVariables();
             TimeLeft.Text = timeLeft.ToString(@"hh\:mm\:ss");
             ActualTime.Text = actual_time.ToString(@"hh\:mm\:ss");
-            if (TimeLeft.Text.Equals("00:00:00") && notifDisplayed == false)
+            if (TimeLeft.Text.Equals("00:00:00") && notifDisplayed == false && !sessionVariables.notified1)
             {
                 notifDisplayed = true;
+                sessionVariables.notified1 = true;
                 NotificationClass notificationClass = new NotificationClass();
                 notificationClass.sendNotification(ORNo.Text, "Laundry Finished");
             }
