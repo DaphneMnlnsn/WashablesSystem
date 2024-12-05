@@ -28,80 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateLaundry = new WashablesSystem.CustomDatePicker();
-            this.btnCancel = new WashablesSystem.CustomButton();
-            this.btnAdd = new WashablesSystem.CustomButton();
             this.sameDateContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
+            this.dateLaundry = new WashablesSystem.CustomDatePicker();
+            this.btnCancel = new WashablesSystem.CustomButton();
+            this.btnResolve = new WashablesSystem.CustomButton();
             this.SuspendLayout();
-            // 
-            // dateLaundry
-            // 
-            this.dateLaundry.BorderColor = System.Drawing.Color.Silver;
-            this.dateLaundry.BorderSize = 1;
-            this.dateLaundry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateLaundry.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateLaundry.Location = new System.Drawing.Point(25, 89);
-            this.dateLaundry.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dateLaundry.MinimumSize = new System.Drawing.Size(4, 35);
-            this.dateLaundry.Name = "dateLaundry";
-            this.dateLaundry.Size = new System.Drawing.Size(309, 35);
-            this.dateLaundry.SkinColor = System.Drawing.SystemColors.Control;
-            this.dateLaundry.TabIndex = 39;
-            this.dateLaundry.TextColor = System.Drawing.Color.Black;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancel.BackgroundColor = System.Drawing.Color.Transparent;
-            this.btnCancel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.btnCancel.BorderRadius = 15;
-            this.btnCancel.BorderSize = 1;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(211, 321);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(116, 29);
-            this.btnCancel.TabIndex = 31;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.TextColor = System.Drawing.Color.Black;
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.btnAdd.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.btnAdd.BorderColor = System.Drawing.Color.Transparent;
-            this.btnAdd.BorderRadius = 15;
-            this.btnAdd.BorderSize = 0;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(57, 321);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(150, 29);
-            this.btnAdd.TabIndex = 30;
-            this.btnAdd.Text = "Mark as Solved";
-            this.btnAdd.TextColor = System.Drawing.Color.White;
-            this.btnAdd.UseVisualStyleBackColor = false;
             // 
             // sameDateContainer
             // 
             this.sameDateContainer.AutoScroll = true;
             this.sameDateContainer.BackColor = System.Drawing.Color.Transparent;
+            this.sameDateContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sameDateContainer.Location = new System.Drawing.Point(25, 157);
-            this.sameDateContainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sameDateContainer.Margin = new System.Windows.Forms.Padding(2);
             this.sameDateContainer.Name = "sameDateContainer";
             this.sameDateContainer.Size = new System.Drawing.Size(332, 150);
             this.sameDateContainer.TabIndex = 93;
@@ -158,18 +101,63 @@
             this.label1.TabIndex = 95;
             this.label1.Text = "___________________________________________";
             // 
-            // btnSearch
+            // dateLaundry
             // 
-            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSearch.BackColor = System.Drawing.SystemColors.Control;
-            this.btnSearch.Image = global::WashablesSystem.Properties.Resources.Search;
-            this.btnSearch.Location = new System.Drawing.Point(337, 90);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 7, 2);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(23, 23);
-            this.btnSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnSearch.TabIndex = 97;
-            this.btnSearch.TabStop = false;
+            this.dateLaundry.BorderColor = System.Drawing.Color.Silver;
+            this.dateLaundry.BorderSize = 1;
+            this.dateLaundry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateLaundry.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateLaundry.Location = new System.Drawing.Point(25, 89);
+            this.dateLaundry.Margin = new System.Windows.Forms.Padding(2);
+            this.dateLaundry.MinimumSize = new System.Drawing.Size(4, 35);
+            this.dateLaundry.Name = "dateLaundry";
+            this.dateLaundry.Size = new System.Drawing.Size(332, 35);
+            this.dateLaundry.SkinColor = System.Drawing.SystemColors.Control;
+            this.dateLaundry.TabIndex = 39;
+            this.dateLaundry.TextColor = System.Drawing.Color.Black;
+            this.dateLaundry.ValueChanged += new System.EventHandler(this.dateLaundry_ValueChanged);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancel.BackgroundColor = System.Drawing.Color.Transparent;
+            this.btnCancel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.btnCancel.BorderRadius = 15;
+            this.btnCancel.BorderSize = 1;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnCancel.Location = new System.Drawing.Point(211, 321);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(116, 29);
+            this.btnCancel.TabIndex = 31;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.TextColor = System.Drawing.Color.Black;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnResolve
+            // 
+            this.btnResolve.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.btnResolve.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.btnResolve.BorderColor = System.Drawing.Color.Transparent;
+            this.btnResolve.BorderRadius = 15;
+            this.btnResolve.BorderSize = 0;
+            this.btnResolve.FlatAppearance.BorderSize = 0;
+            this.btnResolve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResolve.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResolve.ForeColor = System.Drawing.Color.White;
+            this.btnResolve.Location = new System.Drawing.Point(57, 321);
+            this.btnResolve.Margin = new System.Windows.Forms.Padding(2);
+            this.btnResolve.Name = "btnResolve";
+            this.btnResolve.Size = new System.Drawing.Size(150, 29);
+            this.btnResolve.TabIndex = 30;
+            this.btnResolve.Text = "Mark as Solved";
+            this.btnResolve.TextColor = System.Drawing.Color.White;
+            this.btnResolve.UseVisualStyleBackColor = false;
+            this.btnResolve.Click += new System.EventHandler(this.btnResolve_Click);
             // 
             // MissingItem
             // 
@@ -177,33 +165,30 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(388, 374);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.sameDateContainer);
             this.Controls.Add(this.dateLaundry);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnResolve);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MissingItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MissingItem_FormClosed);
             this.Load += new System.EventHandler(this.MissingItem_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private CustomButton btnAdd;
+        private CustomButton btnResolve;
         private CustomButton btnCancel;
         private CustomDatePicker dateLaundry;
         private System.Windows.Forms.FlowLayoutPanel sameDateContainer;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox btnSearch;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label label1;

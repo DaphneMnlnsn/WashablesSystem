@@ -43,10 +43,10 @@ namespace WashablesSystem
 
         private void activityText_Click(object sender, EventArgs e)
         {
-            NotificationClass  notificationClass = new NotificationClass();
+            NotificationClass notificationClass = new NotificationClass();
             PictureBox btn = (PictureBox)grandparentForm.FindForm().Controls.Find("btnNotif", true)[0];
             btn.Enabled = true;
-            if(category.Equals("Inventory"))
+            if (category.Equals("Inventory"))
             {
                 notificationClass.readNotification(notificationID);
                 loadForm(new Inventory(grandparentForm));
@@ -54,9 +54,9 @@ namespace WashablesSystem
             else
             {
                 notificationClass.readNotification(notificationID);
-                loadForm(new Schedule(grandparentForm, "Finished"));
+                loadForm(new LaundryOperations(grandparentForm));
             }
-            
+
             notifOverlay.Dispose();
         }
         private void loadForm(Form m)

@@ -13,6 +13,7 @@ namespace WashablesSystem
 {
     public partial class PendingPayments : Form
     {
+        PaymentClass paymentClass = new PaymentClass();
         public PendingPayments()
         {
             InitializeComponent();
@@ -21,14 +22,26 @@ namespace WashablesSystem
         public PendingPayments(string ORNum)
         {
             InitializeComponent();
-            PaymentDetails paymentDetails = new PaymentDetails(this, ORNum);
-            paymentDetails.ShowDialog();
+            string transactNum = "";
+            DataTable bill = paymentClass.getTransactNum(ORNum);
+            foreach (DataRow row in bill.Rows)
+            {
+                transactNum = row["transaction_id"].ToString();
+                if (row["payment_status"].ToString().Equals("Paid"))
+                {
+                    Receipt receipt = new Receipt(transactNum);
+                    receipt.ShowDialog();
+                }
+                else
+                {
+                    PaymentDetails paymentDetails = new PaymentDetails(this, transactNum);
+                    paymentDetails.ShowDialog();
+                }
+            }
         }
-
         private void PendingPayments_Load(object sender, EventArgs e)
         {
             PendingContainer.Controls.Clear();
-            PaymentClass paymentClass = new PaymentClass();
             DataTable payments = paymentClass.getBills();
             foreach (DataRow row in payments.Rows)
             {

@@ -51,6 +51,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new WashablesSystem.CustomButton();
             this.btnRestore = new WashablesSystem.CustomButton();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.txtRate2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRate1)).BeginInit();
@@ -89,6 +91,7 @@
             this.txtRestore.Size = new System.Drawing.Size(327, 30);
             this.txtRestore.TabIndex = 260;
             this.txtRestore.UnderlinedStyle = false;
+            this.txtRestore.Click += new System.EventHandler(this.txtRestore_Click);
             // 
             // label6
             // 
@@ -149,6 +152,7 @@
             this.txtBackup.Size = new System.Drawing.Size(327, 30);
             this.txtBackup.TabIndex = 256;
             this.txtBackup.UnderlinedStyle = false;
+            this.txtBackup.Click += new System.EventHandler(this.txtBackup_Click);
             // 
             // label8
             // 
@@ -208,6 +212,7 @@
             this.btnBackup.Text = "Backup";
             this.btnBackup.TextColor = System.Drawing.Color.White;
             this.btnBackup.UseVisualStyleBackColor = false;
+            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
             // 
             // label3
             // 
@@ -227,6 +232,7 @@
             // 
             this.txtRate2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRate2.DecimalPlaces = 2;
+            this.txtRate2.Enabled = false;
             this.txtRate2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.txtRate2.Location = new System.Drawing.Point(40, 178);
             this.txtRate2.Maximum = new decimal(new int[] {
@@ -313,6 +319,7 @@
             this.txtRate1.Name = "txtRate1";
             this.txtRate1.Size = new System.Drawing.Size(235, 21);
             this.txtRate1.TabIndex = 245;
+            this.txtRate1.ValueChanged += new System.EventHandler(this.txtRate1_ValueChanged);
             // 
             // btnService
             // 
@@ -393,6 +400,7 @@
             this.btnSave.Text = "Apply Changes";
             this.btnSave.TextColor = System.Drawing.Color.White;
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnRestore
             // 
@@ -413,6 +421,11 @@
             this.btnRestore.Text = "Restore";
             this.btnRestore.TextColor = System.Drawing.Color.White;
             this.btnRestore.UseVisualStyleBackColor = false;
+            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Settings
             // 
@@ -479,5 +492,7 @@
         private System.Windows.Forms.Label label1;
         private CustomButton btnSave;
         private CustomButton btnRestore;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

@@ -64,7 +64,7 @@ namespace WashablesSystem.Classes
             SqlDataReader reader1;
             reader1 = cmd.ExecuteReader();
             if (reader1.Read())
-            { 
+            {
                 serviceID = reader1.GetString(1);
                 IDNum = int.Parse(string.Join("", serviceID.Where(Char.IsDigit))) + 1;
                 serviceID = acronym + IDNum;
@@ -186,22 +186,39 @@ namespace WashablesSystem.Classes
 
             this.serviceID = serviceID;
 
-            String query = "DELETE FROM [Service] WHERE service_id='" + serviceID + "';";
-
-            SqlCommand cmd2 = new SqlCommand(query, constring);
-            cmd2.CommandText = query;
-
-            //If successful, add to activity log
-            if (cmd2.ExecuteNonQuery() == 1)
+            string checkQuery = "SELECT COUNT(*) FROM [Order] WHERE service_id = @ServiceId OR service_id2 = @ServiceId OR service_id3 = @ServiceId";
+            using (SqlCommand checkCommand = new SqlCommand(checkQuery, constring))
             {
-                constring.Close();
-                logOperation("Deleted Service");
+                checkCommand.Parameters.AddWithValue("@ServiceId", serviceID);
+                int count = (int)checkCommand.ExecuteScalar();
+
+                if (count > 0)
+                {
+                    MessageBox.Show("Service cannot be deleted because it is referenced elsewhere.", "Delete Restricted", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    constring.Close();
+                    return;
+                }
+                else
+                {
+                    string query = "DELETE FROM [Service] WHERE service_id='" + serviceID + "';";
+
+                    SqlCommand cmd2 = new SqlCommand(query, constring);
+                    cmd2.CommandText = query;
+
+                    //If successful, add to activity log
+                    if (cmd2.ExecuteNonQuery() == 1)
+                    {
+                        constring.Close();
+                        logOperation("Deleted Service");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong. Please try again.");
+                        constring.Close();
+                    }
+                }
             }
-            else
-            {
-                MessageBox.Show("Something went wrong. Please try again.");
-                constring.Close();
-            }
+
         }
         public DataTable displayService()
         {

@@ -17,16 +17,19 @@ namespace WashablesSystem
         private TimeSpan time_left;
         private DateTime end_time;
         ScheduleClass scheduleClass = new ScheduleClass();
+        private bool notifDisplayed = false;
         public InProgLaundryList()
         {
             InitializeComponent();
         }
-        public void setStatus(string orNo, string unit, string customer, string service, string status, string endTime)
+        public void setStatus(string orNo, string batchNo, string unit, string customer, string service, string weight, string status, string endTime)
         {
-            orderNum.Text = orNo;
+            orderNum.Text = orNo + "-";
+            lblBatch.Text = batchNo;
             lblUnit.Text = unit;
             custName.Text = customer;
             serviceType.Text = service;
+            lblWeight.Text = weight;
             lblStatus.Text = status;
             time_left = DateTime.Parse(endTime) - DateTime.Now;
             end_time = DateTime.Parse(endTime);
@@ -55,12 +58,18 @@ namespace WashablesSystem
         private void UpdateTimeDisplay(TimeSpan time)
         {
             timeLeft.Text = time.ToString(@"hh\:mm\:ss");
+            if (timeLeft.Text.Equals("00:00:00") && notifDisplayed == false)
+            {
+                notifDisplayed = true;
+                NotificationClass notificationClass = new NotificationClass();
+                notificationClass.sendNotification(lblBatch.Text, "Laundry Finished");
+            }
         }
 
         private void btnFinish_Click(object sender, EventArgs e)
         {
             timeLeftTimer.Stop();
-            scheduleClass.finishSchedule(orderNum.Text);
+            scheduleClass.finishSchedule(lblBatch.Text);
         }
     }
 }

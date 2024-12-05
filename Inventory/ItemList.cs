@@ -33,15 +33,17 @@ namespace WashablesSystem
             Quantity.Text = quan + measurement;
             Price.Text = price + "/" + measurement;
 
-            if (Quantity.Text.Equals("20mL"))
+            if (decimal.Parse(quan) <= 5)
             {
                 ItemCode.ForeColor = System.Drawing.Color.FromArgb(161, 0, 0);
                 ItemName.ForeColor = System.Drawing.Color.FromArgb(161, 0, 0);
                 Category.ForeColor = System.Drawing.Color.FromArgb(161, 0, 0);
                 Quantity.ForeColor = System.Drawing.Color.FromArgb(161, 0, 0);
                 Price.ForeColor = System.Drawing.Color.FromArgb(161, 0, 0);
-            }
 
+                NotificationClass notification = new NotificationClass();
+                notification.sendNotification(ItemCode.Text, "Low on Stock");
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

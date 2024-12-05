@@ -17,6 +17,8 @@ namespace WashablesSystem
     {
         Form thisParentForm;
         DashboardClass dashboardClass;
+        SessionVariables sessionVariables = new SessionVariables();
+        bool userAccess;
         public Dashboard(Main parentForm)
         {
             InitializeComponent();
@@ -29,6 +31,13 @@ namespace WashablesSystem
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            UserClass userClass = new UserClass();
+            DataTable user = userClass.displaySelectedUser(sessionVariables.loggedIn);
+            foreach (DataRow row in user.Rows)
+            {
+                userAccess = bool.Parse(row["user_access"].ToString());
+            }
+
             DataTable log = dashboardClass.generateActLog();
             foreach (DataRow row in log.Rows)
             {
@@ -73,81 +82,54 @@ namespace WashablesSystem
             DateTime endDate = DateTime.Now;
             string machineType = cbMachine.SelectedItem.ToString();
 
-        // Set the date range based on the selected filter
-        switch (cbTimeKilos.SelectedItem.ToString())
-        {
-            case "This Week":
-                startDate = DateTime.Now.AddDays(-(int)DateTime.Now.DayOfWeek); // Start of the week (Sunday)
-                endDate = startDate.AddDays(7); // End of the week (Saturday)
-                break;
-            case "This Month":
-                startDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1); // Start of the current month
-                endDate = startDate.AddMonths(1); // Start of the next month
-                break;
-            case "This Year":
-                startDate = new DateTime(DateTime.Now.Year, 1, 1); // Start of the current year
-                endDate = startDate.AddYears(1); // Start of the next year
-                break;
-        }
-
-        // Fetch data based on the filter and machine type
-        Dictionary<string, List<decimal>> unitData = dashboardClass.generateUnitUsed(startDate, endDate, machineType);
-
-        // Clear any existing series from the chart
-        this.chartKgs.Series.Clear();
-        int colorIndex = 0;
-
-        // Add series for each unit if there is data
-        foreach (var unit in unitData)
-        {
-            string unitName = unit.Key;
-            List<decimal> weights = unit.Value;
-
-            // Only add the series if it contains data
-            if (weights != null && weights.Count > 0)
+            switch (cbTimeKilos.SelectedItem.ToString())
             {
-                // Create a new series for this unit
-                Series series = new Series(unitName)
-                {
-                    ChartType = SeriesChartType.Column,
-                    Color = GetColorForIndex(colorIndex),
-                };
+                case "This Week":
+                    startDate = DateTime.Now.AddDays(-(int)DateTime.Now.DayOfWeek);
+                    endDate = startDate.AddDays(7);
+                    break;
+                case "This Month":
+                    startDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                    endDate = startDate.AddMonths(1);
+                    break;
+                case "This Year":
+                    startDate = new DateTime(DateTime.Now.Year, 1, 1);
+                    endDate = startDate.AddYears(1);
+                    break;
+            }
 
-                // Add data points to the series
-                for (int i = 0; i < weights.Count; i++)
+            Dictionary<string, List<decimal>> unitData = dashboardClass.generateUnitUsed(startDate, endDate, machineType);
+
+            this.chartKgs.Series.Clear();
+            int colorIndex = 0;
+
+            foreach (var unit in unitData)
+            {
+                string unitName = unit.Key;
+                List<decimal> weights = unit.Value;
+
+                if (weights != null && weights.Count > 0 && !unitName.Equals(""))
                 {
-                    series.Points.AddXY(i + 1, weights[i]); // X: day (or unit index), Y: weight
+                    Series series = new Series(unitName)
+                    {
+                        ChartType = SeriesChartType.Column,
+                        Color = getColorForIndex(colorIndex),
+                    };
+
+                    for (int i = 0; i < weights.Count; i++)
+                    {
+                        series.Points.AddXY(i + 1, weights[i]);
+                    }
+
+                    this.chartKgs.Series.Add(series);
+                    colorIndex++;
                 }
-
-                // Add the series to the chart
-                this.chartKgs.Series.Add(series);
-                colorIndex++;
             }
         }
 
-        /*chartKgs.Series.Clear();
-        DataTable filteredWeight = dashboardClass.generateUnitUsed(cbMachine.SelectedItem.ToString(), cbTimeKilos.SelectedItem.ToString());
-
-        var series = new Series("kgs")
+        private Color getColorForIndex(int index)
         {
-            ChartType = SeriesChartType.Column,
-            Color = Color.ForestGreen
-        };
-
-        foreach (DataRow row in filteredWeight.Rows)
-        {
-            string unit = row["unit_name"].ToString();
-            decimal totalWeight = decimal.Parse(row["TotalWeight"].ToString());
-            series.Points.AddXY(unit, totalWeight);
-        }
-
-        chartKgs.Series.Add(series);*/
-        }
-
-        private Color GetColorForIndex(int index)
-        {
-            // Return different colors for each series (Unit I, Unit II, Unit III, etc.)
-            Color[] colors = new Color[] { Color.ForestGreen, Color.Green, Color.LightSeaGreen, Color.Cyan, Color.DarkGreen };
+            Color[] colors = new Color[] { Color.ForestGreen, Color.Green, Color.LightSeaGreen, Color.LimeGreen, Color.DarkGreen };
             return colors[index % colors.Length];
         }
 
@@ -176,7 +158,14 @@ namespace WashablesSystem
 
         private void btnSeeAll_Click(object sender, EventArgs e)
         {
-            loadForm(new Users(new Main(), "Activity Log"));
+            if (userAccess)
+            {
+                loadForm(new Users(new Main(), "Activity Log"));
+            }
+            else
+            {
+                MessageBox.Show("You do not have access to this page!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
         private void loadForm(Form m)
         {

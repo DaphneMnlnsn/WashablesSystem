@@ -96,6 +96,54 @@ namespace WashablesSystem.Classes
                 }
             }
         }
+        public void addFreeBill(string orderID)
+        {
+            constring.Open();
+
+            this.orderID = orderID;
+
+            //Add Item to Database
+            SqlCommand cmd = new SqlCommand("SELECT TOP 1 [transaction_id] FROM [Billing] ORDER BY [transaction_id] DESC", constring);
+            SqlDataReader reader1;
+            reader1 = cmd.ExecuteReader();
+            if (reader1.Read())
+            {
+                transactionID = reader1.GetString(0);
+                int num = int.Parse(string.Join("", transactionID.Where(Char.IsDigit))) + 1;
+                transactionID = "T" + num;
+            }
+            else
+            {
+                transactionID = "T1";
+            }
+            reader1.Close();
+            cmd.Dispose();
+
+            //Query for inserting
+            string query = @"INSERT INTO [Billing](transaction_id, user_id, order_id, total_amount, transaction_date, payment_method, payment_status) VALUES(@transactionID, @userID, @orderID, @totalAmount, @transaction_date, 'Free', 'Paid')";
+
+            using (SqlCommand cmd2 = new SqlCommand(query, constring))
+            {
+                // Add parameters
+                cmd2.Parameters.AddWithValue("@transactionID", transactionID);
+                cmd2.Parameters.AddWithValue("@orderID", orderID);
+                cmd2.Parameters.AddWithValue("@userID", sessionVar.loggedIn);
+                cmd2.Parameters.AddWithValue("@totalAmount", "0.00");
+                cmd2.Parameters.AddWithValue("@transactionDate", DateTime.Now);
+
+                //If successful, add to activity log and generate bill
+                if (cmd2.ExecuteNonQuery() == 1)
+                {
+                    constring.Close();
+                    logOperation("Generated Bill");
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong. Please try again.");
+                    constring.Close();
+                }
+            }
+        }
         public DataTable getBillingDetails(string transactionID)
         {
             constring.Open();
@@ -105,6 +153,23 @@ namespace WashablesSystem.Classes
                 "OR [Order].service_id2 = [Service].service_id " +
                 "OR [Order].service_id3 = [Service].service_id " +
                 "INNER JOIN [User] ON [Billing].user_id = [User].user_id WHERE transaction_id = '" + transactionID + "'";
+
+            DataTable bill = new DataTable("bill");
+            SqlDataAdapter da = new SqlDataAdapter(sql, constring);
+            da.Fill(bill);
+            constring.Close();
+
+            return bill;
+        }
+        public DataTable getTransactNum(string orderID)
+        {
+            constring.Open();
+            string sql = "SELECT * FROM [Billing] INNER JOIN [Order] ON [Billing].order_id = [Order].order_id " +
+                "INNER JOIN [Customer] ON [Order].customer_id = [Customer].customer_id " +
+                "INNER JOIN [Service] ON [Order].service_id = [Service].service_id " +
+                "OR [Order].service_id2 = [Service].service_id " +
+                "OR [Order].service_id3 = [Service].service_id " +
+                "INNER JOIN [User] ON [Billing].user_id = [User].user_id WHERE [Billing].[order_id] = '" + orderID + "'";
 
             DataTable bill = new DataTable("bill");
             SqlDataAdapter da = new SqlDataAdapter(sql, constring);
@@ -233,7 +298,7 @@ namespace WashablesSystem.Classes
 
             //Query for editing
             String query = "UPDATE [Billing] SET user_id = '" + sessionVar.loggedIn + "', total_amount='" + totalAmount + "',payment_method='"
-                + paymentMethod + "',additional_charge='" + charge + "',payment_status='Downpaid', downpayment = '" + downpayment + 
+                + paymentMethod + "',additional_charge='" + charge + "',payment_status='Downpaid', downpayment = '" + downpayment +
                 "', balance_due = '" + balancedue + "', reference_num = '" + referenceNo +
                   "', downpayment_received = '" + paymentReceived + "', downpayment_change = '" + change + "' WHERE transaction_id='" + transactNum + "';";
 

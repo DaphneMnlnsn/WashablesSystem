@@ -35,6 +35,10 @@ namespace WashablesSystem
                 {
                     dateResolved = "-";
                 }
+                else
+                {
+                    dateResolved = Convert.ToDateTime(row["date_resolved"]).ToShortDateString();
+                }
                 if (row["resolved_status"].ToString().Equals("False"))
                 {
                     resolvedStatus = "Not Resolved";
@@ -44,8 +48,8 @@ namespace WashablesSystem
                     resolvedStatus = "Resolved";
                 }
                 complaint.setComplaintInfo(row["complaint_id"].ToString(), row["user_fullname"].ToString(),
-                   row["customer_name"].ToString(), row["problem"].ToString(),
-                   Convert.ToDateTime(row["date_complained"]).ToShortDateString(), 
+                   row["customer_id"].ToString(), row["customer_name"].ToString(), row["problem"].ToString(),
+                   Convert.ToDateTime(row["date_complained"]).ToShortDateString(),
                    dateResolved, resolvedStatus);
                 complaintContainer.Controls.Add(complaint);
             }

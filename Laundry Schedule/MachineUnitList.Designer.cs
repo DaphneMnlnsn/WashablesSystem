@@ -32,6 +32,7 @@
             this.lblUnit = new System.Windows.Forms.Label();
             this.btnAvailability = new WashablesSystem.CustomButton();
             this.machineType = new System.Windows.Forms.Label();
+            this.lblunitID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.unitPicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,11 +92,25 @@
             this.machineType.TabIndex = 19;
             this.machineType.Visible = false;
             // 
+            // lblunitID
+            // 
+            this.lblunitID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblunitID.Font = new System.Drawing.Font("Berlin Sans FB", 5F);
+            this.lblunitID.Location = new System.Drawing.Point(151, 219);
+            this.lblunitID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblunitID.Name = "lblunitID";
+            this.lblunitID.Size = new System.Drawing.Size(29, 11);
+            this.lblunitID.TabIndex = 20;
+            this.lblunitID.Text = "Unit";
+            this.lblunitID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblunitID.Visible = false;
+            // 
             // MachineUnitList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.lblunitID);
             this.Controls.Add(this.machineType);
             this.Controls.Add(this.btnAvailability);
             this.Controls.Add(this.lblUnit);
@@ -114,5 +129,6 @@
         private System.Windows.Forms.Label lblUnit;
         private CustomButton btnAvailability;
         private System.Windows.Forms.Label machineType;
+        private System.Windows.Forms.Label lblunitID;
     }
 }

@@ -23,6 +23,22 @@ namespace WashablesSystem.Classes
         {
             constring = sessionVar.Constring;
         }
+        public DataTable generateSalesReport()
+        {
+            constring.Open();
+
+            string query = "SELECT [Order].order_id, customer_name, unit_id, unit_id2, unit_id3, service_category, [Order].service_id, service_id2, service_id3, " +
+                "weight + weight2 + weight3 AS totalweight, transaction_date, total_amount FROM [Order] INNER JOIN [Customer] ON [Order].customer_id =" +
+                "[Customer].customer_id LEFT JOIN [Service] ON [Order].service_id = [Service].service_id OR [Order].service_id2 = " +
+                "[Service].service_id OR [Order].service_id3 = [Service].service_id INNER JOIN [Billing] ON [Order].order_id = [Billing].order_id WHERE transaction_date IS NOT NULL";
+
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, constring);
+            DataTable salesReport = new DataTable("salesReport");
+            dataAdapter.Fill(salesReport);
+
+            constring.Close();
+            return salesReport;
+        }
         public Dictionary<string, decimal> generateSales(string filter)
         {
             constring.Open();
@@ -104,32 +120,32 @@ namespace WashablesSystem.Classes
                          GROUP BY unit_id3";
             }
 
-                SqlCommand command = new SqlCommand(query, constring);
-                command.Parameters.AddWithValue("@StartDate", startDate);
-                command.Parameters.AddWithValue("@EndDate", endDate);
+            SqlCommand command = new SqlCommand(query, constring);
+            command.Parameters.AddWithValue("@StartDate", startDate);
+            command.Parameters.AddWithValue("@EndDate", endDate);
 
-                constring.Open();
+            constring.Open();
 
-                using (SqlDataReader reader = command.ExecuteReader())
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
                 {
-                    while (reader.Read())
+                    string unitID = reader["unitID"].ToString();
+                    decimal totalWeight = decimal.Parse(reader["TotalWeight"].ToString());
+
+                    if (!unitData.ContainsKey(unitID))
                     {
-                        string unitID = reader["unitID"].ToString();
-                        decimal totalWeight = decimal.Parse(reader["TotalWeight"].ToString());
-
-                        if (!unitData.ContainsKey(unitID))
-                        {
-                            unitData[unitID] = new List<decimal>();
-                        }
-
-                        unitData[unitID].Add(totalWeight);
+                        unitData[unitID] = new List<decimal>();
                     }
+
+                    unitData[unitID].Add(totalWeight);
                 }
-            
+            }
+
             constring.Close();
             return unitData;
         }
-        public DataTable generateUnitUsed(string machine, string filter)
+        /*public DataTable generateUnitUsed(string machine, string filter)
         {
             constring.Open();
 
@@ -222,6 +238,7 @@ namespace WashablesSystem.Classes
             constring.Close();
             return kiloPerUnit;
         }
+        */
         public Dictionary<string, int> generateServices(string filter)
         {
             Dictionary<string, int> serviceCounts = new Dictionary<string, int>();
@@ -235,7 +252,8 @@ namespace WashablesSystem.Classes
                     FROM [Order] o INNER JOIN [Service] ON o.service_id = [Service].service_id
                     OR o.service_id2 = [Service].service_id
                     OR o.service_id3 = [Service].service_id
-                    WHERE YEAR(o.finished_on) = YEAR(GETDATE()) AND DAY(o.finished_on) = DAY(GETDATE())
+                    WHERE o.finished_on >= DATEADD(DAY, 1 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE))
+                    AND o.finished_on < DATEADD(DAY, 8 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE))
                     GROUP BY service_category";
                     break;
 
@@ -261,19 +279,19 @@ namespace WashablesSystem.Classes
             }
 
             // Execute the query and fill the serviceCounts dictionary
-                SqlCommand cmd = new SqlCommand(query, constring);
+            SqlCommand cmd = new SqlCommand(query, constring);
 
-                constring.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
+            constring.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
 
-                while (reader.Read())
-                {
-                    string serviceType = reader["service_category"].ToString();
-                    int serviceCount = Convert.ToInt32(reader["ServiceCount"]);
+            while (reader.Read())
+            {
+                string serviceType = reader["service_category"].ToString();
+                int serviceCount = Convert.ToInt32(reader["ServiceCount"]);
 
-                    // Add the service type and count to the dictionary
-                    serviceCounts[serviceType] = serviceCount;
-                }
+                // Add the service type and count to the dictionary
+                serviceCounts[serviceType] = serviceCount;
+            }
 
             constring.Close();
             return serviceCounts;

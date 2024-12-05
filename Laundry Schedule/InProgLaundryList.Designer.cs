@@ -41,6 +41,9 @@
             this.lblButton = new System.Windows.Forms.Label();
             this.orderNum = new System.Windows.Forms.Label();
             this.timeLeftTimer = new System.Windows.Forms.Timer(this.components);
+            this.lblWeight = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblBatch = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnFinish)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +64,7 @@
             this.lblStatus.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblStatus.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
-            this.lblStatus.Location = new System.Drawing.Point(231, 0);
+            this.lblStatus.Location = new System.Drawing.Point(216, 0);
             this.lblStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(79, 18);
@@ -73,7 +76,7 @@
             // 
             this.lblCustomer.AutoSize = true;
             this.lblCustomer.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomer.Location = new System.Drawing.Point(5, 43);
+            this.lblCustomer.Location = new System.Drawing.Point(5, 58);
             this.lblCustomer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCustomer.Name = "lblCustomer";
             this.lblCustomer.Size = new System.Drawing.Size(73, 18);
@@ -84,7 +87,7 @@
             // 
             this.lblService.AutoSize = true;
             this.lblService.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblService.Location = new System.Drawing.Point(5, 80);
+            this.lblService.Location = new System.Drawing.Point(5, 81);
             this.lblService.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblService.Name = "lblService";
             this.lblService.Size = new System.Drawing.Size(89, 18);
@@ -95,7 +98,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 116);
+            this.label1.Location = new System.Drawing.Point(5, 129);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 18);
@@ -107,7 +110,7 @@
             this.custName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.custName.AutoSize = true;
             this.custName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.custName.Location = new System.Drawing.Point(84, 42);
+            this.custName.Location = new System.Drawing.Point(83, 57);
             this.custName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.custName.Name = "custName";
             this.custName.Size = new System.Drawing.Size(110, 19);
@@ -120,7 +123,7 @@
             this.serviceType.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.serviceType.AutoEllipsis = true;
             this.serviceType.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.serviceType.Location = new System.Drawing.Point(100, 79);
+            this.serviceType.Location = new System.Drawing.Point(99, 80);
             this.serviceType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.serviceType.Name = "serviceType";
             this.serviceType.Size = new System.Drawing.Size(129, 19);
@@ -133,7 +136,7 @@
             this.timeLeft.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.timeLeft.AutoSize = true;
             this.timeLeft.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.timeLeft.Location = new System.Drawing.Point(80, 115);
+            this.timeLeft.Location = new System.Drawing.Point(80, 129);
             this.timeLeft.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.timeLeft.Name = "timeLeft";
             this.timeLeft.Size = new System.Drawing.Size(0, 19);
@@ -143,7 +146,7 @@
             // btnFinish
             // 
             this.btnFinish.Image = global::WashablesSystem.Properties.Resources.Finish;
-            this.btnFinish.Location = new System.Drawing.Point(234, 94);
+            this.btnFinish.Location = new System.Drawing.Point(215, 94);
             this.btnFinish.Name = "btnFinish";
             this.btnFinish.Size = new System.Drawing.Size(52, 40);
             this.btnFinish.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -155,7 +158,7 @@
             // 
             this.lblButton.AutoSize = true;
             this.lblButton.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblButton.Location = new System.Drawing.Point(222, 137);
+            this.lblButton.Location = new System.Drawing.Point(203, 137);
             this.lblButton.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblButton.Name = "lblButton";
             this.lblButton.Size = new System.Drawing.Size(77, 18);
@@ -166,26 +169,65 @@
             // 
             this.orderNum.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.orderNum.AutoSize = true;
-            this.orderNum.Font = new System.Drawing.Font("Segoe UI Semibold", 3F, System.Drawing.FontStyle.Bold);
-            this.orderNum.Location = new System.Drawing.Point(290, 23);
+            this.orderNum.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.orderNum.Location = new System.Drawing.Point(3, 32);
             this.orderNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.orderNum.Name = "orderNum";
-            this.orderNum.Size = new System.Drawing.Size(9, 5);
+            this.orderNum.Size = new System.Drawing.Size(39, 21);
             this.orderNum.TabIndex = 86;
             this.orderNum.Text = "or #";
             this.orderNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.orderNum.Visible = false;
             // 
             // timeLeftTimer
             // 
             this.timeLeftTimer.Interval = 1000;
             this.timeLeftTimer.Tick += new System.EventHandler(this.timeLeftTimer_Tick);
             // 
+            // lblWeight
+            // 
+            this.lblWeight.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblWeight.AutoEllipsis = true;
+            this.lblWeight.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.lblWeight.Location = new System.Drawing.Point(83, 104);
+            this.lblWeight.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWeight.Name = "lblWeight";
+            this.lblWeight.Size = new System.Drawing.Size(74, 19);
+            this.lblWeight.TabIndex = 91;
+            this.lblWeight.Text = "weight";
+            this.lblWeight.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(5, 104);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 18);
+            this.label2.TabIndex = 90;
+            this.label2.Text = "Weight:";
+            // 
+            // lblBatch
+            // 
+            this.lblBatch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblBatch.AutoSize = true;
+            this.lblBatch.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.lblBatch.Location = new System.Drawing.Point(66, 33);
+            this.lblBatch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBatch.Name = "lblBatch";
+            this.lblBatch.Size = new System.Drawing.Size(29, 19);
+            this.lblBatch.TabIndex = 92;
+            this.lblBatch.Text = "b #";
+            this.lblBatch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // InProgLaundryList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.lblBatch);
+            this.Controls.Add(this.lblWeight);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.orderNum);
             this.Controls.Add(this.lblButton);
             this.Controls.Add(this.btnFinish);
@@ -198,7 +240,7 @@
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lblUnit);
             this.Name = "InProgLaundryList";
-            this.Size = new System.Drawing.Size(310, 165);
+            this.Size = new System.Drawing.Size(295, 165);
             this.Load += new System.EventHandler(this.InProgLaundryList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnFinish)).EndInit();
             this.ResumeLayout(false);
@@ -220,5 +262,8 @@
         private System.Windows.Forms.Label lblButton;
         private System.Windows.Forms.Label orderNum;
         private System.Windows.Forms.Timer timeLeftTimer;
+        private System.Windows.Forms.Label lblWeight;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblBatch;
     }
 }

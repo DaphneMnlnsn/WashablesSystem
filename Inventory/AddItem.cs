@@ -25,28 +25,34 @@ namespace WashablesSystem
 
         private void unitQuantity_Click(object sender, EventArgs e)
         {
-            if (cbCategory.Text.Equals("Liquid"))
-            {
-                unitQuantity.Text = "L";
-                unitQuantity.Enabled = false;
-            }
-            else
-            {
-                unitQuantity.Text = "kg";
-                unitQuantity.Enabled = false;
-            }
+
         }
 
         private void unitQuantity_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            lblPrice.Text = "Price per " + unitQuantity.Text;
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-                InventoryClass inventory = new InventoryClass(txtBoxName.Text, cbCategory.Text, decimal.Parse(txtBoxQuantity.Text), decimal.Parse(txtBoxPrice.Text), unitQuantity.Text);
-                inventory.addItem();
-                this.Close();
+            InventoryClass inventory = new InventoryClass(txtBoxName.Text, cbCategory.Text, decimal.Parse(txtBoxQuantity.Text), decimal.Parse(txtBoxPrice.Text), unitQuantity.Text);
+            inventory.addItem();
+            this.Close();
+        }
+
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbCategory.Text.Equals("Liquid"))
+            {
+                unitQuantity.SelectedItem = "L";
+                unitQuantity.Enabled = false;
+            }
+            else
+            {
+                unitQuantity.SelectedItem = "kg";
+                unitQuantity.Enabled = false;
+            }
+            lblPrice.Text = "Price per " + unitQuantity.Text;
         }
     }
 }

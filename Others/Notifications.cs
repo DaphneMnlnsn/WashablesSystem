@@ -14,6 +14,7 @@ namespace WashablesSystem
 {
     public partial class Notifications : Form
     {
+
         public Notifications(Main grandparentForm)
         {
             InitializeComponent();
@@ -25,18 +26,23 @@ namespace WashablesSystem
 
         private void Notifications_Load(object sender, EventArgs e)
         {
+            NotificationContainer.Controls.Clear();
             NotificationClass notifClass = new NotificationClass();
             DataTable notifications = notifClass.displayNotification();
             foreach (DataRow row in notifications.Rows)
             {
-                NotificationList notif = new NotificationList();
+                NotificationList notif = new NotificationList(this);
                 notif.setNotificationInfo(row["notification_id"].ToString(), row["unit_id"].ToString(),
-                    row["order_id"].ToString(), row["item_id"].ToString(),
+                    row["batch_id"].ToString(), row["item_id"].ToString(),
                    row["item_name"].ToString(), row["notification_subject"].ToString(),
-                   row["notification_location"].ToString(), bool.Parse(row["read_status"].ToString()), 
+                   row["notification_location"].ToString(), bool.Parse(row["read_status"].ToString()),
                    row["datetime_received"].ToString());
                 NotificationContainer.Controls.Add(notif);
             }
+        }
+        public void RefreshPanel()
+        {
+            this.Notifications_Load(null, null);
         }
     }
 }

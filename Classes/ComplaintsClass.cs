@@ -38,54 +38,81 @@ namespace WashablesSystem.Classes
         public void addComplaint()
         {
             constring.Open();
-                //Add User to Database
-                SqlCommand cmd = new SqlCommand("SELECT TOP 1 [complaint_id] FROM [Complaints] ORDER BY [complaint_id] DESC", constring);
-                SqlDataReader reader1;
-                reader1 = cmd.ExecuteReader();
-                if (reader1.Read())
-                {
-                    complaintID = reader1.GetString(0);
-                    int IDNum = int.Parse(string.Join("", complaintID.Where(Char.IsDigit))) + 1;
-                    complaintID = "CC" + IDNum;
-                }
-                else
-                {
-                    complaintID = "CC1";
-                }
-                reader1.Close();
-                cmd.Dispose();
+            //Add User to Database
+            SqlCommand cmd = new SqlCommand("SELECT TOP 1 [complaint_id] FROM [Complaints] ORDER BY [complaint_id] DESC", constring);
+            SqlDataReader reader1;
+            reader1 = cmd.ExecuteReader();
+            if (reader1.Read())
+            {
+                complaintID = reader1.GetString(0);
+                int IDNum = int.Parse(string.Join("", complaintID.Where(Char.IsDigit))) + 1;
+                complaintID = "CC" + IDNum;
+            }
+            else
+            {
+                complaintID = "CC1";
+            }
+            reader1.Close();
+            cmd.Dispose();
 
-                //Query for inserting
-                String query = "INSERT INTO [Complaints] VALUES('" + complaintID + "','" + sessionVar.loggedIn + "','"
-                    + customerID + "','" + complaintIssue + "','" + complaintDate + "','','0')";
+            //Query for inserting
+            String query = "INSERT INTO [Complaints] VALUES('" + complaintID + "','" + sessionVar.loggedIn + "','"
+                + customerID + "','" + complaintIssue + "','" + complaintDate + "','','0')";
 
-                SqlCommand cmd2 = new SqlCommand(query, constring);
-                cmd2.CommandText = query;
+            SqlCommand cmd2 = new SqlCommand(query, constring);
+            cmd2.CommandText = query;
 
-                //If successful, add to activity log
-                if (cmd2.ExecuteNonQuery() == 1)
-                {
-                    constring.Close();
-                    logOperation("Added New Complaint");
+            //If successful, add to activity log
+            if (cmd2.ExecuteNonQuery() == 1)
+            {
+                constring.Close();
+                logOperation("Added New Complaint");
 
-                }
-                else
-                {
-                    MessageBox.Show("Something went wrong. Please try again.");
-                    constring.Close();
-                }
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong. Please try again.");
+                constring.Close();
+            }
         }
         public void resolveComplaint(string complaintID, string problem)
         {
+            constring.Open();
 
+            this.complaintID = complaintID;
+
+            //Query for editing
+            String query = "UPDATE [Complaints] SET resolved_status='1' WHERE complaint_id='" + complaintID + "';";
+
+            SqlCommand cmd2 = new SqlCommand(query, constring);
+            cmd2.CommandText = query;
+
+            //If successful, add to activity log
+            if (cmd2.ExecuteNonQuery() == 1)
+            {
+                constring.Close();
+                logOperation("Resolved Complaint");
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong. Please try again.");
+                constring.Close();
+            }
         }
-        public void missingItem(string order_date)
+        public DataTable missingItem(string order_date)
         {
+            constring.Open();
+            DataTable missingItemInfo = new DataTable("missingItemInfo");
+            string sql = "SELECT * FROM [Order] INNER JOIN [Customer] ON [Order].customer_id = [Customer].customer_id INNER JOIN [Unit] ON [Order].unit_id = [Unit].unit_id WHERE CAST(scheduled_time AS DATE) = @order_date";
 
-        }
-        public void remainingStains()
-        {
+            SqlCommand cmd = new SqlCommand(sql, constring);
+            cmd.Parameters.AddWithValue("@order_date", order_date);
 
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(missingItemInfo);
+            constring.Close();
+
+            return missingItemInfo;
         }
         public DataTable displayComplaint()
         {
@@ -120,7 +147,7 @@ namespace WashablesSystem.Classes
             if (activity.Equals("Added New Complaint"))
             {
                 string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','added complaint "
-                            + customerID + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','Customers" + "')";
+                            + complaintID + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','Customers" + "')";
                 SqlCommand cmdAct = new SqlCommand(queryAct, constring);
                 cmdAct.CommandText = queryAct;
                 cmdAct.ExecuteNonQuery();
@@ -129,8 +156,8 @@ namespace WashablesSystem.Classes
             }
             else if (activity.Equals("Resolved Complaint"))
             {
-                string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','resolved complaint "
-                            + customerID + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','Customers" + "')";
+                string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','marked complaint "
+                            + complaintID + " as resolved','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','Customers" + "')";
                 SqlCommand cmdAct = new SqlCommand(queryAct, constring);
                 cmdAct.CommandText = queryAct;
                 cmdAct.ExecuteNonQuery();

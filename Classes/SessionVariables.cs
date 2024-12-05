@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.ReportingServices.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -10,10 +11,35 @@ namespace WashablesSystem
     internal class SessionVariables
     {
         private static SqlConnection constring = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["SqlConnection"].ConnectionString);
-        private string _loggedIn = "U1";
-        private decimal _downpaymentRate = decimal.Parse("0.50");
-        private decimal _balanceDueRate = decimal.Parse("0.50");
+        private static string _loggedIn;
+        private static decimal _downpaymentRate;
+        private static decimal _balanceDueRate;
+        private static bool _allRead;
 
+        public SessionVariables()
+        {
+
+        }
+        public SessionVariables(bool rates)
+        {
+            constring.Open();
+
+            SqlCommand cmd = new SqlCommand("SELECT TOP 1 [downpayment_rate], [balancedue_rate] FROM [Settings]", constring);
+            SqlDataReader reader1;
+            reader1 = cmd.ExecuteReader();
+            if (reader1.Read())
+            {
+                downPaymentRate = reader1.GetDecimal(0);
+                balanceDueRate = reader1.GetDecimal(1);
+            }
+            else
+            {
+
+            }
+            reader1.Close();
+            cmd.Dispose();
+            constring.Close();
+        }
         public SqlConnection Constring
         {
             get { return constring; }
@@ -23,6 +49,12 @@ namespace WashablesSystem
         {
             get { return _loggedIn; }
             set { _loggedIn = value; }
+        }
+
+        public bool allRead
+        {
+            get { return _allRead; }
+            set { _allRead = value; }
         }
 
         public decimal downPaymentRate

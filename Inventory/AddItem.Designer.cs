@@ -36,11 +36,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.unitQuantity = new System.Windows.Forms.ComboBox();
+            this.txtBoxQuantity = new System.Windows.Forms.NumericUpDown();
             this.btnCancel = new WashablesSystem.CustomButton();
             this.btnAdd = new WashablesSystem.CustomButton();
             this.txtBoxPrice = new WashablesSystem.CustomTextbox();
             this.txtBoxName = new WashablesSystem.CustomTextbox();
-            this.txtBoxQuantity = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.txtBoxQuantity)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,6 +137,7 @@
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(307, 28);
             this.cbCategory.TabIndex = 202;
+            this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
             // 
             // unitQuantity
             // 
@@ -145,6 +146,9 @@
             this.unitQuantity.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.unitQuantity.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unitQuantity.FormattingEnabled = true;
+            this.unitQuantity.Items.AddRange(new object[] {
+            "L",
+            "kg"});
             this.unitQuantity.Location = new System.Drawing.Point(214, 231);
             this.unitQuantity.Margin = new System.Windows.Forms.Padding(2);
             this.unitQuantity.Name = "unitQuantity";
@@ -152,6 +156,20 @@
             this.unitQuantity.TabIndex = 203;
             this.unitQuantity.SelectionChangeCommitted += new System.EventHandler(this.unitQuantity_SelectionChangeCommitted);
             this.unitQuantity.Click += new System.EventHandler(this.unitQuantity_Click);
+            // 
+            // txtBoxQuantity
+            // 
+            this.txtBoxQuantity.DecimalPlaces = 2;
+            this.txtBoxQuantity.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtBoxQuantity.Location = new System.Drawing.Point(22, 233);
+            this.txtBoxQuantity.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.txtBoxQuantity.Name = "txtBoxQuantity";
+            this.txtBoxQuantity.Size = new System.Drawing.Size(187, 25);
+            this.txtBoxQuantity.TabIndex = 204;
             // 
             // btnCancel
             // 
@@ -236,20 +254,6 @@
             this.txtBoxName.Size = new System.Drawing.Size(307, 26);
             this.txtBoxName.TabIndex = 23;
             this.txtBoxName.UnderlinedStyle = false;
-            // 
-            // txtBoxQuantity
-            // 
-            this.txtBoxQuantity.DecimalPlaces = 2;
-            this.txtBoxQuantity.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.txtBoxQuantity.Location = new System.Drawing.Point(22, 233);
-            this.txtBoxQuantity.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.txtBoxQuantity.Name = "txtBoxQuantity";
-            this.txtBoxQuantity.Size = new System.Drawing.Size(187, 25);
-            this.txtBoxQuantity.TabIndex = 204;
             // 
             // AddItem
             // 

@@ -43,11 +43,9 @@
             this.lblUnitUsed = new System.Windows.Forms.Label();
             this.lblServices = new System.Windows.Forms.Label();
             this.lblONo = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.PictureBox();
             this.btnPay = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPay)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +59,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 171F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 115F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 176F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 131F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
@@ -80,7 +78,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(141, 9);
+            this.label1.Location = new System.Drawing.Point(140, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 19);
@@ -93,7 +91,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Location = new System.Drawing.Point(11, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 19);
@@ -106,7 +104,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(376, 9);
+            this.label3.Location = new System.Drawing.Point(375, 9);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 19);
@@ -119,7 +117,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(544, 9);
+            this.label5.Location = new System.Drawing.Point(543, 9);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 19);
@@ -132,7 +130,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(686, 9);
+            this.label6.Location = new System.Drawing.Point(685, 9);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 19);
@@ -158,9 +156,9 @@
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel2.ColumnCount = 7;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 48F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 219F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 116F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
@@ -173,7 +171,6 @@
             this.tableLayoutPanel2.Controls.Add(this.lblUnitUsed, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblServices, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblONo, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnCancel, 8, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnPay, 7, 0);
             this.tableLayoutPanel2.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.AddColumns;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(-4, 3);
@@ -189,7 +186,7 @@
             this.lblStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(707, 10);
+            this.lblStatus.Location = new System.Drawing.Point(786, 10);
             this.lblStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(46, 17);
@@ -202,7 +199,7 @@
             this.lblWeight.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblWeight.AutoSize = true;
             this.lblWeight.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWeight.Location = new System.Drawing.Point(582, 10);
+            this.lblWeight.Location = new System.Drawing.Point(661, 10);
             this.lblWeight.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblWeight.Name = "lblWeight";
             this.lblWeight.Size = new System.Drawing.Size(79, 17);
@@ -215,7 +212,7 @@
             this.lblPNo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPNo.AutoSize = true;
             this.lblPNo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPNo.Location = new System.Drawing.Point(20, 10);
+            this.lblPNo.Location = new System.Drawing.Point(28, 10);
             this.lblPNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPNo.Name = "lblPNo";
             this.lblPNo.Size = new System.Drawing.Size(24, 17);
@@ -228,7 +225,7 @@
             this.lblCustomerName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCustomerName.AutoSize = true;
             this.lblCustomerName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomerName.Location = new System.Drawing.Point(168, 10);
+            this.lblCustomerName.Location = new System.Drawing.Point(213, 10);
             this.lblCustomerName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCustomerName.Name = "lblCustomerName";
             this.lblCustomerName.Size = new System.Drawing.Size(107, 17);
@@ -241,7 +238,7 @@
             this.lblUnitUsed.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUnitUsed.AutoSize = true;
             this.lblUnitUsed.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnitUsed.Location = new System.Drawing.Point(353, 10);
+            this.lblUnitUsed.Location = new System.Drawing.Point(423, 10);
             this.lblUnitUsed.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUnitUsed.Name = "lblUnitUsed";
             this.lblUnitUsed.Size = new System.Drawing.Size(67, 17);
@@ -254,7 +251,7 @@
             this.lblServices.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblServices.AutoSize = true;
             this.lblServices.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblServices.Location = new System.Drawing.Point(475, 10);
+            this.lblServices.Location = new System.Drawing.Point(554, 10);
             this.lblServices.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblServices.Name = "lblServices";
             this.lblServices.Size = new System.Drawing.Size(57, 17);
@@ -267,7 +264,7 @@
             this.lblONo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblONo.AutoSize = true;
             this.lblONo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblONo.Location = new System.Drawing.Point(75, 10);
+            this.lblONo.Location = new System.Drawing.Point(98, 10);
             this.lblONo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblONo.Name = "lblONo";
             this.lblONo.Size = new System.Drawing.Size(26, 17);
@@ -275,23 +272,11 @@
             this.lblONo.Text = "O#";
             this.lblONo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnCancel
-            // 
-            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCancel.Image = global::WashablesSystem.Properties.Resources.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(893, 4);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(31, 29);
-            this.btnCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnCancel.TabIndex = 88;
-            this.btnCancel.TabStop = false;
-            // 
             // btnPay
             // 
             this.btnPay.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPay.Image = global::WashablesSystem.Properties.Resources.Pay;
-            this.btnPay.Location = new System.Drawing.Point(807, 5);
+            this.btnPay.Location = new System.Drawing.Point(886, 5);
             this.btnPay.Margin = new System.Windows.Forms.Padding(2, 1, 7, 1);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(30, 27);
@@ -314,7 +299,6 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPay)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -338,6 +322,5 @@
         private System.Windows.Forms.Label lblServices;
         private System.Windows.Forms.Label lblONo;
         private System.Windows.Forms.PictureBox btnPay;
-        private System.Windows.Forms.PictureBox btnCancel;
     }
 }

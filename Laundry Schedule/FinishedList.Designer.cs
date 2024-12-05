@@ -42,6 +42,7 @@
             this.CustomerName = new System.Windows.Forms.Label();
             this.ORNo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.batchesContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnPickedUp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBill)).BeginInit();
@@ -49,11 +50,12 @@
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.AutoSize = true;
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel2.ColumnCount = 11;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 152F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 142F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 73F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 173F));
@@ -73,31 +75,35 @@
             this.tableLayoutPanel2.Controls.Add(this.btnBill, 10, 0);
             this.tableLayoutPanel2.Controls.Add(this.CustomerName, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.ORNo, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(-4, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.MaximumSize = new System.Drawing.Size(931, 38);
+            this.tableLayoutPanel2.MinimumSize = new System.Drawing.Size(931, 38);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(948, 115);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(931, 38);
             this.tableLayoutPanel2.TabIndex = 94;
             // 
             // btnPickedUp
             // 
             this.btnPickedUp.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnPickedUp.Image = global::WashablesSystem.Properties.Resources.Resolve;
-            this.btnPickedUp.Location = new System.Drawing.Point(881, 36);
+            this.btnPickedUp.Location = new System.Drawing.Point(864, 2);
             this.btnPickedUp.Margin = new System.Windows.Forms.Padding(5, 2, 2, 2);
             this.btnPickedUp.Name = "btnPickedUp";
-            this.btnPickedUp.Size = new System.Drawing.Size(28, 42);
+            this.btnPickedUp.Size = new System.Drawing.Size(28, 34);
             this.btnPickedUp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnPickedUp.TabIndex = 87;
             this.btnPickedUp.TabStop = false;
+            this.btnPickedUp.Click += new System.EventHandler(this.btnPickedUp_Click);
             // 
             // Weights
             // 
             this.Weights.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Weights.AutoSize = true;
             this.Weights.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Weights.Location = new System.Drawing.Point(396, 40);
+            this.Weights.Location = new System.Drawing.Point(379, 2);
             this.Weights.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Weights.Name = "Weights";
             this.Weights.Size = new System.Drawing.Size(52, 34);
@@ -110,7 +116,7 @@
             this.ScheduleTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ScheduleTime.AutoSize = true;
             this.ScheduleTime.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScheduleTime.Location = new System.Drawing.Point(494, 49);
+            this.ScheduleTime.Location = new System.Drawing.Point(477, 10);
             this.ScheduleTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ScheduleTime.Name = "ScheduleTime";
             this.ScheduleTime.Size = new System.Drawing.Size(103, 17);
@@ -123,7 +129,7 @@
             this.Services.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Services.AutoSize = true;
             this.Services.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Services.Location = new System.Drawing.Point(296, 49);
+            this.Services.Location = new System.Drawing.Point(279, 10);
             this.Services.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Services.Name = "Services";
             this.Services.Size = new System.Drawing.Size(57, 17);
@@ -136,7 +142,7 @@
             this.UnitUsed.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UnitUsed.AutoSize = true;
             this.UnitUsed.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnitUsed.Location = new System.Drawing.Point(211, 40);
+            this.UnitUsed.Location = new System.Drawing.Point(198, 2);
             this.UnitUsed.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.UnitUsed.Name = "UnitUsed";
             this.UnitUsed.Size = new System.Drawing.Size(38, 34);
@@ -149,7 +155,7 @@
             this.FinishedOn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FinishedOn.AutoSize = true;
             this.FinishedOn.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FinishedOn.Location = new System.Drawing.Point(793, 49);
+            this.FinishedOn.Location = new System.Drawing.Point(776, 10);
             this.FinishedOn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FinishedOn.Name = "FinishedOn";
             this.FinishedOn.Size = new System.Drawing.Size(80, 17);
@@ -162,7 +168,7 @@
             this.PickUpDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PickUpDate.AutoSize = true;
             this.PickUpDate.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PickUpDate.Location = new System.Drawing.Point(727, 40);
+            this.PickUpDate.Location = new System.Drawing.Point(710, 2);
             this.PickUpDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PickUpDate.Name = "PickUpDate";
             this.PickUpDate.Size = new System.Drawing.Size(52, 34);
@@ -175,7 +181,7 @@
             this.actualTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.actualTime.AutoSize = true;
             this.actualTime.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.actualTime.Location = new System.Drawing.Point(634, 49);
+            this.actualTime.Location = new System.Drawing.Point(617, 10);
             this.actualTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.actualTime.Name = "actualTime";
             this.actualTime.Size = new System.Drawing.Size(79, 17);
@@ -187,7 +193,7 @@
             // 
             this.btnBill.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnBill.Image = global::WashablesSystem.Properties.Resources.Bill;
-            this.btnBill.Location = new System.Drawing.Point(913, 44);
+            this.btnBill.Location = new System.Drawing.Point(896, 5);
             this.btnBill.Margin = new System.Windows.Forms.Padding(2);
             this.btnBill.Name = "btnBill";
             this.btnBill.Size = new System.Drawing.Size(30, 27);
@@ -201,7 +207,7 @@
             this.CustomerName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CustomerName.AutoSize = true;
             this.CustomerName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CustomerName.Location = new System.Drawing.Point(66, 49);
+            this.CustomerName.Location = new System.Drawing.Point(62, 10);
             this.CustomerName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CustomerName.Name = "CustomerName";
             this.CustomerName.Size = new System.Drawing.Size(107, 17);
@@ -214,7 +220,7 @@
             this.ORNo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ORNo.AutoSize = true;
             this.ORNo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ORNo.Location = new System.Drawing.Point(7, 49);
+            this.ORNo.Location = new System.Drawing.Point(8, 10);
             this.ORNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ORNo.Name = "ORNo";
             this.ORNo.Size = new System.Drawing.Size(29, 17);
@@ -227,7 +233,7 @@
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(0, 105);
+            this.label1.Location = new System.Drawing.Point(0, 35);
             this.label1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(937, 13);
@@ -235,15 +241,28 @@
             this.label1.Text = "_________________________________________________________________________________" +
     "__________________________________________________________________________";
             // 
+            // batchesContainer
+            // 
+            this.batchesContainer.AutoSize = true;
+            this.batchesContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.batchesContainer.Location = new System.Drawing.Point(0, 38);
+            this.batchesContainer.MaximumSize = new System.Drawing.Size(931, 0);
+            this.batchesContainer.MinimumSize = new System.Drawing.Size(0, 10);
+            this.batchesContainer.Name = "batchesContainer";
+            this.batchesContainer.Size = new System.Drawing.Size(931, 10);
+            this.batchesContainer.TabIndex = 99;
+            // 
             // FinishedList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.tableLayoutPanel2);
+            this.Controls.Add(this.batchesContainer);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FinishedList";
-            this.Size = new System.Drawing.Size(941, 118);
+            this.Size = new System.Drawing.Size(931, 61);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnPickedUp)).EndInit();
@@ -267,5 +286,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label actualTime;
         private System.Windows.Forms.PictureBox btnPickedUp;
+        private System.Windows.Forms.FlowLayoutPanel batchesContainer;
     }
 }

@@ -28,34 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea22 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend22 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series36 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea23 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend23 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series37 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series38 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series39 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea24 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend24 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series40 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.chartSales = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.cbTimeSales = new WashablesSystem.CustomComboBox();
             this.lblHeader = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbMachine = new WashablesSystem.CustomComboBox();
+            this.cbTimeKilos = new WashablesSystem.CustomComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.chartKgs = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cbTimeServices = new WashablesSystem.CustomComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.chartServices = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnSeeAll = new System.Windows.Forms.Label();
             this.activityPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbTimeServices = new WashablesSystem.CustomComboBox();
-            this.cbMachine = new WashablesSystem.CustomComboBox();
-            this.cbTimeKilos = new WashablesSystem.CustomComboBox();
-            this.cbTimeSales = new WashablesSystem.CustomComboBox();
             this.btnReport = new WashablesSystem.CustomButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartSales)).BeginInit();
@@ -82,26 +82,50 @@
             // 
             this.chartSales.BackColor = System.Drawing.Color.Transparent;
             this.chartSales.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea22.BackColor = System.Drawing.Color.Transparent;
-            chartArea22.Name = "ChartArea1";
-            this.chartSales.ChartAreas.Add(chartArea22);
-            legend22.Enabled = false;
-            legend22.Name = "Legend1";
-            this.chartSales.Legends.Add(legend22);
+            chartArea1.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            this.chartSales.ChartAreas.Add(chartArea1);
+            legend1.Enabled = false;
+            legend1.Name = "Legend1";
+            this.chartSales.Legends.Add(legend1);
             this.chartSales.Location = new System.Drawing.Point(-13, 36);
             this.chartSales.Margin = new System.Windows.Forms.Padding(2);
             this.chartSales.Name = "chartSales";
             this.chartSales.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series36.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            series36.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            series36.ChartArea = "ChartArea1";
-            series36.Color = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
-            series36.Legend = "Legend1";
-            series36.Name = "Series1";
-            this.chartSales.Series.Add(series36);
+            series1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            series1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            series1.ChartArea = "ChartArea1";
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartSales.Series.Add(series1);
             this.chartSales.Size = new System.Drawing.Size(495, 187);
             this.chartSales.TabIndex = 16;
             this.chartSales.Text = "chart1";
+            // 
+            // cbTimeSales
+            // 
+            this.cbTimeSales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(200)))), ((int)(((byte)(176)))));
+            this.cbTimeSales.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(200)))), ((int)(((byte)(176)))));
+            this.cbTimeSales.BorderSize = 0;
+            this.cbTimeSales.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTimeSales.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTimeSales.ForeColor = System.Drawing.Color.Black;
+            this.cbTimeSales.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.cbTimeSales.Items.AddRange(new object[] {
+            "This Week",
+            "This Month",
+            "This Year"});
+            this.cbTimeSales.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cbTimeSales.ListTextColor = System.Drawing.Color.Black;
+            this.cbTimeSales.Location = new System.Drawing.Point(321, 7);
+            this.cbTimeSales.Margin = new System.Windows.Forms.Padding(2);
+            this.cbTimeSales.MinimumSize = new System.Drawing.Size(133, 20);
+            this.cbTimeSales.Name = "cbTimeSales";
+            this.cbTimeSales.Size = new System.Drawing.Size(140, 25);
+            this.cbTimeSales.TabIndex = 15;
+            this.cbTimeSales.Texts = "This Week";
+            this.cbTimeSales.OnSelectedIndexChanged += new System.EventHandler(this.cbTimeSales_OnSelectedIndexChanged);
             // 
             // lblHeader
             // 
@@ -129,6 +153,53 @@
             this.panel2.Size = new System.Drawing.Size(475, 224);
             this.panel2.TabIndex = 4;
             // 
+            // cbMachine
+            // 
+            this.cbMachine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(200)))), ((int)(((byte)(176)))));
+            this.cbMachine.BorderColor = System.Drawing.Color.Transparent;
+            this.cbMachine.BorderSize = 0;
+            this.cbMachine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbMachine.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.cbMachine.ForeColor = System.Drawing.Color.Black;
+            this.cbMachine.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.cbMachine.Items.AddRange(new object[] {
+            "Washer",
+            "Dryer",
+            "Iron"});
+            this.cbMachine.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cbMachine.ListTextColor = System.Drawing.Color.Black;
+            this.cbMachine.Location = new System.Drawing.Point(227, 10);
+            this.cbMachine.MinimumSize = new System.Drawing.Size(113, 20);
+            this.cbMachine.Name = "cbMachine";
+            this.cbMachine.Size = new System.Drawing.Size(113, 25);
+            this.cbMachine.TabIndex = 18;
+            this.cbMachine.Texts = "Washer";
+            this.cbMachine.OnSelectedIndexChanged += new System.EventHandler(this.cbMachine_OnSelectedIndexChanged);
+            // 
+            // cbTimeKilos
+            // 
+            this.cbTimeKilos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(200)))), ((int)(((byte)(176)))));
+            this.cbTimeKilos.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(200)))), ((int)(((byte)(176)))));
+            this.cbTimeKilos.BorderSize = 0;
+            this.cbTimeKilos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTimeKilos.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTimeKilos.ForeColor = System.Drawing.Color.Black;
+            this.cbTimeKilos.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.cbTimeKilos.Items.AddRange(new object[] {
+            "This Week",
+            "This Month",
+            "This Year"});
+            this.cbTimeKilos.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cbTimeKilos.ListTextColor = System.Drawing.Color.Black;
+            this.cbTimeKilos.Location = new System.Drawing.Point(345, 10);
+            this.cbTimeKilos.Margin = new System.Windows.Forms.Padding(2);
+            this.cbTimeKilos.MinimumSize = new System.Drawing.Size(113, 20);
+            this.cbTimeKilos.Name = "cbTimeKilos";
+            this.cbTimeKilos.Size = new System.Drawing.Size(127, 25);
+            this.cbTimeKilos.TabIndex = 17;
+            this.cbTimeKilos.Texts = "This Week";
+            this.cbTimeKilos.OnSelectedIndexChanged += new System.EventHandler(this.cbMachine_OnSelectedIndexChanged);
+            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -146,46 +217,46 @@
             // 
             this.chartKgs.BackColor = System.Drawing.Color.Transparent;
             this.chartKgs.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea23.BackColor = System.Drawing.Color.Transparent;
-            chartArea23.Name = "ChartArea1";
-            chartArea23.Position.Auto = false;
-            chartArea23.Position.Height = 94F;
-            chartArea23.Position.Width = 78F;
-            chartArea23.Position.X = 3F;
-            chartArea23.Position.Y = 3F;
-            this.chartKgs.ChartAreas.Add(chartArea23);
-            legend23.BackColor = System.Drawing.Color.Transparent;
-            legend23.BorderWidth = 0;
-            legend23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend23.IsTextAutoFit = false;
-            legend23.ItemColumnSpacing = 20;
-            legend23.Name = "Legend1";
-            legend23.Position.Auto = false;
-            legend23.Position.Height = 33.10104F;
-            legend23.Position.Width = 17.60753F;
-            legend23.Position.X = 80.39247F;
-            legend23.Position.Y = 3F;
-            legend23.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chartKgs.Legends.Add(legend23);
+            chartArea2.BackColor = System.Drawing.Color.Transparent;
+            chartArea2.Name = "ChartArea1";
+            chartArea2.Position.Auto = false;
+            chartArea2.Position.Height = 94F;
+            chartArea2.Position.Width = 78F;
+            chartArea2.Position.X = 3F;
+            chartArea2.Position.Y = 3F;
+            this.chartKgs.ChartAreas.Add(chartArea2);
+            legend2.BackColor = System.Drawing.Color.Transparent;
+            legend2.BorderWidth = 0;
+            legend2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend2.IsTextAutoFit = false;
+            legend2.ItemColumnSpacing = 20;
+            legend2.Name = "Legend1";
+            legend2.Position.Auto = false;
+            legend2.Position.Height = 33.10104F;
+            legend2.Position.Width = 17.60753F;
+            legend2.Position.X = 80.39247F;
+            legend2.Position.Y = 3F;
+            legend2.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chartKgs.Legends.Add(legend2);
             this.chartKgs.Location = new System.Drawing.Point(-11, 36);
             this.chartKgs.Margin = new System.Windows.Forms.Padding(2);
             this.chartKgs.Name = "chartKgs";
             this.chartKgs.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series37.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            series37.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            series37.ChartArea = "ChartArea1";
-            series37.Color = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
-            series37.Legend = "Legend1";
-            series37.Name = "Unit I";
-            series38.ChartArea = "ChartArea1";
-            series38.Legend = "Legend1";
-            series38.Name = "Unit II";
-            series39.ChartArea = "ChartArea1";
-            series39.Legend = "Legend1";
-            series39.Name = "Unit III";
-            this.chartKgs.Series.Add(series37);
-            this.chartKgs.Series.Add(series38);
-            this.chartKgs.Series.Add(series39);
+            series2.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            series2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            series2.ChartArea = "ChartArea1";
+            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
+            series2.Legend = "Legend1";
+            series2.Name = "Unit I";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Unit II";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Unit III";
+            this.chartKgs.Series.Add(series2);
+            this.chartKgs.Series.Add(series3);
+            this.chartKgs.Series.Add(series4);
             this.chartKgs.Size = new System.Drawing.Size(497, 187);
             this.chartKgs.TabIndex = 17;
             this.chartKgs.Text = "chart1";
@@ -201,6 +272,30 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(471, 225);
             this.panel3.TabIndex = 4;
+            // 
+            // cbTimeServices
+            // 
+            this.cbTimeServices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(200)))), ((int)(((byte)(176)))));
+            this.cbTimeServices.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(200)))), ((int)(((byte)(176)))));
+            this.cbTimeServices.BorderSize = 0;
+            this.cbTimeServices.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTimeServices.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTimeServices.ForeColor = System.Drawing.Color.Black;
+            this.cbTimeServices.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.cbTimeServices.Items.AddRange(new object[] {
+            "This Week",
+            "This Month",
+            "This Year"});
+            this.cbTimeServices.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cbTimeServices.ListTextColor = System.Drawing.Color.Black;
+            this.cbTimeServices.Location = new System.Drawing.Point(318, 7);
+            this.cbTimeServices.Margin = new System.Windows.Forms.Padding(2);
+            this.cbTimeServices.MinimumSize = new System.Drawing.Size(133, 20);
+            this.cbTimeServices.Name = "cbTimeServices";
+            this.cbTimeServices.Size = new System.Drawing.Size(133, 25);
+            this.cbTimeServices.TabIndex = 16;
+            this.cbTimeServices.Texts = "This Week";
+            this.cbTimeServices.OnSelectedIndexChanged += new System.EventHandler(this.cbTimeServices_OnSelectedIndexChanged);
             // 
             // label1
             // 
@@ -219,28 +314,28 @@
             // 
             this.chartServices.BackColor = System.Drawing.Color.Transparent;
             this.chartServices.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea24.BackColor = System.Drawing.Color.Transparent;
-            chartArea24.Name = "ChartArea1";
-            this.chartServices.ChartAreas.Add(chartArea24);
-            legend24.BackColor = System.Drawing.Color.Transparent;
-            legend24.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend24.IsTextAutoFit = false;
-            legend24.Name = "Legend1";
-            this.chartServices.Legends.Add(legend24);
+            chartArea3.BackColor = System.Drawing.Color.Transparent;
+            chartArea3.Name = "ChartArea1";
+            this.chartServices.ChartAreas.Add(chartArea3);
+            legend3.BackColor = System.Drawing.Color.Transparent;
+            legend3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend3.IsTextAutoFit = false;
+            legend3.Name = "Legend1";
+            this.chartServices.Legends.Add(legend3);
             this.chartServices.Location = new System.Drawing.Point(2, 24);
             this.chartServices.Margin = new System.Windows.Forms.Padding(2);
             this.chartServices.Name = "chartServices";
             this.chartServices.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series40.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            series40.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            series40.ChartArea = "ChartArea1";
-            series40.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series40.Color = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
-            series40.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series40.IsValueShownAsLabel = true;
-            series40.Legend = "Legend1";
-            series40.Name = "Series1";
-            this.chartServices.Series.Add(series40);
+            series5.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            series5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(122)))), ((int)(((byte)(69)))));
+            series5.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series5.IsValueShownAsLabel = true;
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.chartServices.Series.Add(series5);
             this.chartServices.Size = new System.Drawing.Size(467, 209);
             this.chartServices.TabIndex = 17;
             this.chartServices.Text = "chart1";
@@ -291,101 +386,6 @@
             this.label3.Size = new System.Drawing.Size(114, 25);
             this.label3.TabIndex = 17;
             this.label3.Text = "Activity Log";
-            // 
-            // cbTimeServices
-            // 
-            this.cbTimeServices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(200)))), ((int)(((byte)(176)))));
-            this.cbTimeServices.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(200)))), ((int)(((byte)(176)))));
-            this.cbTimeServices.BorderSize = 0;
-            this.cbTimeServices.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTimeServices.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTimeServices.ForeColor = System.Drawing.Color.Black;
-            this.cbTimeServices.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.cbTimeServices.Items.AddRange(new object[] {
-            "This Week",
-            "This Month",
-            "This Year"});
-            this.cbTimeServices.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cbTimeServices.ListTextColor = System.Drawing.Color.Black;
-            this.cbTimeServices.Location = new System.Drawing.Point(318, 7);
-            this.cbTimeServices.Margin = new System.Windows.Forms.Padding(2);
-            this.cbTimeServices.MinimumSize = new System.Drawing.Size(133, 20);
-            this.cbTimeServices.Name = "cbTimeServices";
-            this.cbTimeServices.Size = new System.Drawing.Size(133, 25);
-            this.cbTimeServices.TabIndex = 16;
-            this.cbTimeServices.Texts = "This Week";
-            this.cbTimeServices.OnSelectedIndexChanged += new System.EventHandler(this.cbTimeServices_OnSelectedIndexChanged);
-            // 
-            // cbMachine
-            // 
-            this.cbMachine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(200)))), ((int)(((byte)(176)))));
-            this.cbMachine.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.cbMachine.BorderSize = 0;
-            this.cbMachine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cbMachine.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.cbMachine.ForeColor = System.Drawing.Color.Black;
-            this.cbMachine.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.cbMachine.Items.AddRange(new object[] {
-            "Washer",
-            "Dryer",
-            "Iron"});
-            this.cbMachine.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cbMachine.ListTextColor = System.Drawing.Color.Black;
-            this.cbMachine.Location = new System.Drawing.Point(227, 10);
-            this.cbMachine.MinimumSize = new System.Drawing.Size(113, 20);
-            this.cbMachine.Name = "cbMachine";
-            this.cbMachine.Size = new System.Drawing.Size(113, 25);
-            this.cbMachine.TabIndex = 18;
-            this.cbMachine.Texts = "Washer";
-            this.cbMachine.OnSelectedIndexChanged += new System.EventHandler(this.cbMachine_OnSelectedIndexChanged);
-            // 
-            // cbTimeKilos
-            // 
-            this.cbTimeKilos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(200)))), ((int)(((byte)(176)))));
-            this.cbTimeKilos.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(200)))), ((int)(((byte)(176)))));
-            this.cbTimeKilos.BorderSize = 0;
-            this.cbTimeKilos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTimeKilos.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTimeKilos.ForeColor = System.Drawing.Color.Black;
-            this.cbTimeKilos.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.cbTimeKilos.Items.AddRange(new object[] {
-            "This Week",
-            "This Month",
-            "This Year"});
-            this.cbTimeKilos.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cbTimeKilos.ListTextColor = System.Drawing.Color.Black;
-            this.cbTimeKilos.Location = new System.Drawing.Point(345, 10);
-            this.cbTimeKilos.Margin = new System.Windows.Forms.Padding(2);
-            this.cbTimeKilos.MinimumSize = new System.Drawing.Size(113, 20);
-            this.cbTimeKilos.Name = "cbTimeKilos";
-            this.cbTimeKilos.Size = new System.Drawing.Size(127, 25);
-            this.cbTimeKilos.TabIndex = 17;
-            this.cbTimeKilos.Texts = "This Week";
-            this.cbTimeKilos.OnSelectedIndexChanged += new System.EventHandler(this.cbMachine_OnSelectedIndexChanged);
-            // 
-            // cbTimeSales
-            // 
-            this.cbTimeSales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(200)))), ((int)(((byte)(176)))));
-            this.cbTimeSales.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(200)))), ((int)(((byte)(176)))));
-            this.cbTimeSales.BorderSize = 0;
-            this.cbTimeSales.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTimeSales.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTimeSales.ForeColor = System.Drawing.Color.Black;
-            this.cbTimeSales.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.cbTimeSales.Items.AddRange(new object[] {
-            "This Week",
-            "This Month",
-            "This Year"});
-            this.cbTimeSales.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cbTimeSales.ListTextColor = System.Drawing.Color.Black;
-            this.cbTimeSales.Location = new System.Drawing.Point(321, 7);
-            this.cbTimeSales.Margin = new System.Windows.Forms.Padding(2);
-            this.cbTimeSales.MinimumSize = new System.Drawing.Size(133, 20);
-            this.cbTimeSales.Name = "cbTimeSales";
-            this.cbTimeSales.Size = new System.Drawing.Size(140, 25);
-            this.cbTimeSales.TabIndex = 15;
-            this.cbTimeSales.Texts = "This Week";
-            this.cbTimeSales.OnSelectedIndexChanged += new System.EventHandler(this.cbTimeSales_OnSelectedIndexChanged);
             // 
             // btnReport
             // 

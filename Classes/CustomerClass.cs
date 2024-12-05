@@ -125,8 +125,8 @@ namespace WashablesSystem.Classes
             constring.Close();
 
             return customerInfo;
-         
-            
+
+
         }
         public void restoreCustomer(string customerID)
         {
@@ -157,31 +157,8 @@ namespace WashablesSystem.Classes
 
             this.customerID = customerID;
 
-                //Query for editing
-                String query = "UPDATE [Customer] SET archived=1 WHERE customer_id='" + customerID + "';";
-
-                SqlCommand cmd2 = new SqlCommand(query, constring);
-                cmd2.CommandText = query;
-
-                //If successful, add to activity log
-                if (cmd2.ExecuteNonQuery() == 1)
-                {
-                    constring.Close();
-                    logOperation("Archived Customer");
-                }
-                else
-                {
-                    MessageBox.Show("Something went wrong. Please try again.");
-                    constring.Close();
-                }
-        }
-        public void deleteCustomer(string customerID)
-        {
-            constring.Open();
-
-            this.customerID = customerID;
-
-            string query = "DELETE FROM [Customer] WHERE customer_id='" + customerID + "';";
+            //Query for editing
+            String query = "UPDATE [Customer] SET archived=1 WHERE customer_id='" + customerID + "';";
 
             SqlCommand cmd2 = new SqlCommand(query, constring);
             cmd2.CommandText = query;
@@ -190,13 +167,53 @@ namespace WashablesSystem.Classes
             if (cmd2.ExecuteNonQuery() == 1)
             {
                 constring.Close();
-                logOperation("Deleted Customer");
+                logOperation("Archived Customer");
             }
             else
             {
                 MessageBox.Show("Something went wrong. Please try again.");
                 constring.Close();
             }
+        }
+        public void deleteCustomer(string customerID)
+        {
+            constring.Open();
+
+            this.customerID = customerID;
+
+            string checkQuery = "SELECT COUNT(*) FROM [Order] WHERE customer_id = @CustomerId";
+            using (SqlCommand checkCommand = new SqlCommand(checkQuery, constring))
+            {
+                checkCommand.Parameters.AddWithValue("@CustomerId", customerID);
+                int count = (int)checkCommand.ExecuteScalar();
+
+                if (count > 0)
+                {
+                    MessageBox.Show("Customer cannot be deleted because it is referenced elsewhere.", "Delete Restricted", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    constring.Close();
+                    return;
+                }
+                else
+                {
+                    string query = "DELETE FROM [Customer] WHERE customer_id='" + customerID + "';";
+
+                    SqlCommand cmd2 = new SqlCommand(query, constring);
+                    cmd2.CommandText = query;
+
+                    //If successful, add to activity log
+                    if (cmd2.ExecuteNonQuery() == 1)
+                    {
+                        constring.Close();
+                        logOperation("Deleted Customer");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong. Please try again.");
+                        constring.Close();
+                    }
+                }
+            }
+
         }
         public DataTable displayCustomer()
         {
@@ -220,7 +237,7 @@ namespace WashablesSystem.Classes
             constring.Close();
 
             return customerInfo;
-            
+
         }
         private void logOperation(string activity)
         {

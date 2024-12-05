@@ -21,6 +21,7 @@ namespace WashablesSystem
 
         private void ActivityLog_Load(object sender, EventArgs e)
         {
+            activityContainer.Controls.Clear();
             UserClass user = new UserClass();
             DataTable log = user.displayLog();
             foreach (DataRow row in log.Rows)
@@ -34,8 +35,22 @@ namespace WashablesSystem
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            ReportView reportView = new ReportView();
+            ReportView reportView = new ReportView(false);
             reportView.ShowDialog();
+        }
+
+        private void dateFilter_ValueChanged(object sender, EventArgs e)
+        {
+            activityContainer.Controls.Clear();
+            UserClass user = new UserClass();
+            DataTable log = user.displayLogFilter(dateFilter.Value);
+            foreach (DataRow row in log.Rows)
+            {
+                ActivityLogList logList = new ActivityLogList();
+                logList.setActivityLog(row["page_location"].ToString(), row["username"].ToString(),
+                   row["activity_date"].ToString(), row["activity"].ToString());
+                activityContainer.Controls.Add(logList);
+            }
         }
     }
 }

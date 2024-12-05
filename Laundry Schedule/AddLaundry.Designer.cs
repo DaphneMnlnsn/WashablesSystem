@@ -49,7 +49,6 @@
             this.txtWeight3 = new System.Windows.Forms.NumericUpDown();
             this.txtWeight2 = new System.Windows.Forms.NumericUpDown();
             this.txtWeight = new System.Windows.Forms.NumericUpDown();
-            this.cbUnit = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnService = new WashablesSystem.CustomTextbox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -71,8 +70,6 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.pickupDate = new WashablesSystem.CustomDatePicker();
             this.lvlPickup = new System.Windows.Forms.Label();
-            this.priorityCheckBox = new System.Windows.Forms.CheckBox();
-            this.lblPriority = new System.Windows.Forms.Label();
             this.lblItemName = new System.Windows.Forms.Label();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.lblWeight = new System.Windows.Forms.Label();
@@ -95,6 +92,7 @@
             this.timeIron30 = new System.Windows.Forms.RadioButton();
             this.timeIron1 = new System.Windows.Forms.RadioButton();
             this.timeIronCustomMin = new System.Windows.Forms.RadioButton();
+            this.txtBoxUnit = new WashablesSystem.CustomTextbox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDryOtherHour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDryOtherMin)).BeginInit();
@@ -391,20 +389,6 @@
             this.txtWeight.Size = new System.Drawing.Size(89, 25);
             this.txtWeight.TabIndex = 277;
             // 
-            // cbUnit
-            // 
-            this.cbUnit.BackColor = System.Drawing.SystemColors.Control;
-            this.cbUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbUnit.Enabled = false;
-            this.cbUnit.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cbUnit.Font = new System.Drawing.Font("Berlin Sans FB", 11F);
-            this.cbUnit.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.cbUnit.FormattingEnabled = true;
-            this.cbUnit.Location = new System.Drawing.Point(151, 80);
-            this.cbUnit.Name = "cbUnit";
-            this.cbUnit.Size = new System.Drawing.Size(90, 25);
-            this.cbUnit.TabIndex = 276;
-            // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -694,7 +678,7 @@
             this.pickupDate.SkinColor = System.Drawing.Color.White;
             this.pickupDate.TabIndex = 266;
             this.pickupDate.TextColor = System.Drawing.Color.Black;
-            this.pickupDate.Value = new System.DateTime(2024, 11, 30, 0, 0, 0, 0);
+            this.pickupDate.Value = new System.DateTime(2024, 12, 4, 0, 0, 0, 0);
             // 
             // lvlPickup
             // 
@@ -708,28 +692,6 @@
             this.lvlPickup.Size = new System.Drawing.Size(99, 18);
             this.lvlPickup.TabIndex = 265;
             this.lvlPickup.Text = "Pick-Up Date";
-            // 
-            // priorityCheckBox
-            // 
-            this.priorityCheckBox.AutoSize = true;
-            this.priorityCheckBox.Location = new System.Drawing.Point(270, 86);
-            this.priorityCheckBox.Name = "priorityCheckBox";
-            this.priorityCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.priorityCheckBox.TabIndex = 264;
-            this.priorityCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // lblPriority
-            // 
-            this.lblPriority.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblPriority.AutoSize = true;
-            this.lblPriority.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
-            this.lblPriority.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.lblPriority.Location = new System.Drawing.Point(248, 58);
-            this.lblPriority.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPriority.Name = "lblPriority";
-            this.lblPriority.Size = new System.Drawing.Size(61, 18);
-            this.lblPriority.TabIndex = 263;
-            this.lblPriority.Text = "Priority?";
             // 
             // lblItemName
             // 
@@ -1028,11 +990,34 @@
             this.timeIronCustomMin.TabStop = true;
             this.timeIronCustomMin.UseVisualStyleBackColor = true;
             // 
+            // txtBoxUnit
+            // 
+            this.txtBoxUnit.BackColor = System.Drawing.Color.White;
+            this.txtBoxUnit.BorderColor = System.Drawing.Color.LightGray;
+            this.txtBoxUnit.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.txtBoxUnit.BorderRadius = 5;
+            this.txtBoxUnit.BorderSize = 1;
+            this.txtBoxUnit.Enabled = false;
+            this.txtBoxUnit.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtBoxUnit.ForeColor = System.Drawing.Color.Black;
+            this.txtBoxUnit.Location = new System.Drawing.Point(151, 77);
+            this.txtBoxUnit.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxUnit.Multiline = false;
+            this.txtBoxUnit.Name = "txtBoxUnit";
+            this.txtBoxUnit.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
+            this.txtBoxUnit.PasswordChar = false;
+            this.txtBoxUnit.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtBoxUnit.PlaceholderText = "";
+            this.txtBoxUnit.Size = new System.Drawing.Size(152, 30);
+            this.txtBoxUnit.TabIndex = 289;
+            this.txtBoxUnit.UnderlinedStyle = false;
+            // 
             // AddLaundry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(654, 538);
+            this.Controls.Add(this.txtBoxUnit);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label17);
@@ -1045,7 +1030,6 @@
             this.Controls.Add(this.txtWeight3);
             this.Controls.Add(this.txtWeight2);
             this.Controls.Add(this.txtWeight);
-            this.Controls.Add(this.cbUnit);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnService);
             this.Controls.Add(this.groupBox1);
@@ -1056,8 +1040,6 @@
             this.Controls.Add(this.cbMachine);
             this.Controls.Add(this.pickupDate);
             this.Controls.Add(this.lvlPickup);
-            this.Controls.Add(this.priorityCheckBox);
-            this.Controls.Add(this.lblPriority);
             this.Controls.Add(this.lblItemName);
             this.Controls.Add(this.lblQuantity);
             this.Controls.Add(this.lblWeight);
@@ -1121,7 +1103,6 @@
         private System.Windows.Forms.NumericUpDown txtWeight3;
         private System.Windows.Forms.NumericUpDown txtWeight2;
         private System.Windows.Forms.NumericUpDown txtWeight;
-        private System.Windows.Forms.ComboBox cbUnit;
         private System.Windows.Forms.Label label6;
         private CustomTextbox btnService;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -1143,8 +1124,6 @@
         private System.Windows.Forms.Label lblTime;
         private CustomDatePicker pickupDate;
         private System.Windows.Forms.Label lvlPickup;
-        private System.Windows.Forms.CheckBox priorityCheckBox;
-        private System.Windows.Forms.Label lblPriority;
         private System.Windows.Forms.Label lblItemName;
         private System.Windows.Forms.Label lblQuantity;
         private System.Windows.Forms.Label lblWeight;
@@ -1167,5 +1146,6 @@
         private System.Windows.Forms.RadioButton timeIron30;
         private System.Windows.Forms.RadioButton timeIron1;
         private System.Windows.Forms.RadioButton timeIronCustomMin;
+        private CustomTextbox txtBoxUnit;
     }
 }

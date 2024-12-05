@@ -1,15 +1,18 @@
 ﻿using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using WashablesSystem.Classes;
 
 namespace WashablesSystem
 {
     public partial class NotificationList : UserControl
     {
+        private Notifications _parentForm = new Notifications(new Main());
         string pageLocation;
         bool readStatus;
-        public NotificationList()
+        public NotificationList(Notifications parentForm)
         {
             InitializeComponent();
+            _parentForm = parentForm;
         }
         public void setNotificationInfo(string Num, string unit_id, string order_id, string item_id, string item_name, string Subject, string loc, bool read, string Received)
         {
@@ -32,6 +35,7 @@ namespace WashablesSystem
         {
             NotificationClass notificationClass = new NotificationClass();
             notificationClass.deleteNotification(lblNo.Text);
+            _parentForm.RefreshPanel();
         }
     }
 }

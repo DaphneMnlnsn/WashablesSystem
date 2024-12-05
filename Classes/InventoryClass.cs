@@ -1,4 +1,5 @@
 ﻿using Microsoft.IdentityModel.Tokens;
+using Microsoft.ReportingServices.Diagnostics.Internal;
 using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
 using System;
 using System.Collections;
@@ -40,8 +41,8 @@ namespace WashablesSystem.Classes
         {
             constring = sessionVar.Constring;
             this.itemName = ItemName;
-            this.itemCategory = Category;   
-            this.itemQuantity = Quantity;   
+            this.itemCategory = Category;
+            this.itemQuantity = Quantity;
             this.itemPrice = Price;
             this.itemUnit = Unit;
         }
@@ -107,7 +108,7 @@ namespace WashablesSystem.Classes
             this.itemQuantity = quantity1;
             //Query for editing
             String query = "UPDATE [Item] SET item_quantity = item_quantity - "
-                + itemQuantity /1000 + " WHERE item_id='" + itemID + "'";
+                + itemQuantity / 1000 + " WHERE item_id='" + itemID + "'";
 
             SqlCommand cmd2 = new SqlCommand(query, constring);
             cmd2.CommandText = query;
@@ -132,7 +133,7 @@ namespace WashablesSystem.Classes
 
                 //Query for editing
                 query = "UPDATE [Item] SET item_quantity = item_quantity + "
-                    + itemQuantity /1000 + " WHERE item_id='" + itemID2 + "'";
+                    + itemQuantity / 1000 + " WHERE item_id='" + itemID2 + "'";
 
                 cmd2 = new SqlCommand(query, constring);
                 cmd2.CommandText = query;
@@ -155,7 +156,7 @@ namespace WashablesSystem.Classes
 
                 //Query for editing
                 query = "UPDATE [Item] SET item_quantity = item_quantity + "
-                    + itemQuantity /1000 + " WHERE item_id='" + itemID3 + "'";
+                    + itemQuantity / 1000 + " WHERE item_id='" + itemID3 + "'";
 
                 cmd2 = new SqlCommand(query, constring);
                 cmd2.CommandText = query;
@@ -173,6 +174,24 @@ namespace WashablesSystem.Classes
                 }
             }
         }
+        public void checkStock()
+        {
+            constring.Open();
+            string sql = "SELECT * FROM [Item] WHERE item_id = '" + itemID + "'";
+            DataTable itemInfo = new DataTable("itemInfo");
+            SqlDataAdapter da = new SqlDataAdapter(sql, constring);
+            da.Fill(itemInfo);
+            constring.Close();
+
+            foreach (DataRow row in itemInfo.Rows)
+            {
+                if (decimal.Parse(row["item_quantity"].ToString()) < 5)
+                {
+                    NotificationClass notificationClass = new NotificationClass();
+                    notificationClass.sendNotification(itemID, "Low on Stock");
+                }
+            }
+        }
         public void editItem(string itemID)
         {
             constring.Open();
@@ -181,7 +200,7 @@ namespace WashablesSystem.Classes
 
             //Query for editing
             String query = "UPDATE [Item] SET item_name='"
-                + itemName + "',item_category='" + itemCategory + "',item_price='" + itemPrice 
+                + itemName + "',item_category='" + itemCategory + "',item_price='" + itemPrice
                 + "' WHERE item_id='" + itemID + "'";
 
             SqlCommand cmd2 = new SqlCommand(query, constring);
@@ -264,7 +283,7 @@ namespace WashablesSystem.Classes
 
             this.itemID = itemID;
 
-            String query = "UPDATE [Item] SET archived=1 WHERE item_id='" + itemID + "';";
+            string query = "UPDATE [Item] SET archived=1 WHERE item_id='" + itemID + "';";
 
             SqlCommand cmd2 = new SqlCommand(query, constring);
             cmd2.CommandText = query;
@@ -287,27 +306,44 @@ namespace WashablesSystem.Classes
 
             this.itemID = itemID;
 
-            String query = "DELETE FROM [Item] WHERE item_id='" + itemID + "';";
-
-            SqlCommand cmd2 = new SqlCommand(query, constring);
-            cmd2.CommandText = query;
-
-            String query2 = "DELETE FROM [ItemHistory] WHERE item_id='" + itemID + "';";
-
-            SqlCommand cmd3 = new SqlCommand(query2, constring);
-            cmd3.CommandText = query2;
-
-            //If successful, add to activity log
-            if (cmd2.ExecuteNonQuery() == 1 && cmd3.ExecuteNonQuery() == 1)
+            string checkQuery = "SELECT COUNT(*) FROM [Order] WHERE item_id = @ItemId OR item_id2 = @ItemId OR item_id3 = @ItemId";
+            using (SqlCommand checkCommand = new SqlCommand(checkQuery, constring))
             {
-                constring.Close();
-                logOperation("Deleted Item");
+                checkCommand.Parameters.AddWithValue("@ItemId", itemID);
+                int count = (int)checkCommand.ExecuteScalar();
+
+                if (count > 0)
+                {
+                    MessageBox.Show("Item cannot be deleted because it is referenced elsewhere.", "Delete Restricted", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    constring.Close();
+                    return;
+                }
+                else
+                {
+                    string query = "DELETE FROM [Item] WHERE item_id='" + itemID + "';";
+
+                    SqlCommand cmd2 = new SqlCommand(query, constring);
+                    cmd2.CommandText = query;
+
+                    string query2 = "DELETE FROM [ItemHistory] WHERE item_id='" + itemID + "';";
+
+                    SqlCommand cmd3 = new SqlCommand(query2, constring);
+                    cmd3.CommandText = query2;
+
+                    //If successful, add to activity log
+                    if (cmd2.ExecuteNonQuery() == 1 && cmd3.ExecuteNonQuery() == 1)
+                    {
+                        constring.Close();
+                        logOperation("Deleted Item");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong. Please try again.");
+                        constring.Close();
+                    }
+                }
             }
-            else
-            {
-                MessageBox.Show("Something went wrong. Please try again.");
-                constring.Close();
-            }
+
         }
         public DataTable displayItem()
         {
@@ -315,6 +351,27 @@ namespace WashablesSystem.Classes
             string sql = "SELECT * FROM [Item] WHERE archived = 0";
             DataTable item = new DataTable("item");
             SqlDataAdapter da = new SqlDataAdapter(sql, constring);
+            da.Fill(item);
+            constring.Close();
+
+            return item;
+        }
+        public DataTable displayItemSearch(string searchTerm)
+        {
+            constring.Open();
+            string sql = "SELECT * FROM [Item] WHERE archived = 0 AND (item_id LIKE @itemID OR"
+        + " item_name LIKE @itemName OR item_quantity LIKE @itemQuantity OR item_price LIKE @itemPrice OR item_measurement LIKE @itemMeasurement)";
+
+            SqlCommand sqlCommand = new SqlCommand(sql, constring);
+
+            sqlCommand.Parameters.AddWithValue("@itemID", string.Format("%{0}%", searchTerm));
+            sqlCommand.Parameters.AddWithValue("@itemName", string.Format("%{0}%", searchTerm));
+            sqlCommand.Parameters.AddWithValue("@itemQuantity", string.Format("%{0}%", searchTerm));
+            sqlCommand.Parameters.AddWithValue("@itemPrice", string.Format("%{0}%", searchTerm));
+            sqlCommand.Parameters.AddWithValue("@itemMeasurement", string.Format("%{0}%", searchTerm));
+
+            DataTable item = new DataTable("item");
+            SqlDataAdapter da = new SqlDataAdapter(sqlCommand);
             da.Fill(item);
             constring.Close();
 
@@ -399,7 +456,7 @@ namespace WashablesSystem.Classes
                 cmdAct.CommandText = queryAct;
                 cmdAct.ExecuteNonQuery();
 
-                string queryAddHistory = "INSERT INTO ItemHistory VALUES('" + sessionVar.loggedIn.ToString() + "','" + itemID +  "','" 
+                string queryAddHistory = "INSERT INTO ItemHistory VALUES('" + sessionVar.loggedIn.ToString() + "','" + itemID + "','"
                     + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "',' added " + itemQuantity + itemUnit + "')";
                 SqlCommand cmdAddHistory = new SqlCommand(queryAddHistory, constring);
                 cmdAddHistory.CommandText = queryAddHistory;

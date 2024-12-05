@@ -51,14 +51,16 @@ namespace WashablesSystem
         {
             if (e.Button == MouseButtons.Left && this.Visible == true)
                 this.Dispose();
-                PictureBox btn = (PictureBox)parentForm.FindForm().Controls.Find("btnNotif", true)[0];
-                btn.Enabled = true;
+            PictureBox btn = (PictureBox)parentForm.FindForm().Controls.Find("btnNotif", true)[0];
+            btn.Enabled = true;
         }
 
         private void NotifOverlay_Load(object sender, EventArgs e)
         {
-            foreach (Control ctrl in this.Controls) { 
-                if (ctrl is Panel || ctrl is Label || ctrl is PictureBox){
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is Panel || ctrl is Label || ctrl is PictureBox)
+                {
                     ctrl.MouseClick += NotifOverlay_MouseClick;
                 }
             }
@@ -70,7 +72,7 @@ namespace WashablesSystem
                 notifItem notif = new notifItem(parentForm, this);
                 if (!row["order_id"].ToString().Equals(""))
                 {
-                   notif.setNotif("Laundry " + row["order_id"].ToString() + " " + row["notification_subject"].ToString() + ".", bool.Parse(row["read_status"].ToString()), row["notification_id"].ToString(), "Schedule");
+                    notif.setNotif("Laundry " + row["batch_id"].ToString() + " " + row["notification_subject"].ToString() + ".", bool.Parse(row["read_status"].ToString()), row["notification_id"].ToString(), "Schedule");
                 }
                 else if (!row["item_id"].ToString().Equals(""))
                 {

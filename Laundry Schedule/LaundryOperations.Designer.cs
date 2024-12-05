@@ -33,7 +33,6 @@
             this.lblOccupied = new System.Windows.Forms.Label();
             this.lblNotAvailable = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbSort = new WashablesSystem.CustomComboBox();
             this.laundryContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.btnPending = new System.Windows.Forms.Button();
             this.btnInProg = new System.Windows.Forms.Button();
@@ -42,6 +41,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.machinePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAddLaundry = new WashablesSystem.CustomButton();
+            this.cbSort = new WashablesSystem.CustomComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -107,31 +107,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(342, 523);
             this.panel1.TabIndex = 10;
-            // 
-            // cbSort
-            // 
-            this.cbSort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.cbSort.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(200)))), ((int)(((byte)(176)))));
-            this.cbSort.BorderSize = 0;
-            this.cbSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSort.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSort.ForeColor = System.Drawing.Color.Black;
-            this.cbSort.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.cbSort.Items.AddRange(new object[] {
-            "Priority",
-            "Time Schedule (Asc)",
-            "Time Schedule (Desc)",
-            "Pick-up Date (Asc)",
-            "Pick-up Date (Desc)"});
-            this.cbSort.ListBackColor = System.Drawing.Color.White;
-            this.cbSort.ListTextColor = System.Drawing.Color.Black;
-            this.cbSort.Location = new System.Drawing.Point(165, 58);
-            this.cbSort.Margin = new System.Windows.Forms.Padding(2);
-            this.cbSort.MinimumSize = new System.Drawing.Size(133, 20);
-            this.cbSort.Name = "cbSort";
-            this.cbSort.Size = new System.Drawing.Size(156, 25);
-            this.cbSort.TabIndex = 96;
-            this.cbSort.Texts = "Sort by...";
             // 
             // laundryContainer
             // 
@@ -233,6 +208,31 @@
             this.btnAddLaundry.TextColor = System.Drawing.Color.Black;
             this.btnAddLaundry.UseVisualStyleBackColor = false;
             this.btnAddLaundry.Click += new System.EventHandler(this.btnAddCustomer_Click);
+            // 
+            // cbSort
+            // 
+            this.cbSort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.cbSort.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(200)))), ((int)(((byte)(176)))));
+            this.cbSort.BorderSize = 0;
+            this.cbSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSort.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSort.ForeColor = System.Drawing.Color.Black;
+            this.cbSort.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.cbSort.Items.AddRange(new object[] {
+            "Time Scheduled (Asc)",
+            "Time Scheduled (Desc)",
+            "Pick-up Date (Asc)",
+            "Pick-up Date (Desc)"});
+            this.cbSort.ListBackColor = System.Drawing.Color.White;
+            this.cbSort.ListTextColor = System.Drawing.Color.Black;
+            this.cbSort.Location = new System.Drawing.Point(145, 58);
+            this.cbSort.Margin = new System.Windows.Forms.Padding(2);
+            this.cbSort.MinimumSize = new System.Drawing.Size(133, 20);
+            this.cbSort.Name = "cbSort";
+            this.cbSort.Size = new System.Drawing.Size(176, 25);
+            this.cbSort.TabIndex = 96;
+            this.cbSort.Texts = "Sort by...";
+            this.cbSort.OnSelectedIndexChanged += new System.EventHandler(this.cbSort_OnSelectedIndexChanged);
             // 
             // LaundryOperations
             // 

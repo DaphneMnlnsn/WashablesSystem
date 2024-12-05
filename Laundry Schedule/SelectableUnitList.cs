@@ -18,6 +18,7 @@ namespace WashablesSystem
         public SelectableUnitList()
         {
             InitializeComponent();
+
             btnUnit.Click += btnUnit_Click;
         }
         public void setMachineInfo(string unitName, string unitID, string availability_status, bool occupied)
@@ -32,7 +33,7 @@ namespace WashablesSystem
             {
                 btnUnit.BackColor = Color.FromArgb(117, 238, 131);
             }
-            else if (!occupied && availability_status.Equals("Available"))
+            else if (occupied && availability_status.Equals("Available"))
             {
                 btnUnit.BackColor = Color.FromArgb(255, 0, 0);
                 btnUnit.Enabled = false;
@@ -40,7 +41,7 @@ namespace WashablesSystem
             else if (availability_status.Equals("Not Available"))
             {
                 btnUnit.BackColor = Color.FromArgb(217, 217, 217);
-                btnUnit.Enabled= false;
+                btnUnit.Enabled = false;
             }
         }
 
@@ -51,7 +52,7 @@ namespace WashablesSystem
         }
         public void SelectButton()
         {
-            btnUnit.BackColor = Color.FromArgb(34,56,97);
+            btnUnit.BackColor = Color.FromArgb(34, 56, 97);
             btnUnit.ForeColor = Color.White;
         }
 
@@ -78,6 +79,12 @@ namespace WashablesSystem
                 btnUnit.Enabled = false;
             }
             btnUnit.ForeColor = Color.Black;
+        }
+
+        private void btnUnit_ControlAdded(object sender, ControlEventArgs e)
+        {
+
+
         }
     }
 }

@@ -42,9 +42,10 @@
             this.lblCust.AutoSize = true;
             this.lblCust.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCust.ForeColor = System.Drawing.Color.Black;
-            this.lblCust.Location = new System.Drawing.Point(14, 18);
+            this.lblCust.Location = new System.Drawing.Point(9, 12);
+            this.lblCust.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCust.Name = "lblCust";
-            this.lblCust.Size = new System.Drawing.Size(174, 30);
+            this.lblCust.Size = new System.Drawing.Size(119, 20);
             this.lblCust.TabIndex = 99;
             this.lblCust.Text = "Customer Name";
             // 
@@ -52,11 +53,12 @@
             // 
             this.lblUnit.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblUnit.AutoSize = true;
-            this.lblUnit.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnit.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lblUnit.ForeColor = System.Drawing.Color.Black;
-            this.lblUnit.Location = new System.Drawing.Point(14, 60);
+            this.lblUnit.Location = new System.Drawing.Point(9, 37);
+            this.lblUnit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUnit.Name = "lblUnit";
-            this.lblUnit.Size = new System.Drawing.Size(153, 30);
+            this.lblUnit.Size = new System.Drawing.Size(98, 19);
             this.lblUnit.TabIndex = 100;
             this.lblUnit.Text = "Machine Used";
             // 
@@ -64,11 +66,12 @@
             // 
             this.lblDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.lblDate.ForeColor = System.Drawing.Color.Black;
-            this.lblDate.Location = new System.Drawing.Point(154, 60);
+            this.lblDate.Location = new System.Drawing.Point(137, 39);
+            this.lblDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(211, 30);
+            this.lblDate.Size = new System.Drawing.Size(118, 15);
             this.lblDate.TabIndex = 101;
             this.lblDate.Text = "10/14/2024 11:30AM";
             // 
@@ -77,10 +80,10 @@
             this.btnDetails.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnDetails.BackColor = System.Drawing.SystemColors.Control;
             this.btnDetails.Image = global::WashablesSystem.Properties.Resources.More_Details;
-            this.btnDetails.Location = new System.Drawing.Point(387, 23);
-            this.btnDetails.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
+            this.btnDetails.Location = new System.Drawing.Point(258, 15);
+            this.btnDetails.Margin = new System.Windows.Forms.Padding(2, 2, 7, 2);
             this.btnDetails.Name = "btnDetails";
-            this.btnDetails.Size = new System.Drawing.Size(60, 60);
+            this.btnDetails.Size = new System.Drawing.Size(40, 39);
             this.btnDetails.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnDetails.TabIndex = 102;
             this.btnDetails.TabStop = false;
@@ -89,22 +92,24 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(3, 5);
+            this.panel1.Location = new System.Drawing.Point(2, 3);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(451, 100);
+            this.panel1.Size = new System.Drawing.Size(301, 66);
             this.panel1.TabIndex = 103;
             // 
             // SameDateItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnDetails);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lblUnit);
             this.Controls.Add(this.lblCust);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SameDateItem";
-            this.Size = new System.Drawing.Size(457, 110);
+            this.Size = new System.Drawing.Size(305, 72);
             ((System.ComponentModel.ISupportInitialize)(this.btnDetails)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

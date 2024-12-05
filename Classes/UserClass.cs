@@ -97,7 +97,7 @@ namespace WashablesSystem.Classes
                 {
                     constring.Close();
                     logOperation("Added New User");
-                    
+
                 }
                 else
                 {
@@ -156,9 +156,9 @@ namespace WashablesSystem.Classes
 
             //Query for editing
             String query = "UPDATE [User] SET user_fullname='" + employeeName + "',username='"
-                + employeeUsername + "',user_password='" + employeePass + "',laundry_access='" + laundryPermission 
-                + "',schedule_access='" + schedPermission + "',sAndE_access='" + sAndEPermission 
-                + "',inventory_access='" + inventoryPermission + "',customer_access='" + customerPermission 
+                + employeeUsername + "',user_password='" + employeePass + "',laundry_access='" + laundryPermission
+                + "',schedule_access='" + schedPermission + "',sAndE_access='" + sAndEPermission
+                + "',inventory_access='" + inventoryPermission + "',customer_access='" + customerPermission
                 + "',user_access='" + userPermission + "',billing_access='" + billingPermission + "' WHERE user_id='" + employeeID + "';";
 
             SqlCommand cmd2 = new SqlCommand(query, constring);
@@ -216,7 +216,7 @@ namespace WashablesSystem.Classes
 
             this.employeeID = userID;
 
-            if (!userID.Equals("U1"))
+            if (!userID.Equals("U101"))
             {
                 //Query for editing
                 String query = "UPDATE [User] SET archived=1 WHERE user_id='" + employeeID + "';";
@@ -248,21 +248,44 @@ namespace WashablesSystem.Classes
 
             this.employeeID = userID;
 
-            String query = "DELETE FROM [User] WHERE user_id='" + employeeID + "';";
-
-            SqlCommand cmd2 = new SqlCommand(query, constring);
-            cmd2.CommandText = query;
-
-            //If successful, add to activity log
-            if (cmd2.ExecuteNonQuery() == 1)
+            string checkQuery = "SELECT(SELECT COUNT(*) FROM [Billing] WHERE user_id = @UserId) + (SELECT COUNT(*) FROM [ActivityLog] WHERE user_id = @UserId) " +
+                "+ (SELECT COUNT(*) FROM [Complaints] WHERE user_id = @UserId) AS total";
+            using (SqlCommand checkCommand = new SqlCommand(checkQuery, constring))
             {
-                constring.Close();
-                logOperation("Deleted User");
-            }
-            else
-            {
-                MessageBox.Show("Something went wrong. Please try again.");
-                constring.Close();
+                checkCommand.Parameters.AddWithValue("@UserId", userID);
+                int count = (int)checkCommand.ExecuteScalar();
+
+                if (count > 0)
+                {
+                    MessageBox.Show("User cannot be deleted because it is referenced elsewhere.", "Delete Restricted", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    constring.Close();
+                    return;
+                }
+                else if (sessionVar.loggedIn.Equals(userID))
+                {
+                    MessageBox.Show("User cannot be deleted because it is currently in use.", "Delete Restricted", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    constring.Close();
+                    return;
+                }
+                else
+                {
+                    string query = "DELETE FROM [User] WHERE user_id='" + employeeID + "';";
+
+                    SqlCommand cmd2 = new SqlCommand(query, constring);
+                    cmd2.CommandText = query;
+
+                    //If successful, add to activity log
+                    if (cmd2.ExecuteNonQuery() == 1)
+                    {
+                        constring.Close();
+                        logOperation("Deleted User");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong. Please try again.");
+                        constring.Close();
+                    }
+                }
             }
         }
         public DataTable displayUser()
@@ -273,7 +296,7 @@ namespace WashablesSystem.Classes
             SqlDataAdapter da = new SqlDataAdapter(sql, constring);
             da.Fill(users);
             constring.Close();
-            
+
             return users;
 
         }
@@ -293,6 +316,18 @@ namespace WashablesSystem.Classes
         {
             constring.Open();
             string sql = "SELECT * FROM [ActivityLog] INNER JOIN [User] ON [ActivityLog].user_id = [User].user_id ORDER BY [log_id] DESC";
+            DataTable log = new DataTable("log");
+            SqlDataAdapter da = new SqlDataAdapter(sql, constring);
+            da.Fill(log);
+            constring.Close();
+
+            return log;
+        }
+        public DataTable displayLogFilter(DateTime filterBy)
+        {
+            constring.Open();
+            string sql = "SELECT * FROM [ActivityLog] INNER JOIN [User] ON [ActivityLog].user_id = [User].user_id WHERE activity_date >= '" +
+                filterBy.Date + "' AND activity_date < '" + filterBy.AddDays(1) + "' ORDER BY [log_id] DESC";
             DataTable log = new DataTable("log");
             SqlDataAdapter da = new SqlDataAdapter(sql, constring);
             da.Fill(log);
@@ -320,8 +355,8 @@ namespace WashablesSystem.Classes
 
             if (activity.Equals("Added New User"))
             {
-                string queryAct = "INSERT INTO ActivityLog VALUES('" + logID  + "','" + sessionVar.loggedIn.ToString() + "','added user "
-                            + employeeID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))  + "','Users" + "')";
+                string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','added user "
+                            + employeeID + "','" + DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")) + "','Users" + "')";
                 SqlCommand cmdAct = new SqlCommand(queryAct, constring);
                 cmdAct.CommandText = queryAct;
                 cmdAct.ExecuteNonQuery();

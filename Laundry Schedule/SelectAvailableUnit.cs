@@ -14,12 +14,12 @@ namespace WashablesSystem
     public partial class SelectAvailableUnit : Form
     {
         private SelectableUnitList selectedButtonControl = null;
-        private string orderID = "";
+        private string batchID = "";
         ScheduleClass scheduleClass;
-        public SelectAvailableUnit(string orderID)
+        public SelectAvailableUnit(string batchID)
         {
             InitializeComponent();
-            this.orderID = orderID;
+            this.batchID = batchID;
             scheduleClass = new ScheduleClass();
         }
 
@@ -36,10 +36,10 @@ namespace WashablesSystem
             DateTime startTime = DateTime.Now;
             TimeSpan washTime = TimeSpan.Zero, dryTime = TimeSpan.Zero, ironTime = TimeSpan.Zero;
 
-            DataTable orders = scheduleClass.displaySelectedOrder(orderID);
+            DataTable orders = scheduleClass.displaySelectedOrder(batchID);
             foreach (DataRow row in orders.Rows)
             {
-                order_status = row["order_status"].ToString();
+                order_status = row["status"].ToString();
                 washTime = TimeSpan.Parse(row["wash_time"].ToString());
                 dryTime = TimeSpan.Parse(row["dry_time"].ToString());
                 ironTime = TimeSpan.Parse(row["iron_time"].ToString());
@@ -47,7 +47,7 @@ namespace WashablesSystem
             lblStartTime.Text = startTime.ToShortTimeString();
             if (order_status.Equals("Pending Wash"))
             {
-                lblMachine.Text.Equals("Washingg Machine");
+                lblMachine.Text.Equals("Washing Machine");
                 lblEndTime.Text = (startTime + washTime).ToShortTimeString();
                 machineType = "Washing Machine";
             }
@@ -90,7 +90,7 @@ namespace WashablesSystem
         private void btnStart_Click(object sender, EventArgs e)
         {
             string unitID = selectedButtonControl.getSelectedButton();
-            scheduleClass.startSchedule(orderID, unitID);
+            scheduleClass.startSchedule(batchID, unitID);
             this.Close();
         }
     }

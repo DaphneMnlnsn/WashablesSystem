@@ -14,23 +14,26 @@ namespace WashablesSystem
 {
     public partial class AddLaundry : Form
     {
+        bool specificUnit;
+        string unitSelected;
         public AddLaundry()
         {
             InitializeComponent();
         }
 
-        public AddLaundry(string machineSelected, string unitSelected)
+        public AddLaundry(string unitID, string machineSelected, string unitSelected)
         {
             InitializeComponent();
+            this.unitSelected = unitID;
             cbMachine.Text = machineSelected;
-            cbUnit.Text = unitSelected;
+            txtBoxUnit.Text = unitSelected;
+            specificUnit = true;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             /// collect details
-            string unit = cbUnit.Text;
-            bool priority = priorityCheckBox.Checked;
+            string unit = txtBoxUnit.Text;
             string serviceCategory = cbService.Text;
 
             string service = btnService.Text;
@@ -38,7 +41,7 @@ namespace WashablesSystem
             string input = service;
             char[] separators = new char[] { '|' };
             string[] types = input.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-            if(types.Length == 1)
+            if (types.Length == 1)
             {
                 service1 = types[0];
             }
@@ -122,8 +125,16 @@ namespace WashablesSystem
                 ironTime = TimeSpan.FromHours(double.Parse(txtPressOtherHr.Text));
             }
 
-            ScheduleClass schedule = new ScheduleClass(serviceCategory, service1, service2, service3, weight, weight2, weight3, custID, DateTime.Now, pickUp, item1, item2, item3, itemQuan1, itemQuan2, itemQuan3, washTime, dryTime, ironTime, priority);
-            schedule.addLaundry();
+            ScheduleClass schedule = new ScheduleClass(serviceCategory, service1, service2, service3, weight, weight2, weight3, custID, DateTime.Now, pickUp, item1, item2, item3, itemQuan1, itemQuan2, itemQuan3, washTime, dryTime, ironTime);
+            if (specificUnit)
+            {
+                schedule.addLaundry(unitSelected, cbMachine.Text);
+            }
+            else
+            {
+                schedule.addLaundry();
+            }
+
             this.Close();
 
         }

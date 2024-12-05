@@ -92,7 +92,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 360F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 261F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 202F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 203F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -111,7 +111,7 @@
             this.lblSE.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSE.AutoSize = true;
             this.lblSE.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSE.Location = new System.Drawing.Point(273, 9);
+            this.lblSE.Location = new System.Drawing.Point(272, 9);
             this.lblSE.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSE.Name = "lblSE";
             this.lblSE.Size = new System.Drawing.Size(58, 18);
@@ -124,7 +124,7 @@
             this.lblRS.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblRS.AutoSize = true;
             this.lblRS.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRS.Location = new System.Drawing.Point(582, 9);
+            this.lblRS.Location = new System.Drawing.Point(581, 9);
             this.lblRS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRS.Name = "lblRS";
             this.lblRS.Size = new System.Drawing.Size(62, 18);
@@ -157,6 +157,7 @@
             this.btnSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnSearch.TabIndex = 15;
             this.btnSearch.TabStop = false;
+            this.btnSearch.Visible = false;
             // 
             // btnEquipment
             // 
@@ -222,6 +223,7 @@
             this.txtBoxSearch.Size = new System.Drawing.Size(279, 26);
             this.txtBoxSearch.TabIndex = 8;
             this.txtBoxSearch.UnderlinedStyle = false;
+            this.txtBoxSearch.Visible = false;
             // 
             // ServicesAndEquipment
             // 

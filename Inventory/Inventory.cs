@@ -51,5 +51,11 @@ namespace WashablesSystem
             btnArchive.BackColor = Color.FromArgb(217, 217, 217);
             btnView.BackColor = SystemColors.Control;
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string search = txtBoxSearch.Text;
+            loadForm(new ItemView(search));
+        }
     }
 }

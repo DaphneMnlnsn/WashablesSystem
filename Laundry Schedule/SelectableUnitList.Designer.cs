@@ -53,6 +53,7 @@
             this.btnUnit.TextColor = System.Drawing.Color.Black;
             this.btnUnit.UseVisualStyleBackColor = false;
             this.btnUnit.Click += new System.EventHandler(this.btnUnit_Click);
+            this.btnUnit.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.btnUnit_ControlAdded);
             // 
             // lblUnit
             // 

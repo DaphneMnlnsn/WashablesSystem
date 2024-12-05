@@ -19,9 +19,6 @@ namespace WashablesSystem
 
         private void ArchiveSched_Load(object sender, EventArgs e)
         {
-            ArchiveSchedList archiveSchedList = new ArchiveSchedList();
-            archiveSchedList.setScheduleInfo("OR1033", "Amiah Velesco", "-", "Wash/Dry (Clothes...)", "1.00", "Time Schedule: 10/14/2024\n8:45 AM\nStart Time: ---\nEnd Time: ---", "10/16/2024", "1 hr");
-            ArchivedContainer.Controls.Add(archiveSchedList);
         }
     }
 }

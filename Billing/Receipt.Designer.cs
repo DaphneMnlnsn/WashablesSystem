@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Receipt));
             this.lblChange = new System.Windows.Forms.Label();
             this.lblPaymentReceived = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -60,6 +61,8 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.btnCancel = new WashablesSystem.CustomButton();
             this.btnPrint = new WashablesSystem.CustomButton();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -491,6 +494,17 @@
             this.btnPrint.Text = "Print";
             this.btnPrint.TextColor = System.Drawing.Color.White;
             this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // Receipt
             // 
@@ -575,5 +589,7 @@
         private CustomButton btnCancel;
         private CustomButton btnPrint;
         private System.Windows.Forms.Label lblDate;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }

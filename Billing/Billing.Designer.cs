@@ -100,6 +100,7 @@
             this.btnSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnSearch.TabIndex = 15;
             this.btnSearch.TabStop = false;
+            this.btnSearch.Visible = false;
             // 
             // txtBoxSearch
             // 
@@ -121,6 +122,7 @@
             this.txtBoxSearch.Size = new System.Drawing.Size(279, 26);
             this.txtBoxSearch.TabIndex = 8;
             this.txtBoxSearch.UnderlinedStyle = false;
+            this.txtBoxSearch.Visible = false;
             // 
             // Billing
             // 

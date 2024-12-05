@@ -18,7 +18,7 @@ namespace WashablesSystem
         {
             InitializeComponent();
         }
-        public void setScheduleInfo(string OrNum, string customerName, string unitUsed, string services, string weights, string SchedTime, string pickUpDate, string timeLeft)
+        public void setScheduleInfo(string OrNum, string customerName, string unitUsed, string services, string weights, string SchedTime, string pickUpDate)
         {
             //Displaying Schedule info
             ORNo.Text = OrNum;
@@ -29,7 +29,6 @@ namespace WashablesSystem
 
             ScheduleTime.Text = SchedTime;
             PickUpDate.Text = pickUpDate;
-            TimeLeft.Text = timeLeft;
 
         }
     }

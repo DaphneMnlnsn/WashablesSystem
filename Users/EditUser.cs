@@ -65,5 +65,15 @@ namespace WashablesSystem
                 MessageBox.Show("Passwords do not match!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+
+        private void btnSee_Click(object sender, EventArgs e)
+        {
+            txtBoxPass.PasswordChar = false;
+        }
+
+        private void btnConfirmSee_Click(object sender, EventArgs e)
+        {
+            txtBoxConfirm.PasswordChar = false;
+        }
     }
 }

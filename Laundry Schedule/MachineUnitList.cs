@@ -17,9 +17,10 @@ namespace WashablesSystem
         {
             InitializeComponent();
         }
-        public void setMachineInfo(string unitName, string availability, bool occupied, string machine, Image picture)
+        public void setMachineInfo(string unitID, string unitName, string availability, bool occupied, string machine, Image picture)
         {
             //Displaying machine info
+            lblunitID.Text = unitID;
             lblUnit.Text = unitName;
             btnAvailability.Text = availability;
             unitPicture.Image = picture;
@@ -42,12 +43,16 @@ namespace WashablesSystem
                 btnAvailability.Text = "Not Available";
                 btnAvailability.Enabled = false;
             }
+            else if (machineType.Equals("Iron"))
+            {
+                btnAvailability.Enabled = false;
+            }
 
         }
 
         private void btnAvailability_Click(object sender, EventArgs e)
         {
-            AddLaundry addLaundry = new AddLaundry(machineType.Text, lblUnit.Text);
+            AddLaundry addLaundry = new AddLaundry(lblunitID.Text, machineType.Text, lblUnit.Text);
             addLaundry.ShowDialog();
         }
     }

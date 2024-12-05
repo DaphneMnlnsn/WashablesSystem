@@ -202,6 +202,7 @@
             this.btnConfirmSee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnConfirmSee.TabIndex = 83;
             this.btnConfirmSee.TabStop = false;
+            this.btnConfirmSee.Click += new System.EventHandler(this.btnConfirmSee_Click);
             // 
             // btnSee
             // 
@@ -214,6 +215,7 @@
             this.btnSee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnSee.TabIndex = 82;
             this.btnSee.TabStop = false;
+            this.btnSee.Click += new System.EventHandler(this.btnSee_Click);
             // 
             // label4
             // 

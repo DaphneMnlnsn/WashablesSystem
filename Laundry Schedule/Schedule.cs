@@ -35,7 +35,7 @@ namespace WashablesSystem
             {
                 displayInProgress();
             }
-            
+
         }
         private void loadForm(Form m)
         {
@@ -56,10 +56,10 @@ namespace WashablesSystem
             DataTable orders = scheduleClass.displayInProgress("Wash In-Progress");
             foreach (DataRow row in orders.Rows)
             {
-                InProgressList inProg = new InProgressList();
-                inProg.setScheduleInfo(row["order_id"].ToString(), row["customer_name"].ToString(),
-                   row["unit_name"].ToString(), row["service_category"] + "(" + row["service_name"].ToString() + ")",
-                   row["weight"].ToString(), "Time Scheduled: " + row["scheduled_time"].ToString() 
+                decimal total_weight = decimal.Parse(row["weight"].ToString()) + decimal.Parse(row["weight2"].ToString()) + decimal.Parse(row["weight3"].ToString());
+                InProgressList inProg = new InProgressList(this);
+                inProg.setScheduleInfo(row["order_id"].ToString(), row["customer_name"].ToString(), row["service_category"] + "(" + row["service_name"].ToString() + ")",
+                   total_weight.ToString(), "Time Scheduled: " + row["scheduled_time"].ToString()
                    + "\nStart Time: " + row["laundry_startTime"].ToString() + "\nEnd Time: "
                    + row["laundry_endTime"].ToString(), row["pickup_date"].ToString(),
                    row["laundry_startTime"].ToString(), row["laundry_endTime"].ToString(),
@@ -70,10 +70,10 @@ namespace WashablesSystem
             orders = scheduleClass.displayInProgress("Dry In-Progress");
             foreach (DataRow row in orders.Rows)
             {
-                InProgressList inProg = new InProgressList();
-                inProg.setScheduleInfo(row["order_id"].ToString(), row["customer_name"].ToString(),
-                   row["unit_name"].ToString(), row["service_category"] + "(" + row["service_name"].ToString() + ")",
-                   row["weight"].ToString(), "Time Scheduled: " + row["scheduled_time"].ToString()
+                decimal total_weight = decimal.Parse(row["weight"].ToString()) + decimal.Parse(row["weight2"].ToString()) + decimal.Parse(row["weight3"].ToString());
+                InProgressList inProg = new InProgressList(this);
+                inProg.setScheduleInfo(row["order_id"].ToString(), row["customer_name"].ToString(), row["service_category"] + "(" + row["service_name"].ToString() + ")",
+                   total_weight.ToString(), "Time Scheduled: " + row["scheduled_time"].ToString()
                    + "\nStart Time: " + row["laundry_startTime"].ToString() + "\nEnd Time: "
                    + row["laundry_endTime"].ToString(), row["pickup_date"].ToString(),
                    row["laundry_startTime"].ToString(), row["laundry_endTime"].ToString(),
@@ -83,10 +83,10 @@ namespace WashablesSystem
             orders = scheduleClass.displayInProgress("Press In-Progress");
             foreach (DataRow row in orders.Rows)
             {
-                InProgressList inProg = new InProgressList();
-                inProg.setScheduleInfo(row["order_id"].ToString(), row["customer_name"].ToString(),
-                   row["unit_name"].ToString(), row["service_category"] + "(" + row["service_name"].ToString() + ")",
-                   row["weight"].ToString(), "Time Scheduled: " + row["scheduled_time"].ToString()
+                decimal total_weight = decimal.Parse(row["weight"].ToString()) + decimal.Parse(row["weight2"].ToString()) + decimal.Parse(row["weight3"].ToString());
+                InProgressList inProg = new InProgressList(this);
+                inProg.setScheduleInfo(row["order_id"].ToString(), row["customer_name"].ToString(), row["service_category"] + "(" + row["service_name"].ToString() + ")",
+                   total_weight.ToString(), "Time Scheduled: " + row["scheduled_time"].ToString()
                    + "\nStart Time: " + row["laundry_startTime"].ToString() + "\nEnd Time: "
                    + row["laundry_endTime"].ToString(), row["pickup_date"].ToString(),
                    row["laundry_startTime"].ToString(), row["laundry_endTime"].ToString(),
@@ -101,10 +101,11 @@ namespace WashablesSystem
             DataTable orders = scheduleClass.displayPending();
             foreach (DataRow row in orders.Rows)
             {
-                PendingList pending = new PendingList();
+                decimal total_weight = decimal.Parse(row["weight"].ToString()) + decimal.Parse(row["weight2"].ToString()) + decimal.Parse(row["weight3"].ToString());
+                PendingList pending = new PendingList(this);
                 pending.setScheduleInfo(row["order_id"].ToString(), row["customer_name"].ToString(),
                    "-", row["service_category"] + "(" + row["service_name"].ToString() + ")",
-                   row["weight"].ToString(), "Time Scheduled: " + row["scheduled_time"].ToString()
+                   total_weight.ToString(), "Time Scheduled: " + row["scheduled_time"].ToString()
                    + "\nStart Time: -" + "\nEnd Time: -", row["pickup_date"].ToString(), "-",
                    "-");
                 panelTab.Controls.Add(pending);
@@ -117,13 +118,14 @@ namespace WashablesSystem
             DataTable orders = scheduleClass.displayFinished();
             foreach (DataRow row in orders.Rows)
             {
-                FinishedList finished = new FinishedList();
+                FinishedList finished = new FinishedList(this);
+                decimal total_weight = decimal.Parse(row["weight"].ToString()) + decimal.Parse(row["weight2"].ToString()) + decimal.Parse(row["weight3"].ToString());
                 finished.setScheduleInfo(row["order_id"].ToString(), row["customer_name"].ToString(),
                    row["unit_id"].ToString() + "\n" + row["unit_id2"].ToString() + "\n" + row["unit_id3"].ToString(), row["service_category"] + "(" + row["service_name"].ToString() + ")",
-                   row["weight"].ToString(), "Time Scheduled: " + row["scheduled_time"].ToString()
+                   total_weight.ToString(), "Time Scheduled: " + row["scheduled_time"].ToString()
                    + "\nStart Time: " + row["laundry_startTime"].ToString() + "\nEnd Time: "
-                   + row["laundry_endTime"].ToString(), TimeSpan.Parse(row["laundry_totalDuration"].ToString()).ToString(@"hh\:mm\:ss"), row["pickup_date"].ToString(),
-                   row["finished_on"].ToString(), WashablesSystem.Properties.Resources.Bill);
+                   + row["laundry_endTime"].ToString(), scheduleClass.computeTotalDuration().ToString(@"hh\:mm\:ss"), row["pickup_date"].ToString(),
+                   row["finished_on"].ToString(), "Finished", WashablesSystem.Properties.Resources.Bill);
                 panelTab.Controls.Add(finished);
             }
         }
@@ -134,13 +136,14 @@ namespace WashablesSystem
             DataTable orders = scheduleClass.displayPickedUp();
             foreach (DataRow row in orders.Rows)
             {
-                FinishedList pickedUp = new FinishedList();
+                FinishedList pickedUp = new FinishedList(this);
+                decimal total_weight = decimal.Parse(row["weight"].ToString()) + decimal.Parse(row["weight2"].ToString()) + decimal.Parse(row["weight3"].ToString());
                 pickedUp.setScheduleInfo(row["order_id"].ToString(), row["customer_name"].ToString(),
-                   row["unit_name"].ToString(), row["service_category"] + "(" + row["service_name"].ToString() + ")",
-                   row["weight"].ToString(), "Time Scheduled: " + row["scheduled_time"].ToString()
+                   row["unit_name"].ToString(), total_weight.ToString(), row["service_category"] + "(" + row["service_name"].ToString() + ")",
+                    "Time Scheduled: " + row["scheduled_time"].ToString()
                    + "\nStart Time: " + row["laundry_startTime"].ToString() + "\nEnd Time: "
                    + row["laundry_endTime"].ToString(), TimeSpan.Parse(row["laundry_totalDuration"].ToString()).ToString(@"hh\:mm\:ss"), row["pickup_date"].ToString(),
-                   row["finished_on"].ToString(), WashablesSystem.Properties.Resources.Bill);
+                   row["finished_on"].ToString(), "Picked-Up", WashablesSystem.Properties.Resources.Bill);
                 panelTab.Controls.Add(pickedUp);
             }
         }
@@ -151,15 +154,11 @@ namespace WashablesSystem
             DataTable orders = scheduleClass.displayCancelled();
             foreach (DataRow row in orders.Rows)
             {
-                InProgressList cancelled = new InProgressList();
+                decimal total_weight = decimal.Parse(row["weight"].ToString()) + decimal.Parse(row["weight2"].ToString()) + decimal.Parse(row["weight3"].ToString());
+                ArchiveSchedList cancelled = new ArchiveSchedList();
                 cancelled.setScheduleInfo(row["order_id"].ToString(), row["customer_name"].ToString(),
-                   row["unit_name"].ToString(), row["service_category"] + "(" + row["service_name"].ToString() + ")",
-                   row["weight"].ToString(), "Time Scheduled: " + row["scheduled_time"].ToString()
-                   + "\nStart Time: " + row["laundry_startTime"].ToString() + "\nEnd Time: "
-                   + row["laundry_endTime"].ToString(), row["pickup_date"].ToString(),
-                   TimeSpan.Parse((DateTime.Parse(row["laundry_endTime"].ToString()) - DateTime.Now).ToString()).ToString(@"hh\:mm\:ss"),
-                   TimeSpan.Parse((DateTime.Now - DateTime.Parse(row["laundry_startTime"].ToString())).ToString()).ToString(@"hh\:mm\:ss"),
-                   WashablesSystem.Properties.Resources.Pause, WashablesSystem.Properties.Resources.Cancel);
+                   row["unit_name"].ToString(), row["service_category"] + "\n" + row["service_name"].ToString(),
+                   total_weight.ToString(), row["scheduled_time"].ToString(), row["pickup_date"].ToString());
                 panelTab.Controls.Add(cancelled);
             }
         }
@@ -226,6 +225,51 @@ namespace WashablesSystem
                 finishedLayout.Visible = false;
                 displayCancelled();
             }
+        }
+
+        public void RefreshPanel()
+        {
+            this.Customers_Load(null, null);
+        }
+
+        private void cbSortFinished_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbFilter.Texts.Equals("Pending"))
+            {
+                panelTab.Controls.Clear();
+                ScheduleClass scheduleClass = new ScheduleClass();
+                DataTable orders = scheduleClass.displayPendingSort(cbSortFinished.SelectedIndex);
+                foreach (DataRow row in orders.Rows)
+                {
+                    decimal total_weight = decimal.Parse(row["weight"].ToString()) + decimal.Parse(row["weight2"].ToString()) + decimal.Parse(row["weight3"].ToString());
+                    PendingList pending = new PendingList(this);
+                    pending.setScheduleInfo(row["order_id"].ToString(), row["customer_name"].ToString(),
+                       "-", row["service_category"] + "(" + row["service_name"].ToString() + ")",
+                       total_weight.ToString(), "Time Scheduled: " + row["scheduled_time"].ToString()
+                       + "\nStart Time: -" + "\nEnd Time: -", row["pickup_date"].ToString(), "-",
+                       "-");
+                    panelTab.Controls.Add(pending);
+                }
+            }
+            else if (cbFilter.Texts.Equals("Finished"))
+            {
+                panelTab.Controls.Clear();
+                ScheduleClass scheduleClass = new ScheduleClass();
+                DataTable orders = scheduleClass.displayFinishedSort(cbSortFinished.SelectedIndex);
+                foreach (DataRow row in orders.Rows)
+                {
+                    FinishedList finished = new FinishedList(this);
+                    decimal total_weight = decimal.Parse(row["weight"].ToString()) + decimal.Parse(row["weight2"].ToString()) + decimal.Parse(row["weight3"].ToString());
+                    finished.setScheduleInfo(row["order_id"].ToString(), row["customer_name"].ToString(),
+                       row["unit_id"].ToString() + "\n" + row["unit_id2"].ToString() + "\n" + row["unit_id3"].ToString(), row["service_category"] + "(" + row["service_name"].ToString() + ")",
+                       total_weight.ToString(), "Time Scheduled: " + row["scheduled_time"].ToString()
+                       + "\nStart Time: " + row["laundry_startTime"].ToString() + "\nEnd Time: "
+                       + row["laundry_endTime"].ToString(), scheduleClass.computeTotalDuration().ToString(@"hh\:mm\:ss"), row["pickup_date"].ToString(),
+                       row["finished_on"].ToString(), "Finished", WashablesSystem.Properties.Resources.Bill);
+                    panelTab.Controls.Add(finished);
+                }
+            }
+
         }
     }
 }

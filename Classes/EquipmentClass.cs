@@ -75,7 +75,7 @@ namespace WashablesSystem.Classes
             cmd.Dispose();
 
             //Query for inserting
-            String query = "INSERT INTO [Unit] VALUES('" + unitID + "','" + unitName + "','" 
+            String query = "INSERT INTO [Unit] VALUES('" + unitID + "','" + unitName + "','"
                 + unitCategory + "','" + availabilityStatus + "',0,0);";
 
             SqlCommand cmd2 = new SqlCommand(query, constring);
@@ -158,24 +158,41 @@ namespace WashablesSystem.Classes
             constring.Open();
 
             this.unitID = unitID;
-           
-                //Query for editing
-                String query = "UPDATE [Unit] SET archived=1 WHERE unit_id='" + unitID + "';";
 
-                SqlCommand cmd2 = new SqlCommand(query, constring);
-                cmd2.CommandText = query;
+            string checkQuery = "SELECT occupied FROM [Unit] WHERE unit_id = @UnitId";
+            using (SqlCommand checkCommand = new SqlCommand(checkQuery, constring))
+            {
+                checkCommand.Parameters.AddWithValue("@UnitId", unitID);
+                bool occupied = (bool)checkCommand.ExecuteScalar();
 
-                //If successful, add to activity log
-                if (cmd2.ExecuteNonQuery() == 1)
+                if (occupied)
                 {
+                    MessageBox.Show("Unit cannot be archived because it is being used.", "Archive Restricted", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     constring.Close();
-                    logOperation("Archived Unit");
+                    return;
                 }
                 else
                 {
-                    MessageBox.Show("Something went wrong. Please try again.");
-                    constring.Close();
+                    //Query for archiving
+                    string query = "UPDATE [Unit] SET archived=1 WHERE unit_id='" + unitID + "';";
+
+                    SqlCommand cmd2 = new SqlCommand(query, constring);
+                    cmd2.CommandText = query;
+
+                    //If successful, add to activity log
+                    if (cmd2.ExecuteNonQuery() == 1)
+                    {
+                        constring.Close();
+                        logOperation("Archived Unit");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong. Please try again.");
+                        constring.Close();
+                    }
                 }
+            }
+
         }
         public void deleteUnit(string unitID)
         {
@@ -183,21 +200,37 @@ namespace WashablesSystem.Classes
 
             this.unitID = unitID;
 
-            String query = "DELETE FROM [Unit] WHERE unit_id='" + unitID + "';";
-
-            SqlCommand cmd2 = new SqlCommand(query, constring);
-            cmd2.CommandText = query;
-
-            //If successful, add to activity log
-            if (cmd2.ExecuteNonQuery() == 1)
+            string checkQuery = "SELECT COUNT(*) FROM [Order] WHERE unit_id = @UnitId OR unit_id2 = @UnitId OR unit_id3 = @UnitId";
+            using (SqlCommand checkCommand = new SqlCommand(checkQuery, constring))
             {
-                constring.Close();
-                logOperation("Deleted Unit");
-            }
-            else
-            {
-                MessageBox.Show("Something went wrong. Please try again.");
-                constring.Close();
+                checkCommand.Parameters.AddWithValue("@UnitId", unitID);
+                int count = (int)checkCommand.ExecuteScalar();
+
+                if (count > 0)
+                {
+                    MessageBox.Show("Unit cannot be deleted because it is referenced elsewhere.", "Delete Restricted", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    constring.Close();
+                    return;
+                }
+                else
+                {
+                    string query = "DELETE FROM [Unit] WHERE unit_id='" + unitID + "';";
+
+                    SqlCommand cmd2 = new SqlCommand(query, constring);
+                    cmd2.CommandText = query;
+
+                    //If successful, add to activity log
+                    if (cmd2.ExecuteNonQuery() == 1)
+                    {
+                        constring.Close();
+                        logOperation("Deleted Unit");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong. Please try again.");
+                        constring.Close();
+                    }
+                }
             }
         }
         public DataTable displayUnit(string unit_category)

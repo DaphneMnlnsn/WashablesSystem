@@ -42,8 +42,8 @@ namespace WashablesSystem
             foreach (DataRow row in units.Rows)
             {
                 MachineUnitList unit = new MachineUnitList();
-                unit.setMachineInfo(row["unit_name"].ToString(), row["availability_status"].ToString(),
-                   bool.Parse(row["occupied"].ToString()),machineType, machine);
+                unit.setMachineInfo(row["unit_id"].ToString(), row["unit_name"].ToString(), row["availability_status"].ToString(),
+                   bool.Parse(row["occupied"].ToString()), machineType, machine);
                 machineContainer.Controls.Add(unit);
             }
         }

@@ -33,12 +33,12 @@ namespace WashablesSystem
             /// add pending Laundry orders
             laundryContainer.Controls.Clear();
             ScheduleClass scheduleClass = new ScheduleClass();
-            DataTable orders = scheduleClass.displayPending();
+            DataTable orders = scheduleClass.displayPendingBatches();
             foreach (DataRow row in orders.Rows)
             {
                 PendingLaundryList pending = new PendingLaundryList();
-                pending.setStatus(row["order_id"].ToString(), row["customer_name"].ToString(), 
-                    row["service_category"] + "(" + row["service_name"].ToString() + ")", row["order_status"].ToString(),
+                pending.setStatus(row["order_id"].ToString() + "-", row["batch_id"].ToString(), row["customer_name"].ToString(),
+                    row["service_category"] + "(" + row["service_name"].ToString() + ")", row["weight"].ToString(), row["status"].ToString(),
                    row["scheduled_time"].ToString(), row["pickup_date"].ToString());
                 laundryContainer.Controls.Add(pending);
             }
@@ -54,41 +54,41 @@ namespace WashablesSystem
             /// add in-progress Laundry orders
             laundryContainer.Controls.Clear();
             ScheduleClass scheduleClass = new ScheduleClass();
-            DataTable orders = scheduleClass.displayInProgress("Wash In-Progress");
+            DataTable orders = scheduleClass.displayInProgressBatches("Wash In-Progress");
             foreach (DataRow row in orders.Rows)
             {
-                if (row["order_status"].ToString().Equals("Wash In-Progress"))
+                if (row["status"].ToString().Equals("Wash In-Progress"))
                 {
                     InProgLaundryList inProg = new InProgLaundryList();
-                    inProg.setStatus(row["order_id"].ToString(), row["unit_name"].ToString(),
+                    inProg.setStatus(row["order_id"].ToString(), row["batch_id"].ToString(), row["unit_name"].ToString(),
                        row["customer_name"].ToString(), row["service_category"] + "(" + row["service_name"].ToString() + ")",
-                       row["order_status"].ToString(), row["laundry_endTime"].ToString());
+                       row["weight"].ToString(), row["status"].ToString(), row["end_time"].ToString());
                     laundryContainer.Controls.Add(inProg);
                 }
             }
 
-            orders = scheduleClass.displayInProgress("Dry In-Progress");
+            orders = scheduleClass.displayInProgressBatches("Dry In-Progress");
             foreach (DataRow row in orders.Rows)
             {
-                if (row["order_status"].ToString().Equals("Dry In-Progress"))
+                if (row["status"].ToString().Equals("Dry In-Progress"))
                 {
                     InProgLaundryList inProg = new InProgLaundryList();
-                    inProg.setStatus(row["order_id"].ToString(), row["unit_name"].ToString(),
+                    inProg.setStatus(row["order_id"].ToString(), row["batch_id"].ToString(), row["unit_name"].ToString(),
                        row["customer_name"].ToString(), row["service_category"] + "(" + row["service_name"].ToString() + ")",
-                       row["order_status"].ToString(), row["laundry_endTime"].ToString());
+                       row["weight"].ToString(), row["status"].ToString(), row["end_time"].ToString());
                     laundryContainer.Controls.Add(inProg);
                 }
             }
 
-            orders = scheduleClass.displayInProgress("Press In-Progress");
+            orders = scheduleClass.displayInProgressBatches("Press In-Progress");
             foreach (DataRow row in orders.Rows)
             {
-                if (row["order_status"].ToString().Equals("Press In-Progress"))
+                if (row["status"].ToString().Equals("Press In-Progress"))
                 {
                     InProgLaundryList inProg = new InProgLaundryList();
-                    inProg.setStatus(row["order_id"].ToString(), row["unit_name"].ToString(),
+                    inProg.setStatus(row["order_id"].ToString(), row["batch_id"].ToString(), row["unit_name"].ToString(),
                        row["customer_name"].ToString(), row["service_category"] + "(" + row["service_name"].ToString() + ")",
-                       row["order_status"].ToString(), row["laundry_endTime"].ToString());
+                       row["weight"].ToString(), row["status"].ToString(), row["end_time"].ToString());
                     laundryContainer.Controls.Add(inProg);
                 }
             }
@@ -113,13 +113,28 @@ namespace WashablesSystem
             /// add Laundry orders
             cbSort.Hide();
             laundryContainer.Padding = new Padding(0, 10, 0, 0);
-            btnInProg_Click(null,null);
+            btnInProg_Click(null, null);
 
         }
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
             AddLaundry laundryForm = new AddLaundry();
             laundryForm.ShowDialog();
+        }
+
+        private void cbSort_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            laundryContainer.Controls.Clear();
+            ScheduleClass scheduleClass = new ScheduleClass();
+            DataTable orders = scheduleClass.displayPendingBatchesSort(cbSort.SelectedIndex);
+            foreach (DataRow row in orders.Rows)
+            {
+                PendingLaundryList pending = new PendingLaundryList();
+                pending.setStatus(row["order_id"].ToString() + "-", row["batch_id"].ToString(), row["customer_name"].ToString(),
+                     row["service_category"] + "(" + row["service_name"].ToString() + ")", row["weight"].ToString(), row["status"].ToString(),
+                     row["scheduled_time"].ToString(), row["pickup_date"].ToString());
+                laundryContainer.Controls.Add(pending);
+            }
         }
     }
 }

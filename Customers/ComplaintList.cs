@@ -23,7 +23,7 @@ namespace WashablesSystem
             InitializeComponent();
             _parentForm = parentForm;
         }
-        public void setComplaintInfo(string complaintNum, string handled, string custName, string problem, string dateComp, string dateRes, string status)
+        public void setComplaintInfo(string complaintNum, string handled, string custID, string custName, string problem, string dateComp, string dateRes, string status)
         {
             //Displaying customer info
             lblNum.Text = complaintNum;
@@ -33,6 +33,7 @@ namespace WashablesSystem
             lblDateComp.Text = dateComp;
             lblDateRes.Text = dateRes;
             lblStatus.Text = status;
+            customerID.Text = custID;
         }
 
         private void btnResolve_Click(object sender, EventArgs e)
@@ -41,12 +42,12 @@ namespace WashablesSystem
             Form grandparentForm = parentForm?.ParentForm;
             if (lblProblem.Text.Equals("Missing Item"))
             {
-                MissingItem findItem = new MissingItem(grandparentForm);
+                MissingItem findItem = new MissingItem(grandparentForm, lblNum.Text, customerID.Text);
                 findItem.ShowDialog();
             }
             if (lblProblem.Text.Equals("Remaining Stains"))
             {
-                FreeWash freeWash = new FreeWash();
+                FreeWash freeWash = new FreeWash(lblNum.Text, customerID.Text);
                 freeWash.ShowDialog();
             }
         }
