@@ -39,6 +39,59 @@ namespace WashablesSystem.Classes
             constring.Close();
             return salesReport;
         }
+        public DataTable generateSalesReportFilter(string filter)
+        {
+            constring.Open();
+            string query = "";
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = constring;
+
+            if (filter.Equals("This Week"))
+            {
+                int weekNumber = GetWeekOfYear(DateTime.Now);
+                query = @"SELECT [Order].order_id, customer_name, unit_id, unit_id2, unit_id3, service_category, [Order].service_id, service_id2, service_id3, " +
+            "weight + weight2 + weight3 AS totalweight, transaction_date, total_amount FROM [Order] INNER JOIN [Customer] ON [Order].customer_id =" +
+            "[Customer].customer_id LEFT JOIN [Service] ON [Order].service_id = [Service].service_id OR [Order].service_id2 = " +
+            "[Service].service_id OR [Order].service_id3 = [Service].service_id INNER JOIN [Billing] ON [Order].order_id = [Billing].order_id WHERE transaction_date IS NOT NULL" +
+            " AND total_amount > 0.00 AND DATEPART(week, transaction_date) = @Week AND YEAR(transaction_date) = @Year";
+                cmd.Parameters.AddWithValue("@Week", weekNumber);
+                cmd.Parameters.AddWithValue("@Year", DateTime.Now.Year);
+            }
+            else if (filter.Equals("This Month"))
+            {
+                query = @"SELECT [Order].order_id, customer_name, unit_id, unit_id2, unit_id3, service_category, [Order].service_id, service_id2, service_id3, " +
+            "weight + weight2 + weight3 AS totalweight, transaction_date, total_amount FROM [Order] INNER JOIN [Customer] ON [Order].customer_id =" +
+            "[Customer].customer_id LEFT JOIN [Service] ON [Order].service_id = [Service].service_id OR [Order].service_id2 = " +
+            "[Service].service_id OR [Order].service_id3 = [Service].service_id INNER JOIN [Billing] ON [Order].order_id = [Billing].order_id WHERE transaction_date IS NOT NULL" +
+            " AND total_amount > 0.00 AND MONTH(transaction_date) = @Month AND YEAR(transaction_date) = @Year";
+                cmd.Parameters.AddWithValue("@Month", DateTime.Now.Month);
+                cmd.Parameters.AddWithValue("@Year", DateTime.Now.Year);
+            }
+            else if (filter.Equals("This Year"))
+            {
+                query = @"SELECT [Order].order_id, customer_name, unit_id, unit_id2, unit_id3, service_category, [Order].service_id, service_id2, service_id3, " +
+            "weight + weight2 + weight3 AS totalweight, transaction_date, total_amount FROM [Order] INNER JOIN [Customer] ON [Order].customer_id =" +
+            "[Customer].customer_id LEFT JOIN [Service] ON [Order].service_id = [Service].service_id OR [Order].service_id2 = " +
+            "[Service].service_id OR [Order].service_id3 = [Service].service_id INNER JOIN [Billing] ON [Order].order_id = [Billing].order_id WHERE transaction_date IS NOT NULL" +
+            " AND total_amount > 0.00 AND YEAR(transaction_date) = @Year";
+                cmd.Parameters.AddWithValue("@Year", DateTime.Now.Year);
+            }
+            
+            cmd.CommandText = query;
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+            DataTable salesReport = new DataTable("salesReport");
+            dataAdapter.Fill(salesReport);
+
+            constring.Close();
+            return salesReport;
+        }
+        private int GetWeekOfYear(DateTime date)
+        {
+            var culture = System.Globalization.CultureInfo.CurrentCulture;
+            return culture.Calendar.GetWeekOfYear(date,
+                System.Globalization.CalendarWeekRule.FirstDay,
+                DayOfWeek.Monday);
+        }
         public Dictionary<string, decimal> generateSales(string filter)
         {
             constring.Open();

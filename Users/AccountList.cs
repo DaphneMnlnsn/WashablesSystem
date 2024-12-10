@@ -26,13 +26,35 @@ namespace WashablesSystem
             //Displaying customer info
             employeeNo.Text = employeeNum;
             employeeName.Text = empName;
-            lblLaundry.Text = laundryChecked;
-            lblSchedule.Text = scheduleChecked;
-            lblSerEq.Text = serviceEqChecked;
-            lblInventory.Text = inventoryChecked;
-            lblCustomers.Text = customersChecked;
-            lblUsers.Text = usersChecked; 
-            lblBilling.Text = billingChecked;    
+            Image check = WashablesSystem.Properties.Resources.Check_Mark;
+            if (laundryChecked.Equals("True"))
+            {
+                laundryCheck.Image = check;
+            }
+            if (scheduleChecked.Equals("True"))
+            {
+                scheduleCheck.Image = check;
+            }
+            if (serviceEqChecked.Equals("True"))
+            {
+                sAndECheck.Image = check;
+            }
+            if (inventoryChecked.Equals("True"))
+            {
+                inventoryCheck.Image = check;
+            }
+            if (customersChecked.Equals("True"))
+            {
+                customersCheck.Image = check;
+            }
+            if (usersChecked.Equals("True"))
+            {
+                usersCheck.Image = check;
+            }
+            if (billingChecked.Equals("True"))
+            {
+                billingCheck.Image = check;
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

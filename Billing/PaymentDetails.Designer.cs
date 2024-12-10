@@ -120,6 +120,7 @@
             this.label14.Size = new System.Drawing.Size(52, 16);
             this.label14.TabIndex = 230;
             this.label14.Text = "Change";
+            this.label14.Visible = false;
             // 
             // label15
             // 
@@ -359,6 +360,7 @@
             this.txtBoxChange.Name = "txtBoxChange";
             this.txtBoxChange.Size = new System.Drawing.Size(81, 25);
             this.txtBoxChange.TabIndex = 281;
+            this.txtBoxChange.Visible = false;
             // 
             // weight3
             // 

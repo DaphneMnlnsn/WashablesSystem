@@ -21,19 +21,36 @@ namespace WashablesSystem
         {
             InitializeComponent();
             _parentForm = parentForm;
+            pickupDate.MinDate = DateTime.Now;
+            timeDryer1.Checked = true;
+            timeWashing1.Checked = true;
+            timeIron1.Checked = true;
         }
         public AddLaundry()
         {
             InitializeComponent();
+            pickupDate.MinDate = DateTime.Now;
+            timeDryer1.Checked = true;
+            timeWashing1.Checked = true;
+            timeIron1.Checked = true;
         }
 
         public AddLaundry(string unitID, string machineSelected, string unitSelected)
         {
             InitializeComponent();
+            tobeassignedLbl.Visible = false;
             this.unitSelected = unitID;
+            lblMachine.Visible = true;
+            cbMachine.Visible = true;
+            lblUnit.Visible = true;
+            txtBoxUnit.Visible = true;
             cbMachine.Text = machineSelected;
             txtBoxUnit.Text = unitSelected;
             specificUnit = true;
+            pickupDate.MinDate = DateTime.Now;
+            timeDryer1.Checked = true;
+            timeWashing1.Checked = true;
+            timeIron1.Checked = true;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -210,17 +227,44 @@ namespace WashablesSystem
                 timeIron1.Enabled = false;
                 timeIronCustomMin.Enabled = false;
                 timeIronCustomHr.Enabled = false;
+                timeWashing30.Enabled = true;
+                timeWashing1.Enabled = true;
+                timeWashingCustomMin.Enabled = true;
+                timeWashingCustomHr.Enabled = true;
+                timeDryer1.Enabled = true;
+                timeDryer30.Enabled = true;
+                timeDryerCustomMin.Enabled = true;
+                timeDryerCustomHr.Enabled = true;
             }
             else if (cbService.Text.Equals("Dry Only"))
             {
                 timeWashing30.Enabled = false;
                 timeWashing1.Enabled = false;
-                timeDryerCustomMin.Enabled = false;
-                timeDryerCustomHr.Enabled = false;
+                timeWashingCustomMin.Enabled = false;
+                timeWashingCustomHr.Enabled = false;
                 timeIron30.Enabled = false;
                 timeIron1.Enabled = false;
                 timeIronCustomMin.Enabled = false;
                 timeIronCustomHr.Enabled = false;
+                timeDryer1.Enabled = true;
+                timeDryer30.Enabled = true;
+                timeDryerCustomMin.Enabled = true;
+                timeDryerCustomHr.Enabled = true;
+            }
+            else
+            {
+                timeWashing30.Enabled = true;
+                timeWashing1.Enabled = true;
+                timeWashingCustomMin.Enabled = true;
+                timeWashingCustomHr.Enabled = true;
+                timeDryer1.Enabled = true;
+                timeDryer30.Enabled = true;
+                timeDryerCustomMin.Enabled = true;
+                timeDryerCustomHr.Enabled = true;
+                timeIron30.Enabled = true;
+                timeIron1.Enabled = true;
+                timeIronCustomMin.Enabled = true;
+                timeIronCustomHr.Enabled = true;
             }
         }
     }

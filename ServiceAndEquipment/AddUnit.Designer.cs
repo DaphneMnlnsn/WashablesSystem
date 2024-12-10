@@ -56,6 +56,7 @@
             this.cbEquipment.Name = "cbEquipment";
             this.cbEquipment.Size = new System.Drawing.Size(307, 25);
             this.cbEquipment.TabIndex = 231;
+            this.cbEquipment.SelectedIndexChanged += new System.EventHandler(this.cbEquipment_SelectedIndexChanged);
             // 
             // lblPrice
             // 
@@ -171,6 +172,7 @@
             this.txtBoxName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.txtBoxName.BorderRadius = 5;
             this.txtBoxName.BorderSize = 1;
+            this.txtBoxName.Enabled = false;
             this.txtBoxName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.txtBoxName.ForeColor = System.Drawing.Color.Black;
             this.txtBoxName.Location = new System.Drawing.Point(19, 161);

@@ -101,6 +101,37 @@ namespace WashablesSystem.Classes
                 MessageBox.Show("Invalid input! Error: " + ex, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+        public string viewUnit(string machineType)
+        {
+            constring.Open();
+            SqlCommand cmd = new SqlCommand("SELECT TOP 1 [unit_name],[unit_id] FROM [Unit] WHERE [unit_category] = '" + machineType + "' ORDER BY [unit_id] DESC", constring);
+            SqlDataReader reader1;
+            reader1 = cmd.ExecuteReader();
+            string newUnitName = "";
+            if (reader1.Read())
+            {
+                int latestUnitNum = int.Parse(string.Join("", reader1.GetString(0).Where(Char.IsDigit))) + 1;
+                if (machineType.Equals("Washing Machine"))
+                {
+                    newUnitName = "Washer " + latestUnitNum;
+                }
+                else if (machineType.Equals("Dryer"))
+                {
+                    newUnitName = "Dryer " + latestUnitNum;
+                }
+                else if (machineType.Equals("Iron"))
+                {
+                    newUnitName = "Iron " + latestUnitNum;
+                }
+            }
+            else
+            {
+            }
+            reader1.Close();
+            cmd.Dispose();
+            constring.Close();
+            return newUnitName;
+        }
         public void editUnit(string unitID)
         {
             try
@@ -222,7 +253,7 @@ namespace WashablesSystem.Classes
 
                 if (count > 0)
                 {
-                    MessageBox.Show("Unit cannot be deleted because it is referenced elsewhere.", "Delete Restricted", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Unit cannot be deleted because it is in a record.", "Delete Restricted", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     constring.Close();
                     return;
                 }

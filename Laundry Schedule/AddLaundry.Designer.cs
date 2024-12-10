@@ -49,8 +49,7 @@
             this.txtWeight3 = new System.Windows.Forms.NumericUpDown();
             this.txtWeight2 = new System.Windows.Forms.NumericUpDown();
             this.txtWeight = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnService = new WashablesSystem.CustomTextbox();
+            this.lblUnit = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtWashOtherHour = new System.Windows.Forms.NumericUpDown();
@@ -68,7 +67,6 @@
             this.cbCust = new System.Windows.Forms.ComboBox();
             this.cbMachine = new System.Windows.Forms.ComboBox();
             this.lblTime = new System.Windows.Forms.Label();
-            this.pickupDate = new WashablesSystem.CustomDatePicker();
             this.lvlPickup = new System.Windows.Forms.Label();
             this.lblItemName = new System.Windows.Forms.Label();
             this.lblQuantity = new System.Windows.Forms.Label();
@@ -76,11 +74,9 @@
             this.lblItemTitle = new System.Windows.Forms.Label();
             this.lblCust = new System.Windows.Forms.Label();
             this.lblService = new System.Windows.Forms.Label();
-            this.lblUnit = new System.Windows.Forms.Label();
+            this.lblMachine = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCancel = new WashablesSystem.CustomButton();
-            this.btnAdd = new WashablesSystem.CustomButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtPressOtherHr = new System.Windows.Forms.NumericUpDown();
@@ -93,6 +89,11 @@
             this.timeIron1 = new System.Windows.Forms.RadioButton();
             this.timeIronCustomMin = new System.Windows.Forms.RadioButton();
             this.txtBoxUnit = new WashablesSystem.CustomTextbox();
+            this.btnService = new WashablesSystem.CustomTextbox();
+            this.pickupDate = new WashablesSystem.CustomDatePicker();
+            this.btnCancel = new WashablesSystem.CustomButton();
+            this.btnAdd = new WashablesSystem.CustomButton();
+            this.tobeassignedLbl = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDryOtherHour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDryOtherMin)).BeginInit();
@@ -389,40 +390,19 @@
             this.txtWeight.Size = new System.Drawing.Size(89, 25);
             this.txtWeight.TabIndex = 277;
             // 
-            // label6
+            // lblUnit
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.label6.Location = new System.Drawing.Point(151, 58);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 18);
-            this.label6.TabIndex = 275;
-            this.label6.Text = "Unit";
-            // 
-            // btnService
-            // 
-            this.btnService.BackColor = System.Drawing.Color.White;
-            this.btnService.BorderColor = System.Drawing.Color.LightGray;
-            this.btnService.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.btnService.BorderRadius = 5;
-            this.btnService.BorderSize = 1;
-            this.btnService.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.btnService.ForeColor = System.Drawing.Color.Black;
-            this.btnService.Location = new System.Drawing.Point(151, 133);
-            this.btnService.Margin = new System.Windows.Forms.Padding(4);
-            this.btnService.Multiline = false;
-            this.btnService.Name = "btnService";
-            this.btnService.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
-            this.btnService.PasswordChar = false;
-            this.btnService.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.btnService.PlaceholderText = "";
-            this.btnService.Size = new System.Drawing.Size(152, 30);
-            this.btnService.TabIndex = 274;
-            this.btnService.UnderlinedStyle = false;
-            this.btnService.Click += new System.EventHandler(this.btnService_Click);
+            this.lblUnit.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblUnit.AutoSize = true;
+            this.lblUnit.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.lblUnit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.lblUnit.Location = new System.Drawing.Point(151, 58);
+            this.lblUnit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUnit.Name = "lblUnit";
+            this.lblUnit.Size = new System.Drawing.Size(35, 18);
+            this.lblUnit.TabIndex = 275;
+            this.lblUnit.Text = "Unit";
+            this.lblUnit.Visible = false;
             // 
             // groupBox1
             // 
@@ -649,6 +629,7 @@
             this.cbMachine.Name = "cbMachine";
             this.cbMachine.Size = new System.Drawing.Size(114, 25);
             this.cbMachine.TabIndex = 268;
+            this.cbMachine.Visible = false;
             // 
             // lblTime
             // 
@@ -662,23 +643,6 @@
             this.lblTime.Size = new System.Drawing.Size(169, 18);
             this.lblTime.TabIndex = 267;
             this.lblTime.Text = "Time (Washing Machine)";
-            // 
-            // pickupDate
-            // 
-            this.pickupDate.BorderColor = System.Drawing.Color.LightGray;
-            this.pickupDate.BorderSize = 1;
-            this.pickupDate.CalendarMonthBackground = System.Drawing.SystemColors.Control;
-            this.pickupDate.CalendarTitleBackColor = System.Drawing.SystemColors.Control;
-            this.pickupDate.Font = new System.Drawing.Font("Berlin Sans FB", 11F);
-            this.pickupDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.pickupDate.Location = new System.Drawing.Point(34, 316);
-            this.pickupDate.MinimumSize = new System.Drawing.Size(4, 35);
-            this.pickupDate.Name = "pickupDate";
-            this.pickupDate.Size = new System.Drawing.Size(258, 35);
-            this.pickupDate.SkinColor = System.Drawing.Color.White;
-            this.pickupDate.TabIndex = 266;
-            this.pickupDate.TextColor = System.Drawing.Color.Black;
-            this.pickupDate.Value = new System.DateTime(2024, 12, 4, 0, 0, 0, 0);
             // 
             // lvlPickup
             // 
@@ -771,18 +735,19 @@
             this.lblService.TabIndex = 257;
             this.lblService.Text = "Service";
             // 
-            // lblUnit
+            // lblMachine
             // 
-            this.lblUnit.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblUnit.AutoSize = true;
-            this.lblUnit.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
-            this.lblUnit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.lblUnit.Location = new System.Drawing.Point(30, 58);
-            this.lblUnit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblUnit.Name = "lblUnit";
-            this.lblUnit.Size = new System.Drawing.Size(61, 18);
-            this.lblUnit.TabIndex = 256;
-            this.lblUnit.Text = "Machine";
+            this.lblMachine.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblMachine.AutoSize = true;
+            this.lblMachine.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.lblMachine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.lblMachine.Location = new System.Drawing.Point(30, 58);
+            this.lblMachine.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMachine.Name = "lblMachine";
+            this.lblMachine.Size = new System.Drawing.Size(61, 18);
+            this.lblMachine.TabIndex = 256;
+            this.lblMachine.Text = "Machine";
+            this.lblMachine.Visible = false;
             // 
             // lblHeader
             // 
@@ -809,48 +774,6 @@
             this.label1.Size = new System.Drawing.Size(618, 21);
             this.label1.TabIndex = 255;
             this.label1.Text = "____________________________________________________________________________";
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancel.BackgroundColor = System.Drawing.Color.Transparent;
-            this.btnCancel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.btnCancel.BorderRadius = 15;
-            this.btnCancel.BorderSize = 1;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(519, 493);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(116, 29);
-            this.btnCancel.TabIndex = 253;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.TextColor = System.Drawing.Color.Black;
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.btnAdd.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.btnAdd.BorderColor = System.Drawing.Color.Transparent;
-            this.btnAdd.BorderRadius = 15;
-            this.btnAdd.BorderSize = 0;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(399, 493);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(116, 29);
-            this.btnAdd.TabIndex = 252;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.TextColor = System.Drawing.Color.White;
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // groupBox3
             // 
@@ -1011,6 +934,101 @@
             this.txtBoxUnit.Size = new System.Drawing.Size(152, 30);
             this.txtBoxUnit.TabIndex = 289;
             this.txtBoxUnit.UnderlinedStyle = false;
+            this.txtBoxUnit.Visible = false;
+            // 
+            // btnService
+            // 
+            this.btnService.BackColor = System.Drawing.Color.White;
+            this.btnService.BorderColor = System.Drawing.Color.LightGray;
+            this.btnService.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnService.BorderRadius = 5;
+            this.btnService.BorderSize = 1;
+            this.btnService.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.btnService.ForeColor = System.Drawing.Color.Black;
+            this.btnService.Location = new System.Drawing.Point(151, 133);
+            this.btnService.Margin = new System.Windows.Forms.Padding(4);
+            this.btnService.Multiline = false;
+            this.btnService.Name = "btnService";
+            this.btnService.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
+            this.btnService.PasswordChar = false;
+            this.btnService.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.btnService.PlaceholderText = "";
+            this.btnService.Size = new System.Drawing.Size(152, 30);
+            this.btnService.TabIndex = 274;
+            this.btnService.UnderlinedStyle = false;
+            this.btnService.Click += new System.EventHandler(this.btnService_Click);
+            // 
+            // pickupDate
+            // 
+            this.pickupDate.BorderColor = System.Drawing.Color.LightGray;
+            this.pickupDate.BorderSize = 1;
+            this.pickupDate.CalendarMonthBackground = System.Drawing.SystemColors.Control;
+            this.pickupDate.CalendarTitleBackColor = System.Drawing.SystemColors.Control;
+            this.pickupDate.Font = new System.Drawing.Font("Berlin Sans FB", 11F);
+            this.pickupDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.pickupDate.Location = new System.Drawing.Point(34, 316);
+            this.pickupDate.MinimumSize = new System.Drawing.Size(4, 35);
+            this.pickupDate.Name = "pickupDate";
+            this.pickupDate.Size = new System.Drawing.Size(258, 35);
+            this.pickupDate.SkinColor = System.Drawing.Color.White;
+            this.pickupDate.TabIndex = 266;
+            this.pickupDate.TextColor = System.Drawing.Color.Black;
+            this.pickupDate.Value = new System.DateTime(2024, 12, 4, 0, 0, 0, 0);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancel.BackgroundColor = System.Drawing.Color.Transparent;
+            this.btnCancel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.btnCancel.BorderRadius = 15;
+            this.btnCancel.BorderSize = 1;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnCancel.Location = new System.Drawing.Point(519, 493);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(116, 29);
+            this.btnCancel.TabIndex = 253;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.TextColor = System.Drawing.Color.Black;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.btnAdd.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.btnAdd.BorderColor = System.Drawing.Color.Transparent;
+            this.btnAdd.BorderRadius = 15;
+            this.btnAdd.BorderSize = 0;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(399, 493);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(116, 29);
+            this.btnAdd.TabIndex = 252;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.TextColor = System.Drawing.Color.White;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // tobeassignedLbl
+            // 
+            this.tobeassignedLbl.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tobeassignedLbl.AutoSize = true;
+            this.tobeassignedLbl.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.tobeassignedLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.tobeassignedLbl.Location = new System.Drawing.Point(39, 71);
+            this.tobeassignedLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.tobeassignedLbl.Name = "tobeassignedLbl";
+            this.tobeassignedLbl.Size = new System.Drawing.Size(253, 18);
+            this.tobeassignedLbl.TabIndex = 290;
+            this.tobeassignedLbl.Text = "Machine and Unit Are To Be Assigned";
             // 
             // AddLaundry
             // 
@@ -1030,7 +1048,7 @@
             this.Controls.Add(this.txtWeight3);
             this.Controls.Add(this.txtWeight2);
             this.Controls.Add(this.txtWeight);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblUnit);
             this.Controls.Add(this.btnService);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cbItem3);
@@ -1046,12 +1064,13 @@
             this.Controls.Add(this.lblItemTitle);
             this.Controls.Add(this.lblCust);
             this.Controls.Add(this.lblService);
-            this.Controls.Add(this.lblUnit);
+            this.Controls.Add(this.lblMachine);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.tobeassignedLbl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddLaundry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1103,7 +1122,7 @@
         private System.Windows.Forms.NumericUpDown txtWeight3;
         private System.Windows.Forms.NumericUpDown txtWeight2;
         private System.Windows.Forms.NumericUpDown txtWeight;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblUnit;
         private CustomTextbox btnService;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label8;
@@ -1130,7 +1149,7 @@
         private System.Windows.Forms.Label lblItemTitle;
         private System.Windows.Forms.Label lblCust;
         private System.Windows.Forms.Label lblService;
-        private System.Windows.Forms.Label lblUnit;
+        private System.Windows.Forms.Label lblMachine;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label label1;
         private CustomButton btnCancel;
@@ -1147,5 +1166,6 @@
         private System.Windows.Forms.RadioButton timeIron1;
         private System.Windows.Forms.RadioButton timeIronCustomMin;
         private CustomTextbox txtBoxUnit;
+        private System.Windows.Forms.Label tobeassignedLbl;
     }
 }

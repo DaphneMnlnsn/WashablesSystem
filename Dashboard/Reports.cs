@@ -44,5 +44,22 @@ namespace WashablesSystem
                 salesPanel.Controls.Add(sale);
             }
         }
+
+        private void cbTimeSales_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            salesPanel.Controls.Clear();
+            DashboardClass dashboardClass = new DashboardClass();
+            DataTable sales = dashboardClass.generateSalesReportFilter(cbTimeSales.SelectedItem.ToString());
+            foreach (DataRow row in sales.Rows)
+            {
+                SalesList sale = new SalesList();
+                sale.setSalesInfo(row["order_id"].ToString(), row["customer_name"].ToString(),
+                    row["unit_id"].ToString(), row["unit_id2"].ToString(),
+                   row["unit_id3"].ToString(), row["service_category"].ToString(),
+                   row["service_id"].ToString(), row["service_id2"].ToString(),
+                   row["service_id3"].ToString(), row["totalweight"].ToString(), row["transaction_date"].ToString(), row["total_amount"].ToString());
+                salesPanel.Controls.Add(sale);
+            }
+        }
     }
 }

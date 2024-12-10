@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccountList));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,19 +38,26 @@
             this.btnTrash = new System.Windows.Forms.PictureBox();
             this.btnEdit = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblBilling = new System.Windows.Forms.Label();
-            this.lblUsers = new System.Windows.Forms.Label();
-            this.lblCustomers = new System.Windows.Forms.Label();
-            this.lblInventory = new System.Windows.Forms.Label();
-            this.lblSerEq = new System.Windows.Forms.Label();
-            this.lblSchedule = new System.Windows.Forms.Label();
-            this.lblLaundry = new System.Windows.Forms.Label();
             this.employeeName = new System.Windows.Forms.Label();
             this.employeeNo = new System.Windows.Forms.Label();
+            this.laundryCheck = new System.Windows.Forms.PictureBox();
+            this.scheduleCheck = new System.Windows.Forms.PictureBox();
+            this.sAndECheck = new System.Windows.Forms.PictureBox();
+            this.inventoryCheck = new System.Windows.Forms.PictureBox();
+            this.customersCheck = new System.Windows.Forms.PictureBox();
+            this.usersCheck = new System.Windows.Forms.PictureBox();
+            this.billingCheck = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnTrash)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.laundryCheck)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scheduleCheck)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sAndECheck)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryCheck)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersCheck)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersCheck)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.billingCheck)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -62,7 +70,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 171F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 115F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 176F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 131F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
@@ -81,7 +89,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(141, 9);
+            this.label1.Location = new System.Drawing.Point(140, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 19);
@@ -94,7 +102,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Location = new System.Drawing.Point(11, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 19);
@@ -107,7 +115,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(376, 9);
+            this.label3.Location = new System.Drawing.Point(375, 9);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 19);
@@ -120,7 +128,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(544, 9);
+            this.label5.Location = new System.Drawing.Point(543, 9);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 19);
@@ -133,7 +141,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(686, 9);
+            this.label6.Location = new System.Drawing.Point(685, 9);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 19);
@@ -183,17 +191,17 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tableLayoutPanel2.Controls.Add(this.lblBilling, 9, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lblUsers, 8, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lblCustomers, 7, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lblInventory, 6, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lblSerEq, 5, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lblSchedule, 4, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lblLaundry, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnEdit, 10, 0);
             this.tableLayoutPanel2.Controls.Add(this.employeeName, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.employeeNo, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnTrash, 11, 0);
+            this.tableLayoutPanel2.Controls.Add(this.laundryCheck, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.scheduleCheck, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.sAndECheck, 5, 0);
+            this.tableLayoutPanel2.Controls.Add(this.inventoryCheck, 6, 0);
+            this.tableLayoutPanel2.Controls.Add(this.customersCheck, 7, 0);
+            this.tableLayoutPanel2.Controls.Add(this.usersCheck, 8, 0);
+            this.tableLayoutPanel2.Controls.Add(this.billingCheck, 9, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(-4, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
@@ -201,97 +209,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(954, 37);
             this.tableLayoutPanel2.TabIndex = 94;
-            // 
-            // lblBilling
-            // 
-            this.lblBilling.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblBilling.AutoSize = true;
-            this.lblBilling.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBilling.Location = new System.Drawing.Point(800, 9);
-            this.lblBilling.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblBilling.Name = "lblBilling";
-            this.lblBilling.Size = new System.Drawing.Size(49, 19);
-            this.lblBilling.TabIndex = 98;
-            this.lblBilling.Text = "Billing";
-            this.lblBilling.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblUsers
-            // 
-            this.lblUsers.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblUsers.AutoSize = true;
-            this.lblUsers.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsers.Location = new System.Drawing.Point(742, 9);
-            this.lblUsers.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblUsers.Name = "lblUsers";
-            this.lblUsers.Size = new System.Drawing.Size(43, 19);
-            this.lblUsers.TabIndex = 97;
-            this.lblUsers.Text = "Users";
-            this.lblUsers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblCustomers
-            // 
-            this.lblCustomers.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblCustomers.AutoSize = true;
-            this.lblCustomers.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomers.Location = new System.Drawing.Point(651, 9);
-            this.lblCustomers.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblCustomers.Name = "lblCustomers";
-            this.lblCustomers.Size = new System.Drawing.Size(75, 19);
-            this.lblCustomers.TabIndex = 96;
-            this.lblCustomers.Text = "Customers";
-            this.lblCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblInventory
-            // 
-            this.lblInventory.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblInventory.AutoSize = true;
-            this.lblInventory.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInventory.Location = new System.Drawing.Point(566, 9);
-            this.lblInventory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblInventory.Name = "lblInventory";
-            this.lblInventory.Size = new System.Drawing.Size(69, 19);
-            this.lblInventory.TabIndex = 95;
-            this.lblInventory.Text = "Inventory";
-            this.lblInventory.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblSerEq
-            // 
-            this.lblSerEq.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblSerEq.AutoSize = true;
-            this.lblSerEq.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSerEq.Location = new System.Drawing.Point(467, 0);
-            this.lblSerEq.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblSerEq.Name = "lblSerEq";
-            this.lblSerEq.Size = new System.Drawing.Size(82, 37);
-            this.lblSerEq.TabIndex = 94;
-            this.lblSerEq.Text = "Service and Equipment ";
-            this.lblSerEq.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblSchedule
-            // 
-            this.lblSchedule.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblSchedule.AutoSize = true;
-            this.lblSchedule.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSchedule.Location = new System.Drawing.Point(383, 9);
-            this.lblSchedule.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblSchedule.Name = "lblSchedule";
-            this.lblSchedule.Size = new System.Drawing.Size(66, 19);
-            this.lblSchedule.TabIndex = 93;
-            this.lblSchedule.Text = "Schedule";
-            this.lblSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblLaundry
-            // 
-            this.lblLaundry.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblLaundry.AutoSize = true;
-            this.lblLaundry.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLaundry.Location = new System.Drawing.Point(299, 9);
-            this.lblLaundry.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblLaundry.Name = "lblLaundry";
-            this.lblLaundry.Size = new System.Drawing.Size(60, 19);
-            this.lblLaundry.TabIndex = 92;
-            this.lblLaundry.Text = "Laundry";
-            this.lblLaundry.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // employeeName
             // 
@@ -319,6 +236,83 @@
             this.employeeNo.Text = "No.";
             this.employeeNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // laundryCheck
+            // 
+            this.laundryCheck.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.laundryCheck.Image = global::WashablesSystem.Properties.Resources.Cross_Mark;
+            this.laundryCheck.Location = new System.Drawing.Point(316, 6);
+            this.laundryCheck.Name = "laundryCheck";
+            this.laundryCheck.Size = new System.Drawing.Size(26, 25);
+            this.laundryCheck.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.laundryCheck.TabIndex = 91;
+            this.laundryCheck.TabStop = false;
+            // 
+            // scheduleCheck
+            // 
+            this.scheduleCheck.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.scheduleCheck.Image = ((System.Drawing.Image)(resources.GetObject("scheduleCheck.Image")));
+            this.scheduleCheck.Location = new System.Drawing.Point(405, 7);
+            this.scheduleCheck.Name = "scheduleCheck";
+            this.scheduleCheck.Size = new System.Drawing.Size(22, 23);
+            this.scheduleCheck.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.scheduleCheck.TabIndex = 92;
+            this.scheduleCheck.TabStop = false;
+            // 
+            // sAndECheck
+            // 
+            this.sAndECheck.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.sAndECheck.Image = ((System.Drawing.Image)(resources.GetObject("sAndECheck.Image")));
+            this.sAndECheck.Location = new System.Drawing.Point(497, 7);
+            this.sAndECheck.Name = "sAndECheck";
+            this.sAndECheck.Size = new System.Drawing.Size(22, 23);
+            this.sAndECheck.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.sAndECheck.TabIndex = 93;
+            this.sAndECheck.TabStop = false;
+            // 
+            // inventoryCheck
+            // 
+            this.inventoryCheck.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.inventoryCheck.Image = ((System.Drawing.Image)(resources.GetObject("inventoryCheck.Image")));
+            this.inventoryCheck.Location = new System.Drawing.Point(589, 7);
+            this.inventoryCheck.Name = "inventoryCheck";
+            this.inventoryCheck.Size = new System.Drawing.Size(22, 23);
+            this.inventoryCheck.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.inventoryCheck.TabIndex = 94;
+            this.inventoryCheck.TabStop = false;
+            // 
+            // customersCheck
+            // 
+            this.customersCheck.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.customersCheck.Image = ((System.Drawing.Image)(resources.GetObject("customersCheck.Image")));
+            this.customersCheck.Location = new System.Drawing.Point(677, 7);
+            this.customersCheck.Name = "customersCheck";
+            this.customersCheck.Size = new System.Drawing.Size(22, 23);
+            this.customersCheck.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.customersCheck.TabIndex = 95;
+            this.customersCheck.TabStop = false;
+            // 
+            // usersCheck
+            // 
+            this.usersCheck.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.usersCheck.Image = ((System.Drawing.Image)(resources.GetObject("usersCheck.Image")));
+            this.usersCheck.Location = new System.Drawing.Point(752, 7);
+            this.usersCheck.Name = "usersCheck";
+            this.usersCheck.Size = new System.Drawing.Size(22, 23);
+            this.usersCheck.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.usersCheck.TabIndex = 96;
+            this.usersCheck.TabStop = false;
+            // 
+            // billingCheck
+            // 
+            this.billingCheck.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.billingCheck.Image = ((System.Drawing.Image)(resources.GetObject("billingCheck.Image")));
+            this.billingCheck.Location = new System.Drawing.Point(813, 7);
+            this.billingCheck.Name = "billingCheck";
+            this.billingCheck.Size = new System.Drawing.Size(22, 23);
+            this.billingCheck.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.billingCheck.TabIndex = 97;
+            this.billingCheck.TabStop = false;
+            // 
             // AccountList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,6 +328,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.laundryCheck)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scheduleCheck)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sAndECheck)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryCheck)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersCheck)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersCheck)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.billingCheck)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -348,14 +349,14 @@
         private System.Windows.Forms.PictureBox btnTrash;
         private System.Windows.Forms.PictureBox btnEdit;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label lblBilling;
-        private System.Windows.Forms.Label lblUsers;
-        private System.Windows.Forms.Label lblCustomers;
-        private System.Windows.Forms.Label lblInventory;
-        private System.Windows.Forms.Label lblSerEq;
-        private System.Windows.Forms.Label lblSchedule;
-        private System.Windows.Forms.Label lblLaundry;
         private System.Windows.Forms.Label employeeName;
         private System.Windows.Forms.Label employeeNo;
+        private System.Windows.Forms.PictureBox laundryCheck;
+        private System.Windows.Forms.PictureBox scheduleCheck;
+        private System.Windows.Forms.PictureBox sAndECheck;
+        private System.Windows.Forms.PictureBox inventoryCheck;
+        private System.Windows.Forms.PictureBox customersCheck;
+        private System.Windows.Forms.PictureBox usersCheck;
+        private System.Windows.Forms.PictureBox billingCheck;
     }
 }

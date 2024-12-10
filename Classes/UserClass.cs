@@ -271,7 +271,7 @@ namespace WashablesSystem.Classes
 
                 if (count > 0)
                 {
-                    MessageBox.Show("User cannot be deleted because it is referenced elsewhere.", "Delete Restricted", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("User cannot be deleted because it is in a record.", "Delete Restricted", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     constring.Close();
                     return;
                 }
@@ -341,7 +341,7 @@ namespace WashablesSystem.Classes
         {
             constring.Open();
             string sql = "SELECT * FROM [ActivityLog] INNER JOIN [User] ON [ActivityLog].user_id = [User].user_id WHERE activity_date >= '" +
-                filterBy.Date + "' AND activity_date < '" + filterBy.AddDays(1) + "' ORDER BY [log_id] DESC";
+                filterBy.Date + "' AND activity_date < '" + filterBy.AddHours(0) + "' ORDER BY [log_id] DESC";
             DataTable log = new DataTable("log");
             SqlDataAdapter da = new SqlDataAdapter(sql, constring);
             da.Fill(log);

@@ -44,6 +44,7 @@
             // 
             this.cbEquipment.BackColor = System.Drawing.SystemColors.Control;
             this.cbEquipment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEquipment.Enabled = false;
             this.cbEquipment.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbEquipment.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.cbEquipment.FormattingEnabled = true;
@@ -171,6 +172,7 @@
             this.txtBoxName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.txtBoxName.BorderRadius = 5;
             this.txtBoxName.BorderSize = 1;
+            this.txtBoxName.Enabled = false;
             this.txtBoxName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.txtBoxName.ForeColor = System.Drawing.Color.Black;
             this.txtBoxName.Location = new System.Drawing.Point(19, 161);

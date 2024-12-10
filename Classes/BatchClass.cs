@@ -28,17 +28,33 @@ namespace WashablesSystem.Classes
             string query = @"
                             WITH BatchCTE AS (
                                 SELECT 
-                                    o.order_id, s.service_id, s.service_minWeight AS max_weight, o.weight,
-                                    FLOOR(o.weight / s.service_minWeight) AS full_batches, o.weight % s.service_minWeight AS remaining_weight
-                                FROM [Order] o JOIN Service s ON o.service_id = s.service_id WHERE o.weight > 0 AND o.order_id = @OrderId
+                                    o.order_id, 
+                                    s.service_id, 
+                                    s.service_minWeight AS max_weight, 
+                                    o.weight,
+                                    FLOOR(o.weight / s.service_minWeight) AS full_batches, 
+                                    o.weight % s.service_minWeight AS remaining_weight
+                                FROM [Order] o 
+                                JOIN Service s ON o.service_id = s.service_id 
+                                WHERE o.weight > 0 AND o.order_id = @OrderId
                             )
                             SELECT 
-                                order_id, service_id, max_weight AS batch_weight, 'Full Batch' AS batch_type
+                                order_id, 
+                                service_id, 
+                                max_weight AS batch_weight, 
+                                'Full Batch' AS batch_type
                             FROM BatchCTE
                             WHERE full_batches > 0
                             UNION ALL
-                            SELECT order_id, service_id, remaining_weight AS batch_weight, 'Remaining Batch' AS batch_type
-                            FROM BatchCTE WHERE remaining_weight > 0;";
+                            SELECT 
+                                order_id, 
+                                service_id, 
+                                CASE 
+                                    WHEN remaining_weight = 0 THEN max_weight
+                                    ELSE remaining_weight 
+                                END AS batch_weight, 
+                                'Remaining Batch' AS batch_type
+                            FROM BatchCTE;";
 
             DataTable orderDetails = new DataTable();
             SqlCommand cmd = new SqlCommand(query, constring);
@@ -80,19 +96,35 @@ namespace WashablesSystem.Classes
 
             //For service_id2
             query = @"
-                      WITH BatchCTE AS (
+                     WITH BatchCTE AS (
+                            SELECT 
+                                o.order_id, 
+                                s.service_id, 
+                                s.service_minWeight AS max_weight, 
+                                o.weight2,
+                                FLOOR(o.weight2 / s.service_minWeight) AS full_batches, 
+                                o.weight2 % s.service_minWeight AS remaining_weight
+                            FROM [Order] o 
+                            JOIN Service s ON o.service_id = s.service_id 
+                            WHERE o.weight2 > 0 AND o.order_id = @OrderId
+                        )
                         SELECT 
-                          o.order_id, s.service_id, s.service_minWeight AS max_weight, o.weight2,
-                          FLOOR(o.weight2 / s.service_minWeight) AS full_batches, o.weight2 % s.service_minWeight AS remaining_weight
-                          FROM [Order] o JOIN Service s ON o.service_id2 = s.service_id WHERE o.weight2 > 0 AND o.order_id = @OrderId
-                       )
-                       SELECT 
-                        order_id, service_id, max_weight AS batch_weight, 'Full Batch' AS batch_type
-                       FROM BatchCTE
-                       WHERE full_batches > 0
-                       UNION ALL
-                       SELECT order_id, service_id, remaining_weight AS batch_weight, 'Remaining Batch' AS batch_type
-                       FROM BatchCTE WHERE remaining_weight > 0;";
+                            order_id, 
+                            service_id, 
+                            max_weight AS batch_weight, 
+                            'Full Batch' AS batch_type
+                        FROM BatchCTE
+                        WHERE full_batches > 0
+                        UNION ALL
+                        SELECT 
+                            order_id, 
+                            service_id, 
+                            CASE 
+                                WHEN remaining_weight = 0 THEN max_weight
+                                ELSE remaining_weight 
+                            END AS batch_weight, 
+                            'Remaining Batch' AS batch_type
+                        FROM BatchCTE;";
 
             DataTable orderDetails2 = new DataTable();
             cmd = new SqlCommand(query, constring);
@@ -135,18 +167,34 @@ namespace WashablesSystem.Classes
             //For service_id3
             query = @"
                       WITH BatchCTE AS (
+                            SELECT 
+                                o.order_id, 
+                                s.service_id, 
+                                s.service_minWeight AS max_weight, 
+                                o.weight3,
+                                FLOOR(o.weight3 / s.service_minWeight) AS full_batches, 
+                                o.weight3 % s.service_minWeight AS remaining_weight
+                            FROM [Order] o 
+                            JOIN Service s ON o.service_id = s.service_id 
+                            WHERE o.weight3 > 0 AND o.order_id = 'OR1016'
+                        )
                         SELECT 
-                          o.order_id, s.service_id, s.service_minWeight AS max_weight, o.weight3,
-                          FLOOR(o.weight3 / s.service_minWeight) AS full_batches, o.weight3 % s.service_minWeight AS remaining_weight
-                          FROM [Order] o JOIN Service s ON o.service_id3 = s.service_id WHERE o.weight3 > 0 AND o.order_id = @OrderId
-                       )
-                       SELECT 
-                         order_id, service_id, max_weight AS batch_weight, 'Full Batch' AS batch_type
-                       FROM BatchCTE
-                       WHERE full_batches > 0
-                       UNION ALL
-                       SELECT order_id, service_id, remaining_weight AS batch_weight, 'Remaining Batch' AS batch_type
-                       FROM BatchCTE WHERE remaining_weight > 0;";
+                            order_id, 
+                            service_id, 
+                            max_weight AS batch_weight, 
+                            'Full Batch' AS batch_type
+                        FROM BatchCTE
+                        WHERE full_batches > 0
+                        UNION ALL
+                        SELECT 
+                            order_id, 
+                            service_id, 
+                            CASE 
+                                WHEN remaining_weight = 0 THEN max_weight
+                                ELSE remaining_weight 
+                            END AS batch_weight, 
+                            'Remaining Batch' AS batch_type
+                        FROM BatchCTE;";
 
             DataTable orderDetails3 = new DataTable();
             cmd = new SqlCommand(query, constring);

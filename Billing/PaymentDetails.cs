@@ -23,6 +23,9 @@ namespace WashablesSystem
             InitializeComponent();
             this._parentForm = parentForm;
             this.transactNum = transactNum;
+            radioBtnCash.Checked = true;
+            fullPaymentRadio.Checked = true;
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

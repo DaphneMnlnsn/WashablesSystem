@@ -204,7 +204,7 @@ namespace WashablesSystem.Classes
 
                 if (count > 0)
                 {
-                    MessageBox.Show("Customer cannot be deleted because it is referenced elsewhere.", "Delete Restricted", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Customer cannot be deleted because it is in a record.", "Delete Restricted", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     constring.Close();
                     return;
                 }

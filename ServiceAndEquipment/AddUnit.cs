@@ -39,5 +39,11 @@ namespace WashablesSystem
                 MessageBox.Show("Invalid input!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+
+        private void cbEquipment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            EquipmentClass equipmentClass = new EquipmentClass();
+            txtBoxName.Text = equipmentClass.viewUnit(cbEquipment.Text);
+        }
     }
 }

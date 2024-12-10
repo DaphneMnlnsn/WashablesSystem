@@ -1086,12 +1086,35 @@
   <ItemGroup>
     <None Include="Resources\Iron.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\NotAvailableWasher.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Settings.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\NewNotif.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NotAvailableDryer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OccupiedDryer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OccupiedIron.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NotAvailableIron.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OccupiedWasher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Check Mark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cross Mark.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
