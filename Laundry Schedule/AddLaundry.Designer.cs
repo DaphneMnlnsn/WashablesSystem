@@ -41,7 +41,6 @@
             this.timeDryer1 = new System.Windows.Forms.RadioButton();
             this.timeDryerCustomMin = new System.Windows.Forms.RadioButton();
             this.label12 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.cbService = new System.Windows.Forms.ComboBox();
             this.quantity3 = new System.Windows.Forms.NumericUpDown();
             this.quantity2 = new System.Windows.Forms.NumericUpDown();
@@ -88,12 +87,29 @@
             this.timeIron30 = new System.Windows.Forms.RadioButton();
             this.timeIron1 = new System.Windows.Forms.RadioButton();
             this.timeIronCustomMin = new System.Windows.Forms.RadioButton();
+            this.tobeassignedLbl = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.serviceType1 = new System.Windows.Forms.ComboBox();
+            this.serviceType2 = new System.Windows.Forms.ComboBox();
+            this.serviceType3 = new System.Windows.Forms.ComboBox();
+            this.txtBoxAddress = new WashablesSystem.CustomTextbox();
+            this.txtBoxPhone = new WashablesSystem.CustomTextbox();
+            this.txtBoxEmail = new WashablesSystem.CustomTextbox();
+            this.txtBoxName = new WashablesSystem.CustomTextbox();
             this.txtBoxUnit = new WashablesSystem.CustomTextbox();
-            this.btnService = new WashablesSystem.CustomTextbox();
             this.pickupDate = new WashablesSystem.CustomDatePicker();
             this.btnCancel = new WashablesSystem.CustomButton();
             this.btnAdd = new WashablesSystem.CustomButton();
-            this.tobeassignedLbl = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDryOtherHour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDryOtherMin)).BeginInit();
@@ -117,7 +133,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.label17.Location = new System.Drawing.Point(378, 345);
+            this.label17.Location = new System.Drawing.Point(697, 344);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(80, 18);
@@ -136,7 +152,7 @@
             this.groupBox2.Controls.Add(this.timeDryer30);
             this.groupBox2.Controls.Add(this.timeDryer1);
             this.groupBox2.Controls.Add(this.timeDryerCustomMin);
-            this.groupBox2.Location = new System.Drawing.Point(395, 212);
+            this.groupBox2.Location = new System.Drawing.Point(714, 211);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 122);
             this.groupBox2.TabIndex = 286;
@@ -268,25 +284,12 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.label12.Location = new System.Drawing.Point(376, 200);
+            this.label12.Location = new System.Drawing.Point(695, 199);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(89, 18);
             this.label12.TabIndex = 285;
             this.label12.Text = "Time(Dryer)";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.label7.Location = new System.Drawing.Point(150, 113);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 18);
-            this.label7.TabIndex = 284;
-            this.label7.Text = "Service Type";
             // 
             // cbService
             // 
@@ -297,12 +300,13 @@
             this.cbService.ForeColor = System.Drawing.SystemColors.MenuText;
             this.cbService.FormattingEnabled = true;
             this.cbService.Items.AddRange(new object[] {
+            "<Select Service Category>",
             "Wash-Dry-Fold",
             "Wash-Dry-Press",
             "Dry Only"});
-            this.cbService.Location = new System.Drawing.Point(30, 136);
+            this.cbService.Location = new System.Drawing.Point(349, 135);
             this.cbService.Name = "cbService";
-            this.cbService.Size = new System.Drawing.Size(114, 25);
+            this.cbService.Size = new System.Drawing.Size(283, 25);
             this.cbService.TabIndex = 283;
             this.cbService.SelectedIndexChanged += new System.EventHandler(this.cbService_SelectedIndexChanged);
             // 
@@ -310,7 +314,7 @@
             // 
             this.quantity3.DecimalPlaces = 2;
             this.quantity3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.quantity3.Location = new System.Drawing.Point(239, 468);
+            this.quantity3.Location = new System.Drawing.Point(558, 478);
             this.quantity3.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -324,7 +328,7 @@
             // 
             this.quantity2.DecimalPlaces = 2;
             this.quantity2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.quantity2.Location = new System.Drawing.Point(239, 436);
+            this.quantity2.Location = new System.Drawing.Point(558, 446);
             this.quantity2.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -338,7 +342,7 @@
             // 
             this.quantity1.DecimalPlaces = 2;
             this.quantity1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.quantity1.Location = new System.Drawing.Point(239, 404);
+            this.quantity1.Location = new System.Drawing.Point(558, 414);
             this.quantity1.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -352,42 +356,42 @@
             // 
             this.txtWeight3.DecimalPlaces = 2;
             this.txtWeight3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.txtWeight3.Location = new System.Drawing.Point(217, 256);
+            this.txtWeight3.Location = new System.Drawing.Point(571, 264);
             this.txtWeight3.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
             this.txtWeight3.Name = "txtWeight3";
-            this.txtWeight3.Size = new System.Drawing.Size(89, 25);
+            this.txtWeight3.Size = new System.Drawing.Size(61, 25);
             this.txtWeight3.TabIndex = 279;
             // 
             // txtWeight2
             // 
             this.txtWeight2.DecimalPlaces = 2;
             this.txtWeight2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.txtWeight2.Location = new System.Drawing.Point(125, 256);
+            this.txtWeight2.Location = new System.Drawing.Point(571, 196);
             this.txtWeight2.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
             this.txtWeight2.Name = "txtWeight2";
-            this.txtWeight2.Size = new System.Drawing.Size(89, 25);
+            this.txtWeight2.Size = new System.Drawing.Size(61, 25);
             this.txtWeight2.TabIndex = 278;
             // 
             // txtWeight
             // 
             this.txtWeight.DecimalPlaces = 2;
             this.txtWeight.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.txtWeight.Location = new System.Drawing.Point(30, 256);
+            this.txtWeight.Location = new System.Drawing.Point(571, 230);
             this.txtWeight.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
             this.txtWeight.Name = "txtWeight";
-            this.txtWeight.Size = new System.Drawing.Size(89, 25);
+            this.txtWeight.Size = new System.Drawing.Size(61, 25);
             this.txtWeight.TabIndex = 277;
             // 
             // lblUnit
@@ -396,7 +400,7 @@
             this.lblUnit.AutoSize = true;
             this.lblUnit.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.lblUnit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.lblUnit.Location = new System.Drawing.Point(151, 58);
+            this.lblUnit.Location = new System.Drawing.Point(480, 57);
             this.lblUnit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUnit.Name = "lblUnit";
             this.lblUnit.Size = new System.Drawing.Size(35, 18);
@@ -416,7 +420,7 @@
             this.groupBox1.Controls.Add(this.timeWashing30);
             this.groupBox1.Controls.Add(this.timeWashing1);
             this.groupBox1.Controls.Add(this.timeWashingCustomMin);
-            this.groupBox1.Location = new System.Drawing.Point(393, 71);
+            this.groupBox1.Location = new System.Drawing.Point(712, 70);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 122);
             this.groupBox1.TabIndex = 273;
@@ -554,7 +558,7 @@
             "Surf Powder",
             "Tide",
             "Champion Liquid"});
-            this.cbItem3.Location = new System.Drawing.Point(34, 468);
+            this.cbItem3.Location = new System.Drawing.Point(353, 478);
             this.cbItem3.Name = "cbItem3";
             this.cbItem3.Size = new System.Drawing.Size(180, 25);
             this.cbItem3.TabIndex = 272;
@@ -571,7 +575,7 @@
             "Surf Powder",
             "Tide",
             "Champion Liquid"});
-            this.cbItem2.Location = new System.Drawing.Point(34, 436);
+            this.cbItem2.Location = new System.Drawing.Point(353, 446);
             this.cbItem2.Name = "cbItem2";
             this.cbItem2.Size = new System.Drawing.Size(180, 25);
             this.cbItem2.TabIndex = 271;
@@ -588,7 +592,7 @@
             "Surf Powder",
             "Tide",
             "Champion Liquid"});
-            this.cbItem1.Location = new System.Drawing.Point(33, 404);
+            this.cbItem1.Location = new System.Drawing.Point(352, 414);
             this.cbItem1.Name = "cbItem1";
             this.cbItem1.Size = new System.Drawing.Size(180, 25);
             this.cbItem1.TabIndex = 270;
@@ -601,16 +605,11 @@
             this.cbCust.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
             this.cbCust.ForeColor = System.Drawing.SystemColors.MenuText;
             this.cbCust.FormattingEnabled = true;
-            this.cbCust.Items.AddRange(new object[] {
-            "Kiana Martin",
-            "Quiana Momingo",
-            "Lei Mar",
-            "Dap Man",
-            "Natasha Valerio"});
-            this.cbCust.Location = new System.Drawing.Point(30, 195);
+            this.cbCust.Location = new System.Drawing.Point(29, 79);
             this.cbCust.Name = "cbCust";
-            this.cbCust.Size = new System.Drawing.Size(276, 27);
+            this.cbCust.Size = new System.Drawing.Size(245, 27);
             this.cbCust.TabIndex = 269;
+            this.cbCust.SelectedIndexChanged += new System.EventHandler(this.cbCust_SelectedIndexChanged);
             // 
             // cbMachine
             // 
@@ -625,9 +624,9 @@
             "Washing Machine",
             "Dryer",
             "Iron"});
-            this.cbMachine.Location = new System.Drawing.Point(30, 80);
+            this.cbMachine.Location = new System.Drawing.Point(349, 79);
             this.cbMachine.Name = "cbMachine";
-            this.cbMachine.Size = new System.Drawing.Size(114, 25);
+            this.cbMachine.Size = new System.Drawing.Size(124, 25);
             this.cbMachine.TabIndex = 268;
             this.cbMachine.Visible = false;
             // 
@@ -637,7 +636,7 @@
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.lblTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.lblTime.Location = new System.Drawing.Point(374, 59);
+            this.lblTime.Location = new System.Drawing.Point(693, 58);
             this.lblTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(169, 18);
@@ -650,7 +649,7 @@
             this.lvlPickup.AutoSize = true;
             this.lvlPickup.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.lvlPickup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.lvlPickup.Location = new System.Drawing.Point(31, 294);
+            this.lvlPickup.Location = new System.Drawing.Point(350, 304);
             this.lvlPickup.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lvlPickup.Name = "lvlPickup";
             this.lvlPickup.Size = new System.Drawing.Size(99, 18);
@@ -663,7 +662,7 @@
             this.lblItemName.AutoSize = true;
             this.lblItemName.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.lblItemName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.lblItemName.Location = new System.Drawing.Point(31, 384);
+            this.lblItemName.Location = new System.Drawing.Point(350, 394);
             this.lblItemName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblItemName.Name = "lblItemName";
             this.lblItemName.Size = new System.Drawing.Size(82, 18);
@@ -676,7 +675,7 @@
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.lblQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.lblQuantity.Location = new System.Drawing.Point(214, 383);
+            this.lblQuantity.Location = new System.Drawing.Point(533, 393);
             this.lblQuantity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(116, 18);
@@ -689,7 +688,7 @@
             this.lblWeight.AutoSize = true;
             this.lblWeight.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.lblWeight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.lblWeight.Location = new System.Drawing.Point(31, 231);
+            this.lblWeight.Location = new System.Drawing.Point(560, 172);
             this.lblWeight.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblWeight.Name = "lblWeight";
             this.lblWeight.Size = new System.Drawing.Size(88, 18);
@@ -702,7 +701,7 @@
             this.lblItemTitle.AutoSize = true;
             this.lblItemTitle.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.lblItemTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.lblItemTitle.Location = new System.Drawing.Point(31, 362);
+            this.lblItemTitle.Location = new System.Drawing.Point(350, 372);
             this.lblItemTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblItemTitle.Name = "lblItemTitle";
             this.lblItemTitle.Size = new System.Drawing.Size(121, 18);
@@ -715,12 +714,12 @@
             this.lblCust.AutoSize = true;
             this.lblCust.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.lblCust.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.lblCust.Location = new System.Drawing.Point(30, 173);
+            this.lblCust.Location = new System.Drawing.Point(28, 57);
             this.lblCust.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCust.Name = "lblCust";
-            this.lblCust.Size = new System.Drawing.Size(114, 18);
+            this.lblCust.Size = new System.Drawing.Size(110, 18);
             this.lblCust.TabIndex = 258;
-            this.lblCust.Text = "Customer Name";
+            this.lblCust.Text = "Select Customer";
             // 
             // lblService
             // 
@@ -728,12 +727,12 @@
             this.lblService.AutoSize = true;
             this.lblService.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.lblService.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.lblService.Location = new System.Drawing.Point(30, 114);
+            this.lblService.Location = new System.Drawing.Point(349, 113);
             this.lblService.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblService.Name = "lblService";
-            this.lblService.Size = new System.Drawing.Size(52, 18);
+            this.lblService.Size = new System.Drawing.Size(116, 18);
             this.lblService.TabIndex = 257;
-            this.lblService.Text = "Service";
+            this.lblService.Text = "Service Category";
             // 
             // lblMachine
             // 
@@ -741,7 +740,7 @@
             this.lblMachine.AutoSize = true;
             this.lblMachine.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
             this.lblMachine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.lblMachine.Location = new System.Drawing.Point(30, 58);
+            this.lblMachine.Location = new System.Drawing.Point(349, 57);
             this.lblMachine.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMachine.Name = "lblMachine";
             this.lblMachine.Size = new System.Drawing.Size(61, 18);
@@ -755,12 +754,12 @@
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.lblHeader.Location = new System.Drawing.Point(15, 13);
+            this.lblHeader.Location = new System.Drawing.Point(334, 12);
             this.lblHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(164, 21);
+            this.lblHeader.Size = new System.Drawing.Size(187, 21);
             this.lblHeader.TabIndex = 254;
-            this.lblHeader.Text = "Add Laundry Form";
+            this.lblHeader.Text = "Laundry Order Details";
             // 
             // label1
             // 
@@ -768,7 +767,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(15, 26);
+            this.label1.Location = new System.Drawing.Point(334, 25);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(618, 21);
@@ -787,7 +786,7 @@
             this.groupBox3.Controls.Add(this.timeIron30);
             this.groupBox3.Controls.Add(this.timeIron1);
             this.groupBox3.Controls.Add(this.timeIronCustomMin);
-            this.groupBox3.Location = new System.Drawing.Point(397, 357);
+            this.groupBox3.Location = new System.Drawing.Point(716, 356);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(200, 122);
             this.groupBox3.TabIndex = 288;
@@ -913,6 +912,301 @@
             this.timeIronCustomMin.TabStop = true;
             this.timeIronCustomMin.UseVisualStyleBackColor = true;
             // 
+            // tobeassignedLbl
+            // 
+            this.tobeassignedLbl.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tobeassignedLbl.AutoSize = true;
+            this.tobeassignedLbl.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.tobeassignedLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.tobeassignedLbl.Location = new System.Drawing.Point(364, 70);
+            this.tobeassignedLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.tobeassignedLbl.Name = "tobeassignedLbl";
+            this.tobeassignedLbl.Size = new System.Drawing.Size(253, 18);
+            this.tobeassignedLbl.TabIndex = 290;
+            this.tobeassignedLbl.Text = "Machine and Unit Are To Be Assigned";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.label2.Location = new System.Drawing.Point(11, 12);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(144, 21);
+            this.label2.TabIndex = 291;
+            this.label2.Text = "Customer Details";
+            // 
+            // label18
+            // 
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Black;
+            this.label18.Location = new System.Drawing.Point(11, 26);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(282, 21);
+            this.label18.TabIndex = 293;
+            this.label18.Text = "__________________________________";
+            // 
+            // label19
+            // 
+            this.label19.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.label19.Location = new System.Drawing.Point(350, 172);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(94, 18);
+            this.label19.TabIndex = 294;
+            this.label19.Text = "Service Types";
+            // 
+            // label20
+            // 
+            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.label20.Location = new System.Drawing.Point(356, 199);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(12, 18);
+            this.label20.TabIndex = 298;
+            this.label20.Text = "1";
+            // 
+            // label21
+            // 
+            this.label21.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.label21.Location = new System.Drawing.Point(354, 231);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(16, 18);
+            this.label21.TabIndex = 299;
+            this.label21.Text = "2";
+            // 
+            // label22
+            // 
+            this.label22.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.label22.Location = new System.Drawing.Point(354, 266);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(16, 18);
+            this.label22.TabIndex = 300;
+            this.label22.Text = "3";
+            // 
+            // label23
+            // 
+            this.label23.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.label23.Location = new System.Drawing.Point(28, 336);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(60, 18);
+            this.label23.TabIndex = 308;
+            this.label23.Text = "Address";
+            // 
+            // label24
+            // 
+            this.label24.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.label24.Location = new System.Drawing.Point(28, 263);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(108, 18);
+            this.label24.TabIndex = 307;
+            this.label24.Text = "Phone Number";
+            // 
+            // label25
+            // 
+            this.label25.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.label25.Location = new System.Drawing.Point(28, 191);
+            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(101, 18);
+            this.label25.TabIndex = 306;
+            this.label25.Text = "Email Address";
+            // 
+            // label26
+            // 
+            this.label26.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
+            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.label26.Location = new System.Drawing.Point(28, 121);
+            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(114, 18);
+            this.label26.TabIndex = 305;
+            this.label26.Text = "Customer Name";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Location = new System.Drawing.Point(309, 9);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(2, 517);
+            this.panel1.TabIndex = 309;
+            // 
+            // serviceType1
+            // 
+            this.serviceType1.BackColor = System.Drawing.SystemColors.Control;
+            this.serviceType1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.serviceType1.Enabled = false;
+            this.serviceType1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.serviceType1.Font = new System.Drawing.Font("Berlin Sans FB", 11F);
+            this.serviceType1.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.serviceType1.FormattingEnabled = true;
+            this.serviceType1.Items.AddRange(new object[] {
+            "Wash-Dry-Fold",
+            "Wash-Dry-Press",
+            "Dry Only"});
+            this.serviceType1.Location = new System.Drawing.Point(372, 197);
+            this.serviceType1.Name = "serviceType1";
+            this.serviceType1.Size = new System.Drawing.Size(193, 25);
+            this.serviceType1.TabIndex = 310;
+            this.serviceType1.SelectedIndexChanged += new System.EventHandler(this.serviceType1_SelectedIndexChanged);
+            // 
+            // serviceType2
+            // 
+            this.serviceType2.BackColor = System.Drawing.SystemColors.Control;
+            this.serviceType2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.serviceType2.Enabled = false;
+            this.serviceType2.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.serviceType2.Font = new System.Drawing.Font("Berlin Sans FB", 11F);
+            this.serviceType2.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.serviceType2.FormattingEnabled = true;
+            this.serviceType2.Items.AddRange(new object[] {
+            "Wash-Dry-Fold",
+            "Wash-Dry-Press",
+            "Dry Only"});
+            this.serviceType2.Location = new System.Drawing.Point(372, 229);
+            this.serviceType2.Name = "serviceType2";
+            this.serviceType2.Size = new System.Drawing.Size(193, 25);
+            this.serviceType2.TabIndex = 311;
+            this.serviceType2.SelectedIndexChanged += new System.EventHandler(this.serviceType2_SelectedIndexChanged);
+            // 
+            // serviceType3
+            // 
+            this.serviceType3.BackColor = System.Drawing.SystemColors.Control;
+            this.serviceType3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.serviceType3.Enabled = false;
+            this.serviceType3.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.serviceType3.Font = new System.Drawing.Font("Berlin Sans FB", 11F);
+            this.serviceType3.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.serviceType3.FormattingEnabled = true;
+            this.serviceType3.Items.AddRange(new object[] {
+            "Wash-Dry-Fold",
+            "Wash-Dry-Press",
+            "Dry Only"});
+            this.serviceType3.Location = new System.Drawing.Point(372, 264);
+            this.serviceType3.Name = "serviceType3";
+            this.serviceType3.Size = new System.Drawing.Size(193, 25);
+            this.serviceType3.TabIndex = 312;
+            // 
+            // txtBoxAddress
+            // 
+            this.txtBoxAddress.BackColor = System.Drawing.Color.White;
+            this.txtBoxAddress.BorderColor = System.Drawing.Color.Silver;
+            this.txtBoxAddress.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.txtBoxAddress.BorderRadius = 5;
+            this.txtBoxAddress.BorderSize = 1;
+            this.txtBoxAddress.Enabled = false;
+            this.txtBoxAddress.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxAddress.ForeColor = System.Drawing.Color.Black;
+            this.txtBoxAddress.Location = new System.Drawing.Point(29, 359);
+            this.txtBoxAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxAddress.Multiline = false;
+            this.txtBoxAddress.Name = "txtBoxAddress";
+            this.txtBoxAddress.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
+            this.txtBoxAddress.PasswordChar = false;
+            this.txtBoxAddress.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtBoxAddress.PlaceholderText = "";
+            this.txtBoxAddress.Size = new System.Drawing.Size(245, 26);
+            this.txtBoxAddress.TabIndex = 304;
+            this.txtBoxAddress.UnderlinedStyle = false;
+            // 
+            // txtBoxPhone
+            // 
+            this.txtBoxPhone.BackColor = System.Drawing.Color.White;
+            this.txtBoxPhone.BorderColor = System.Drawing.Color.Silver;
+            this.txtBoxPhone.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.txtBoxPhone.BorderRadius = 5;
+            this.txtBoxPhone.BorderSize = 1;
+            this.txtBoxPhone.Enabled = false;
+            this.txtBoxPhone.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxPhone.ForeColor = System.Drawing.Color.Black;
+            this.txtBoxPhone.Location = new System.Drawing.Point(29, 286);
+            this.txtBoxPhone.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxPhone.Multiline = false;
+            this.txtBoxPhone.Name = "txtBoxPhone";
+            this.txtBoxPhone.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
+            this.txtBoxPhone.PasswordChar = false;
+            this.txtBoxPhone.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtBoxPhone.PlaceholderText = "";
+            this.txtBoxPhone.Size = new System.Drawing.Size(245, 26);
+            this.txtBoxPhone.TabIndex = 303;
+            this.txtBoxPhone.UnderlinedStyle = false;
+            // 
+            // txtBoxEmail
+            // 
+            this.txtBoxEmail.BackColor = System.Drawing.Color.White;
+            this.txtBoxEmail.BorderColor = System.Drawing.Color.Silver;
+            this.txtBoxEmail.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.txtBoxEmail.BorderRadius = 5;
+            this.txtBoxEmail.BorderSize = 1;
+            this.txtBoxEmail.Enabled = false;
+            this.txtBoxEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxEmail.ForeColor = System.Drawing.Color.Black;
+            this.txtBoxEmail.Location = new System.Drawing.Point(29, 214);
+            this.txtBoxEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxEmail.Multiline = false;
+            this.txtBoxEmail.Name = "txtBoxEmail";
+            this.txtBoxEmail.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
+            this.txtBoxEmail.PasswordChar = false;
+            this.txtBoxEmail.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtBoxEmail.PlaceholderText = "";
+            this.txtBoxEmail.Size = new System.Drawing.Size(245, 26);
+            this.txtBoxEmail.TabIndex = 302;
+            this.txtBoxEmail.UnderlinedStyle = false;
+            // 
+            // txtBoxName
+            // 
+            this.txtBoxName.BackColor = System.Drawing.Color.White;
+            this.txtBoxName.BorderColor = System.Drawing.Color.Silver;
+            this.txtBoxName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.txtBoxName.BorderRadius = 5;
+            this.txtBoxName.BorderSize = 1;
+            this.txtBoxName.Enabled = false;
+            this.txtBoxName.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxName.ForeColor = System.Drawing.Color.Black;
+            this.txtBoxName.Location = new System.Drawing.Point(29, 144);
+            this.txtBoxName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxName.Multiline = false;
+            this.txtBoxName.Name = "txtBoxName";
+            this.txtBoxName.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
+            this.txtBoxName.PasswordChar = false;
+            this.txtBoxName.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtBoxName.PlaceholderText = "";
+            this.txtBoxName.Size = new System.Drawing.Size(245, 26);
+            this.txtBoxName.TabIndex = 301;
+            this.txtBoxName.UnderlinedStyle = false;
+            // 
             // txtBoxUnit
             // 
             this.txtBoxUnit.BackColor = System.Drawing.Color.White;
@@ -923,7 +1217,7 @@
             this.txtBoxUnit.Enabled = false;
             this.txtBoxUnit.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.txtBoxUnit.ForeColor = System.Drawing.Color.Black;
-            this.txtBoxUnit.Location = new System.Drawing.Point(151, 77);
+            this.txtBoxUnit.Location = new System.Drawing.Point(480, 76);
             this.txtBoxUnit.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxUnit.Multiline = false;
             this.txtBoxUnit.Name = "txtBoxUnit";
@@ -936,28 +1230,6 @@
             this.txtBoxUnit.UnderlinedStyle = false;
             this.txtBoxUnit.Visible = false;
             // 
-            // btnService
-            // 
-            this.btnService.BackColor = System.Drawing.Color.White;
-            this.btnService.BorderColor = System.Drawing.Color.LightGray;
-            this.btnService.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.btnService.BorderRadius = 5;
-            this.btnService.BorderSize = 1;
-            this.btnService.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.btnService.ForeColor = System.Drawing.Color.Black;
-            this.btnService.Location = new System.Drawing.Point(151, 133);
-            this.btnService.Margin = new System.Windows.Forms.Padding(4);
-            this.btnService.Multiline = false;
-            this.btnService.Name = "btnService";
-            this.btnService.Padding = new System.Windows.Forms.Padding(10, 5, 7, 5);
-            this.btnService.PasswordChar = false;
-            this.btnService.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.btnService.PlaceholderText = "";
-            this.btnService.Size = new System.Drawing.Size(152, 30);
-            this.btnService.TabIndex = 274;
-            this.btnService.UnderlinedStyle = false;
-            this.btnService.Click += new System.EventHandler(this.btnService_Click);
-            // 
             // pickupDate
             // 
             this.pickupDate.BorderColor = System.Drawing.Color.LightGray;
@@ -966,10 +1238,10 @@
             this.pickupDate.CalendarTitleBackColor = System.Drawing.SystemColors.Control;
             this.pickupDate.Font = new System.Drawing.Font("Berlin Sans FB", 11F);
             this.pickupDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.pickupDate.Location = new System.Drawing.Point(34, 316);
+            this.pickupDate.Location = new System.Drawing.Point(353, 326);
             this.pickupDate.MinimumSize = new System.Drawing.Size(4, 35);
             this.pickupDate.Name = "pickupDate";
-            this.pickupDate.Size = new System.Drawing.Size(258, 35);
+            this.pickupDate.Size = new System.Drawing.Size(279, 35);
             this.pickupDate.SkinColor = System.Drawing.Color.White;
             this.pickupDate.TabIndex = 266;
             this.pickupDate.TextColor = System.Drawing.Color.Black;
@@ -986,7 +1258,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(519, 493);
+            this.btnCancel.Location = new System.Drawing.Point(838, 492);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(116, 29);
@@ -1007,7 +1279,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(399, 493);
+            this.btnAdd.Location = new System.Drawing.Point(718, 492);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(116, 29);
@@ -1017,30 +1289,33 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // tobeassignedLbl
-            // 
-            this.tobeassignedLbl.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.tobeassignedLbl.AutoSize = true;
-            this.tobeassignedLbl.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
-            this.tobeassignedLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.tobeassignedLbl.Location = new System.Drawing.Point(39, 71);
-            this.tobeassignedLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.tobeassignedLbl.Name = "tobeassignedLbl";
-            this.tobeassignedLbl.Size = new System.Drawing.Size(253, 18);
-            this.tobeassignedLbl.TabIndex = 290;
-            this.tobeassignedLbl.Text = "Machine and Unit Are To Be Assigned";
-            // 
             // AddLaundry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 538);
+            this.ClientSize = new System.Drawing.Size(987, 538);
+            this.Controls.Add(this.serviceType3);
+            this.Controls.Add(this.serviceType2);
+            this.Controls.Add(this.serviceType1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.label24);
+            this.Controls.Add(this.label25);
+            this.Controls.Add(this.label26);
+            this.Controls.Add(this.txtBoxAddress);
+            this.Controls.Add(this.txtBoxPhone);
+            this.Controls.Add(this.txtBoxEmail);
+            this.Controls.Add(this.txtBoxName);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtBoxUnit);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.cbService);
             this.Controls.Add(this.quantity3);
             this.Controls.Add(this.quantity2);
@@ -1049,7 +1324,6 @@
             this.Controls.Add(this.txtWeight2);
             this.Controls.Add(this.txtWeight);
             this.Controls.Add(this.lblUnit);
-            this.Controls.Add(this.btnService);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cbItem3);
             this.Controls.Add(this.cbItem2);
@@ -1071,6 +1345,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.tobeassignedLbl);
+            this.Controls.Add(this.label18);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddLaundry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1114,7 +1389,6 @@
         private System.Windows.Forms.RadioButton timeDryer1;
         private System.Windows.Forms.RadioButton timeDryerCustomMin;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbService;
         private System.Windows.Forms.NumericUpDown quantity3;
         private System.Windows.Forms.NumericUpDown quantity2;
@@ -1123,7 +1397,6 @@
         private System.Windows.Forms.NumericUpDown txtWeight2;
         private System.Windows.Forms.NumericUpDown txtWeight;
         private System.Windows.Forms.Label lblUnit;
-        private CustomTextbox btnService;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown txtWashOtherHour;
@@ -1167,5 +1440,23 @@
         private System.Windows.Forms.RadioButton timeIronCustomMin;
         private CustomTextbox txtBoxUnit;
         private System.Windows.Forms.Label tobeassignedLbl;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private CustomTextbox txtBoxAddress;
+        private CustomTextbox txtBoxPhone;
+        private CustomTextbox txtBoxEmail;
+        private CustomTextbox txtBoxName;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox serviceType1;
+        private System.Windows.Forms.ComboBox serviceType2;
+        private System.Windows.Forms.ComboBox serviceType3;
     }
 }

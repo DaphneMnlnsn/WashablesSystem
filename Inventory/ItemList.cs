@@ -33,13 +33,29 @@ namespace WashablesSystem
             Quantity.Text = quan + measurement;
             Price.Text = price + "/" + measurement;
 
-            if (decimal.Parse(quan) <= 5)
+            if (decimal.Parse(quan) == 0)
             {
                 ItemCode.ForeColor = System.Drawing.Color.FromArgb(161, 0, 0);
                 ItemName.ForeColor = System.Drawing.Color.FromArgb(161, 0, 0);
                 Category.ForeColor = System.Drawing.Color.FromArgb(161, 0, 0);
                 Quantity.ForeColor = System.Drawing.Color.FromArgb(161, 0, 0);
                 Price.ForeColor = System.Drawing.Color.FromArgb(161, 0, 0);
+
+                SessionVariables sessionVariables = new SessionVariables();
+                if (!sessionVariables.notified2)
+                {
+                    NotificationClass notification = new NotificationClass();
+                    notification.sendNotification(ItemCode.Text, "Out of Stock");
+                    sessionVariables.notified2 = true;
+                }
+            }
+            else if (decimal.Parse(quan) <= 5 && decimal.Parse(quan) > 0)
+            {
+                ItemCode.ForeColor = System.Drawing.Color.FromArgb(192, 64, 0);
+                ItemName.ForeColor = System.Drawing.Color.FromArgb(192, 64, 0);
+                Category.ForeColor = System.Drawing.Color.FromArgb(192, 64, 0);
+                Quantity.ForeColor = System.Drawing.Color.FromArgb(192, 64, 0);
+                Price.ForeColor = System.Drawing.Color.FromArgb(192, 64, 0);
 
                 SessionVariables sessionVariables = new SessionVariables();
                 if (!sessionVariables.notified2)

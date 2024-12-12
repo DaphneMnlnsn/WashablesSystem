@@ -62,6 +62,13 @@ namespace WashablesSystem.Classes
                     query = "INSERT INTO [Notification] VALUES('" + notificationID + "',null,'" + num + "','"
                         + description + "','Inventory',0,'" + DateTime.Now + "')";
                 }
+                else if (type.Equals("Out of Stock"))
+                {
+                    description = "is out of stock";
+                    //Query for inserting
+                    query = "INSERT INTO [Notification] VALUES('" + notificationID + "',null,'" + num + "','"
+                        + description + "','Inventory',0,'" + DateTime.Now + "')";
+                }
 
                 SqlCommand cmd2 = new SqlCommand(query, constring);
                 cmd2.CommandText = query;
@@ -69,8 +76,8 @@ namespace WashablesSystem.Classes
                 //If successful, add to activity log
                 if (cmd2.ExecuteNonQuery() == 1)
                 {
-                    new Main(num + " " + description);
                     constring.Close();
+                    new Main(num + " " + description);
                 }
                 else
                 {

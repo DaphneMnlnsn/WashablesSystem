@@ -38,7 +38,11 @@
             this.txtBoxRemaining = new WashablesSystem.CustomTextbox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtBoxQuantity = new System.Windows.Forms.NumericUpDown();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioAdd = new System.Windows.Forms.RadioButton();
+            this.radioSubtract = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtBoxQuantity)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -76,9 +80,9 @@
             this.lblHeader.Location = new System.Drawing.Point(16, 18);
             this.lblHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(212, 21);
+            this.lblHeader.Size = new System.Drawing.Size(91, 21);
             this.lblHeader.TabIndex = 32;
-            this.lblHeader.Text = "Restock this selected item";
+            this.lblHeader.Text = "Edit Stock";
             // 
             // label1
             // 
@@ -104,7 +108,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(172, 236);
+            this.btnCancel.Location = new System.Drawing.Point(172, 247);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(116, 29);
@@ -125,12 +129,12 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(52, 236);
+            this.btnAdd.Location = new System.Drawing.Point(52, 247);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(116, 29);
             this.btnAdd.TabIndex = 30;
-            this.btnAdd.Text = "Restock Now";
+            this.btnAdd.Text = "Save";
             this.btnAdd.TextColor = System.Drawing.Color.White;
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -144,7 +148,7 @@
             this.txtQuantity.BorderSize = 1;
             this.txtQuantity.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuantity.ForeColor = System.Drawing.Color.Black;
-            this.txtQuantity.Location = new System.Drawing.Point(20, 166);
+            this.txtQuantity.Location = new System.Drawing.Point(150, 180);
             this.txtQuantity.Margin = new System.Windows.Forms.Padding(4);
             this.txtQuantity.Multiline = false;
             this.txtQuantity.Name = "txtQuantity";
@@ -152,7 +156,7 @@
             this.txtQuantity.PasswordChar = false;
             this.txtQuantity.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtQuantity.PlaceholderText = "";
-            this.txtQuantity.Size = new System.Drawing.Size(307, 26);
+            this.txtQuantity.Size = new System.Drawing.Size(118, 26);
             this.txtQuantity.TabIndex = 25;
             this.txtQuantity.UnderlinedStyle = false;
             // 
@@ -183,29 +187,62 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(289, 169);
+            this.label4.Location = new System.Drawing.Point(229, 183);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 20);
+            this.label4.Size = new System.Drawing.Size(37, 19);
             this.label4.TabIndex = 36;
-            this.label4.Text = "kg";
+            this.label4.Text = "L/kg";
             // 
             // txtBoxQuantity
             // 
             this.txtBoxQuantity.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxQuantity.DecimalPlaces = 2;
             this.txtBoxQuantity.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.txtBoxQuantity.Location = new System.Drawing.Point(28, 169);
+            this.txtBoxQuantity.Location = new System.Drawing.Point(158, 184);
             this.txtBoxQuantity.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
             this.txtBoxQuantity.Name = "txtBoxQuantity";
-            this.txtBoxQuantity.Size = new System.Drawing.Size(260, 21);
+            this.txtBoxQuantity.Size = new System.Drawing.Size(69, 21);
             this.txtBoxQuantity.TabIndex = 205;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioSubtract);
+            this.groupBox1.Controls.Add(this.radioAdd);
+            this.groupBox1.Location = new System.Drawing.Point(22, 164);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(117, 55);
+            this.groupBox1.TabIndex = 206;
+            this.groupBox1.TabStop = false;
+            // 
+            // radioAdd
+            // 
+            this.radioAdd.AutoSize = true;
+            this.radioAdd.Checked = true;
+            this.radioAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioAdd.Location = new System.Drawing.Point(7, 10);
+            this.radioAdd.Name = "radioAdd";
+            this.radioAdd.Size = new System.Drawing.Size(77, 17);
+            this.radioAdd.TabIndex = 0;
+            this.radioAdd.Text = "Add Stock";
+            this.radioAdd.UseVisualStyleBackColor = true;
+            // 
+            // radioSubtract
+            // 
+            this.radioSubtract.AutoSize = true;
+            this.radioSubtract.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioSubtract.Location = new System.Drawing.Point(7, 33);
+            this.radioSubtract.Name = "radioSubtract";
+            this.radioSubtract.Size = new System.Drawing.Size(98, 17);
+            this.radioSubtract.TabIndex = 1;
+            this.radioSubtract.Text = "Subtract Stock";
+            this.radioSubtract.UseVisualStyleBackColor = true;
             // 
             // RestockItem
             // 
@@ -213,6 +250,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(363, 307);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtBoxQuantity);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -229,6 +267,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.RestockItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtBoxQuantity)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,5 +285,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown txtBoxQuantity;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radioSubtract;
+        private System.Windows.Forms.RadioButton radioAdd;
     }
 }

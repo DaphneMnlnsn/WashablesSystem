@@ -148,6 +148,7 @@ namespace WashablesSystem.Classes
                 //If successful, add to activity log
                 if (cmd2.ExecuteNonQuery() == 1)
                 {
+                    constring.Close();
                     logOperation("Subtracted Item");
                 }
                 else
@@ -179,6 +180,30 @@ namespace WashablesSystem.Classes
                     constring.Close();
                     MessageBox.Show("Something went wrong. Please try again.");
                 }
+            }
+        }
+        public void subtractItem(string itemID)
+        {
+            constring.Open();
+            //for Item1
+            this.itemID = itemID;
+            //Query for editing
+            String query = "UPDATE [Item] SET item_quantity = item_quantity - "
+                + itemQuantity + " WHERE item_id='" + itemID + "'";
+
+            SqlCommand cmd2 = new SqlCommand(query, constring);
+            cmd2.CommandText = query;
+
+            //If successful, add to activity log
+            if (cmd2.ExecuteNonQuery() == 1)
+            {
+                constring.Close();
+                logOperation("Subtracted Item2");
+            }
+            else
+            {
+                constring.Close();
+                MessageBox.Show("Something went wrong. Please try again.");
             }
         }
         public void checkStock()
@@ -280,8 +305,8 @@ namespace WashablesSystem.Classes
             }
             else
             {
-                MessageBox.Show("Something went wrong. Please try again.");
                 constring.Close();
+                MessageBox.Show("Something went wrong. Please try again.");
             }
         }
         public void archiveItem(string itemID)
@@ -457,7 +482,7 @@ namespace WashablesSystem.Classes
             }
             else if (activity.Equals("Restocked Item"))
             {
-                string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','restocked item"
+                string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','edited stock of item "
                             + itemID + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','Inventory" + "')";
                 SqlCommand cmdAct = new SqlCommand(queryAct, constring);
                 cmdAct.CommandText = queryAct;
@@ -478,6 +503,22 @@ namespace WashablesSystem.Classes
                 SqlCommand cmdAddHistory = new SqlCommand(queryAddHistory, constring);
                 cmdAddHistory.CommandText = queryAddHistory;
                 cmdAddHistory.ExecuteNonQuery();
+            }
+            else if (activity.Equals("Subtracted Item2"))
+            {
+                string queryAct = "INSERT INTO ActivityLog VALUES('" + logID + "','" + sessionVar.loggedIn.ToString() + "','edited stock of item "
+                            + itemID + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','Inventory" + "')";
+                SqlCommand cmdAct = new SqlCommand(queryAct, constring);
+                cmdAct.CommandText = queryAct;
+                cmdAct.ExecuteNonQuery();
+
+                string queryAddHistory = "INSERT INTO ItemHistory VALUES('" + sessionVar.loggedIn.ToString() + "','" + itemID + "','"
+                    + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "',' subtracted " + itemQuantity + "L/kg')";
+                SqlCommand cmdAddHistory = new SqlCommand(queryAddHistory, constring);
+                cmdAddHistory.CommandText = queryAddHistory;
+                cmdAddHistory.ExecuteNonQuery();
+                MessageBox.Show("Item stock successfully subtracted!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                constring.Close();
             }
             else if (activity.Equals("Restored Item"))
             {

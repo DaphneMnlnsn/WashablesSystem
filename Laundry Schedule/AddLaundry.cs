@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Xml.Schema;
 using WashablesSystem.Classes;
 
@@ -61,9 +62,9 @@ namespace WashablesSystem
                 string unit = txtBoxUnit.Text;
                 string serviceCategory = cbService.Text;
 
-                string service = btnService.Text;
-                string service1 = "", service2 = "", service3 = "";
-                string input = service;
+                //string service = btnService.Text;
+                /*string service1 = "", service2 = "", service3 = "";
+                //string input = service;
                 char[] separators = new char[] { '|' };
                 string[] types = input.Split(separators, StringSplitOptions.RemoveEmptyEntries);
                 if (types.Length == 1)
@@ -80,9 +81,26 @@ namespace WashablesSystem
                     service1 = types[0];
                     service2 = types[1];
                     service3 = types[2];
+                }*/
+
+                string service1 = serviceType1.SelectedValue.ToString();
+                string service2 = serviceType2.SelectedValue.ToString();
+                string service3 = serviceType3.SelectedValue.ToString();
+
+                if (service1.Equals("placeholder"))
+                {
+
+                }
+                else if (service2.Equals("placeholder"))
+                {
+                    service2 = "";
+                    service3 = "";
+                }
+                else if (service3.Equals("placeholder"))
+                {
+                    service3 = "";
                 }
 
-                string custID = cbCust.SelectedValue.ToString();
                 string weight = txtWeight.Text;
                 string weight2 = txtWeight2.Text;
                 string weight3 = txtWeight3.Text;
@@ -150,6 +168,23 @@ namespace WashablesSystem
                     ironTime = TimeSpan.FromHours(double.Parse(txtPressOtherHr.Text));
                 }
 
+                string custID = "";
+                //Adding/Editing Customer
+                if (cbCust.SelectedValue.ToString().Equals("add"))
+                {
+                    CustomerClass customerClass = new CustomerClass(txtBoxName.Text, txtBoxPhone.Text, txtBoxEmail.Text, txtBoxAddress.Text);
+                    custID = customerClass.addCustomer(true);
+                }
+                else if (cbCust.SelectedValue.ToString().Equals("placeholder"))
+                {
+                    MessageBox.Show("Please select a customer!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    CustomerClass customerClass = new CustomerClass(txtBoxName.Text, txtBoxPhone.Text, txtBoxEmail.Text, txtBoxAddress.Text);
+                    customerClass.editCustomer(cbCust.SelectedValue.ToString());
+                }
+
                 ScheduleClass schedule = new ScheduleClass(serviceCategory, service1, service2, service3, weight, weight2, weight3, custID, DateTime.Now, pickUp, item1, item2, item3, itemQuan1, itemQuan2, itemQuan3, washTime, dryTime, ironTime);
                 if (specificUnit)
                 {
@@ -183,9 +218,11 @@ namespace WashablesSystem
 
         private void AddLaundry_Load(object sender, EventArgs e)
         {
+            cbService.SelectedIndex = 0;
             Dictionary<string, string> data = new Dictionary<string, string>
             {
-                { "placeholder", "<Select Customer Name>" }
+                { "placeholder", "<Select Customer Name>" },
+                { "add", "<Add New Customer>" }
             };
             CustomerClass customer = new CustomerClass();
             DataTable customers = customer.displayCustomer();
@@ -223,6 +260,8 @@ namespace WashablesSystem
         {
             if (cbService.Text.Equals("Wash-Dry-Fold"))
             {
+                serviceType1.Enabled = true;
+
                 timeIron30.Enabled = false;
                 timeIron1.Enabled = false;
                 timeIronCustomMin.Enabled = false;
@@ -238,6 +277,8 @@ namespace WashablesSystem
             }
             else if (cbService.Text.Equals("Dry Only"))
             {
+                serviceType1.Enabled = true;
+
                 timeWashing30.Enabled = false;
                 timeWashing1.Enabled = false;
                 timeWashingCustomMin.Enabled = false;
@@ -253,6 +294,8 @@ namespace WashablesSystem
             }
             else
             {
+                serviceType1.Enabled = true;
+
                 timeWashing30.Enabled = true;
                 timeWashing1.Enabled = true;
                 timeWashingCustomMin.Enabled = true;
@@ -265,6 +308,124 @@ namespace WashablesSystem
                 timeIron1.Enabled = true;
                 timeIronCustomMin.Enabled = true;
                 timeIronCustomHr.Enabled = true;
+            }
+
+            Dictionary<string, string> serviceData = new Dictionary<string, string>
+            {
+                { "placeholder", "<Select Service Type>" }
+            };
+
+            ServiceClass serviceClass = new ServiceClass(cbService.Text);
+            DataTable services = serviceClass.displayService();
+            foreach (DataRow row in services.Rows)
+            {
+                if (!row["service_id"].ToString().Equals(serviceType1.SelectedValue.ToString()) && !row["service_id"].ToString().Equals(serviceType2.SelectedValue.ToString()))
+                {
+                    serviceData.Add(row["service_id"].ToString(), row["service_name"].ToString());
+                }
+            }
+
+            serviceType1.DataSource = serviceData.ToArray();
+            serviceType1.DisplayMember = "Value";
+            serviceType1.ValueMember = "Key";
+        }
+
+        private void cbCust_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbCust.SelectedValue.ToString().Equals("placeholder"))
+            {
+                txtBoxName.Enabled = false;
+                txtBoxEmail.Enabled = false;
+                txtBoxAddress.Enabled = false;
+                txtBoxPhone.Enabled = false;
+            }
+            else if (cbCust.SelectedValue.ToString().Equals("add"))
+            {
+                txtBoxName.Enabled = true;
+                txtBoxEmail.Enabled = true;
+                txtBoxAddress.Enabled = true;
+                txtBoxPhone.Enabled = true;
+            }
+            else
+            {
+                txtBoxName.Enabled = true;
+                txtBoxEmail.Enabled = true;
+                txtBoxAddress.Enabled = true;
+                txtBoxPhone.Enabled = true;
+
+                CustomerClass customerClass = new CustomerClass();
+                DataTable customerInfo = new DataTable();
+                customerInfo = customerClass.displaySelectedCustomer(cbCust.SelectedValue.ToString());
+
+                foreach (DataRow row in customerInfo.Rows)
+                {
+                    txtBoxName.Text = row["customer_name"].ToString();
+                    txtBoxEmail.Text = row["customer_email"].ToString();
+                    txtBoxPhone.Text = row["customer_phone"].ToString();
+                    txtBoxAddress.Text = row["customer_address"].ToString();
+                }
+            }
+        }
+
+        private void serviceType1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (serviceType1.SelectedValue.ToString().Equals("placeholder"))
+            {
+                serviceType2.Enabled = false;
+                serviceType3.Enabled = false;
+            }
+            else if (!serviceType1.SelectedValue.ToString().Equals("placeholder"))
+            {
+                serviceType2.Enabled = true;
+                Dictionary<string, string> serviceData = new Dictionary<string, string>
+                {
+                    { "placeholder", "<Select Service Type>" }
+                };
+
+                ServiceClass serviceClass = new ServiceClass(cbService.Text);
+                DataTable services = serviceClass.displayService();
+                foreach (DataRow row in services.Rows)
+                {
+                    if (!row["service_id"].ToString().Equals(serviceType1.SelectedValue.ToString()) && !row["service_id"].ToString().Equals(serviceType2.SelectedValue.ToString()))
+                    {
+                        serviceData.Add(row["service_id"].ToString(), row["service_name"].ToString());
+                    }
+                }
+
+                serviceType2.DataSource = serviceData.ToArray();
+                serviceType2.DisplayMember = "Value";
+                serviceType2.ValueMember = "Key";
+            }
+        }
+
+        private void serviceType2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (serviceType2.SelectedValue.ToString().Equals("placeholder"))
+            {
+                serviceType3.Enabled = false;
+            }
+            else if (!serviceType2.SelectedValue.ToString().Equals("placeholder"))
+            {
+                serviceType3.Enabled = true;
+
+                Dictionary<string, string> serviceData = new Dictionary<string, string>
+                {
+                    { "placeholder", "<Select Service Type>" }
+                };
+
+                ServiceClass serviceClass = new ServiceClass(cbService.Text);
+                DataTable services = serviceClass.displayService();
+                foreach (DataRow row in services.Rows)
+                {
+                    if (!row["service_id"].ToString().Equals(serviceType1.SelectedValue.ToString()) && !row["service_id"].ToString().Equals(serviceType2.SelectedValue.ToString()))
+                    {
+                        serviceData.Add(row["service_id"].ToString(), row["service_name"].ToString());
+                    }
+                }
+
+                serviceType3.DataSource = serviceData.ToArray();
+                serviceType3.DisplayMember = "Value";
+                serviceType3.ValueMember = "Key";
             }
         }
     }

@@ -87,13 +87,76 @@ namespace WashablesSystem.Classes
                 }
                 else
                 {
-                    MessageBox.Show("Username already exists!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Customer name already exists!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     constring.Close();
                 }
             }
             catch(Exception ex)
             {
                 MessageBox.Show("Invalid input! Error: " + ex, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+        }
+        public string addCustomer(bool directNew)
+        {
+            try
+            {
+                constring.Open();
+
+                //Verify if Customername exists
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM [Customer] WHERE customer_id ='" + customerID + "'", constring);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                if (dt.Rows[0][0].ToString() == "0")
+                {
+                    //Add User to Database
+                    SqlCommand cmd = new SqlCommand("SELECT TOP 1 [customer_id] FROM [Customer] ORDER BY [customer_id] DESC", constring);
+                    SqlDataReader reader1;
+                    reader1 = cmd.ExecuteReader();
+                    if (reader1.Read())
+                    {
+                        customerID = reader1.GetString(0);
+                        int IDNum = int.Parse(string.Join("", customerID.Where(Char.IsDigit))) + 1;
+                        customerID = "C" + IDNum;
+                    }
+                    else
+                    {
+                        MessageBox.Show("NO DATA FOUND");
+                    }
+                    reader1.Close();
+                    cmd.Dispose();
+
+                    //Query for inserting
+                    String query = "INSERT INTO [Customer] VALUES('" + customerID + "','" + customerName + "','"
+                        + customerEmail + "','" + customerPhone + "','" + customerAddress + "',0)";
+
+                    SqlCommand cmd2 = new SqlCommand(query, constring);
+                    cmd2.CommandText = query;
+
+                    //If successful, add to activity log
+                    if (cmd2.ExecuteNonQuery() == 1)
+                    {
+                        constring.Close();
+                        logOperation("Added New Customer");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong. Please try again.");
+                        constring.Close();
+                    }
+                    return customerID;
+                }
+                else
+                {
+                    MessageBox.Show("Customer name already exists!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    constring.Close();
+                    return customerID;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid input! Error: " + ex, "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return customerID;
             }
 
         }
