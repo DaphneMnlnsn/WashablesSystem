@@ -50,11 +50,19 @@ namespace WashablesSystem
         {
             try
             {
-                //call edit method here
-                InventoryClass inventory = new InventoryClass(txtBoxName.Text, cbCategory.Text, item_quantity, decimal.Parse(txtBoxPrice.Text), item_unit);
-                inventory.editItem(item_selected);
-                _parentForm.RefreshPanel();
-                this.Close();
+                if (!String.IsNullOrWhiteSpace(txtBoxName.Text) && decimal.TryParse(txtBoxPrice.Text, out decimal price)
+                    && decimal.Parse(txtBoxPrice.Text) > 0)
+                {
+                    //call edit method here
+                    InventoryClass inventory = new InventoryClass(txtBoxName.Text, cbCategory.Text, item_quantity, decimal.Parse(txtBoxPrice.Text), item_unit);
+                    inventory.editItem(item_selected);
+                    _parentForm.RefreshPanel();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid input! Please try again.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             catch (Exception ex)
             {

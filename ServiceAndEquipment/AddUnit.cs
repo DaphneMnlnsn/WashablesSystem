@@ -19,6 +19,7 @@ namespace WashablesSystem
         {
             InitializeComponent();
             _parentForm = parentForm;
+            cbEquipment.SelectedIndex = 0;
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -29,10 +30,17 @@ namespace WashablesSystem
         {
             try
             {
-                EquipmentClass equipmentClass = new EquipmentClass(cbEquipment.Text, txtBoxName.Text, cbStatus.Text);
-                equipmentClass.addUnit();
-                _parentForm.RefreshPanel();
-                this.Close();
+                if (!String.IsNullOrWhiteSpace(txtBoxName.Text) && !String.IsNullOrWhiteSpace(cbStatus.Text))
+                {
+                    EquipmentClass equipmentClass = new EquipmentClass(cbEquipment.Text, txtBoxName.Text, cbStatus.Text);
+                    equipmentClass.addUnit();
+                    _parentForm.RefreshPanel();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid input! Please try again.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             catch (Exception ex)
             {

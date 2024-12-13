@@ -28,10 +28,17 @@ namespace WashablesSystem
         {
             try
             {
-                ComplaintsClass complaintsClass = new ComplaintsClass(cbCustomerName.SelectedValue.ToString(), cbIssue.Text, DateTime.Parse(dateComplained.Text));
-                complaintsClass.addComplaint();
-                _parentForm.RefreshPanel();
-                this.Close();
+                if (!cbCustomerName.SelectedValue.ToString().Equals("placeholder") && !cbIssue.Text.Equals(""))
+                {
+                    ComplaintsClass complaintsClass = new ComplaintsClass(cbCustomerName.SelectedValue.ToString(), cbIssue.Text, DateTime.Parse(dateComplained.Text));
+                    complaintsClass.addComplaint();
+                    _parentForm.RefreshPanel();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid input! Please try again.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             catch(Exception ex)
             {

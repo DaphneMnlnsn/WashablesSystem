@@ -277,6 +277,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.AddItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtBoxQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

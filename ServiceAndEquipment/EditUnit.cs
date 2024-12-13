@@ -46,11 +46,18 @@ namespace WashablesSystem
         {
             try
             {
-                //call edit method here
-                EquipmentClass equipmentClass = new EquipmentClass(cbEquipment.Text, txtBoxName.Text, cbStatus.Text);
-                equipmentClass.editUnit(unit_selected);
-                _parentForm.RefreshPanel();
-                this.Close();
+                if (!String.IsNullOrWhiteSpace(txtBoxName.Text) && !String.IsNullOrWhiteSpace(cbStatus.Text))
+                {
+                    //call edit method here
+                    EquipmentClass equipmentClass = new EquipmentClass(cbEquipment.Text, txtBoxName.Text, cbStatus.Text);
+                    equipmentClass.editUnit(unit_selected);
+                    _parentForm.RefreshPanel();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid input! Please try again.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             catch(Exception ex)
             {

@@ -19,6 +19,7 @@ namespace WashablesSystem
         {
             InitializeComponent();
             _parentForm = parentForm;
+            cbService.SelectedIndex = 0;
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -29,11 +30,19 @@ namespace WashablesSystem
         {
             try
             {
-                ServiceClass service = new ServiceClass(cbService.Text, txtBoxName.Text,
-                    decimal.Parse(txtBoxRate.Text), decimal.Parse(txtBoxMin.Text));
-                service.addService();
-                _parentForm.RefreshPanel();
-                this.Close();
+                if (!String.IsNullOrWhiteSpace(txtBoxName.Text) && decimal.TryParse(txtBoxRate.Text, out decimal rate) 
+                    && decimal.Parse(txtBoxRate.Text) > 0 && txtBoxMin.Value > 0)
+                {
+                    ServiceClass service = new ServiceClass(cbService.Text, txtBoxName.Text,
+                        decimal.Parse(txtBoxRate.Text), decimal.Parse(txtBoxMin.Text));
+                    service.addService();
+                    _parentForm.RefreshPanel();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid input! Please try again.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             catch (Exception ex)
             {

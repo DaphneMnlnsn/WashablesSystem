@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WashablesSystem.Classes;
@@ -49,10 +50,26 @@ namespace WashablesSystem
             try
             {
                 //call edit method here
-                CustomerClass customerClass = new CustomerClass(txtBoxName.Text, txtBoxPhone.Text, txtBoxEmail.Text, txtBoxAddress.Text);
-                customerClass.editCustomer(customer_selected);
-                _parentForm.RefreshPanel();
-                this.Close();
+                if (!txtBoxName.Text.Equals("") && !txtBoxName.Text.Equals(" ") && Regex.IsMatch(txtBoxPhone.Text, @"^09\d{9}$") &&
+                    Regex.IsMatch(txtBoxEmail.Text, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))
+                {
+                    CustomerClass customerClass = new CustomerClass(txtBoxName.Text, txtBoxPhone.Text, txtBoxEmail.Text, txtBoxAddress.Text);
+                    customerClass.editCustomer(customer_selected);
+                    _parentForm.RefreshPanel();
+                    this.Close();
+                }
+                else if (!Regex.IsMatch(txtBoxPhone.Text, @"^09\d{9}$"))
+                {
+                    MessageBox.Show("Invalid phone number!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (!Regex.IsMatch(txtBoxEmail.Text, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))
+                {
+                    MessageBox.Show("Invalid email address!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    MessageBox.Show("Invalid input! Please try again.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             catch (Exception ex)
             {

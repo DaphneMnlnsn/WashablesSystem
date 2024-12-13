@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.IdentityModel.Tokens;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,9 +14,11 @@ namespace WashablesSystem
 {
     public partial class AddItem : Form
     {
-        public AddItem()
+        private ItemView _parentForm = new ItemView();
+        public AddItem(ItemView parentForm)
         {
             InitializeComponent();
+            _parentForm = parentForm;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -37,9 +40,18 @@ namespace WashablesSystem
         {
             try
             {
-                InventoryClass inventory = new InventoryClass(txtBoxName.Text, cbCategory.Text, decimal.Parse(txtBoxQuantity.Text), decimal.Parse(txtBoxPrice.Text), unitQuantity.Text);
-                inventory.addItem();
-                this.Close();
+                if (!String.IsNullOrWhiteSpace(txtBoxName.Text) && txtBoxQuantity.Value > 0 && decimal.TryParse(txtBoxPrice.Text, out decimal price)
+                    && decimal.Parse(txtBoxPrice.Text) > 0)
+                {
+                    InventoryClass inventory = new InventoryClass(txtBoxName.Text, cbCategory.Text, decimal.Parse(txtBoxQuantity.Text), decimal.Parse(txtBoxPrice.Text), unitQuantity.Text);
+                    inventory.addItem();
+                    _parentForm.RefreshPanel();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid input! Please try again.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             catch(Exception ex)
             {
@@ -60,6 +72,11 @@ namespace WashablesSystem
                 unitQuantity.Enabled = false;
             }
             lblPrice.Text = "Price per " + unitQuantity.Text;
+        }
+
+        private void AddItem_Load(object sender, EventArgs e)
+        {
+            cbCategory.SelectedIndex = 0;
         }
     }
 }

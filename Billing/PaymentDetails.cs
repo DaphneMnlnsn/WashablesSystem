@@ -102,27 +102,35 @@ namespace WashablesSystem
             {
                 paymentMethod = "Cash";
             }
-            PaymentClass paymentClass2 = new PaymentClass(decimal.Parse(lblTotal.Text), totalAmount - decimal.Parse(lblTotal.Text),
-                totalAmount, txtBoxCharge.Value, paymentMethod, txtBoxReferenceNo.Text,
-                txtBoxReceived.Value, txtBoxChange.Value);
 
-            if (downpaymentRadio.Checked && totalAmountLbl.Text.Equals("Downpayment Amount:"))
-            {
-                paymentClass2.payBillDown(transactNum);
-                _parentForm.RefreshPanel(sender, e);
-                this.Close();
+            if (decimal.TryParse(lblTotal.Text, out decimal num) && txtBoxReceived.Value >= 0 && txtBoxReceived.Value >= decimal.Parse(lblTotal.Text)) {
+                
+                PaymentClass paymentClass2 = new PaymentClass(decimal.Parse(lblTotal.Text), totalAmount - decimal.Parse(lblTotal.Text),
+                    totalAmount, txtBoxCharge.Value, paymentMethod, txtBoxReferenceNo.Text,
+                    txtBoxReceived.Value, txtBoxChange.Value);
+
+                if (downpaymentRadio.Checked && totalAmountLbl.Text.Equals("Downpayment Amount:"))
+                {
+                    paymentClass2.payBillDown(transactNum);
+                    _parentForm.RefreshPanel(sender, e);
+                    this.Close();
+                }
+                else if (downpaymentRadio.Checked && totalAmountLbl.Text.Equals("Balance Due:"))
+                {
+                    paymentClass2.payBillDue(transactNum);
+                    _parentForm.RefreshPanel(sender, e);
+                    this.Close();
+                }
+                else if (!downpaymentRadio.Checked && totalAmountLbl.Text.Equals("Total Amount to Pay:"))
+                {
+                    paymentClass2.payBillFullPayment(transactNum);
+                    _parentForm.RefreshPanel(sender, e);
+                    this.Close();
+                }
             }
-            else if (downpaymentRadio.Checked && totalAmountLbl.Text.Equals("Balance Due:"))
+            else
             {
-                paymentClass2.payBillDue(transactNum);
-                _parentForm.RefreshPanel(sender, e);
-                this.Close();
-            }
-            else if (downpaymentRadio.Checked && totalAmountLbl.Text.Equals("Total Amount to Pay:"))
-            {
-                paymentClass2.payBillFullPayment(transactNum);
-                _parentForm.RefreshPanel(sender, e);
-                this.Close();
+                MessageBox.Show("Invalid input! Please try again.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

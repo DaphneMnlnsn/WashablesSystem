@@ -41,25 +41,32 @@ namespace WashablesSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-                //call restock method here
-                InventoryClass itemClass = new InventoryClass(decimal.Parse(txtBoxQuantity.Text));
-                if (radioAdd.Checked)
+            try
+            {
+                if (txtBoxQuantity.Value > 0)
                 {
-                    itemClass.restockItem(item_selected);
+                    //call restock method here
+                    InventoryClass itemClass = new InventoryClass(decimal.Parse(txtBoxQuantity.Text));
+                    if (radioAdd.Checked)
+                    {
+                        itemClass.restockItem(item_selected);
+                    }
+                    else
+                    {
+                        itemClass.subtractItem(item_selected);
+                    }
+                    _parentForm.RefreshPanel();
+                    this.Close();
                 }
                 else
                 {
-                    itemClass.subtractItem(item_selected);
+                    MessageBox.Show("Invalid input! Please try again.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                _parentForm.RefreshPanel();
-                this.Close();
-            //}
-            //catch (Exception ex)
-            //{
-              //  MessageBox.Show("Invalid input!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid input!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

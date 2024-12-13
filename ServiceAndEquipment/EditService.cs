@@ -45,10 +45,18 @@ namespace WashablesSystem
         {
             try
             {
-                ServiceClass serviceClass = new ServiceClass(cbService.Text, txtBoxName.Text, decimal.Parse(txtBoxRate.Text), decimal.Parse(txtBoxMin.Text));
-                serviceClass.editService(service_selected);
-                _parentForm.RefreshPanel();
-                this.Close();
+                if (!String.IsNullOrWhiteSpace(txtBoxName.Text) && decimal.TryParse(txtBoxRate.Text, out decimal rate)
+                    && decimal.Parse(txtBoxRate.Text) > 0 && txtBoxMin.Value > 0)
+                {
+                    ServiceClass serviceClass = new ServiceClass(cbService.Text, txtBoxName.Text, decimal.Parse(txtBoxRate.Text), decimal.Parse(txtBoxMin.Text));
+                    serviceClass.editService(service_selected);
+                    _parentForm.RefreshPanel();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid input! Please try again.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             catch (Exception ex)
             {

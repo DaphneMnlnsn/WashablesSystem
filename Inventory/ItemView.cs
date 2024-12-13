@@ -56,7 +56,7 @@ namespace WashablesSystem
 
         private void btnAddItem_Click(object sender, EventArgs e)
         {
-            AddItem addItem = new AddItem();
+            AddItem addItem = new AddItem(this);
             addItem.ShowDialog();
         }
         public void RefreshPanel()

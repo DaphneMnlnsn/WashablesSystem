@@ -456,6 +456,12 @@ namespace WashablesSystem.Classes
                 SqlCommand cmdAct = new SqlCommand(queryAct, constring);
                 cmdAct.CommandText = queryAct;
                 cmdAct.ExecuteNonQuery();
+
+                string queryAddHistory = "INSERT INTO ItemHistory VALUES('" + sessionVar.loggedIn.ToString() + "','" + itemID + "','"
+                    + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "',' added " + itemQuantity + itemUnit + "')";
+                SqlCommand cmdAddHistory = new SqlCommand(queryAddHistory, constring);
+                cmdAddHistory.CommandText = queryAddHistory;
+                cmdAddHistory.ExecuteNonQuery();
                 MessageBox.Show("Item successfully added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 constring.Close();
             }
