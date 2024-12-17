@@ -71,7 +71,7 @@ namespace WashablesSystem.Classes
                 }
                 else
                 {
-                    unitID = acronym + "U1";
+                    unitID = acronym + "U101";
                 }
                 reader1.Close();
                 cmd.Dispose();

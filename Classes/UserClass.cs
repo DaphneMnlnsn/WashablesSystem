@@ -80,7 +80,7 @@ namespace WashablesSystem.Classes
                     }
                     else
                     {
-                        MessageBox.Show("NO DATA FOUND");
+                        employeeID = "U101";
                     }
                     reader1.Close();
                     cmd.Dispose();

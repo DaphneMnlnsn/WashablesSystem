@@ -74,7 +74,7 @@ namespace WashablesSystem.Classes
                 }
                 else
                 {
-                    serviceID = acronym + "1";
+                    serviceID = acronym + "101";
                 }
                 reader1.Close();
                 cmd.Dispose();

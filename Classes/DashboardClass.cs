@@ -30,7 +30,7 @@ namespace WashablesSystem.Classes
             string query = "SELECT [Order].order_id, customer_name, unit_id, unit_id2, unit_id3, service_category, [Order].service_id, service_id2, service_id3, " +
                 "weight + weight2 + weight3 AS totalweight, transaction_date, total_amount FROM [Order] INNER JOIN [Customer] ON [Order].customer_id =" +
                 "[Customer].customer_id LEFT JOIN [Service] ON [Order].service_id = [Service].service_id OR [Order].service_id2 = " +
-                "[Service].service_id OR [Order].service_id3 = [Service].service_id INNER JOIN [Billing] ON [Order].order_id = [Billing].order_id WHERE transaction_date IS NOT NULL";
+                "[Service].service_id OR [Order].service_id3 = [Service].service_id INNER JOIN [Billing] ON [Order].order_id = [Billing].order_id WHERE transaction_date IS NOT NULL AND total_amount > 0.00";
 
             SqlDataAdapter dataAdapter = new SqlDataAdapter(query, constring);
             DataTable salesReport = new DataTable("salesReport");
@@ -112,14 +112,14 @@ namespace WashablesSystem.Classes
                 query = @"SELECT DAY(transaction_date) AS Day, SUM(total_amount) AS TotalSales
                   FROM Billing
                   WHERE MONTH(transaction_date) = MONTH(GETDATE())
-                    AND YEAR(transaction_date) = YEAR(GETDATE())
+                    AND YEAR(transaction_date) = YEAR(GETDATE()) AND total_amount > 0.00
                   GROUP BY DAY(transaction_date)";
             }
             else if (filter.Equals("This Year"))
             {
                 query = @"SELECT MONTH(transaction_date) AS Month, SUM(total_amount) AS TotalSales
                   FROM Billing
-                  WHERE YEAR(transaction_date) = YEAR(GETDATE())
+                  WHERE YEAR(transaction_date) = YEAR(GETDATE()) AND total_amount > 0.00
                   GROUP BY MONTH(transaction_date)";
             }
 

@@ -52,7 +52,7 @@ namespace WashablesSystem.Classes
                 }
                 else
                 {
-                    complaintID = "CC1";
+                    complaintID = "CC101";
                 }
                 reader1.Close();
                 cmd.Dispose();

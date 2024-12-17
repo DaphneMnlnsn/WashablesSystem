@@ -60,7 +60,7 @@ namespace WashablesSystem.Classes
                     }
                     else
                     {
-                        MessageBox.Show("NO DATA FOUND");
+                        customerID = "C1001";
                     }
                     reader1.Close();
                     cmd.Dispose();

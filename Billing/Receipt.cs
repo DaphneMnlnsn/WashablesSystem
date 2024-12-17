@@ -57,11 +57,39 @@ namespace WashablesSystem
                 }
                 else
                 {
-                    lblReference.Text = row["reference_num"].ToString() + " | " + row["reference_num"].ToString();
+                    lblReference.Text = row["reference_num"].ToString();
                 }
+                if (!String.IsNullOrWhiteSpace(row["downpayment_received"].ToString()))
+                {
+                    paymentMode.Text = "Downpayment";
+                }
+                else
+                {
+                    paymentMode.Text = "Full Payment";
+                }
+                if(paymentMode.Text.Equals("Full Payment"))
+                {
+                    lastPaymentHeader.Visible = false;
+                    panel1.Visible = false;
+                    paymentMethod2.Visible = false;
+                    received2.Visible = false;
+                    charge2.Visible = false;
+                    refNo2.Visible = false;
+                }
+                paymentMethod2.Text = row["payment_method2"].ToString();
                 lblAdditionalCharge.Text = row["additional_charge"].ToString();
-                lblPaymentReceived.Text = row["payment_received"].ToString() + " | " + row["downpayment_received"].ToString();
-                lblChange.Text = row["change"].ToString() + " | " + row["downpayment_change"].ToString();
+                lblPaymentReceived.Text = row["downpayment_received"].ToString();
+                received2.Text = row["payment_received"].ToString();
+                charge2.Text = row["additional_charge"].ToString();
+
+                if (row["payment_method2"].ToString().Equals("Cash"))
+                {
+                    refNo2.Text = "N/A";
+                }
+                else
+                {
+                    refNo2.Text = row["reference_num2"].ToString();
+                }
                 lblTotal.Text = row["total_amount"].ToString();
             }
         }

@@ -71,7 +71,7 @@ namespace WashablesSystem.Classes
                     }
                     else
                     {
-                        itemID = "ITM1";
+                        itemID = "ITM101";
                     }
                     reader1.Close();
                     cmd.Dispose();

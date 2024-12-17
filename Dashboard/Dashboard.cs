@@ -129,7 +129,7 @@ namespace WashablesSystem
 
         private Color getColorForIndex(int index)
         {
-            Color[] colors = new Color[] { Color.ForestGreen, Color.Green, Color.LightSeaGreen, Color.LimeGreen, Color.DarkGreen };
+            Color[] colors = new Color[] { Color.ForestGreen, Color.LightBlue, Color.PaleGreen, Color.LightGoldenrodYellow, Color.Thistle, Color.Pink, Color.Lavender, Color.LightCoral, Color.PaleTurquoise, Color.LightSkyBlue };
             return colors[index % colors.Length];
         }
 
@@ -153,6 +153,7 @@ namespace WashablesSystem
                 pieSeries.Points.AddXY(serviceName, serviceCount);
                 pieSeries.Points[pieSeries.Points.Count - 1].IsValueShownAsLabel = true; // Show value as label
             }
+            chartServices.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
             this.chartServices.Series.Add(pieSeries);
         }
 

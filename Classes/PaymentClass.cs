@@ -69,7 +69,7 @@ namespace WashablesSystem.Classes
                 }
                 else
                 {
-                    transactionID = "T1";
+                    transactionID = "T101";
                 }
                 reader1.Close();
                 cmd.Dispose();
@@ -123,7 +123,7 @@ namespace WashablesSystem.Classes
                 }
                 else
                 {
-                    transactionID = "T1";
+                    transactionID = "T101";
                 }
                 reader1.Close();
                 cmd.Dispose();
@@ -195,7 +195,7 @@ namespace WashablesSystem.Classes
         public DataTable getBills()
         {
             constring.Open();
-            string sql = "SELECT * FROM [Billing] INNER JOIN [Order] ON [Billing].order_id = [Order].order_id INNER JOIN [Customer] ON [Order].customer_id = [Customer].customer_id WHERE payment_status = 'Pending' OR payment_status = 'Downpaid'";
+            string sql = "SELECT * FROM [Billing] INNER JOIN [Order] ON [Billing].order_id = [Order].order_id INNER JOIN [Customer] ON [Order].customer_id = [Customer].customer_id WHERE payment_status = 'Pending' OR payment_status = 'Partially Paid'";
 
             DataTable payments = new DataTable("payments");
             SqlDataAdapter da = new SqlDataAdapter(sql, constring);
@@ -312,7 +312,7 @@ namespace WashablesSystem.Classes
 
             //Query for editing
             String query = "UPDATE [Billing] SET user_id = '" + sessionVar.loggedIn + "', total_amount='" + totalAmount + "',payment_method='"
-                + paymentMethod + "',additional_charge='" + charge + "',payment_status='Downpaid', downpayment = '" + downpayment +
+                + paymentMethod + "',additional_charge='" + charge + "',payment_status='Partially Paid', downpayment = '" + downpayment +
                 "', balance_due = '" + balancedue + "', reference_num = '" + referenceNo +
                   "', downpayment_received = '" + paymentReceived + "', downpayment_change = '" + change + "' WHERE transaction_id='" + transactNum + "';";
 
@@ -338,7 +338,7 @@ namespace WashablesSystem.Classes
             this.transactionID = transactNum;
 
             //Query for editing
-            String query = "UPDATE [Billing] SET user_id = '" + sessionVar.loggedIn + "', total_amount='" + totalAmount + "',payment_method='"
+            String query = "UPDATE [Billing] SET user_id = '" + sessionVar.loggedIn + "', total_amount='" + totalAmount + "',payment_method2='"
                 + paymentMethod + "',additional_charge='" + charge + "',payment_status='Paid', downpayment = '" + downpayment +
                 "', balance_due = '" + balancedue + "', transaction_date = '" + transactionDate + "', reference_num2 = '" + referenceNo +
                   "', payment_received = '" + paymentReceived + "', change = '" + change + "' WHERE transaction_id='" + transactNum + "';";
@@ -357,14 +357,6 @@ namespace WashablesSystem.Classes
                 MessageBox.Show("Something went wrong. Please try again.");
                 constring.Close();
             }
-        }
-        public void cancelPayment()
-        {
-
-        }
-        public void generateReceipt()
-        {
-
         }
         private void logOperation(string activity)
         {

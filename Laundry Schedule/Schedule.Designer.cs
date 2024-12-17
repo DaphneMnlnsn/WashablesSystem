@@ -51,12 +51,12 @@
             this.PickUpDate = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.employee_no = new System.Windows.Forms.Label();
-            this.cbFilter = new WashablesSystem.CustomComboBox();
-            this.cbSortFinished = new WashablesSystem.CustomComboBox();
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.PictureBox();
             this.btnAddLaundry = new WashablesSystem.CustomButton();
             this.txtBoxSearch = new WashablesSystem.CustomTextbox();
+            this.cbFilter = new WashablesSystem.CustomComboBox();
+            this.cbSortFinished = new WashablesSystem.CustomComboBox();
             this.panelTabs.SuspendLayout();
             this.finishedLayout.SuspendLayout();
             this.inProgressColumn.SuspendLayout();
@@ -97,15 +97,15 @@
             this.finishedLayout.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.finishedLayout.ColumnCount = 10;
             this.finishedLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.finishedLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.finishedLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.finishedLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
+            this.finishedLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
             this.finishedLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112F));
-            this.finishedLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.finishedLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
-            this.finishedLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
-            this.finishedLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 111F));
-            this.finishedLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
-            this.finishedLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.finishedLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.finishedLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 148F));
+            this.finishedLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
+            this.finishedLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 113F));
+            this.finishedLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
+            this.finishedLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.finishedLayout.Controls.Add(this.label9, 0, 0);
             this.finishedLayout.Controls.Add(this.label10, 0, 0);
             this.finishedLayout.Controls.Add(this.label12, 3, 0);
@@ -115,11 +115,10 @@
             this.finishedLayout.Controls.Add(this.label8, 6, 0);
             this.finishedLayout.Controls.Add(this.label13, 7, 0);
             this.finishedLayout.Controls.Add(this.label11, 4, 0);
-            this.finishedLayout.Location = new System.Drawing.Point(-2, 49);
+            this.finishedLayout.Location = new System.Drawing.Point(-2, 50);
             this.finishedLayout.Name = "finishedLayout";
             this.finishedLayout.RowCount = 1;
-            this.finishedLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.finishedLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.finishedLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.finishedLayout.Size = new System.Drawing.Size(948, 37);
             this.finishedLayout.TabIndex = 104;
             this.finishedLayout.Visible = false;
@@ -129,7 +128,7 @@
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(52, 9);
+            this.label9.Location = new System.Drawing.Point(45, 9);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(114, 18);
@@ -142,7 +141,7 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(7, 9);
+            this.label10.Location = new System.Drawing.Point(4, 9);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(30, 18);
@@ -155,7 +154,7 @@
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Berlin Sans FB", 11F);
-            this.label12.Location = new System.Drawing.Point(359, 1);
+            this.label12.Location = new System.Drawing.Point(346, 1);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(51, 34);
@@ -168,7 +167,7 @@
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(183, 1);
+            this.label14.Location = new System.Drawing.Point(175, 1);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(41, 35);
@@ -181,7 +180,7 @@
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(261, 9);
+            this.label15.Location = new System.Drawing.Point(252, 9);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(57, 18);
@@ -194,7 +193,7 @@
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Berlin Sans FB", 12F);
-            this.label16.Location = new System.Drawing.Point(806, 1);
+            this.label16.Location = new System.Drawing.Point(786, 1);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(61, 35);
@@ -207,7 +206,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(603, 1);
+            this.label8.Location = new System.Drawing.Point(579, 1);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(50, 35);
@@ -220,7 +219,7 @@
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(707, 1);
+            this.label13.Location = new System.Drawing.Point(684, 1);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(53, 35);
@@ -233,7 +232,7 @@
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(446, 9);
+            this.label11.Location = new System.Drawing.Point(425, 9);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(110, 18);
@@ -260,12 +259,12 @@
             this.inProgressColumn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
             this.inProgressColumn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
             this.inProgressColumn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 111F));
-            this.inProgressColumn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77F));
-            this.inProgressColumn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 153F));
-            this.inProgressColumn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.inProgressColumn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
-            this.inProgressColumn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 92F));
-            this.inProgressColumn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.inProgressColumn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.inProgressColumn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 149F));
+            this.inProgressColumn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
+            this.inProgressColumn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
+            this.inProgressColumn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
+            this.inProgressColumn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
             this.inProgressColumn.Controls.Add(this.label6, 6, 0);
             this.inProgressColumn.Controls.Add(this.label4, 4, 0);
             this.inProgressColumn.Controls.Add(this.label5, 3, 0);
@@ -287,7 +286,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(602, 1);
+            this.label6.Location = new System.Drawing.Point(578, 1);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 35);
@@ -300,7 +299,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(444, 9);
+            this.label4.Location = new System.Drawing.Point(424, 9);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 18);
@@ -313,7 +312,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Berlin Sans FB", 11F);
-            this.label5.Location = new System.Drawing.Point(358, 1);
+            this.label5.Location = new System.Drawing.Point(345, 1);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 34);
@@ -326,7 +325,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(183, 1);
+            this.label2.Location = new System.Drawing.Point(176, 1);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 35);
@@ -339,7 +338,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(260, 9);
+            this.label3.Location = new System.Drawing.Point(253, 9);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 18);
@@ -352,7 +351,7 @@
             this.TimeLeft.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TimeLeft.AutoSize = true;
             this.TimeLeft.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimeLeft.Location = new System.Drawing.Point(815, 1);
+            this.TimeLeft.Location = new System.Drawing.Point(795, 1);
             this.TimeLeft.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TimeLeft.Name = "TimeLeft";
             this.TimeLeft.Size = new System.Drawing.Size(40, 35);
@@ -365,7 +364,7 @@
             this.PickUpDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PickUpDate.AutoSize = true;
             this.PickUpDate.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PickUpDate.Location = new System.Drawing.Point(706, 1);
+            this.PickUpDate.Location = new System.Drawing.Point(683, 1);
             this.PickUpDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PickUpDate.Name = "PickUpDate";
             this.PickUpDate.Size = new System.Drawing.Size(53, 35);
@@ -378,7 +377,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(52, 9);
+            this.label7.Location = new System.Drawing.Point(45, 9);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(114, 18);
@@ -391,65 +390,13 @@
             this.employee_no.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.employee_no.AutoSize = true;
             this.employee_no.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employee_no.Location = new System.Drawing.Point(7, 9);
+            this.employee_no.Location = new System.Drawing.Point(4, 9);
             this.employee_no.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.employee_no.Name = "employee_no";
             this.employee_no.Size = new System.Drawing.Size(30, 18);
             this.employee_no.TabIndex = 77;
             this.employee_no.Text = "No.";
             this.employee_no.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cbFilter
-            // 
-            this.cbFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(200)))), ((int)(((byte)(176)))));
-            this.cbFilter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(200)))), ((int)(((byte)(176)))));
-            this.cbFilter.BorderSize = 0;
-            this.cbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFilter.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFilter.ForeColor = System.Drawing.Color.Black;
-            this.cbFilter.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.cbFilter.Items.AddRange(new object[] {
-            "In-Progress",
-            "Pending",
-            "Finished",
-            "Picked-Up",
-            "Cancelled"});
-            this.cbFilter.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cbFilter.ListTextColor = System.Drawing.Color.Black;
-            this.cbFilter.Location = new System.Drawing.Point(591, 13);
-            this.cbFilter.Margin = new System.Windows.Forms.Padding(2);
-            this.cbFilter.MinimumSize = new System.Drawing.Size(133, 20);
-            this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(156, 25);
-            this.cbFilter.TabIndex = 101;
-            this.cbFilter.Texts = "In-Progress";
-            this.cbFilter.OnSelectedIndexChanged += new System.EventHandler(this.cbFilter_OnSelectedIndexChanged);
-            this.cbFilter.Load += new System.EventHandler(this.cbFilter_Load);
-            // 
-            // cbSortFinished
-            // 
-            this.cbSortFinished.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(200)))), ((int)(((byte)(176)))));
-            this.cbSortFinished.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(200)))), ((int)(((byte)(176)))));
-            this.cbSortFinished.BorderSize = 0;
-            this.cbSortFinished.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSortFinished.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSortFinished.ForeColor = System.Drawing.Color.Black;
-            this.cbSortFinished.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
-            this.cbSortFinished.Items.AddRange(new object[] {
-            "Time Scheduled (Asc)",
-            "Time Scheduled (Desc)",
-            "Pick-up Date (Asc)",
-            "Pick-up Date (Desc)"});
-            this.cbSortFinished.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cbSortFinished.ListTextColor = System.Drawing.Color.Black;
-            this.cbSortFinished.Location = new System.Drawing.Point(751, 13);
-            this.cbSortFinished.Margin = new System.Windows.Forms.Padding(2);
-            this.cbSortFinished.MinimumSize = new System.Drawing.Size(133, 20);
-            this.cbSortFinished.Name = "cbSortFinished";
-            this.cbSortFinished.Size = new System.Drawing.Size(183, 25);
-            this.cbSortFinished.TabIndex = 100;
-            this.cbSortFinished.Texts = "Sort by...";
-            this.cbSortFinished.OnSelectedIndexChanged += new System.EventHandler(this.cbSortFinished_OnSelectedIndexChanged);
             // 
             // lblHeader
             // 
@@ -520,6 +467,58 @@
             this.txtBoxSearch.TabIndex = 8;
             this.txtBoxSearch.UnderlinedStyle = false;
             this.txtBoxSearch.Visible = false;
+            // 
+            // cbFilter
+            // 
+            this.cbFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(200)))), ((int)(((byte)(176)))));
+            this.cbFilter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(200)))), ((int)(((byte)(176)))));
+            this.cbFilter.BorderSize = 0;
+            this.cbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFilter.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFilter.ForeColor = System.Drawing.Color.Black;
+            this.cbFilter.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.cbFilter.Items.AddRange(new object[] {
+            "In-Progress",
+            "Pending",
+            "Finished",
+            "Picked-Up",
+            "Cancelled"});
+            this.cbFilter.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cbFilter.ListTextColor = System.Drawing.Color.Black;
+            this.cbFilter.Location = new System.Drawing.Point(591, 13);
+            this.cbFilter.Margin = new System.Windows.Forms.Padding(2);
+            this.cbFilter.MinimumSize = new System.Drawing.Size(133, 20);
+            this.cbFilter.Name = "cbFilter";
+            this.cbFilter.Size = new System.Drawing.Size(156, 25);
+            this.cbFilter.TabIndex = 101;
+            this.cbFilter.Texts = "In-Progress";
+            this.cbFilter.OnSelectedIndexChanged += new System.EventHandler(this.cbFilter_OnSelectedIndexChanged);
+            this.cbFilter.Load += new System.EventHandler(this.cbFilter_Load);
+            // 
+            // cbSortFinished
+            // 
+            this.cbSortFinished.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(200)))), ((int)(((byte)(176)))));
+            this.cbSortFinished.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(200)))), ((int)(((byte)(176)))));
+            this.cbSortFinished.BorderSize = 0;
+            this.cbSortFinished.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSortFinished.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSortFinished.ForeColor = System.Drawing.Color.Black;
+            this.cbSortFinished.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(56)))), ((int)(((byte)(97)))));
+            this.cbSortFinished.Items.AddRange(new object[] {
+            "Time Scheduled (Asc)",
+            "Time Scheduled (Desc)",
+            "Pick-up Date (Asc)",
+            "Pick-up Date (Desc)"});
+            this.cbSortFinished.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cbSortFinished.ListTextColor = System.Drawing.Color.Black;
+            this.cbSortFinished.Location = new System.Drawing.Point(751, 13);
+            this.cbSortFinished.Margin = new System.Windows.Forms.Padding(2);
+            this.cbSortFinished.MinimumSize = new System.Drawing.Size(133, 20);
+            this.cbSortFinished.Name = "cbSortFinished";
+            this.cbSortFinished.Size = new System.Drawing.Size(183, 25);
+            this.cbSortFinished.TabIndex = 100;
+            this.cbSortFinished.Texts = "Sort by...";
+            this.cbSortFinished.OnSelectedIndexChanged += new System.EventHandler(this.cbSortFinished_OnSelectedIndexChanged);
             // 
             // Schedule
             // 

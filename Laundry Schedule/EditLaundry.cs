@@ -19,7 +19,7 @@ namespace WashablesSystem
         {
             InitializeComponent();
             this.orderID = orderID;
-            pickupDate.MinDate = DateTime.Now;
+            pickupDate.MinDate = DateTime.Now.AddDays(-1);
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {

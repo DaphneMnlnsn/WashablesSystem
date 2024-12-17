@@ -91,10 +91,17 @@ namespace WashablesSystem
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            string unitID = selectedButtonControl.getSelectedButton();
-            scheduleClass.startSchedule(batchID, unitID);
-            this.Close();
-            _parentForm.RefreshPanel();
+            if (selectedButtonControl != null)
+            {
+                string unitID = selectedButtonControl.getSelectedButton();
+                scheduleClass.startSchedule(batchID, unitID);
+                this.Close();
+                _parentForm.RefreshPanel();
+            }
+            else
+            {
+                MessageBox.Show("Please select an available unit!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

@@ -370,7 +370,7 @@
             // 
             this.txtWeight2.DecimalPlaces = 2;
             this.txtWeight2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.txtWeight2.Location = new System.Drawing.Point(571, 196);
+            this.txtWeight2.Location = new System.Drawing.Point(571, 229);
             this.txtWeight2.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -384,7 +384,7 @@
             // 
             this.txtWeight.DecimalPlaces = 2;
             this.txtWeight.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.txtWeight.Location = new System.Drawing.Point(571, 230);
+            this.txtWeight.Location = new System.Drawing.Point(571, 197);
             this.txtWeight.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -1258,7 +1258,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(838, 492);
+            this.btnCancel.Location = new System.Drawing.Point(802, 491);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(116, 29);
@@ -1279,7 +1279,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(718, 492);
+            this.btnAdd.Location = new System.Drawing.Point(682, 491);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(116, 29);
@@ -1293,7 +1293,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(987, 538);
+            this.ClientSize = new System.Drawing.Size(967, 538);
             this.Controls.Add(this.serviceType3);
             this.Controls.Add(this.serviceType2);
             this.Controls.Add(this.serviceType1);

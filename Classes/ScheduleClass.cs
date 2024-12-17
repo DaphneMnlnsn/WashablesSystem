@@ -191,7 +191,7 @@ namespace WashablesSystem.Classes
                 }
                 else
                 {
-                    orderID = "OR1";
+                    orderID = "OR1001";
                 }
                 reader1.Close();
                 cmd.Dispose();

@@ -56,6 +56,9 @@ namespace WashablesSystem
                     fullPaymentRadio.Enabled = false;
                     totalAmountLbl.Text = "Balance Due:";
                     lblTotal.Text = (totalAmount - decimal.Parse(row["downpayment"].ToString())).ToString("0.00");
+                    txtBoxReceived.Value = decimal.Parse((totalAmount - decimal.Parse(row["downpayment"].ToString())).ToString("0.00"));
+                    txtBoxChange.Enabled = false;
+                    txtBoxReceived.Enabled = false;
                 }
                 else
                 {
@@ -103,9 +106,9 @@ namespace WashablesSystem
                 paymentMethod = "Cash";
             }
 
-            if (decimal.TryParse(lblTotal.Text, out decimal num) && txtBoxReceived.Value >= 0 && txtBoxReceived.Value >= decimal.Parse(lblTotal.Text)) {
-                
-                PaymentClass paymentClass2 = new PaymentClass(decimal.Parse(lblTotal.Text), totalAmount - decimal.Parse(lblTotal.Text),
+            if (decimal.TryParse(lblTotal.Text, out decimal num) && txtBoxReceived.Value >= 0 && txtBoxReceived.Value >= decimal.Parse(lblTotal.Text)) 
+            {
+                PaymentClass paymentClass2 = new PaymentClass(txtBoxReceived.Value, totalAmount - decimal.Parse(lblTotal.Text),
                     totalAmount, txtBoxCharge.Value, paymentMethod, txtBoxReferenceNo.Text,
                     txtBoxReceived.Value, txtBoxChange.Value);
 
@@ -136,10 +139,6 @@ namespace WashablesSystem
 
         private void txtBoxReceived_ValueChanged(object sender, EventArgs e)
         {
-            if (txtBoxReceived.Value > currentAmount)
-            {
-                txtBoxChange.Value = txtBoxReceived.Value - decimal.Parse(lblTotal.Text);
-            }
         }
 
         private void txtBoxCharge_ValueChanged(object sender, EventArgs e)

@@ -183,6 +183,7 @@ namespace WashablesSystem
                 {
                     CustomerClass customerClass = new CustomerClass(txtBoxName.Text, txtBoxPhone.Text, txtBoxEmail.Text, txtBoxAddress.Text);
                     customerClass.editCustomer(cbCust.SelectedValue.ToString());
+                    custID = cbCust.SelectedValue.ToString();
                 }
 
                 ScheduleClass schedule = new ScheduleClass(serviceCategory, service1, service2, service3, weight, weight2, weight3, custID, DateTime.Now, pickUp, item1, item2, item3, itemQuan1, itemQuan2, itemQuan3, washTime, dryTime, ironTime);
@@ -373,10 +374,13 @@ namespace WashablesSystem
             {
                 serviceType2.Enabled = false;
                 serviceType3.Enabled = false;
+                txtWeight2.Enabled = false;
+                txtWeight3.Enabled = false;
             }
             else if (!serviceType1.SelectedValue.ToString().Equals("placeholder"))
             {
                 serviceType2.Enabled = true;
+                txtWeight2.Enabled = true;
                 Dictionary<string, string> serviceData = new Dictionary<string, string>
                 {
                     { "placeholder", "<Select Service Type>" }
@@ -403,10 +407,12 @@ namespace WashablesSystem
             if (serviceType2.SelectedValue.ToString().Equals("placeholder"))
             {
                 serviceType3.Enabled = false;
+                txtWeight3.Enabled= false;
             }
             else if (!serviceType2.SelectedValue.ToString().Equals("placeholder"))
             {
                 serviceType3.Enabled = true;
+                txtWeight3.Enabled = true;
 
                 Dictionary<string, string> serviceData = new Dictionary<string, string>
                 {

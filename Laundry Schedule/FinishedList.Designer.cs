@@ -54,16 +54,16 @@
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel2.ColumnCount = 11;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 142F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 73F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 173F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 118F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 153F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel2.Controls.Add(this.btnPickedUp, 9, 0);
             this.tableLayoutPanel2.Controls.Add(this.Weights, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.ScheduleTime, 4, 0);
@@ -89,10 +89,10 @@
             // 
             this.btnPickedUp.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnPickedUp.Image = global::WashablesSystem.Properties.Resources.Resolve;
-            this.btnPickedUp.Location = new System.Drawing.Point(864, 2);
+            this.btnPickedUp.Location = new System.Drawing.Point(871, 2);
             this.btnPickedUp.Margin = new System.Windows.Forms.Padding(5, 2, 2, 2);
             this.btnPickedUp.Name = "btnPickedUp";
-            this.btnPickedUp.Size = new System.Drawing.Size(28, 34);
+            this.btnPickedUp.Size = new System.Drawing.Size(27, 34);
             this.btnPickedUp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnPickedUp.TabIndex = 87;
             this.btnPickedUp.TabStop = false;
@@ -103,7 +103,7 @@
             this.Weights.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Weights.AutoSize = true;
             this.Weights.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Weights.Location = new System.Drawing.Point(379, 2);
+            this.Weights.Location = new System.Drawing.Point(349, 2);
             this.Weights.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Weights.Name = "Weights";
             this.Weights.Size = new System.Drawing.Size(52, 34);
@@ -116,7 +116,7 @@
             this.ScheduleTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ScheduleTime.AutoSize = true;
             this.ScheduleTime.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScheduleTime.Location = new System.Drawing.Point(477, 10);
+            this.ScheduleTime.Location = new System.Drawing.Point(434, 10);
             this.ScheduleTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ScheduleTime.Name = "ScheduleTime";
             this.ScheduleTime.Size = new System.Drawing.Size(103, 17);
@@ -129,7 +129,7 @@
             this.Services.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Services.AutoSize = true;
             this.Services.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Services.Location = new System.Drawing.Point(279, 10);
+            this.Services.Location = new System.Drawing.Point(253, 10);
             this.Services.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Services.Name = "Services";
             this.Services.Size = new System.Drawing.Size(57, 17);
@@ -142,7 +142,7 @@
             this.UnitUsed.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UnitUsed.AutoSize = true;
             this.UnitUsed.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnitUsed.Location = new System.Drawing.Point(198, 2);
+            this.UnitUsed.Location = new System.Drawing.Point(175, 2);
             this.UnitUsed.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.UnitUsed.Name = "UnitUsed";
             this.UnitUsed.Size = new System.Drawing.Size(38, 34);
@@ -155,7 +155,7 @@
             this.FinishedOn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FinishedOn.AutoSize = true;
             this.FinishedOn.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FinishedOn.Location = new System.Drawing.Point(776, 10);
+            this.FinishedOn.Location = new System.Drawing.Point(779, 10);
             this.FinishedOn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FinishedOn.Name = "FinishedOn";
             this.FinishedOn.Size = new System.Drawing.Size(80, 17);
@@ -168,10 +168,10 @@
             this.PickUpDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PickUpDate.AutoSize = true;
             this.PickUpDate.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PickUpDate.Location = new System.Drawing.Point(710, 2);
+            this.PickUpDate.Location = new System.Drawing.Point(674, 10);
             this.PickUpDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PickUpDate.Name = "PickUpDate";
-            this.PickUpDate.Size = new System.Drawing.Size(52, 34);
+            this.PickUpDate.Size = new System.Drawing.Size(84, 17);
             this.PickUpDate.TabIndex = 83;
             this.PickUpDate.Text = "Pick up Date";
             this.PickUpDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -181,7 +181,7 @@
             this.actualTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.actualTime.AutoSize = true;
             this.actualTime.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.actualTime.Location = new System.Drawing.Point(617, 10);
+            this.actualTime.Location = new System.Drawing.Point(571, 10);
             this.actualTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.actualTime.Name = "actualTime";
             this.actualTime.Size = new System.Drawing.Size(79, 17);
@@ -193,10 +193,10 @@
             // 
             this.btnBill.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnBill.Image = global::WashablesSystem.Properties.Resources.Bill;
-            this.btnBill.Location = new System.Drawing.Point(896, 5);
+            this.btnBill.Location = new System.Drawing.Point(902, 5);
             this.btnBill.Margin = new System.Windows.Forms.Padding(2);
             this.btnBill.Name = "btnBill";
-            this.btnBill.Size = new System.Drawing.Size(30, 27);
+            this.btnBill.Size = new System.Drawing.Size(27, 27);
             this.btnBill.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnBill.TabIndex = 85;
             this.btnBill.TabStop = false;
@@ -207,7 +207,7 @@
             this.CustomerName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CustomerName.AutoSize = true;
             this.CustomerName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CustomerName.Location = new System.Drawing.Point(62, 10);
+            this.CustomerName.Location = new System.Drawing.Point(48, 10);
             this.CustomerName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CustomerName.Name = "CustomerName";
             this.CustomerName.Size = new System.Drawing.Size(107, 17);
@@ -220,7 +220,7 @@
             this.ORNo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ORNo.AutoSize = true;
             this.ORNo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ORNo.Location = new System.Drawing.Point(8, 10);
+            this.ORNo.Location = new System.Drawing.Point(4, 10);
             this.ORNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ORNo.Name = "ORNo";
             this.ORNo.Size = new System.Drawing.Size(29, 17);
